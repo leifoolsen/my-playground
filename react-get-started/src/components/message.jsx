@@ -1,4 +1,7 @@
+/*eslint-disable no-unused-vars*/
 import React, { Component, PropTypes } from 'react';
+/*eslint-disable no-unused-vars*/
+
 import moment from 'moment';
 
 class Message extends Component {
@@ -27,7 +30,7 @@ class Message extends Component {
         </div>
         <div className="message__content">{this.props.content}</div>
       </div>
-    )
+    );
   }
 }
 export default Message;

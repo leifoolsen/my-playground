@@ -1,8 +1,11 @@
+/*eslint-disable no-unused-vars*/
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Message from './components/message';
 import MessageCreator from './components/message-creator';
-import css from './main.css';
+/*eslint-disable no-unused-vars*/
+
+import './main.css';
 
 class App extends Component {
   constructor(props) {

@@ -1,4 +1,6 @@
+/*eslint-disable no-unused-vars*/
 import React, { Component, PropTypes } from 'react';
+/*eslint-disable no-unused-vars*/
 
 class MessageCreator extends Component {
   static propTypes = {
@@ -18,7 +20,7 @@ class MessageCreator extends Component {
         <textarea className="message-creator__content" ref="content" required={true} />
         <input className="message-creator__post-button" type="submit" value="Post" />
       </form>
-    )
+    );
   }
 }
 export default MessageCreator;

@@ -2,7 +2,7 @@
 
 ```
 npm install
-./node_modules/.bin/webpack-dev-server --progress --colors --content-base app/
+./node_modules/.bin/webpack-dev-server --progress --colors
 ```
 
 ### See:
