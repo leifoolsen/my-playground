@@ -18,6 +18,17 @@ module.exports = {
     extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx']
   },
   module: {
+    preLoaders: [
+      {
+        test: /\.js[x]?$/,
+        include: [
+          path.join(__dirname, 'src'),
+          path.join(__dirname, 'test')
+        ],
+        //exclude: /(node_modules|bower_components)/,
+        loaders: ['eslint']
+      }
+    ],
     loaders: [
       {
         test: /\.js[x]?$/,                     // Only run `.js` and `.jsx` files through Babel
@@ -32,5 +43,29 @@ module.exports = {
   },
   devServer: {
     contentBase: './src'
+  },
+  eslint: {
+    // See: http://eslint.org/docs/user-guide/configuring.html
+    // See: https://gist.github.com/nkbt/9efd4facb391edbf8048
+    'parser': 'babel-eslint',
+    'env': {
+      'browser': true,
+      'node': true,
+      'es6': true
+    },
+    'settings': {
+      'ecmascript': 7,
+      'jsx': true
+    },
+    'rules': {
+      'strict': 0,
+      'no-unused-vars': 2,
+      'camelcase': 1,
+      'no-underscore-dangle': 1,
+      'indent': [1, 2],
+      'quotes': 0,
+      'linebreak-style': [2, 'unix'],
+      'semi': [2, 'always']
+    }
   }
 };
