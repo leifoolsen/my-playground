@@ -1,6 +1,4 @@
-/*eslint-disable no-unused-vars*/
-import React, { Component, PropTypes } from 'react';
-/*eslint-disable no-unused-vars*/
+import React, { Component, PropTypes } from 'react'; // eslint-disable-line no-unused-vars
 
 class MessageCreator extends Component {
   static propTypes = {
