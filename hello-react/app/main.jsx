@@ -10,7 +10,7 @@ class HelloWorld extends Component {
 ReactDOM.render(<HelloWorld  name="LOL" />, document.querySelector('#react-mount'));
 */
 
-// Staeless function using ES6 arrow syntax
+// Stateless function using ES6 arrow syntax
 // See: https://facebook.github.io/react/docs/reusable-components.html
 var HelloFatPointer = (props) => <div>Hello {props.name} (Stateless function using ES6 arrow syntax)</div>;
 
