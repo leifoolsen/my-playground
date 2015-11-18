@@ -1,50 +1,13 @@
 /*eslint-disable no-unused-vars*/
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import Message from './components/message';
-import MessageCreator from './components/message-creator';
+import Hello from './components/Hello.jsx';
 /*eslint-disable no-unused-vars*/
 
-import './main.css';
+import './main.scss';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      author: 'LOL',
-      messages: []
-    };
-  }
+main();
 
-  addMessage(newContent) {
-    const messages = this.state.messages;
-    messages.unshift({
-      id: this.state.messages.length,
-      author: this.state.author,
-      content: newContent,
-      createdAt: new Date()
-    });
-    this.setState({
-      messages: messages
-    });
-  }
-
-  render() {
-    return (
-      <div>
-        <MessageCreator create={this.addMessage.bind(this)} />
-        {
-          this.state.messages.map(message => {
-            return <Message
-                author={message.author}
-                content={message.content}
-                createdAt={message.createdAt}
-                key={message.id} />;
-          })
-        }
-      </div>
-    );
-  }
+function main() {
+  ReactDOM.render(<Hello />, document.querySelector('#react-mount'));
 }
-
-ReactDOM.render(<App />, document.querySelector('#react-mount'));

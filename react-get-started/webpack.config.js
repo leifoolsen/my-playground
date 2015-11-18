@@ -1,16 +1,19 @@
-//require('./node_modules/es6-promise'); // Not needed for Node v4
+require('./node_modules/es6-promise'); // Not needed for Node v4
+var webpack = require('webpack');
 var path = require('path');
 
 module.exports = {
   debug: true,
   devtool: 'eval-source-map',
-  entry: {
-    app: [ './src/main.jsx' ]
-  },
+  entry: [
+    path.join(__dirname, 'src/main.scss'),
+    'babel-polyfill',                     // Babel requires some helper code to be run before your application
+    path.join(__dirname, 'src/main.jsx')  // Add your application's scripts last
+  ],
   output: {
-    publicPath: '/',
-    path: __dirname,
-    filename: '/bundle/bundle.js'
+    publicPath: '/static/',
+    path: path.join(__dirname, 'dist'),
+    filename: 'bundle.js'
   },
   resolve: {
     extensions: [ '', '.js', '.jsx' ]
@@ -30,16 +33,47 @@ module.exports = {
     loaders: [
       {
         test: /\.js[x]?$/,                     // Only run `.js` and `.jsx` files through Babel
-        include: path.join(__dirname, "src"),  // Skip any files outside of your project's `src` directory
+        include: path.join(__dirname, 'src'),  // Skip any files outside of your project's `src` directory
         loader: 'babel-loader',
         query: {                               // Options to configure babel with
           plugins: ['transform-runtime'],
-          presets: ['es2015', 'react', 'stage-0']
+          presets: ['es2015', 'stage-0', 'react']
         }
       },
       {
+        test: /\.scss$/,
+        include: path.join(__dirname, 'src'),
+        loaders: ['style', 'css?sourceMap', 'autoprefixer?browsers=last 3 versions', 'sass?expanded&sourceMap']
+      },
+      {
         test: /\.css$/,
-        loader: 'style-loader!css-loader'
+        include: path.join(__dirname, 'src'),
+        loaders: ['style', 'css?sourceMap', 'autoprefixer?browsers=last 3 versions']
+      },
+      // images
+      {
+        test: /\.jpg/,
+        loader: 'url-loader',
+        query: {
+          limit: 16384,
+          mimetype: 'image/jpg'
+        }
+      },
+      {
+        test: /\.gif/, loader: 'url-loader?limit=16384&mimetype=image/gif'
+      },
+      {
+        test: /\.png/, loader: 'url-loader?limit=16384&mimetype=image/png'
+      },
+      {
+        test: /\.svg/, loader: 'url-loader?limit=16384&mimetype=image/svg'
+      },
+      // fonts
+      {
+        test: /\.woff(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'url-loader?limit=16384&mimetype=application/font-woff'
+      },
+      {
+        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'file-loader'
       }
     ]
   },
@@ -67,5 +101,5 @@ module.exports = {
       'linebreak-style': [2, 'unix'],
       'semi': [2, 'always']
     }
-  }  
+  }
 };

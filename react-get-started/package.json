@@ -4,6 +4,7 @@
   "description": "Get started with React",
   "main": "webpack.config.js",
   "scripts": {
+    "dev": "webpack-dev-server --progress --colors --hot",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -25,7 +26,6 @@
     "eslint": "^1.9.0",
     "eslint-loader": "^1.1.1",
     "file-loader": "^0.8.4",
-    "moment": "^2.10.6",
     "node-sass": "^3.4.2",
     "sass-loader": "^3.1.1",
     "style-loader": "^0.13.0",
@@ -36,6 +36,7 @@
   "dependencies": {
     "babel-polyfill": "^6.1.19",
     "babel-runtime": "^6.1.18",
+    "moment": "^2.10.6",
     "react": "^0.14.2",
     "react-dom": "^0.14.2"
   },
