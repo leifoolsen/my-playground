@@ -101,7 +101,7 @@ public class UserDTO {
     }
     public User build() {
       if(validTo != null && validFrom > validTo) {
-        throw new IllgalStateExceprion("Something went wrong :-(");
+        throw new IllgalStateException("Something went wrong :-(");
       }
       return new User(this);
     }
@@ -154,6 +154,10 @@ public class UserDTO {
 
   public boolean isValid() {
     return validTo != null && validFrom > validTo ? false : true;
+  }
+
+  public static Builder with(final String username) {
+    return new Builder(username);
   }
 
   public static class Builder {
