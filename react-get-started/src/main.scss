@@ -1,0 +1,21 @@
+$font-stack: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+html, body {
+  position: relative;
+  height: 100%;
+  min-height: 100%;
+  font-size: 100%;
+  font-family: $font-stack;
+}
+
+body {
+  background-color: #eeedee;
+}
