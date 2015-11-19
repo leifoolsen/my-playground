@@ -17,7 +17,7 @@ npm install
 
 ### ES6 links:
 * [Understanding ECMAScript 6](https://leanpub.com/understandinges6/read)
-* [Exploring ES6](http://exploringjs.com/es6/index.html#toc_ch_one-javascript)
+* [Exploring ES6](http://exploringjs.com/)
 * [ECMAScript 6 Learning](https://github.com/ericdouglas/ES6-Learning)
 
 ### TODO
