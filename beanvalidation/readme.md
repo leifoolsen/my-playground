@@ -231,7 +231,7 @@ public class AssertMethodAsTrueValidator implements ConstraintValidator<AssertMe
 }
 ```
 
-### ValidationHelper
+### ValidatiorHelper
 
 ```java
 public class ValidatorHelper {
@@ -257,6 +257,7 @@ public class ValidatorHelper {
 
 ```
 
+### Test
 ```java
 @Test(expected = ConstraintViolationException.class)
 public void userDTOWithBuilderIsNotValid() {
