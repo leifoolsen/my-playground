@@ -29,7 +29,8 @@ public class User implements Serializable {
 
     private Date validTo;
 
-    public User(final String username, final String password, final Date validFrom, final Date validTo) {
+    public User(final String username, final String password,
+      final Date validFrom, final Date validTo) {
         this.username = username;
         this.password = password;
         this.validFrom = validFrom;
@@ -44,12 +45,14 @@ public class User implements Serializable {
 ...
 
 User u = new User("LOL", "LOLLOL", null, null);
-em.persist(u); // Trigger BV
+
+// Bean Validation is triggered by JPA
+em.persist(u);
 ```
 
 ## Tradisjonell JavaBean med bygger
 
-Gitt av vi ønsker å validere en JavaBean ved instansiering.
+Gitt av vi ønsker å validere en JavaBean før instansiering.
 
 ```java
 public class UserDTO {
@@ -97,7 +100,7 @@ public class UserDTO {
       this.validTo = validTo;
     }
     public User build() {
-      if(validFrom != null && validTo != null && validFrom > validTo) {
+      if(validTo != null && validFrom > validTo) {
         throw new IllgalStateExceprion("Something went wrong :-(");
       }
       return new User(this);
@@ -106,8 +109,12 @@ public class UserDTO {
 }
 ....
 
+// Validation is performed by the builder.
 UserDTO u = UserDTO.with()
   .username("LOL").password("LOLLOL").validFrom(new Date()).build();
+
+// ... but how do we validate the instance
+// if the instance is created with e.g. GSON???  
 ```
 
 ## JavaBean med Bean Validation
@@ -116,6 +123,8 @@ Hvordan kan vi få både i pose og sekk ??
 
 
 ```java
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 @AssertMethodAsTrue(value="isValid", message="Did not validate")
 
 public class UserDTO {
@@ -147,10 +156,6 @@ public class UserDTO {
     return validTo != null && validFrom > validTo ? false : true;
   }
 
-  public static Builder with(final String username) {
-    return new Builder(username);
-  }
-
   public static class Builder {
     private String username;
     private String password;
@@ -176,11 +181,8 @@ public class UserDTO {
     }
   }
 }
-....
-
-UserDTO u = UserDTO.with()
-  .username("LOL").password("LOLLOL").validFrom(new Date()).build();
 ```
+
 ### AssertMethodAsTrue
 
 ```java
@@ -252,9 +254,23 @@ public class ValidatorHelper {
 
 ```java
 @Test(expected = ConstraintViolationException.class)
-public void userDTOIsNotValid() {
+public void userDTOWithBuilderIsNotValid() {
   UserDTO u = UserDTO.with()
-    .username("LOL").password("LOLLOL").validFrom(new Date()).build();
+    .username("LOL").password("lollol").validFrom(new Date()).build();
+
+  ValidatorHelper.validate(u);
+}
+
+@Test(expected = ConstraintViolationException.class)
+public void userDTOWithGsonIsNotValid() {
+  String json = "{ \"username\": \"LOL\", \"password\": \"lollol\" }";
+
+  Gson gson = new GsonBuilder()
+    .registerTypeAdapter(
+      String.class, GsonTypeAdapters.stringDeserializerEmptyToNull()
+    ).create();
+
+  UserDTO u = gson.fromJson(json, UserDTO.class);
 
   ValidatorHelper.validate(u);
 }
