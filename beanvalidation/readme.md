@@ -121,12 +121,11 @@ UserDTO u = UserDTO.with()
 
 Hvordan kan vi få både i pose og sekk ??
 
-
 ```java
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 
-<strong>@AssertMethodAsTrue(value="isValid", message="Did not validate")</strong>
+@AssertMethodAsTrue(value="isValid", message="Did not validate")
 
 public class UserDTO {
   @NotBlank(message="Empty user name")
