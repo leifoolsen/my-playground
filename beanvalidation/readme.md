@@ -190,7 +190,8 @@ public class UserDTO {
 ### AssertMethodAsTrue
 
 ```java
-
+// Multiple properties validation,
+// see: http://soadev.blogspot.no/2010/01/jsr-303-bean-validation.html
 @Target( {TYPE, ANNOTATION_TYPE })
 @Retention(RUNTIME)
 @Constraint(validatedBy = {AssertMethodAsTrueValidator.class} )
