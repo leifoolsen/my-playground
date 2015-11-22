@@ -1,14 +1,27 @@
-require('./node_modules/es6-promise'); // Not needed for Node v4
-var webpack = require('webpack');
-var path = require('path');
+//require('./node_modules/es6-promise'); // Not needed for Node v4
+const path = require('path');
+const autoprefixer = require('autoprefixer');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+const cssLoader = [
+  'css-loader?sourceMap',
+  'postcss-loader'
+].join('!');
+
+const sassLoader = [
+  'css-loader?sourceMap',
+  'postcss-loader',
+  'sass-loader?sourceMap&expanded'
+].join('!');
 
 module.exports = {
   debug: true,
+  cache: true,
   devtool: 'eval-source-map',
   entry: [
     path.join(__dirname, 'src/main.scss'),
     'babel-polyfill',                     // Babel requires some helper code to be run before your application
-    path.join(__dirname, 'src/main.jsx')  // Add your application's scripts last
+    path.join(__dirname, 'src/App.jsx')   // Add your application's scripts last
   ],
   output: {
     publicPath: '/static/',
@@ -26,7 +39,7 @@ module.exports = {
           path.join(__dirname, 'src'),
           path.join(__dirname, 'test')
         ],
-        //exclude: /(node_modules|bower_components)/,
+        // ... or: exclude: /(node_modules|bower_components)/,
         loaders: ['eslint']
       }
     ],
@@ -43,12 +56,12 @@ module.exports = {
       {
         test: /\.scss$/,
         include: path.join(__dirname, 'src'),
-        loaders: ['style', 'css?sourceMap', 'autoprefixer?browsers=last 3 versions', 'sass?expanded&sourceMap']
+        loader: ExtractTextPlugin.extract('style-loader', sassLoader)
       },
       {
         test: /\.css$/,
         include: path.join(__dirname, 'src'),
-        loaders: ['style', 'css?sourceMap', 'autoprefixer?browsers=last 3 versions']
+        loader: ExtractTextPlugin.extract('style-loader', cssLoader)
       },
       // images
       {
@@ -77,6 +90,17 @@ module.exports = {
       }
     ]
   },
+  plugins: [
+    new ExtractTextPlugin('styles.css', {
+      disable: false,
+      allChunks: true
+    })
+  ],
+  postcss: [
+    autoprefixer({
+      browsers: ['last 3 versions']
+    })
+  ],
   devServer: {
     contentBase: './src'
   },
