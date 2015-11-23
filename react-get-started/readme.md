@@ -32,6 +32,7 @@ Like this?
 
 ### React links:
 * [A simple todo application using React JS with es6+](http://codepen.io/jcgertig/post/es6-react-todo-list-part-1)
+* [Tutorial – Todo List](https://facebook.github.io/flux/docs/todo-list.html)
 * [ReactJS For Stupid People](http://blog.andrewray.me/reactjs-for-stupid-people/)
 * [Flux For Stupid People](http://blog.andrewray.me/flux-for-stupid-people/)
 * [The ReactJS Controller View Pattern](http://blog.andrewray.me/the-reactjs-controller-view-pattern/)
@@ -53,6 +54,9 @@ Like this?
 * [Building a Router with Raw React](http://jamesknelson.com/routing-with-raw-react/)
 * [React.js By Example: Interacting with the DOM](http://jamesknelson.com/react-js-by-example-interacting-with-the-dom/)
 * [Structuring React Applications: Higher-Order Components](http://jamesknelson.com/structuring-react-applications-higher-order-components/)
+* [React Components with Material Design Lite](http://quaintous.com/2015/07/09/react-components-with-mdl/)
+* [React Auto Update Component](http://quaintous.com/2015/06/09/react-autoupdate-component/)
+* [React-MDL](https://github.com/tleunen/react-mdl)
 
 ### ES6 links:
 * [Understanding ECMAScript 6](https://leanpub.com/understandinges6/read)
