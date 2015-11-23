@@ -1,4 +1,5 @@
-//require('./node_modules/es6-promise'); // Not needed for Node v4
+require('./node_modules/es6-promise'); // Not needed for Node v4
+
 const path = require('path');
 const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -20,8 +21,8 @@ module.exports = {
   devtool: 'eval-source-map',
   entry: [
     path.join(__dirname, 'src/main.scss'),
-    'babel-polyfill',                     // Babel requires some helper code to be run before your application
-    path.join(__dirname, 'src/App.jsx')   // Add your application's scripts last
+    'babel-polyfill',                      // Babel requires some helper code to be run before your application
+    path.join(__dirname, 'src/main.jsx')   // Add your application's scripts last
   ],
   output: {
     publicPath: '/static/',

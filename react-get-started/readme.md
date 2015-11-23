@@ -57,6 +57,10 @@ Like this?
 * [React Components with Material Design Lite](http://quaintous.com/2015/07/09/react-components-with-mdl/)
 * [React Auto Update Component](http://quaintous.com/2015/06/09/react-autoupdate-component/)
 * [React-MDL](https://github.com/tleunen/react-mdl)
+* [generator-react-webpack](https://github.com/newtriks/generator-react-webpack)
+* [react-redux-starter-kit](https://github.com/davezuko/react-redux-starter-kit)
+* [Unicorn Standard Starter Kit](https://github.com/unicorn-standard/starter-kit)
+* [Tutorial – Todo List](https://facebook.github.io/flux/docs/todo-list.html)
 
 ### ES6 links:
 * [Understanding ECMAScript 6](https://leanpub.com/understandinges6/read)
