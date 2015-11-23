@@ -5,7 +5,36 @@ npm install
 ./node_modules/.bin/webpack-dev-server --progress --colors
 ```
 
+npm i babel-preset-es2015 --save-dev (is not installed. do we need it in Babel6?)
+
+## How should we structure our code
+
+Like this?
+
+```
+|
++-- src
+|   +-- scripts
+|   |   +-- components
+|   |   +-- lib
+|   |   +-- mixins
+|   +-- stylesheets
+|   |   +-- components
+|   |   +-- lib
+|   |   +-- mixins
++-- tests
+|   +-- unit
+|   |   +-- components
+|   |   +-- lib
+|   |   +-- mixins
+```
+
+
 ### React links:
+* [A simple todo application using React JS with es6+](http://codepen.io/jcgertig/post/es6-react-todo-list-part-1)
+* [ReactJS For Stupid People](http://blog.andrewray.me/reactjs-for-stupid-people/)
+* [Flux For Stupid People](http://blog.andrewray.me/flux-for-stupid-people/)
+* [The ReactJS Controller View Pattern](http://blog.andrewray.me/the-reactjs-controller-view-pattern/)
 * [LEARN REACT.JS A LITTLE AT A TIME](http://smashingboxes.com/ideas/learn-react-part-1)
 * [Getting started with webpack and React, ES6 style](http://humaan.com/getting-started-with-webpack-and-react-es6-style/)
 * [A cookbook for using Webpack with React JS](https://github.com/christianalfoni/react-webpack-cookbook)
@@ -24,7 +53,7 @@ npm install
 * [Building a Router with Raw React](http://jamesknelson.com/routing-with-raw-react/)
 * [React.js By Example: Interacting with the DOM](http://jamesknelson.com/react-js-by-example-interacting-with-the-dom/)
 * [Structuring React Applications: Higher-Order Components](http://jamesknelson.com/structuring-react-applications-higher-order-components/)
-* []()
+
 ### ES6 links:
 * [Understanding ECMAScript 6](https://leanpub.com/understandinges6/read)
 * [Exploring ES6](http://exploringjs.com/)
