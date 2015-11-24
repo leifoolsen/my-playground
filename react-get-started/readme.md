@@ -5,32 +5,37 @@ npm install
 ./node_modules/.bin/webpack-dev-server --progress --colors
 ```
 
-npm i babel-preset-es2015 --save-dev (is not installed. do we need it in Babel6?)
-
-## How should we structure our code
-
-Like this?
+## How should we structure our code?
 
 ```
 |
 +-- src
-|   +-- scripts
+|   +-- html
+|   +-- js
+|   |   +-- actions
 |   |   +-- components
-|   |   +-- lib
-|   |   +-- mixins
+|   |   +-- constants
+|   |   +-- dispatcher
+|   |   +-- stores
 |   +-- stylesheets
+|   |   +-- base
 |   |   +-- components
-|   |   +-- lib
-|   |   +-- mixins
-+-- tests
-|   +-- unit
+|   |   +-- layout
+|   |   +-- pages
+|   |   +-- themes
+|   |   +-- utils
+|   |   +-- vendor
++-- test
+|   +-- js
 |   |   +-- components
 |   |   +-- lib
 |   |   +-- mixins
 ```
 
-
 ### React links:
+* [Official React tutorial](https://facebook.github.io/react/docs/tutorial.html)
+* [Official React tutorial converted to es6](https://github.com/klaemo/react-es6)
+* [React components with ES6](http://www.tamas.io/react-with-es6/)
 * [A simple todo application using React JS with es6+](http://codepen.io/jcgertig/post/es6-react-todo-list-part-1)
 * [Tutorial – Todo List](https://facebook.github.io/flux/docs/todo-list.html)
 * [ReactJS For Stupid People](http://blog.andrewray.me/reactjs-for-stupid-people/)
@@ -47,6 +52,7 @@ Like this?
 * [Which Flux Implementation Should I Use With React?](http://jamesknelson.com/which-flux-implementation-should-i-use-with-react/)
 * [Redux](http://rackt.org/redux/index.html)
 * [Full-Stack Redux Tutorial](http://teropa.info/blog/2015/09/10/full-stack-redux-tutorial.html)
+* [Building an ES6/JSX React/Flux App – Part 1 – the Views](http://shellmonger.com/2015/08/15/building-an-es6jsx-reactflux-app-part-1-the-views/)
 * [Tutorial: Handcrafting an Isomorphic Redux Application](https://medium.com/@bananaoomarang/handcrafting-an-isomorphic-redux-application-with-love-40ada4468af4#.9p8dmvk7v)
 * [Flux Stores and ES6](https://medium.com/@softwarecf/flux-stores-and-es6-9b453dbf9db#.iuv5ks4nb)
 * [Introducing react-pacomo: Automatic namespacing for className](http://jamesknelson.com/taming-css-globals-with-react-without-webpack-or-inline-style/)
@@ -54,14 +60,14 @@ Like this?
 * [Building a Router with Raw React](http://jamesknelson.com/routing-with-raw-react/)
 * [React.js By Example: Interacting with the DOM](http://jamesknelson.com/react-js-by-example-interacting-with-the-dom/)
 * [Structuring React Applications: Higher-Order Components](http://jamesknelson.com/structuring-react-applications-higher-order-components/)
-* [React Components with Material Design Lite](http://quaintous.com/2015/07/09/react-components-with-mdl/)
 * [React Auto Update Component](http://quaintous.com/2015/06/09/react-autoupdate-component/)
+* [Tutorial: Setting Up a Simple Isomorphic React app](http://jmfurlott.com/tutorial-setting-up-a-simple-isomorphic-react-app/)
+* [React Components with Material Design Lite](http://quaintous.com/2015/07/09/react-components-with-mdl/)
 * [React-MDL](https://github.com/tleunen/react-mdl)
 * [generator-react-webpack](https://github.com/newtriks/generator-react-webpack)
 * [react-redux-starter-kit](https://github.com/davezuko/react-redux-starter-kit)
 * [Unicorn Standard Starter Kit](https://github.com/unicorn-standard/starter-kit)
-* [Tutorial – Todo List](https://facebook.github.io/flux/docs/todo-list.html)
-
+* [Adding authentication to your React Flux app](https://auth0.com/blog/2015/04/09/adding-authentication-to-your-react-flux-app/)
 ### ES6 links:
 * [Understanding ECMAScript 6](https://leanpub.com/understandinges6/read)
 * [Exploring ES6](http://exploringjs.com/)
