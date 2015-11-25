@@ -68,6 +68,20 @@ npm install
 * [react-redux-starter-kit](https://github.com/davezuko/react-redux-starter-kit)
 * [Unicorn Standard Starter Kit](https://github.com/unicorn-standard/starter-kit)
 * [Adding authentication to your React Flux app](https://auth0.com/blog/2015/04/09/adding-authentication-to-your-react-flux-app/)
+* [A complete ES7 Isomorphic Universal ReactJS boilerplate with alt as Flux library.](https://github.com/iam4x/isomorphic-flux-boilerplate)
+* [A primer for building Single-Page Applications with](https://github.com/mikechau/react-primer-draft)
+* [Awesome React](http://getawesomeness.com/get/react)
+* [react-seed](https://github.com/badsyntax/react-seed). Check webpack setup 
+* [The React.js Way: Flux Architecture with Immutable.js](https://blog.risingstack.com/the-react-js-way-flux-architecture-with-immutable-js/)
+* [Backend Apps with Webpack (Part I)](http://jlongster.com/Backend-Apps-with-Webpack--Part-I)
+* [The ultimate Webpack setup](http://www.christianalfoni.com/articles/2015_04_19_The-ultimate-webpack-setup)
+* [webpack-express-boilerplate](https://github.com/christianalfoni/webpack-express-boilerplate)
+* [Webpack and React tutorial - Taking the next steps](http://www.christianalfoni.com/articles/2015_10_01_Taking-the-next-step-with-react-and-webpack)
+* [Using react-hot-loader with a webpack-dev-server and a node server](http://ctheu.com/2015/05/14/using-react-hot-loader-with-a-webpack-dev-server-and-a-node-server/)
+* [Redux: React Todo List Example (Adding a Todo)](https://egghead.io/lessons/javascript-redux-react-todo-list-example-adding-a-todo)
+* [React with Flux by example - a simple Todo List dissected](http://reactkungfu.com/2015/07/react-with-flux-by-example-simple-todo-list-dissected/)
+* [Redux](http://rackt.org/redux/index.html)
+
 ### ES6 links:
 * [Understanding ECMAScript 6](https://leanpub.com/understandinges6/read)
 * [Exploring ES6](http://exploringjs.com/)
