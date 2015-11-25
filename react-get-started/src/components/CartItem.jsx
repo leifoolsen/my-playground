@@ -17,10 +17,20 @@ class CartItem extends React.Component {
     total: 0
   };
 
+  // Fat arrow function in combination with class properties syntax
+  //increaseQty = () => this.increaseQty();
+
   constructor(props) {
     super(props);
 
+    // http://egorsmirnov.me/2015/08/16/react-and-es6-part3.html
     //this.increaseQty = this.increaseQty.bind(this);
+
+    // Fat arrow functions preserve this context when they are called
+    // this.increaseQty = () => this.increaseQty();
+
+    // Function bind syntax, syntactic sugar for Function.prototype.bind()
+    // Can use directly on tag, but not recommended
     this.increaseQty = ::this.increaseQty;
   }
   componentWillMount() {

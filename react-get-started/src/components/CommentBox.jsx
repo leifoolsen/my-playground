@@ -8,16 +8,29 @@ import CommentForm from './CommentForm.jsx';
 
 export default class CommentBox extends React.Component {
 
+  static propTypes = {
+
+  }
+  static defaultProps = {
+    data : [
+      {id: 1, author: "Pete Hunt", text: "This is one comment"},
+      {id: 2, author: "Jordan Walke", text: "This is *another* comment"}
+    ]
+  };
+
+  state = {
+    data: []
+  };
+
   constructor(props) {
     super(props);
-    this.state = { data: [] };
   }
 
   render() {
     return (
       <div className="commentBox">
         <h1>Comments</h1>
-        <CommentList />
+        <CommentList data={this.props.data} />
         <CommentForm />
       </div>
     );

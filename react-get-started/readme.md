@@ -81,6 +81,13 @@ npm install
 * [Redux: React Todo List Example (Adding a Todo)](https://egghead.io/lessons/javascript-redux-react-todo-list-example-adding-a-todo)
 * [React with Flux by example - a simple Todo List dissected](http://reactkungfu.com/2015/07/react-with-flux-by-example-simple-todo-list-dissected/)
 * [Redux](http://rackt.org/redux/index.html)
+* [Fixed Data Tables for React](https://facebook.github.io/fixed-data-table/)
+* [Relay](https://github.com/facebook/relay)
+* [Immutable collections for JavaScript](https://github.com/facebook/immutable-js)
+* [EventEmitter](https://github.com/facebook/emitter)
+* [DataLoader](https://github.com/facebook/dataloader)
+* [Dispatcher](https://facebook.github.io/flux/docs/dispatcher.html)
+* [Event Emitter, Pub Sub or Deferred Promises … which should you choose?](Event Emitter, Pub Sub or Deferred Promises … which should you choose?)
 
 ### ES6 links:
 * [Understanding ECMAScript 6](https://leanpub.com/understandinges6/read)
