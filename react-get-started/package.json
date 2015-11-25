@@ -39,6 +39,7 @@
   "dependencies": {
     "babel-polyfill": "^6.2.0",
     "babel-runtime": "^6.2.0",
+    "marked": "^0.3.5",
     "moment": "^2.10.6",
     "react": "^0.14.3",
     "react-dom": "^0.14.3"
