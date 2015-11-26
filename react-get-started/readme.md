@@ -32,7 +32,7 @@ npm install
 |   |   +-- mixins
 ```
 
-### React links:
+### Reading list, React:
 * [Official React tutorial](https://facebook.github.io/react/docs/tutorial.html)
 * [Official React tutorial converted to es6](https://github.com/klaemo/react-es6)
 * [React components with ES6](http://www.tamas.io/react-with-es6/)
@@ -78,6 +78,7 @@ npm install
 * [webpack-express-boilerplate](https://github.com/christianalfoni/webpack-express-boilerplate)
 * [Webpack and React tutorial - Taking the next steps](http://www.christianalfoni.com/articles/2015_10_01_Taking-the-next-step-with-react-and-webpack)
 * [Using react-hot-loader with a webpack-dev-server and a node server](http://ctheu.com/2015/05/14/using-react-hot-loader-with-a-webpack-dev-server-and-a-node-server/)
+* [Setup Webpack on an ES6 React app with SASS](http://marmelab.com/blog/2015/05/18/setup-webpack-for-es6-react-application-with-sass.html)
 * [Redux: React Todo List Example (Adding a Todo)](https://egghead.io/lessons/javascript-redux-react-todo-list-example-adding-a-todo)
 * [React with Flux by example - a simple Todo List dissected](http://reactkungfu.com/2015/07/react-with-flux-by-example-simple-todo-list-dissected/)
 * [Redux](http://rackt.org/redux/index.html)
@@ -87,11 +88,30 @@ npm install
 * [EventEmitter](https://github.com/facebook/emitter)
 * [DataLoader](https://github.com/facebook/dataloader)
 * [Dispatcher](https://facebook.github.io/flux/docs/dispatcher.html)
-* [Event Emitter, Pub Sub or Deferred Promises … which should you choose?](Event Emitter, Pub Sub or Deferred Promises … which should you choose?)
+* [Event Emitter, Pub Sub or Deferred Promises … which should you choose?](https://otaqui.com/blog/1374/event-emitter-pub-sub-or-deferred-promises-which-should-you-choose/)
 * [Using react-hot-loader with a webpack-dev-server and a node server](http://ctheu.com/2015/05/14/using-react-hot-loader-with-a-webpack-dev-server-and-a-node-server/)
 * [How to communicate between React components](http://ctheu.com/2015/02/12/how-to-communicate-between-react-components/)
+* [Webpack Hot Middleware](https://github.com/glenjamin/webpack-hot-middleware)
+* [Netflix Falcor](http://netflix.github.io/falcor/)
+* [The Future of Web Development - React, Falcor, and ES6](http://engineering.widen.com/blog/future-of-the-web-react-falcor/)
+* [generator-react-webpack V2.0](https://github.com/newtriks/generator-react-webpack#generator-react-webpack-v20)
+* [webpack-howto](https://github.com/petehunt/webpack-howto)
+* [react-webpack-express](https://github.com/mixxen/react-webpack-express)
+* [react-webpack-node](https://github.com/choonkending/react-webpack-node). Boilerplate for React application with webpack using alt's Flux running on a node express server.
+* [React Hot Loader](http://gaearon.github.io/react-hot-loader/)
+* [react-hot-boilerplate](https://github.com/gaearon/react-hot-boilerplate). Demonstrates how to use historyApiFallback to work with React router out of the box
+* [Express & ES6 REST API Boilerplate](https://github.com/developit/express-es6-rest-api)
+* [Getting Started with Redux, Egghead.IO](https://egghead.io/series/getting-started-with-redux)
+* [Adding authentication to your React Flux app](https://auth0.com/blog/2015/04/09/adding-authentication-to-your-react-flux-app/)
+* [Nock](https://github.com/pgte/nock)
+* [Mocking API Requests in Node tests](http://javascriptplayground.com/blog/2013/08/mocking-web-requests/)
+* [JSON Server](https://github.com/typicode/json-server)
+* [Creating Demo APIs with json-server](https://egghead.io/lessons/nodejs-creating-demo-apis-with-json-server)
+* [Node EasyMock Server](https://github.com/cyberagent/node-easymock)
+* [FakeRest](https://github.com/marmelab/FakeRest)
 
-### ES6 links:
+
+### Reading list ES6:
 * [Understanding ECMAScript 6](https://leanpub.com/understandinges6/read)
 * [Exploring ES6](http://exploringjs.com/)
 * [ECMAScript 6 Learning](https://github.com/ericdouglas/ES6-Learning)
@@ -101,4 +121,5 @@ npm install
 * Hot loading code. See: [Using React with Webpack Tutorial](https://blog.risingstack.com/using-react-with-webpack-tutorial/)
 * npm install --save-dev babel babel-cli babel-node
 * npm install --save-dev webpack-dev-middleware webpack-hot-middleware 
+* npm install --save-dev express
 
