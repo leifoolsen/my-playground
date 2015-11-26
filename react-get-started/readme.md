@@ -88,6 +88,8 @@ npm install
 * [DataLoader](https://github.com/facebook/dataloader)
 * [Dispatcher](https://facebook.github.io/flux/docs/dispatcher.html)
 * [Event Emitter, Pub Sub or Deferred Promises … which should you choose?](Event Emitter, Pub Sub or Deferred Promises … which should you choose?)
+* [Using react-hot-loader with a webpack-dev-server and a node server](http://ctheu.com/2015/05/14/using-react-hot-loader-with-a-webpack-dev-server-and-a-node-server/)
+* [How to communicate between React components](http://ctheu.com/2015/02/12/how-to-communicate-between-react-components/)
 
 ### ES6 links:
 * [Understanding ECMAScript 6](https://leanpub.com/understandinges6/read)
@@ -97,3 +99,6 @@ npm install
 
 ### TODO
 * Hot loading code. See: [Using React with Webpack Tutorial](https://blog.risingstack.com/using-react-with-webpack-tutorial/)
+* npm install --save-dev babel babel-cli babel-node
+* npm install --save-dev webpack-dev-middleware webpack-hot-middleware 
+
