@@ -1,4 +1,4 @@
-require('./node_modules/es6-promise'); // Not needed for Node v4
+//require('./node_modules/es6-promise'); // Not needed for Node v4
 
 const path = require('path');
 const autoprefixer = require('autoprefixer');

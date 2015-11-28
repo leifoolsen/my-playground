@@ -3,6 +3,8 @@
 ```
 npm install
 ./node_modules/.bin/webpack-dev-server --progress --colors
+... or
+npm run dev
 ```
 
 ## How should we structure our code?
@@ -32,7 +34,7 @@ npm install
 |   |   +-- mixins
 ```
 
-### Reading list, React:
+### React Reading list
 * [Official React tutorial](https://facebook.github.io/react/docs/tutorial.html)
 * [Official React tutorial converted to es6](https://github.com/klaemo/react-es6)
 * [React components with ES6](http://www.tamas.io/react-with-es6/)
@@ -110,8 +112,20 @@ npm install
 * [Node EasyMock Server](https://github.com/cyberagent/node-easymock)
 * [FakeRest](https://github.com/marmelab/FakeRest)
 
+### NoeJS Reading list
+* [Running scripts with npm](http://www.jayway.com/2014/03/28/running-scripts-with-npm/)
+* [Node.js Tutorials](https://www.codementor.io/nodejs/tutorial)
+* [NODESCHOOL](http://nodeschool.io/)
+* [Howto Node](http://howtonode.org/)
+* [webpack-express-boilerplate](https://github.com/christianalfoni/webpack-express-boilerplate)
+* [Getting Started with Express - Up and Running](https://egghead.io/lessons/node-js-getting-started-with-express-up-and-running)
+* [react-express-babel6](https://github.com/shantanuraj/react-express-babel6)
+* [Using ES6/ES2015 in a Node.JS and Express](https://www.lookami.com/using-es6-es2015-in-a-node-js-express/)
+* [Dropbox Express with ECMAScript 6+](http://notebook.erikostrom.com/2015/05/22/dropbox-express-with-ecmascript-6.html)
+* [Express & ES6 REST API Boilerplate](https://github.com/developit/express-es6-rest-api)
+* [nodemon](https://github.com/remy/nodemon)
 
-### Reading list ES6:
+### ES6 Reading list
 * [Understanding ECMAScript 6](https://leanpub.com/understandinges6/read)
 * [Exploring ES6](http://exploringjs.com/)
 * [ECMAScript 6 Learning](https://github.com/ericdouglas/ES6-Learning)
@@ -119,7 +133,6 @@ npm install
 
 ### TODO
 * Hot loading code. See: [Using React with Webpack Tutorial](https://blog.risingstack.com/using-react-with-webpack-tutorial/)
-* npm install --save-dev babel babel-cli babel-node
 * npm install --save-dev webpack-dev-middleware webpack-hot-middleware 
-* npm install --save-dev express
+* npm install --save-dev express nodemon
 

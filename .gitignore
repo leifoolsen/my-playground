@@ -2,7 +2,8 @@
 ###########
 build/
 bundle/
-logs
+dist/
+logs/
 *.log
 .tmp
 
