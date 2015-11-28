@@ -73,7 +73,7 @@ npm run dev
 * [A complete ES7 Isomorphic Universal ReactJS boilerplate with alt as Flux library.](https://github.com/iam4x/isomorphic-flux-boilerplate)
 * [A primer for building Single-Page Applications with](https://github.com/mikechau/react-primer-draft)
 * [Awesome React](http://getawesomeness.com/get/react)
-* [react-seed](https://github.com/badsyntax/react-seed). Check webpack setup 
+* [react-seed](https://github.com/badsyntax/react-seed). Check webpack setup
 * [The React.js Way: Flux Architecture with Immutable.js](https://blog.risingstack.com/the-react-js-way-flux-architecture-with-immutable-js/)
 * [Backend Apps with Webpack (Part I)](http://jlongster.com/Backend-Apps-with-Webpack--Part-I)
 * [The ultimate Webpack setup](http://www.christianalfoni.com/articles/2015_04_19_The-ultimate-webpack-setup)
@@ -100,8 +100,6 @@ npm run dev
 * [webpack-howto](https://github.com/petehunt/webpack-howto)
 * [react-webpack-express](https://github.com/mixxen/react-webpack-express)
 * [react-webpack-node](https://github.com/choonkending/react-webpack-node). Boilerplate for React application with webpack using alt's Flux running on a node express server.
-* [React Hot Loader](http://gaearon.github.io/react-hot-loader/)
-* [react-hot-boilerplate](https://github.com/gaearon/react-hot-boilerplate). Demonstrates how to use historyApiFallback to work with React router out of the box
 * [Express & ES6 REST API Boilerplate](https://github.com/developit/express-es6-rest-api)
 * [Getting Started with Redux, Egghead.IO](https://egghead.io/series/getting-started-with-redux)
 * [Adding authentication to your React Flux app](https://auth0.com/blog/2015/04/09/adding-authentication-to-your-react-flux-app/)
@@ -111,8 +109,9 @@ npm run dev
 * [Creating Demo APIs with json-server](https://egghead.io/lessons/nodejs-creating-demo-apis-with-json-server)
 * [Node EasyMock Server](https://github.com/cyberagent/node-easymock)
 * [FakeRest](https://github.com/marmelab/FakeRest)
+* [pushState With Webpack-dev-server](http://jaketrent.com/post/pushstate-webpack-dev-server/)
 
-### NoeJS Reading list
+### NoeJS and Express Reading list
 * [Running scripts with npm](http://www.jayway.com/2014/03/28/running-scripts-with-npm/)
 * [Node.js Tutorials](https://www.codementor.io/nodejs/tutorial)
 * [NODESCHOOL](http://nodeschool.io/)
@@ -124,6 +123,8 @@ npm run dev
 * [Dropbox Express with ECMAScript 6+](http://notebook.erikostrom.com/2015/05/22/dropbox-express-with-ecmascript-6.html)
 * [Express & ES6 REST API Boilerplate](https://github.com/developit/express-es6-rest-api)
 * [nodemon](https://github.com/remy/nodemon)
+* [Build a RESTful API Using Node and Express 4](https://scotch.io/tutorials/build-a-restful-api-using-node-and-express-4)
+* [Building a Node.js REST API with Express](https://medium.com/@jeffandersen/building-a-node-js-rest-api-with-express-46b0901f29b6#.9bsnbvr41)
 
 ### ES6 Reading list
 * [Understanding ECMAScript 6](https://leanpub.com/understandinges6/read)
@@ -133,6 +134,7 @@ npm run dev
 
 ### TODO
 * Hot loading code. See: [Using React with Webpack Tutorial](https://blog.risingstack.com/using-react-with-webpack-tutorial/)
-* npm install --save-dev webpack-dev-middleware webpack-hot-middleware 
-* npm install --save-dev express nodemon
-
+* [React Hot Loader](http://gaearon.github.io/react-hot-loader/)
+* [react-hot-boilerplate](https://github.com/gaearon/react-hot-boilerplate). Demonstrates how to use historyApiFallback to work with React router out of the box
+* [Using react-hot-loader with a webpack-dev-server and a node server](https://github.com/christianalfoni/webpack-express-boilerplate)
+* npm install --save-dev webpack-dev-middleware webpack-hot-middleware

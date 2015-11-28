@@ -15,10 +15,10 @@ const server = app.listen(port, 'localhost', () => {
   console.log(`Server running @ http://${server.address().address}:${server.address().port}`);
 });
 
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
   res.send('Hello Node Express!!');
 });
 
-app.get('/yo', (req, res) => {
-  res.send('YO!');
+app.get('/api/yo', (req, res) => {
+  res.send('{"yo": "YO!"}');
 });

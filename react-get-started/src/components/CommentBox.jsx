@@ -14,7 +14,8 @@ export default class CommentBox extends React.Component {
   static defaultProps = {
     data : [
       {id: 1, author: "Pete Hunt", text: "This is one comment"},
-      {id: 2, author: "Jordan Walke", text: "This is *another* comment"}
+      {id: 2, author: "Jordan Walke", text: "This is *another* comment"},
+      {id: 3, author: "LOL", text: "Oh MY!"}
     ]
   };
 

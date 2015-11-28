@@ -1,5 +1,6 @@
 //require('./node_modules/es6-promise'); // Not needed for Node v4
 
+const webpack = require('webpack');
 const path = require('path');
 const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -15,19 +16,32 @@ const sassLoader = [
   'sass-loader?sourceMap&expanded'
 ].join('!');
 
+const vendorLibs = [
+  'marked',
+  'moment',
+  'react',
+  'react-dom'
+  // +++
+];
+
 module.exports = {
   debug: true,
   cache: true,
   devtool: 'eval-source-map',
-  entry: [
-    path.join(__dirname, 'src/main.scss'),
-    'babel-polyfill',                      // Babel requires some helper code to be run before your application
-    path.join(__dirname, 'src/main.jsx')   // Add your application's scripts last
-  ],
+  entry: {
+    app: [
+      path.join(__dirname, 'src/main.scss'),
+      'babel-polyfill',                      // Babel requires some helper code to be run before your application
+      path.join(__dirname, 'src/main.jsx')   // Add your application's scripts last
+    ],
+    vendor: vendorLibs
+  },
   output: {
-    publicPath: '/static/',
-    path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js'
+    path             : path.join(__dirname, 'dist'),
+    filename         : '[name].js',
+    sourceMapFilename: '[file].map',
+    pathinfo         : true,
+    publicPath       : '/static/'
   },
   resolve: {
     extensions: [ '', '.js', '.jsx' ]
@@ -92,6 +106,11 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor', 
+      minChunks: Infinity
+    }),
+
     new ExtractTextPlugin('styles.css', {
       disable: false,
       allChunks: true
@@ -103,7 +122,23 @@ module.exports = {
     })
   ],
   devServer: {
-    contentBase: './src'
+    port: 3002,
+    contentBase: './src',
+    progress: true,
+    colors: true,
+    hot: true,
+    historyApiFallback: false,  // when false, dev server make directory listing, good feature to navigate in project
+    quiet: false,
+    noInfo: false,
+    lazy: false,
+    watchDelay: 300,
+    proxy: {
+      // Our rest server
+      '/api/*': {
+        target: 'http://localhost:3000',
+        secure: false
+      }
+    }
   },
   eslint: {
     'parser': 'babel-eslint',
