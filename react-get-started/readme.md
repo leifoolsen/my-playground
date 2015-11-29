@@ -175,8 +175,6 @@ import path from 'path';
 const app = express();
 const port = 8081;
 
-app.use('/', express.static(path.resolve(__dirname, 'public')));
-
 // Run the server
 const server = app.listen(port, 'localhost', () => {
   console.log(
