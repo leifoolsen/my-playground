@@ -12,8 +12,8 @@ const app = express();
 const port = 8081;
 
 // Use a copy of the original file
-const storePath = path.resolve(__dirname, 'store');
-const commentsFile = path.resolve(storePath, 'comments.json.tmp'); // '.tmp' is git-ignored
+const dataPath = path.resolve(__dirname, 'data');
+const commentsFile = path.resolve(dataPath, 'comments.json.tmp'); // '.tmp' is git-ignored
 
 
 // Folder to to serve public files
@@ -26,8 +26,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 // Run the server
 const server = app.listen(port, 'localhost', () => {
-  fs.writeFileSync(commentsFile, fs.readFileSync(path.resolve(storePath, 'comments.json')));
-  console.log(`Server running @ http://${server.address().address}:${server.address().port}. Comments store: ${commentsFile}`);
+  fs.writeFileSync(commentsFile, fs.readFileSync(path.resolve(dataPath, 'comments.json')));
+  console.log(`Server running @ http://${server.address().address}:${server.address().port}. Comments: ${commentsFile}`);
 });
 
 
