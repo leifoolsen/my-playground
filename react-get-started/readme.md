@@ -159,7 +159,7 @@ npm install --save-dev nodemon  # Autorefresh Express on code change
 }
 ```
 
-3: Create __`server.js__
+3: Create __`server.js`__
 ```javascript
 'use strict';
 require('babel-core/register'); // Load ES6
@@ -187,7 +187,7 @@ app.get('/yo', (req, res) => {
 
 ```
 
-5: Start Express server using __`nodemon `__: <br/>__`./node_modules/.bin/nodemon ./server.js`__
+5: Start Express server using __`nodemon`__: <br/>__`./node_modules/.bin/nodemon ./server.js`__
 
 6: Open browser and navigate to: <br/>__`http://localhost:8081/yo`__
 
