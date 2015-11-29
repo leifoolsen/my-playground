@@ -107,7 +107,7 @@ module.exports = {
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor', 
+      name: 'vendor',
       minChunks: Infinity
     }),
 
@@ -122,7 +122,7 @@ module.exports = {
     })
   ],
   devServer: {
-    port: 3002,
+    port: 8080,
     contentBase: './src',
     progress: true,
     colors: true,
@@ -131,11 +131,11 @@ module.exports = {
     quiet: false,
     noInfo: false,
     lazy: false,
-    watchDelay: 300,
+    aggregateTimeout: 300,
     proxy: {
       // Our rest server
       '/api/*': {
-        target: 'http://localhost:3000',
+        target: 'http://localhost:8081',
         secure: false
       }
     }

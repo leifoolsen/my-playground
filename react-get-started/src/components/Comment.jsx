@@ -39,7 +39,7 @@ const Comment = (props) => {
 
   return (
     <div className='comment'>
-      <h2 className='comment-author'>{props.author}</h2>
+      <h3 className='comment-author'>{props.author}</h3>
       <span dangerouslySetInnerHTML={{__html: rawMarkup}} />
     </div>
   );

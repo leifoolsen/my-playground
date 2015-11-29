@@ -3,6 +3,7 @@
 ```
 npm install
 npm run dev
+http://localhost:8080/webpack-dev-server/
 ```
 
 ## How should we structure our code?
@@ -123,6 +124,8 @@ npm run dev
 * [nodemon](https://github.com/remy/nodemon)
 * [Build a RESTful API Using Node and Express 4](https://scotch.io/tutorials/build-a-restful-api-using-node-and-express-4)
 * [Building a Node.js REST API with Express](https://medium.com/@jeffandersen/building-a-node-js-rest-api-with-express-46b0901f29b6#.9bsnbvr41)
+* [Node.js - Express Framework](http://www.tutorialspoint.com/nodejs/nodejs_express_framework.htm)
+* [ExpressJs Router Tutorial](https://codeforgeek.com/2015/05/expressjs-router-tutorial/)
 
 ### ES6 Reading list
 * [Understanding ECMAScript 6](https://leanpub.com/understandinges6/read)
@@ -139,7 +142,8 @@ npm run dev
 
 
 ## Node Express notes
-Install Express and Nodemon.
+
+1: Install Express and Nodemon.
 
 ```
 npm install --save-dev express  
@@ -148,28 +152,28 @@ npm install --save-dev nodemon  # Autorefresh Express on code change
 ```
 
 
-1: To enable ES6 in Express create __`.babelrc`__ 
+2: To enable ES6 in Express create __`.babelrc`__ 
 ```
 {
   "presets": ["es2015", "stage-0", "react"]
 }
 ```
 
-2: Create __`server.js__
+3: Create __`server.js__
 ```javascript
 'use strict';
 require('babel-core/register'); // Load ES6
 require('./express-server.js'); // Load Express server
 ```
 
-3: Create __`express-server.js__
+4: Create __`express-server.js__
 ```javascript
 'use strict';
 import express from 'express';
 import path from 'path';
 
 const app = express();
-const port = 3000;
+const port = 8081;
 
 app.use('/', express.static(path.resolve(__dirname, 'public')));
 
@@ -185,9 +189,9 @@ app.get('/yo', (req, res) => {
 
 ```
 
-4: Start Express server using __`nodemon `__: <br/>__`./node_modules/.bin/nodemon ./server.js`__
+5: Start Express server using __`nodemon `__: <br/>__`./node_modules/.bin/nodemon ./server.js`__
 
-5: Open browser and navigate to: <br/>__`http://localhost:3000/yo`__
+6: Open browser and navigate to: <br/>__`http://localhost:8081/yo`__
 
 
 ### Use Express as a rest server

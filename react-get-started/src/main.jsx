@@ -28,4 +28,4 @@ class App extends React.Component {
 ReactDOM.render(<App name='Vipul'/>, document.querySelector('#react-mount'));
 */
 
-ReactDOM.render(<CommentBox />, document.querySelector('#react-mount'));
+ReactDOM.render(<CommentBox url='/api/comments.json' pollInterval={2000}/>, document.querySelector('#react-mount'));
