@@ -5,7 +5,7 @@ bundle/
 dist/
 logs/
 *.log
-.tmp
+*.tmp
 
 # Runtime data
 pids
