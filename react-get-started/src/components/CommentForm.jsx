@@ -18,8 +18,8 @@ export default class CommentForm extends React.Component {
   onSubmit (e) {
     e.preventDefault();
 
-    const author = this.refs.author.value.trim();
-    const text = this.refs.text.value.trim() ;
+    const author = this.refs.author.value.trim();  // var author = React.findDOMNode(this.refs.author).value.trim();
+    const text = this.refs.text.value.trim() ;     // var text = React.findDOMNode(this.refs.text).value.trim();
 
     if (!text || !author) {
       return;
