@@ -1,3 +1,7 @@
+/**
+ * The FB tutorial, https://facebook.github.io/react/docs/tutorial.html, written with ES6
+ */
+
 'use strict';
 
 /*eslint-disable no-unused-vars*/
@@ -41,7 +45,6 @@ export default class CommentBox extends React.Component {
   }
 
   postComment (comment) {
-
     fetch(this.props.url, {
       method: 'post',
       headers: {
@@ -51,7 +54,7 @@ export default class CommentBox extends React.Component {
       body: JSON.stringify(comment)
     })
     .then(response => response.json())
-    .then(data => this.setState({ data: data }))
+    .then(data => this.setState({ data: this.state.data.concat(data) }))  // ... or call loadComments()
     .catch(err => console.error(this.props.url, err.toString()));
   }
 
@@ -60,7 +63,7 @@ export default class CommentBox extends React.Component {
       <div className="commentBox">
         <h2>Comments</h2>
         <CommentList data={this.state.data} />
-        <CommentForm onSubmitComment={this.postComment} />
+        <CommentForm submitComment={this.postComment} />
       </div>
     );
   }

@@ -5,7 +5,7 @@ import React, { Component, PropTypes } from 'react'; // eslint-disable-line no-u
 export default class CommentForm extends React.Component {
 
   static propTypes = {
-    onSubmitComment: PropTypes.func.isRequired
+    submitComment: PropTypes.func.isRequired
   };
 
   constructor(props) {
@@ -25,10 +25,9 @@ export default class CommentForm extends React.Component {
       return;
     }
 
-    this.props.onSubmitComment({ author: author, text: text });
+    this.props.submitComment({ author: author, text: text });
     this.refs.author.value = '';
     this.refs.text.value = '';
-    return;
   }
 
   render() {
