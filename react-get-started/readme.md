@@ -2,8 +2,6 @@
 
 ```
 npm install
-./node_modules/.bin/webpack-dev-server --progress --colors
-... or
 npm run dev
 ```
 
@@ -138,3 +136,70 @@ npm run dev
 * [react-hot-boilerplate](https://github.com/gaearon/react-hot-boilerplate). Demonstrates how to use historyApiFallback to work with React router out of the box
 * [Using react-hot-loader with a webpack-dev-server and a node server](https://github.com/christianalfoni/webpack-express-boilerplate)
 * npm install --save-dev webpack-dev-middleware webpack-hot-middleware
+
+
+## Node Express notes
+Install Express and Nodemon.
+
+```
+npm install --save-dev express  
+npm install --save-dev nodemon  # Autorefresh Express on code change 
+
+```
+
+
+1: To enable ES6 in Express create __`.babelrc`__ 
+```
+{
+  "presets": ["es2015", "stage-0", "react"]
+}
+```
+
+2: Create __`server.js__
+```javascript
+'use strict';
+require('babel-core/register'); // Load ES6
+require('./express-server.js'); // Load Express server
+```
+
+3: Create __`express-server.js__
+```javascript
+'use strict';
+import express from 'express';
+import path from 'path';
+
+const app = express();
+const port = 3000;
+
+app.use('/', express.static(path.resolve(__dirname, 'public')));
+
+// Run the server
+const server = app.listen(port, 'localhost', () => {
+  console.log(
+  `Server running @ http://${server.address().address}:${server.address().port}`);
+});
+
+app.get('/yo', (req, res) => {
+  res.send('Yo Express!');
+});
+
+```
+
+4: Start Express server using __`nodemon `__: <br/>__`./node_modules/.bin/nodemon ./server.js`__
+
+5: Open browser and navigate to: <br/>__`http://localhost:3000/yo`__
+
+
+### Use Express as a rest server
+```
+npm install --save-dev body-parser     # node.js middleware for handling JSON, Raw, Text and URL encoded form data
+npm install --save-dev cookie-parser   # Parse Cookie header and populate req.cookies with an object keyed by the cookie names
+npm install --save-dev multer          # node.js middleware for handling multipart/form-data
+
+```
+
+### Webpack dev server with proxy to Express
+```
+npm install --save-dev node-http-proxy 
+
+```
