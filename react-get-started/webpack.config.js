@@ -18,25 +18,23 @@ const sassLoader = [
   'sass-loader?sourceMap&expanded'
 ].join('!');
 
-const vendorLibs = [
-  'marked',
-  'moment',
-  'react',
-  'react-dom'
-  // +++
-];
-
 module.exports = {
   debug: true,
   cache: true,
   devtool: 'eval-source-map',
   entry: {
     app: [
-      path.join(__dirname, 'src/main.scss'),
+      path.join(__dirname, 'src/main.scss'), // Styles
       'babel-polyfill',                      // Babel requires some helper code to be run before your application
       path.join(__dirname, 'src/main.jsx')   // Add your application's scripts last
     ],
-    vendor: vendorLibs
+    vendor: [
+      'marked',
+      'moment',
+      'react',
+      'react-dom'
+      // +++ other 3'rd party
+    ]
   },
   output: {
     path             : path.join(__dirname, 'dist'),
@@ -117,10 +115,10 @@ module.exports = {
       allChunks: true
     })
 
-    // Do not add:
+    // Do not use:
     //   new webpack.HotModuleReplacementPlugin()
     //   new webpack.NoErrorsPlugin()
-    // use '--hot'
+    // Use: '--hot' or 'devServer.hot'
     // see: https://github.com/webpack/docs/wiki/hot-module-replacement-with-webpack
   ],
   postcss: [
@@ -129,8 +127,8 @@ module.exports = {
     })
   ],
   devServer: {
-    port: 8080,
     contentBase: './src',
+    port: 8080,
     progress: true,
     colors: true,
     hot: true,                  // adds the HotModuleReplacementPlugin.
