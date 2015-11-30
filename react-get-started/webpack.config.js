@@ -1,5 +1,7 @@
-//require('./node_modules/es6-promise'); // Not needed for Node v4
-
+if (global.Promise == null) {
+  //console.log("require es6-promise");
+  global.Promise = require('es6-promise').polyfill();
+}
 const webpack = require('webpack');
 const path = require('path');
 const autoprefixer = require('autoprefixer');
@@ -65,7 +67,7 @@ module.exports = {
         loader: 'babel-loader',
         query: {                               // Options to configure babel with
           plugins: ['transform-runtime'],
-          presets: ['es2015', 'stage-0', 'react']
+          presets: ['es2015', 'stage-0', 'react'] // Consider moving presets to '.babelrc'
         }
       },
       {
@@ -110,11 +112,16 @@ module.exports = {
       name: 'vendor',
       minChunks: Infinity
     }),
-
     new ExtractTextPlugin('styles.css', {
       disable: false,
       allChunks: true
     })
+
+    // Do not add:
+    //   new webpack.HotModuleReplacementPlugin()
+    //   new webpack.NoErrorsPlugin()
+    // use '--hot'
+    // see: https://github.com/webpack/docs/wiki/hot-module-replacement-with-webpack
   ],
   postcss: [
     autoprefixer({
@@ -126,7 +133,7 @@ module.exports = {
     contentBase: './src',
     progress: true,
     colors: true,
-    hot: true,
+    hot: true,                  // adds the HotModuleReplacementPlugin.
     historyApiFallback: false,  // when false, dev server make directory listing, good feature to navigate in project
     quiet: false,
     noInfo: false,
