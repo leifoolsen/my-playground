@@ -4,6 +4,7 @@ import express from 'express';
 import path from 'path';
 import bodyParser from 'body-parser';
 import fs from 'fs';
+import config from 'config';
 
 const app = express();
 
@@ -14,6 +15,7 @@ fs.writeFileSync(commentsFile, fs.readFileSync(path.resolve(dataPath, 'comments.
 
 
 // Folder to to serve public files
+// We're only using this server as a rest server - so not needed
 //app.use('/', express.static(path.resolve(__dirname, 'public')));
 
 
@@ -21,9 +23,11 @@ fs.writeFileSync(commentsFile, fs.readFileSync(path.resolve(dataPath, 'comments.
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-const server = app.listen(8081, 'localhost', () => {
+const port = config.get('express.server.port');
+const host = config.get('express.server.host');
+const server = app.listen(port, host, () => {
   console.log(
-    `Server running @ http://${server.address().address}:${server.address().port}. Comments: ${commentsFile}`);
+    `Express server running @ http://${server.address().address}:${server.address().port}. Comments: ${commentsFile}`);
 });
 
 
@@ -71,3 +75,12 @@ app.post('/api/comments.json', (req, res) => {
     }
   });
 });
+
+
+/*
+ // server.js. Pre Babel6
+ // Corect bootstrap is now i 'package.json', scripts
+ 'use strict';
+ require('babel-core/register');      // ES6 in Express. Note: '.babelrc' is also required
+ require('./api/express-server.js');  // Load Express server
+ */

@@ -5,9 +5,9 @@
   "main": "webpack.config.js",
   "scripts": {
     "dev": "npm run server & npm run watch-frontend",
-    "build": "./node_modules/.bin/webpack",
+    "build": "NODE_ENV=production ./node_modules/.bin/webpack --progress --profile --colors",
     "watch-frontend": "./node_modules/.bin/webpack-dev-server --hot --inline --module-bind --progress --color",
-    "watch-server": "./node_modules/.bin/nodemon ./api/express-server.js --watch api/ --ignore api/data/  --exec ./node_modules/.bin/babel-node --presets es2015,stage-0",
+    "watch-server": "./node_modules/.bin/nodemon ./api/express-server.js --watch api/ --ignore api/data/ --exec ./node_modules/.bin/babel-node --presets es2015,stage-0",
     "server": "./node_modules/.bin/babel-node ./api/express-server.js --presets es2015,stage-0",
     "start": "echo \"Error: no start specified\" && exit 1",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -28,6 +28,7 @@
     "babel-preset-react": "^6.3.13",
     "babel-preset-stage-0": "^6.3.13",
     "body-parser": "^1.14.1",
+    "config": "^1.17.1",
     "cookie-parser": "^1.4.0",
     "css-loader": "^0.23.0",
     "es6-promise": "^3.0.2",

@@ -111,6 +111,18 @@ http://localhost:8080/webpack-dev-server/
 * [pushState With Webpack-dev-server](http://jaketrent.com/post/pushstate-webpack-dev-server/)
 * [Create a character voting app using React, Node.js, MongoDB and Socket.IO](http://sahatyalkabov.com/create-a-character-voting-app-using-react-nodejs-mongodb-and-socketio/)
 * [Simple Webpack React Starter](https://elements.heroku.com/buttons/cgreening/simple-webpack-react-starter)
+* [How to Build a Todo App Using React, Redux, and Immutable.js](http://www.sitepoint.com/how-to-build-a-todo-app-using-react-redux-and-immutable-js/)
+* [React seed](https://github.com/badsyntax/react-seed). A boilerplate for building React apps with ES6 and webpack.
+* [react-webpack-es6-boilerplate](https://github.com/mikechau/react-webpack-es6-boilerplate)
+* [Universal (isomorphic) boilerplate written in ES2015 for Node and the browser.](https://github.com/Kflash/trolly)
+* [How to Build a Todo App Using React, Redux, and Immutable.js](http://www.sitepoint.com/how-to-build-a-todo-app-using-react-redux-and-immutable-js/)
+* [Node.js and ES6 Instead of Java – A War Story](http://www.technology-ebay.de/the-teams/mobile-de/blog/nodejs-es6-war-story-2)
+* [React Todo Redux](https://github.com/sitepoint-editors/react-redux-todo-app)
+* [Building modular javascript applications in ES6 with React, Webpack and Babel](https://medium.com/@yamalight/building-modular-javascript-applications-in-es6-with-react-webpack-and-babel-538189cd485f#.2hqep8p4e)
+* [Start from scratch with React/Redux](http://blog.simonstrom.xyz/start-from-scratch-with-reactredux/)
+* [react-kickstart](https://github.com/vesparny/react-kickstart)
+* [Approaches to testing React components - an overview](http://reactkungfu.com/2015/07/approaches-to-testing-react-components-an-overview/)
+* [How to create a universal ReactJS application with bare ReactJS](http://blog.lunarlogic.io/2015/how-to-create-a-universal-reactjs-application-with-bare-reactjs/)
 
 
 ### NoeJS and Express Reading list
@@ -131,10 +143,42 @@ http://localhost:8080/webpack-dev-server/
 * [ExpressJs Router Tutorial](https://codeforgeek.com/2015/05/expressjs-router-tutorial/)
 * [Best Practices for Node.js Development](https://devcenter.heroku.com/articles/node-best-practices)
 * [Create a character voting app using React, Node.js, MongoDB and Socket.IO](http://sahatyalkabov.com/create-a-character-voting-app-using-react-nodejs-mongodb-and-socketio/)
+* [Universal (isomorphic) boilerplate written in ES2015 for Node and the browser.](https://github.com/Kflash/trolly)
+* [Example Node Server w/ Babel](https://github.com/babel/example-node-server)
+* [NodeJS Express ES6 Hello world](https://github.com/500tech/nodejs-express-es6)
+* [Best Practices for Node.js Development](https://devcenter.heroku.com/articles/node-best-practices)
+* [Expressive ES6 features that shine in Node.js 4.0](http://rethinkdb.com/blog/node-4/)
+* [Configure your Node.js Applications](https://github.com/lorenwest/node-config)
+
 
 
 ### Testing
 * [Testing with webpack and Mocha](https://www.youtube.com/watch?v=_sLLjPzOrXI)
+* [From Karma to Mocha, with a taste of jsdom](https://medium.com/podio-engineering-blog/from-karma-to-mocha-with-a-taste-of-jsdom-c9c703a06b21#.uqrd94da2)
+* [Automated Node.js Testing with Jasmine](https://www.distelli.com/docs/tutorials/test-your-nodejs-with-jasmine)
+* [TESTING](https://webpack.github.io/docs/testing.html)
+* [How to easily test React components with Karma and Webpack](http://qiita.com/kimagure/items/f2d8d53504e922fe3c5c)
+* [How to test React components using Karma and webpack](http://nicolasgallagher.com/how-to-test-react-components-karma-webpack/)
+* [Node.js and ES6 Instead of Java – A War Story](http://www.technology-ebay.de/the-teams/mobile-de/blog/nodejs-es6-war-story-2)
+* [js-tests-pro](https://github.com/500tech/js-tests-pro)
+* [webpack-mocha-demo](https://github.com/jesseskinner/webpack-mocha-demo)
+* [Universal (isomorphic) boilerplate written in ES2015 for Node and the browser.](https://github.com/kflash/trolly)
+* [A modern React starter pack based on webpack](http://krasimirtsonev.com/blog/article/a-modern-react-starter-pack-based-on-webpack)
+* [Testing in ES6 with Mocha and Babel 6](http://jamesknelson.com/testing-in-es6-with-mocha-and-babel-6/)
+* [How to implement testing + code coverage on React with Karma, Babel, and Webpack](https://medium.com/@scbarrus/how-to-get-test-coverage-on-react-with-karma-babel-and-webpack-c9273d805063#.za25xszey)
+* [How React Components Make UI Testing Easy](http://www.toptal.com/react/how-react-components-make-ui-testing-easy)
+* [Setting up Unit Testing with Mocha and Chai](https://egghead.io/lessons/javascript-how-to-write-a-javascript-library-setting-up-unit-testing-with-mocha-and-chai)
+* [Adding ES6 Support to Tests using Mocha and Babel](https://egghead.io/lessons/javascript-how-to-write-a-javascript-library-adding-es6-support-to-tests-using-mocha-and-babel)
+* [Handle WebPack CSS imports when testing with Mocha](http://stackoverflow.com/questions/32683440/handle-webpack-css-imports-when-testing-with-mocha?lq=1)
+* [Example Node Server w/ Babel](https://github.com/babel/example-node-server)
+* [Simple Webpack React Starter](https://github.com/cgreening/simple-webpack-react-starter)
+* [Universal (isomorphic) boilerplate written in ES2015 for Node and the browser.](https://github.com/Kflash/trolly)
+* [Testing React on Jsdom](http://jaketrent.com/post/testing-react-with-jsdom/)
+* [The missing piece to the React testing puzzle](https://medium.com/@bruderstein/the-missing-piece-to-the-react-testing-puzzle-c51cd30df7a0#.8ucasbug2)
+* [React Testing Tools & Tricks](https://robertknight.github.io/react-testing/docs/react-london-talk.html#1)
+* [React Testability](https://github.com/robertknight/react-testing)
+* [Start from scratch with React/Redux](http://blog.simonstrom.xyz/start-from-scratch-with-reactredux/)
+* [react-kickstart](https://github.com/vesparny/react-kickstart)
 
 
 ### ES6 Reading list
@@ -146,6 +190,11 @@ http://localhost:8080/webpack-dev-server/
 * [NodeJS and ES6](https://www.youtube.com/watch?v=PBLwtZRNh2M)
 * [Finitely Iterating Infinite Data With ES6 Generators](http://derickbailey.com/categories/tips-and-tricks/)
 
+### Etc
+* [Building a Tree Diagram in D3.js](http://blog.pixelingene.com/2011/07/building-a-tree-diagram-in-d3-js/)
+* [Refactoring to an Adaptive Model](http://martinfowler.com/articles/refactoring-adaptive-model.html)
+* [The Twelve-Factor App](http://12factor.net/)
+
 ### TODO
 * Hot loading code. See: [Using React with Webpack Tutorial](https://blog.risingstack.com/using-react-with-webpack-tutorial/)
 * [React Hot Loader](http://gaearon.github.io/react-hot-loader/)
@@ -156,16 +205,19 @@ http://localhost:8080/webpack-dev-server/
 
 ## Node Express notes
 
-1: Install express, nodemon and babel-cli.
+1: Install [express](http://expressjs.com/en/index.html), [nodemon](http://nodemon.io/), [babel-cli](https://babeljs.io/docs/usage/cli/),
+[babel-preset-es2015](https://babeljs.io/docs/plugins/preset-es2015/) and [babel-preset-stage-0](https://babeljs.io/docs/plugins/preset-stage-0/)
 
 ```
-npm install --save-dev express   # Express server
-npm install --save-dev nodemon   # Autorefresh Express on code change
-npm install --save-dev babel-cli # Installs babel-node in ./node-modules/.bin. Enables ES6 in Node
+npm install --save-dev express              # Express server
+npm install --save-dev nodemon              # Autorefresh Express on code change
+npm install --save-dev babel-cli            # Contains the babel command line interface. Installs babel-node in ./node-modules/.bin. Enables ES6 in Node
+npm install --save-dev babel-preset-es2015  # Compile ES2015 to ES5
+npm install --save-dev babel-preset-stage-0 # Enable ES7
 
 ```
 
-2: Create __`./api/express-server.js`__
+2: Create server __`./api/express-server.js`__
 ```javascript
 'use strict';
 import express from 'express';
@@ -186,13 +238,15 @@ app.get('/yo', (req, res) => {
 3: Start Express server: <br/>
 __`./node_modules/.bin/babel-node ./api/express-server.js --presets es2015,stage-0`__<br/>
 
-... or start Express server using __`nodemon`__: <br/>
+4: To watch file changes, start Express server using __`nodemon`__: <br/>
 __`./node_modules/.bin/nodemon ./api/express-server.js --exec ./node_modules/.bin/babel-node --presets es2015,stage-0`__
 
 
-4: Open browser and navigate to: <br/>__`http://localhost:8081/yo`__
+5: Open browser and navigate to: <br/>__`http://localhost:8081/yo`__
 
-5: Move `--presets es2015,stage-0` into `.babelrc`
+6: Press `Ctrl+C`to stop server
+
+7: Move `--presets es2015,stage-0` into `.babelrc`
 ```javascript
 {
   "presets": ["es2015", "stage-0", "react"],
@@ -200,19 +254,15 @@ __`./node_modules/.bin/nodemon ./api/express-server.js --exec ./node_modules/.bi
 }
 ```
 
-6: Create scripts in `package.json`
+8: Add scripts in `package.json`
 ```javascript
 "scripts": {
-  "dev": "npm run server & npm run watch-frontend",
-  "build": "./node_modules/.bin/webpack",
-  "watch-frontend": "./node_modules/.bin/webpack-dev-server --hot --inline --module-bind --progress --color",
-  "watch-server": "./node_modules/.bin/nodemon ./api/express-server.js --watch api/ --ignore api/data/  --exec ./node_modules/.bin/babel-node --presets es2015,stage-0",
   "server": "./node_modules/.bin/babel-node ./api/express-server.js --presets es2015,stage-0",
-  "start": "echo \"Error: no start specified\" && exit 1",
-  "test": "echo \"Error: no test specified\" && exit 1"
-},
+  "watch-server": "./node_modules/.bin/nodemon ./api/express-server.js --watch api/ --ignore api/data/  --exec ./node_modules/.bin/babel-node --presets es2015,stage-0"
+}
 ```
 
+9: Start server with either `npm run server`or `npm run watch-server`
 
 ### Use Express as a rest server
 ```
@@ -221,12 +271,44 @@ npm install --save-dev cookie-parser   # Parse Cookie header and populate req.co
 npm install --save-dev multer          # node.js middleware for handling multipart/form-data
 
 ```
+TODO
 
 ### Express routing
-
+TODO
 
 ### Webpack dev server with proxy to Express
 ```
 npm install --save-dev node-http-proxy
+
+```
+Update __devserver__ section in webpack
+```javascript
+devServer: {
+  contentBase: './src',
+  port: 8080,
+  progress: true,
+  colors: true,
+  hot: true,                  // adds the HotModuleReplacementPlugin.
+  historyApiFallback: false,  // when false, dev server make directory listing, good feature to navigate in project
+  quiet: false,
+  noInfo: false,
+  lazy: false,
+  aggregateTimeout: 300,
+  proxy: {
+    // Our rest server
+    '/api/*': {
+      target: 'http://localhost:8081',
+      secure: false
+    }
+  }
+},
+```
+
+Use api in client
+```javascript
+fetch('/api/yo')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(err => console.error('/api/yo', err.toString()));
 
 ```

@@ -4,8 +4,13 @@ if (global.Promise == null) {
 }
 const webpack = require('webpack');
 const path = require('path');
+const config = require('config');
 const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+const proxyServer = config.get('express.server.scheme') + '://'
+  + config.get('express.server.host') + ':'
+  + config.get('express.server.port');
 
 const cssLoader = [
   'css-loader?sourceMap',
@@ -52,7 +57,6 @@ module.exports = {
         test: /\.js[x]?$/,
         include: [
           path.join(__dirname, 'src'),
-          path.join(__dirname, 'test'),
           path.join(__dirname, 'test')
         ],
         // ... or: exclude: /(node_modules|bower_components)/,
@@ -129,7 +133,7 @@ module.exports = {
   ],
   devServer: {
     contentBase: './src',
-    port: 8080,
+    port: config.get('webpack.devserver.port'),
     progress: true,
     colors: true,
     hot: true,                  // adds the HotModuleReplacementPlugin.
@@ -141,7 +145,7 @@ module.exports = {
     proxy: {
       // Our rest server
       '/api/*': {
-        target: 'http://localhost:8081',
+        target: proxyServer,
         secure: false
       }
     }
