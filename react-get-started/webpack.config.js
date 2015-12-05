@@ -52,6 +52,7 @@ module.exports = {
         test: /\.js[x]?$/,
         include: [
           path.join(__dirname, 'src'),
+          path.join(__dirname, 'test'),
           path.join(__dirname, 'test')
         ],
         // ... or: exclude: /(node_modules|bower_components)/,
@@ -60,10 +61,10 @@ module.exports = {
     ],
     loaders: [
       {
-        test: /\.js[x]?$/,                     // Only run `.js` and `.jsx` files through Babel
-        include: path.join(__dirname, 'src'),  // Skip any files outside of your project's `src` directory
+        test: /\.js[x]?$/,                        // Only run `.js` and `.jsx` files through Babel
+        include: path.join(__dirname, 'src'),     // Skip any files outside of your project's `src` directory
         loader: 'babel-loader',
-        query: {                               // Options to configure babel with
+        query: {                                  // Options to configure babel with
           plugins: ['transform-runtime'],
           presets: ['es2015', 'stage-0', 'react'] // Consider moving presets to '.babelrc'
         }

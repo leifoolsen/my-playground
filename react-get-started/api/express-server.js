@@ -7,11 +7,7 @@ import fs from 'fs';
 
 const app = express();
 
-//const isProduction = process.env.NODE_ENV === 'production';
-//const port = isProduction ? process.env.PORT : 3000;
-const port = 8081;
-
-// Use a copy of the original file
+// Use a copy of the original JSON file
 const dataPath = path.resolve(__dirname, 'data');
 const commentsFile = path.resolve(dataPath, 'comments.json.tmp'); // '.tmp' is git-ignored
 fs.writeFileSync(commentsFile, fs.readFileSync(path.resolve(dataPath, 'comments.json')));
@@ -25,17 +21,16 @@ fs.writeFileSync(commentsFile, fs.readFileSync(path.resolve(dataPath, 'comments.
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-// Run the server
-app.set('port', port);
-
-const server = app.listen(app.get('port'), 'localhost', () => {
-  console.log(`Server running @ http://${server.address().address}:${server.address().port}. Comments: ${commentsFile}`);
+const server = app.listen(8081, 'localhost', () => {
+  console.log(
+    `Server running @ http://${server.address().address}:${server.address().port}. Comments: ${commentsFile}`);
 });
 
 
 // Sample API
 app.get('/yo', (req, res) => {
-  res.send('Yo Express!');
+  res.setHeader('Content-Type', 'application/json');
+  res.json( {yo: 'Yo Express!'} );
 });
 
 app.get('/api/comments.json', (req, res) => {

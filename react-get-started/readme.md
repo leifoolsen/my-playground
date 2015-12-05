@@ -109,6 +109,9 @@ http://localhost:8080/webpack-dev-server/
 * [Node EasyMock Server](https://github.com/cyberagent/node-easymock)
 * [FakeRest](https://github.com/marmelab/FakeRest)
 * [pushState With Webpack-dev-server](http://jaketrent.com/post/pushstate-webpack-dev-server/)
+* [Create a character voting app using React, Node.js, MongoDB and Socket.IO](http://sahatyalkabov.com/create-a-character-voting-app-using-react-nodejs-mongodb-and-socketio/)
+* [Simple Webpack React Starter](https://elements.heroku.com/buttons/cgreening/simple-webpack-react-starter)
+
 
 ### NoeJS and Express Reading list
 * [Running scripts with npm](http://www.jayway.com/2014/03/28/running-scripts-with-npm/)
@@ -126,12 +129,22 @@ http://localhost:8080/webpack-dev-server/
 * [Building a Node.js REST API with Express](https://medium.com/@jeffandersen/building-a-node-js-rest-api-with-express-46b0901f29b6#.9bsnbvr41)
 * [Node.js - Express Framework](http://www.tutorialspoint.com/nodejs/nodejs_express_framework.htm)
 * [ExpressJs Router Tutorial](https://codeforgeek.com/2015/05/expressjs-router-tutorial/)
+* [Best Practices for Node.js Development](https://devcenter.heroku.com/articles/node-best-practices)
+* [Create a character voting app using React, Node.js, MongoDB and Socket.IO](http://sahatyalkabov.com/create-a-character-voting-app-using-react-nodejs-mongodb-and-socketio/)
+
+
+### Testing
+* [Testing with webpack and Mocha](https://www.youtube.com/watch?v=_sLLjPzOrXI)
+
 
 ### ES6 Reading list
 * [Understanding ECMAScript 6](https://leanpub.com/understandinges6/read)
 * [Exploring ES6](http://exploringjs.com/)
 * [ECMAScript 6 Learning](https://github.com/ericdouglas/ES6-Learning)
 * [A Quick Tour Of ES6 (Or, The Bits You’ll Actually Use)](http://jamesknelson.com/es6-the-bits-youll-actually-use/)
+* [Using the ES6 transpiler Babel on Node.js](http://www.2ality.com/2015/03/babel-on-node.html)
+* [NodeJS and ES6](https://www.youtube.com/watch?v=PBLwtZRNh2M)
+* [Finitely Iterating Infinite Data With ES6 Generators](http://derickbailey.com/categories/tips-and-tricks/)
 
 ### TODO
 * Hot loading code. See: [Using React with Webpack Tutorial](https://blog.risingstack.com/using-react-with-webpack-tutorial/)
@@ -143,53 +156,62 @@ http://localhost:8080/webpack-dev-server/
 
 ## Node Express notes
 
-1: Install Express and Nodemon.
+1: Install express, nodemon and babel-cli.
 
 ```
-npm install --save-dev express  
-npm install --save-dev nodemon  # Autorefresh Express on code change 
+npm install --save-dev express   # Express server
+npm install --save-dev nodemon   # Autorefresh Express on code change
+npm install --save-dev babel-cli # Installs babel-node in ./node-modules/.bin. Enables ES6 in Node
 
 ```
 
-
-2: To enable ES6 in Express create __`.babelrc`__ 
-```
-{
-  "presets": ["es2015", "stage-0", "react"]
-}
-```
-
-3: Create __`server.js`__
-```javascript
-'use strict';
-require('babel-core/register'); // Load ES6
-require('./express-server.js'); // Load Express server
-```
-
-4: Create __`express-server.js__
+2: Create __`./api/express-server.js`__
 ```javascript
 'use strict';
 import express from 'express';
-import path from 'path';
 
 const app = express();
-const port = 8081;
-
-// Run the server
-const server = app.listen(port, 'localhost', () => {
+const server = app.listen(8081, 'localhost', () => {
   console.log(
-  `Server running @ http://${server.address().address}:${server.address().port}`);
+   `Server running @ http://${server.address().address}:${server.address().port}.`);
 });
 
 app.get('/yo', (req, res) => {
-  res.send('Yo Express!');
+  res.setHeader('Content-Type', 'application/json');
+  res.json({yo: 'Yo Express!'});
 });
 
 ```
 
-5: Start Express server using __`nodemon`__: <br/>__`./node_modules/.bin/nodemon ./server.js`__
+3: Start Express server: <br/>
+__`./node_modules/.bin/babel-node ./api/express-server.js --presets es2015,stage-0`__<br/>
 
-6: Open browser and navigate to: <br/>__`http://localhost:8081/yo`__
+... or start Express server using __`nodemon`__: <br/>
+__`./node_modules/.bin/nodemon ./api/express-server.js --exec ./node_modules/.bin/babel-node --presets es2015,stage-0`__
+
+
+4: Open browser and navigate to: <br/>__`http://localhost:8081/yo`__
+
+5: Move `--presets es2015,stage-0` into `.babelrc`
+```javascript
+{
+  "presets": ["es2015", "stage-0", "react"],
+  "plugins": []  
+}
+```
+
+6: Create scripts in `package.json`
+```javascript
+"scripts": {
+  "dev": "npm run server & npm run watch-frontend",
+  "build": "./node_modules/.bin/webpack",
+  "watch-frontend": "./node_modules/.bin/webpack-dev-server --hot --inline --module-bind --progress --color",
+  "watch-server": "./node_modules/.bin/nodemon ./api/express-server.js --watch api/ --ignore api/data/  --exec ./node_modules/.bin/babel-node --presets es2015,stage-0",
+  "server": "./node_modules/.bin/babel-node ./api/express-server.js --presets es2015,stage-0",
+  "start": "echo \"Error: no start specified\" && exit 1",
+  "test": "echo \"Error: no test specified\" && exit 1"
+},
+```
 
 
 ### Use Express as a rest server
@@ -205,6 +227,6 @@ npm install --save-dev multer          # node.js middleware for handling multipa
 
 ### Webpack dev server with proxy to Express
 ```
-npm install --save-dev node-http-proxy 
+npm install --save-dev node-http-proxy
 
 ```
