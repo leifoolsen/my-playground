@@ -6,7 +6,7 @@ import bodyParser from 'body-parser';
 import fs from 'fs';
 import config from 'config';
 import morgan from 'morgan';
-import logger from './logger.js';
+import logger from './winston-logger.js';
 
 
 const app = express();
