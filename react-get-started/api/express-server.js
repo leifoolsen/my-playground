@@ -5,8 +5,14 @@ import path from 'path';
 import bodyParser from 'body-parser';
 import fs from 'fs';
 import config from 'config';
+import morgan from 'morgan';
+import logger from './logger.js';
+
 
 const app = express();
+
+logger.debug("Overriding 'Express' logger");
+app.use(morgan('combined', {stream: logger.stream}));
 
 // Use a copy of the original JSON file
 const dataPath = path.resolve(__dirname, 'data');
@@ -26,7 +32,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 const port = config.get('express.server.port');
 const host = config.get('express.server.host');
 const server = app.listen(port, host, () => {
-  console.log(
+  logger.info(
     `Express server running @ http://${server.address().address}:${server.address().port}. Comments: ${commentsFile}`);
 });
 

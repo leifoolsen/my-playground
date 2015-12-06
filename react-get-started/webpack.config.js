@@ -33,7 +33,7 @@ module.exports = {
       'babel-polyfill',                      // Babel requires some helper code to be run before your application
       path.join(__dirname, 'src/main.jsx')   // Add your application's scripts last
     ],
-    vendor: [
+    vendor: [                                // Scripts packaged into 'vendor.js'
       'marked',
       'moment',
       'react',

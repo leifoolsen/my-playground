@@ -38,6 +38,7 @@
     "extract-text-webpack-plugin": "^0.9.1",
     "file-loader": "^0.8.5",
     "html-loader": "^0.4.0",
+    "morgan": "^1.6.1",
     "multer": "^1.1.0",
     "node-http-proxy": "^0.2.3",
     "node-sass": "^3.4.2",
@@ -48,7 +49,8 @@
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
     "webpack": "^1.12.9",
-    "webpack-dev-server": "^1.14.0"
+    "webpack-dev-server": "^1.14.0",
+    "winston": "^2.1.1"
   },
   "dependencies": {
     "babel-polyfill": "^6.3.14",

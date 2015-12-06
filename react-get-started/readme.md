@@ -149,8 +149,21 @@ http://localhost:8080/webpack-dev-server/
 * [Best Practices for Node.js Development](https://devcenter.heroku.com/articles/node-best-practices)
 * [Expressive ES6 features that shine in Node.js 4.0](http://rethinkdb.com/blog/node-4/)
 * [Configure your Node.js Applications](https://github.com/lorenwest/node-config)
-
-
+* [Architecting a Secure RESTful Node.js app](http://thejackalofjavascript.com/architecting-a-restful-node-js-app/)
+* [Morgan - HTTP request logger middleware for node.js](https://github.com/expressjs/morgan)
+* [a multi-transport async logging library for node.js](https://github.com/winstonjs/winston)
+* [Advanced logging with NodeJs](http://tostring.it/2014/06/23/advanced-logging-with-nodejs/)
+* [Efficient JSON logging with NodeJS](http://logmatic.io/blog/efficient-json-logging-with-nodejs/)
+* [3 Node.js Libraries Which Make Sophisticated Logging Simpler](https://www.loggly.com/blog/three-node-js-libraries-which-make-sophisticated-logging-simplers/)
+* [Comparing Winston and Bunyan Node.js Logging](https://strongloop.com/strongblog/compare-node-js-logging-winston-bunyan/)
+* [Bristol - Insanely configurable logging for Node.js](https://github.com/TomFrost/Bristol)
+* [NODEJS LOGGING WITH BUNYAN AND AZURE](http://geeklearning.io/nodejs-logging-with-bunyan-and-azure/)
+* [Passport - Simple, unobtrusive authentication for Node.js](http://passportjs.org/)
+* [Getting Started with Node.js on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction)
+* [express-validator - An express.js middleware for node-validator.](https://github.com/ctavan/express-validator)
+* [LoggingThe Ultimate Guide](https://www.loggly.com/ultimate-guide/node-logging-basics/)
+* [express-winston - winston middleware for express.js](https://github.com/bithavoc/express-winston)
+            
 
 ### Testing
 * [Testing with webpack and Mocha](https://www.youtube.com/watch?v=_sLLjPzOrXI)
