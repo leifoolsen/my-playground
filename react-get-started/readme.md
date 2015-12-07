@@ -175,7 +175,7 @@ http://localhost:8080/webpack-dev-server/
 * [JSNLog @ Vimeo](https://vimeo.com/channels/jsnlog)
 * [log.io - Real-time log monitoring in your browser](http://logio.org/)
 * [Winston Middleware for Express](https://github.com/FormidableLabs/express-winston-middleware)
-* [cookbook] beautiful logging winston](http://nodeqa.com/nodejs_ref/5)
+* [cookbook - beautiful logging winston](http://nodeqa.com/nodejs_ref/5)
 * [WOODMAN - TAKES CARE OF YOUR LOGS](http://joshfire.github.io/woodman/)
 * [js-Logger](https://github.com/jonnyreeves/js-logger)
 * [JavaScript Logging: We Can Do Better!](http://engineering.cerner.com/blog/javascript-logging-we-can-do-better/)
