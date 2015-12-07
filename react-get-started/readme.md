@@ -169,10 +169,10 @@ http://localhost:8080/webpack-dev-server/
 * [express-winston - winston middleware for express.js](https://github.com/bithavoc/express-winston)
 * [Minilog - Lightweight client & server-side logging with Stream-API backends](http://mixu.net/minilog/)
 * [JSNLog - Log JavaScript client side events in your server side logs](http://jsnlog.com/)
+* [JSNLog @ Vimeo](https://vimeo.com/channels/jsnlog)
 * [Service logging in JSON with Bunyan](https://nodejs.org/en/blog/module/service-logging-in-json-with-bunyan/)            
 * [Log Magic](https://github.com/pquerna/node-logmagic)
 * [Write Logs for Machines, use JSON](https://journal.paul.querna.org/articles/2011/12/26/log-for-machines-in-json/)
-* [JSNLog @ Vimeo](https://vimeo.com/channels/jsnlog)
 * [log.io - Real-time log monitoring in your browser](http://logio.org/)
 * [Winston Middleware for Express](https://github.com/FormidableLabs/express-winston-middleware)
 * [cookbook - beautiful logging winston](http://nodeqa.com/nodejs_ref/5)
@@ -182,6 +182,9 @@ http://localhost:8080/webpack-dev-server/
 * [canadarm - Canadarm makes JavaScript logging easy and seamless](https://github.com/cerner/canadarm)
 * [Sentry - Sentry is a modern error logging and aggregation platform.](https://github.com/getsentry/sentry)
 * [raptor-logging - Super simple logging system that works on the server and and in the browser.](https://github.com/raptorjs/raptor-logging)
+* [Stumpy - The Kickass Logger](https://github.com/jstty/stumpy)
+* [intel](http://seanmonstar.github.io/intel/)
+* [Log4js - The Logging Framework for JavaScript](http://stritti.github.io/log4js/)
 
 
 ### Testing
