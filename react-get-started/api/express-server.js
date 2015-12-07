@@ -17,6 +17,8 @@ app.use(morgan('combined', {stream: logger.stream}));
 // Use a copy of the original JSON file
 const dataPath = path.resolve(__dirname, 'data');
 const commentsFile = path.resolve(dataPath, 'comments.json.tmp'); // '.tmp' is git-ignored
+
+logger.debug(`Comments store: ${commentsFile}`);
 fs.writeFileSync(commentsFile, fs.readFileSync(path.resolve(dataPath, 'comments.json')));
 
 
@@ -32,8 +34,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 const port = config.get('express.server.port');
 const host = config.get('express.server.host');
 const server = app.listen(port, host, () => {
-  logger.info(
-    `Express server running @ http://${server.address().address}:${server.address().port}. Comments: ${commentsFile}`);
+  logger.info(`Express server running @ http://${server.address().address}:${server.address().port}`);
 });
 
 

@@ -34,6 +34,7 @@ module.exports = {
       path.join(__dirname, 'src/main.jsx')   // Add your application's scripts last
     ],
     vendor: [                                // Scripts packaged into 'vendor.js'
+      'js-logger',
       'marked',
       'moment',
       'react',

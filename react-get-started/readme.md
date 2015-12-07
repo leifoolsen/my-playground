@@ -150,20 +150,39 @@ http://localhost:8080/webpack-dev-server/
 * [Expressive ES6 features that shine in Node.js 4.0](http://rethinkdb.com/blog/node-4/)
 * [Configure your Node.js Applications](https://github.com/lorenwest/node-config)
 * [Architecting a Secure RESTful Node.js app](http://thejackalofjavascript.com/architecting-a-restful-node-js-app/)
+* [Passport - Simple, unobtrusive authentication for Node.js](http://passportjs.org/)
+* [express-validator - An express.js middleware for node-validator.](https://github.com/ctavan/express-validator)
+* [NodeJS Tutorial Playlist](https://www.youtube.com/playlist?list=PLZm85UZQLd2Q946FgnllFFMa0mfQLrYDL)
+* [Getting Started with Node.js on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction)
+
+
+### Logging
 * [Morgan - HTTP request logger middleware for node.js](https://github.com/expressjs/morgan)
-* [a multi-transport async logging library for node.js](https://github.com/winstonjs/winston)
+* [Winston - a multi-transport async logging library for node.js](https://github.com/winstonjs/winston)
 * [Advanced logging with NodeJs](http://tostring.it/2014/06/23/advanced-logging-with-nodejs/)
 * [Efficient JSON logging with NodeJS](http://logmatic.io/blog/efficient-json-logging-with-nodejs/)
 * [3 Node.js Libraries Which Make Sophisticated Logging Simpler](https://www.loggly.com/blog/three-node-js-libraries-which-make-sophisticated-logging-simplers/)
 * [Comparing Winston and Bunyan Node.js Logging](https://strongloop.com/strongblog/compare-node-js-logging-winston-bunyan/)
 * [Bristol - Insanely configurable logging for Node.js](https://github.com/TomFrost/Bristol)
 * [NODEJS LOGGING WITH BUNYAN AND AZURE](http://geeklearning.io/nodejs-logging-with-bunyan-and-azure/)
-* [Passport - Simple, unobtrusive authentication for Node.js](http://passportjs.org/)
-* [Getting Started with Node.js on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction)
-* [express-validator - An express.js middleware for node-validator.](https://github.com/ctavan/express-validator)
-* [LoggingThe Ultimate Guide](https://www.loggly.com/ultimate-guide/node-logging-basics/)
+* [Logging - The Ultimate Guide](https://www.loggly.com/ultimate-guide/node-logging-basics/)
 * [express-winston - winston middleware for express.js](https://github.com/bithavoc/express-winston)
-            
+* [Minilog - Lightweight client & server-side logging with Stream-API backends](http://mixu.net/minilog/)
+* [JSNLog - Log JavaScript client side events in your server side logs](http://jsnlog.com/)
+* [Service logging in JSON with Bunyan](https://nodejs.org/en/blog/module/service-logging-in-json-with-bunyan/)            
+* [Log Magic](https://github.com/pquerna/node-logmagic)
+* [Write Logs for Machines, use JSON](https://journal.paul.querna.org/articles/2011/12/26/log-for-machines-in-json/)
+* [JSNLog @ Vimeo](https://vimeo.com/channels/jsnlog)
+* [log.io - Real-time log monitoring in your browser](http://logio.org/)
+* [Winston Middleware for Express](https://github.com/FormidableLabs/express-winston-middleware)
+* [[cookbook] beautiful logging winston](http://nodeqa.com/nodejs_ref/5)
+* [WOODMAN - TAKES CARE OF YOUR LOGS](http://joshfire.github.io/woodman/)
+* [js-Logger](https://github.com/jonnyreeves/js-logger
+* [JavaScript Logging: We Can Do Better!](http://engineering.cerner.com/blog/javascript-logging-we-can-do-better/)
+* [canadarm - Canadarm makes JavaScript logging easy and seamless](https://github.com/cerner/canadarm)
+* [Sentry - Sentry is a modern error logging and aggregation platform.](https://github.com/getsentry/sentry)
+* [raptor-logging - Super simple logging system that works on the server and and in the browser.](https://github.com/raptorjs/raptor-logging)
+
 
 ### Testing
 * [Testing with webpack and Mocha](https://www.youtube.com/watch?v=_sLLjPzOrXI)
@@ -202,11 +221,22 @@ http://localhost:8080/webpack-dev-server/
 * [Using the ES6 transpiler Babel on Node.js](http://www.2ality.com/2015/03/babel-on-node.html)
 * [NodeJS and ES6](https://www.youtube.com/watch?v=PBLwtZRNh2M)
 * [Finitely Iterating Infinite Data With ES6 Generators](http://derickbailey.com/categories/tips-and-tricks/)
+* [ECMAScript 6 — New Features: Overview & Comparison](http://es6-features.org/)
+* [JavaScript Promises](http://www.html5rocks.com/en/tutorials/es6/promises/)
+* [That's so fetch!](https://jakearchibald.com/2015/thats-so-fetch/)
+
 
 ### Etc
 * [Building a Tree Diagram in D3.js](http://blog.pixelingene.com/2011/07/building-a-tree-diagram-in-d3-js/)
 * [Refactoring to an Adaptive Model](http://martinfowler.com/articles/refactoring-adaptive-model.html)
 * [The Twelve-Factor App](http://12factor.net/)
+* [Node-RED](http://nodered.org/)
+* [Node Red in 5 minutes](https://www.youtube.com/watch?v=f5o4tIz2Zzc)
+* [Passwordless - Token-based authentication middleware for Express & Node.js](https://passwordless.net/)
+* [Scoop.it - Node.js](http://www.scoop.it/t/node-js-by-eyal-vardi)
+* [7 Minimal Node.js Web Frameworks for 2014 and Beyond](http://codecondo.com/7-minimal-node-js-web-frameworks/)
+* [Koa - Koa is a new web framework designed by the team behind Express](http://koajs.com/)
+* [Restify - restify is a node.js module built specifically to enable you to build correct REST web services](http://restify.com/)
 
 ### TODO
 * Hot loading code. See: [Using React with Webpack Tutorial](https://blog.risingstack.com/using-react-with-webpack-tutorial/)
