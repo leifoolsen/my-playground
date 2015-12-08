@@ -10,7 +10,7 @@ import CommentBox from './components/CommentBox.jsx';
 
 import './main.scss';
 
-
+/*
 import Canadarm from 'canadarm';
 Canadarm.init({
   onError: true,                  // Set to false if you do not want window.onerror set.
@@ -25,10 +25,7 @@ Canadarm.init({
   ]
 });
 Canadarm.debug('Canadarm debugger enabled');
-
-ReactDOM.render(<CommentBox url='/api/comments.json' pollInterval={2000}/>, document.querySelector('#react-mount'));
-
-
+*/
 
 
 /*
@@ -43,3 +40,17 @@ Logger.useDefaults({
 });
 Logger.info('Client logging is now enabled');
 */
+
+
+// logs are scoped to a namespace for easy filtering (here, the namespace is "app")
+import logger from 'minilog';
+logger.enable();
+window.log = logger('app');
+
+log
+  .debug('debug message')
+  .info('info message')
+  .warn('warning')
+  .error('this is an error message');
+
+ReactDOM.render(<CommentBox url='/api/comments.json' pollInterval={2000}/>, document.querySelector('#react-mount'));

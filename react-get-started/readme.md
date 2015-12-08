@@ -187,7 +187,8 @@ http://localhost:8080/webpack-dev-server/
 * [intel](http://seanmonstar.github.io/intel/)
 * [Log4js - The Logging Framework for JavaScript](http://stritti.github.io/log4js/). No NPM!
 * [debug - tiny node.js & browser debugging utility for your libraries and applications](https://github.com/visionmedia/debug)
-
+* [Logger for Redux](https://github.com/fcomb/redux-logger)
+* [TaggedLogger - A logger frontend for Winston that attaches tags to the messages.](https://bitbucket.org/maghoff/tagged-logger)
 
 
 ### Testing
