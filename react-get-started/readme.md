@@ -123,6 +123,7 @@ http://localhost:8080/webpack-dev-server/
 * [react-kickstart](https://github.com/vesparny/react-kickstart)
 * [Approaches to testing React components - an overview](http://reactkungfu.com/2015/07/approaches-to-testing-react-components-an-overview/)
 * [How to create a universal ReactJS application with bare ReactJS](http://blog.lunarlogic.io/2015/how-to-create-a-universal-reactjs-application-with-bare-reactjs/)
+* [Universal React](https://24ways.org/2015/universal-react/)
 
 
 ### NoeJS and Express Reading list
@@ -184,7 +185,9 @@ http://localhost:8080/webpack-dev-server/
 * [raptor-logging - Super simple logging system that works on the server and and in the browser.](https://github.com/raptorjs/raptor-logging)
 * [Stumpy - The Kickass Logger](https://github.com/jstty/stumpy)
 * [intel](http://seanmonstar.github.io/intel/)
-* [Log4js - The Logging Framework for JavaScript](http://stritti.github.io/log4js/)
+* [Log4js - The Logging Framework for JavaScript](http://stritti.github.io/log4js/). No NPM!
+* [debug - tiny node.js & browser debugging utility for your libraries and applications](https://github.com/visionmedia/debug)
+
 
 
 ### Testing
@@ -227,6 +230,9 @@ http://localhost:8080/webpack-dev-server/
 * [ECMAScript 6 — New Features: Overview & Comparison](http://es6-features.org/)
 * [JavaScript Promises](http://www.html5rocks.com/en/tutorials/es6/promises/)
 * [That's so fetch!](https://jakearchibald.com/2015/thats-so-fetch/)
+* [ECMAScript 6 equivalents in ES5](https://github.com/addyosmani/es6-equivalents-in-es5)
+* [HTML5 Local Storage and Session Storage](http://javaninja.net/2015/08/html5-local-storage-and-session-storage/)
+* [Storing Data on The Client with LocalStorage](http://blog.teamtreehouse.com/storing-data-on-the-client-with-localstorage)
 
 
 ### Etc
@@ -240,6 +246,8 @@ http://localhost:8080/webpack-dev-server/
 * [7 Minimal Node.js Web Frameworks for 2014 and Beyond](http://codecondo.com/7-minimal-node-js-web-frameworks/)
 * [Koa - Koa is a new web framework designed by the team behind Express](http://koajs.com/)
 * [Restify - restify is a node.js module built specifically to enable you to build correct REST web services](http://restify.com/)
+* [Move.js - CSS3 JavaScript animation framework.](https://github.com/visionmedia/move.js)
+
 
 ### TODO
 * Hot loading code. See: [Using React with Webpack Tutorial](https://blog.risingstack.com/using-react-with-webpack-tutorial/)

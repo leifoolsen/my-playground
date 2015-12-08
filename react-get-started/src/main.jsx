@@ -11,26 +11,25 @@ import CommentBox from './components/CommentBox.jsx';
 import './main.scss';
 
 
+import Canadarm from 'canadarm';
+Canadarm.init({
+  onError: true,                  // Set to false if you do not want window.onerror set.
+  wrapEvents: false,              // Set to false if you do not want all event handlers to be logged for errors
+  logLevel: Canadarm.level.DEBUG,
+  appenders: [
+    Canadarm.Appender.standardLogAppender
+  ],
+  handlers: [
+    //Canadarm.Handler.beaconLogHandler('http://example.com/beacon.gif'),
+    Canadarm.Handler.consoleLogHandler
+  ]
+});
+Canadarm.debug('Canadarm debugger enabled');
+
 ReactDOM.render(<CommentBox url='/api/comments.json' pollInterval={2000}/>, document.querySelector('#react-mount'));
 
 
 
-/*
- import Canadarm from 'Canadarm';
- Canadarm.init({
-   onError: true,                  // Set to false if you do not want window.onerror set.
-   wrapEvents: false,              // Set to false if you do not want all event handlers to be logged for errors
-   logLevel: Canadarm.level.DEBUG, // Will only send logs for level of WARN and above.
-   appenders: [
-     Canadarm.Appender.standardLogAppender
-   ],
-   handlers: [
-     //Canadarm.Handler.beaconLogHandler('http://example.com/beacon.gif'),
-     Canadarm.Handler.consoleLogHandler
-   ]
- });
-
- */
 
 /*
 import Logger from 'js-logger';
