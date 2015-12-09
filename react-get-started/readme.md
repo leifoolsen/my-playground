@@ -188,9 +188,11 @@ http://localhost:8080/webpack-dev-server/
 * [Log4js - The Logging Framework for JavaScript](http://stritti.github.io/log4js/). No NPM!
 * [debug - tiny node.js & browser debugging utility for your libraries and applications](https://github.com/visionmedia/debug)
 * [Logger for Redux](https://github.com/fcomb/redux-logger)
+* [Logging JavaScript errors](http://odino.org/logging-javascript-errors/)
 * [TaggedLogger - A logger frontend for Winston that attaches tags to the messages.](https://bitbucket.org/maghoff/tagged-logger)
 * [structured-log](https://github.com/structured-log/structured-log)
 * [Can we change the face of JavaScript logging, too?](http://nblumhardt.com/2014/06/can-we-change-the-face-of-javascript-logging-too/)
+* [loglevel - Minimal lightweight simple logging for JavaScript](https://github.com/pimterry/loglevel)
 
 
 ### Testing

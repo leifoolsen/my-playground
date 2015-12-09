@@ -15,17 +15,15 @@ var structuredLog = require('structured-log');
 var consoleSink = require('structured-log/console-sink');
 
 var log = structuredLog.configure()
+  .minLevel('DEBUG')
   .writeTo(consoleSink())
   .create();
 
 log.info('Hello this is some information.');
-
 log('Hello this is more information.');
-
 log.warn('This is a warning.');
-
 log.error('This is an error.');
-
+log.debug('{a} + {b} = {c}', 1, 2, 3);
 
 /*
 import Canadarm from 'canadarm';
