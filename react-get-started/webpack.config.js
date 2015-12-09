@@ -34,7 +34,7 @@ module.exports = {
       path.join(__dirname, 'src/main.jsx')   // Add your application's scripts last
     ],
     vendor: [                                // Scripts packaged into 'vendor.js'
-      'minilog',                             // Alternatives: canadarm, js-logger, minilog, JSNLog, Woodman, log4js
+      'structured-log',                      // Alternatives: structured-log, canadarm, minilog, js-logger, JSNLog, Woodman, log4js
       'marked',
       'moment',
       'react',

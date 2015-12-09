@@ -44,6 +44,7 @@ app.get('/yo', (req, res) => {
   res.json( {yo: 'Yo Express!'} );
 });
 
+
 app.get('/api/comments.json', (req, res) => {
   fs.readFile(commentsFile, (err, data) => {
     if(err) {
@@ -59,7 +60,7 @@ app.get('/api/comments.json', (req, res) => {
 
 app.post('/api/comments.json', (req, res) => {
 
-  // Maybe rewite this messy code
+  // Maybe rewrite this messy code
   fs.readFile(commentsFile, (err, data) => {
     if(err) {
       console.error(err);
@@ -82,6 +83,19 @@ app.post('/api/comments.json', (req, res) => {
     }
   });
 });
+
+
+app.get('/api/client-log', (req, res) => {
+  logger.info('********** GET client log: ' + req.param('msg'));
+  res.send('');
+});
+
+app.post('/api/client-log.json', (req, res) => {
+  logger.info('********** POST client log: ' + req.body);
+});
+
+
+
 
 
 /*

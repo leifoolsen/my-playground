@@ -189,6 +189,8 @@ http://localhost:8080/webpack-dev-server/
 * [debug - tiny node.js & browser debugging utility for your libraries and applications](https://github.com/visionmedia/debug)
 * [Logger for Redux](https://github.com/fcomb/redux-logger)
 * [TaggedLogger - A logger frontend for Winston that attaches tags to the messages.](https://bitbucket.org/maghoff/tagged-logger)
+* [structured-log](https://github.com/structured-log/structured-log)
+* [Can we change the face of JavaScript logging, too?](http://nblumhardt.com/2014/06/can-we-change-the-face-of-javascript-logging-too/)
 
 
 ### Testing
@@ -218,6 +220,12 @@ http://localhost:8080/webpack-dev-server/
 * [React Testability](https://github.com/robertknight/react-testing)
 * [Start from scratch with React/Redux](http://blog.simonstrom.xyz/start-from-scratch-with-reactredux/)
 * [react-kickstart](https://github.com/vesparny/react-kickstart)
+* [testing-with-karma-webpack](http://slidedeck.io/pascalpp/testing-with-karma-webpack)
+* [Node.js and ES6 Instead of Java – A War Story - The Joy and Pain of Test-driven Development](http://www.technology-ebay.de/the-teams/mobile-de/blog/nodejs-es6-war-story-2)
+* [How to Build a Todo App Using React, Redux, and Immutable.js](http://www.sitepoint.com/how-to-build-a-todo-app-using-react-redux-and-immutable-js/)
+* [A modern React starter pack based on webpack - Testing](http://krasimirtsonev.com/blog/article/a-modern-react-starter-pack-based-on-webpack)
+* [Testing in ES6 with Mocha and Babel 6](http://jamesknelson.com/testing-in-es6-with-mocha-and-babel-6/)
+* [How to test React components using Karma and webpack](http://nicolasgallagher.com/how-to-test-react-components-karma-webpack/)
 
 
 ### ES6 Reading list
@@ -236,6 +244,23 @@ http://localhost:8080/webpack-dev-server/
 * [Storing Data on The Client with LocalStorage](http://blog.teamtreehouse.com/storing-data-on-the-client-with-localstorage)
 
 
+### CSS
+* [React Components with Material Design Lite](http://quaintous.com/2015/07/09/react-components-with-mdl/)
+* [React Toolbox - React Toolbox is a set of React components that implement Google's Material Design specification.](https://github.com/react-toolbox/react-toolbox)
+* [React MDL - React-MDL is a set of React components build on top of Material Design Lite.](https://github.com/tleunen/react-mdl)
+* [Material Design React, MDR](https://github.com/nikvm/material-design-react)
+* [CSS Modules - Welcome to the Future](http://glenmaddern.com/articles/css-modules)
+* [css-modules: Why this is the most significant improvement to CSS in years](http://x-team.com/2015/08/css-modules-a-new-way-to-css/)
+* [Styling React Components In Sass](http://hugogiraudel.com/2015/06/18/styling-react-components-in-sass/)
+* [Move.js - CSS3 JavaScript animation framework.](https://github.com/visionmedia/move.js)
+
+
+### RxJs
+* [What Is RxJS? - egghead.io](https://egghead.io/lessons/rxjs-what-is-rxjs)
+* [The introduction to Reactive Programming you've been missing](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754)
+* [Reactive Programming - What is RxJS? - egghead.io](https://egghead.io/lessons/rxjs-reactive-programming-what-is-rxjs)
+
+
 ### Etc
 * [Building a Tree Diagram in D3.js](http://blog.pixelingene.com/2011/07/building-a-tree-diagram-in-d3-js/)
 * [Refactoring to an Adaptive Model](http://martinfowler.com/articles/refactoring-adaptive-model.html)
@@ -247,7 +272,6 @@ http://localhost:8080/webpack-dev-server/
 * [7 Minimal Node.js Web Frameworks for 2014 and Beyond](http://codecondo.com/7-minimal-node-js-web-frameworks/)
 * [Koa - Koa is a new web framework designed by the team behind Express](http://koajs.com/)
 * [Restify - restify is a node.js module built specifically to enable you to build correct REST web services](http://restify.com/)
-* [Move.js - CSS3 JavaScript animation framework.](https://github.com/visionmedia/move.js)
 
 
 ### TODO

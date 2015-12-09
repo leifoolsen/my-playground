@@ -10,23 +10,39 @@ import CommentBox from './components/CommentBox.jsx';
 
 import './main.scss';
 
+
+var structuredLog = require('structured-log');
+var consoleSink = require('structured-log/console-sink');
+
+var log = structuredLog.configure()
+  .writeTo(consoleSink())
+  .create();
+
+log.info('Hello this is some information.');
+
+log('Hello this is more information.');
+
+log.warn('This is a warning.');
+
+log.error('This is an error.');
+
+
 /*
 import Canadarm from 'canadarm';
 Canadarm.init({
   onError: true,                  // Set to false if you do not want window.onerror set.
-  wrapEvents: false,              // Set to false if you do not want all event handlers to be logged for errors
+  wrapEvents: true,               // Set to false if you do not want all event handlers to be logged for errors
   logLevel: Canadarm.level.DEBUG,
   appenders: [
     Canadarm.Appender.standardLogAppender
   ],
   handlers: [
-    //Canadarm.Handler.beaconLogHandler('http://example.com/beacon.gif'),
+    Canadarm.Handler.beaconLogHandler('/api/client-log'),
     Canadarm.Handler.consoleLogHandler
   ]
 });
-Canadarm.debug('Canadarm debugger enabled');
+Canadarm.debug('Canadarm client debugger enabled');
 */
-
 
 /*
 import Logger from 'js-logger';
@@ -42,6 +58,7 @@ Logger.info('Client logging is now enabled');
 */
 
 
+/*
 // logs are scoped to a namespace for easy filtering (here, the namespace is "app")
 import logger from 'minilog';
 logger.enable();
@@ -52,5 +69,10 @@ log
   .info('info message')
   .warn('warning')
   .error('this is an error message');
+*/
+
 
 ReactDOM.render(<CommentBox url='/api/comments.json' pollInterval={2000}/>, document.querySelector('#react-mount'));
+
+console.debug("Logged a debug message via console.log");
+throw "Threw an error";
