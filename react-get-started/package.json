@@ -56,11 +56,10 @@
     "babel-polyfill": "^6.3.14",
     "babel-runtime": "^6.3.13",
     "marked": "^0.3.5",
+    "minilog": "^3.0.0",
     "moment": "^2.10.6",
     "react": "^0.14.3",
-    "react-dom": "^0.14.3",
-    "structured-log": "0.0.18",
-    "structured-log-http-sink": "0.0.2"
+    "react-dom": "^0.14.3"
   },
   "private": true
 }

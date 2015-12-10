@@ -10,7 +10,7 @@ import CommentBox from './components/CommentBox.jsx';
 
 import './main.scss';
 
-
+/*
 var structuredLog = require('structured-log');
 var consoleSink = require('structured-log/console-sink');
 
@@ -24,6 +24,7 @@ log('Hello this is more information.');
 log.warn('This is a warning.');
 log.error('This is an error.');
 log.debug('{a} + {b} = {c}', 1, 2, 3);
+*/
 
 /*
 import Canadarm from 'canadarm';
@@ -56,7 +57,8 @@ Logger.info('Client logging is now enabled');
 */
 
 
-/*
+
+
 // logs are scoped to a namespace for easy filtering (here, the namespace is "app")
 import logger from 'minilog';
 logger.enable();
@@ -67,7 +69,6 @@ log
   .info('info message')
   .warn('warning')
   .error('this is an error message');
-*/
 
 
 ReactDOM.render(<CommentBox url='/api/comments.json' pollInterval={2000}/>, document.querySelector('#react-mount'));

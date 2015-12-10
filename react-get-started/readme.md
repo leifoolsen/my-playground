@@ -124,6 +124,7 @@ http://localhost:8080/webpack-dev-server/
 * [Approaches to testing React components - an overview](http://reactkungfu.com/2015/07/approaches-to-testing-react-components-an-overview/)
 * [How to create a universal ReactJS application with bare ReactJS](http://blog.lunarlogic.io/2015/how-to-create-a-universal-reactjs-application-with-bare-reactjs/)
 * [Universal React](https://24ways.org/2015/universal-react/)
+* [Alt.js](http://alt.js.org/guide/)
 
 
 ### NoeJS and Express Reading list
@@ -155,6 +156,7 @@ http://localhost:8080/webpack-dev-server/
 * [express-validator - An express.js middleware for node-validator.](https://github.com/ctavan/express-validator)
 * [NodeJS Tutorial Playlist](https://www.youtube.com/playlist?list=PLZm85UZQLd2Q946FgnllFFMa0mfQLrYDL)
 * [Getting Started with Node.js on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction)
+* [How I Structure RESTful APIs using Express 4.](http://www.codekitchen.ca/guide-to-structuring-and-building-a-restful-api-using-express-4/)
 
 
 ### Logging
@@ -230,6 +232,17 @@ http://localhost:8080/webpack-dev-server/
 * [How to test React components using Karma and webpack](http://nicolasgallagher.com/how-to-test-react-components-karma-webpack/)
 
 
+### CSS
+* [React Components with Material Design Lite](http://quaintous.com/2015/07/09/react-components-with-mdl/)
+* [React Toolbox - React Toolbox is a set of React components that implement Google's Material Design specification.](https://github.com/react-toolbox/react-toolbox)
+* [React MDL - React-MDL is a set of React components build on top of Material Design Lite.](https://github.com/tleunen/react-mdl)
+* [Material Design React, MDR](https://github.com/nikvm/material-design-react)
+* [CSS Modules - Welcome to the Future](http://glenmaddern.com/articles/css-modules)
+* [css-modules: Why this is the most significant improvement to CSS in years](http://x-team.com/2015/08/css-modules-a-new-way-to-css/)
+* [Styling React Components In Sass](http://hugogiraudel.com/2015/06/18/styling-react-components-in-sass/)
+* [Move.js - CSS3 JavaScript animation framework.](https://github.com/visionmedia/move.js)
+
+
 ### ES6 Reading list
 * [Understanding ECMAScript 6](https://leanpub.com/understandinges6/read)
 * [Exploring ES6](http://exploringjs.com/)
@@ -244,17 +257,8 @@ http://localhost:8080/webpack-dev-server/
 * [ECMAScript 6 equivalents in ES5](https://github.com/addyosmani/es6-equivalents-in-es5)
 * [HTML5 Local Storage and Session Storage](http://javaninja.net/2015/08/html5-local-storage-and-session-storage/)
 * [Storing Data on The Client with LocalStorage](http://blog.teamtreehouse.com/storing-data-on-the-client-with-localstorage)
-
-
-### CSS
-* [React Components with Material Design Lite](http://quaintous.com/2015/07/09/react-components-with-mdl/)
-* [React Toolbox - React Toolbox is a set of React components that implement Google's Material Design specification.](https://github.com/react-toolbox/react-toolbox)
-* [React MDL - React-MDL is a set of React components build on top of Material Design Lite.](https://github.com/tleunen/react-mdl)
-* [Material Design React, MDR](https://github.com/nikvm/material-design-react)
-* [CSS Modules - Welcome to the Future](http://glenmaddern.com/articles/css-modules)
-* [css-modules: Why this is the most significant improvement to CSS in years](http://x-team.com/2015/08/css-modules-a-new-way-to-css/)
-* [Styling React Components In Sass](http://hugogiraudel.com/2015/06/18/styling-react-components-in-sass/)
-* [Move.js - CSS3 JavaScript animation framework.](https://github.com/visionmedia/move.js)
+* [The Basics Of ES6 Generators](https://davidwalsh.name/es6-generators)
+* [ES6 Promises in Depth](https://ponyfoo.com/articles/es6-promises-in-depth)
 
 
 ### RxJs
