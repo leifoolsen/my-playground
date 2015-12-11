@@ -60,11 +60,11 @@ Logger.info('Client logging is now enabled');
 
 
 // logs are scoped to a namespace for easy filtering (here, the namespace is "app")
-import logger from 'minilog';
-logger.enable();
-window.log = logger('app');
+import minilog from 'minilog';
+minilog.enable();
+window.logger = minilog('app');
 
-log
+logger
   .debug('debug message')
   .info('info message')
   .warn('warning')
