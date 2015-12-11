@@ -7,10 +7,10 @@
 $image_path: '/static/images/mdl' !default;
 
 // 2. Vendors
-@import
-  '../node_modules/material-design-lite/src/material-design-lite';
+@import '../node_modules/material-design-lite/src/material-design-lite';
 
 // 3. Base stuff
+@import 'stylesheets/fonts/roboto.css';
 
 // 4. Layout-related sections
 

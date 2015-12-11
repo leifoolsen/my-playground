@@ -16,13 +16,16 @@ var button = document.createElement('button');
 var textNode = document.createTextNode('Click Me!!!');
 button.appendChild(textNode);
 button.className = 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent';
-
-componentHandler.upgradeElement(button);
 document.getElementById('container').appendChild(button);
+componentHandler.upgradeElement(button);
 content.insertAdjacentHTML('afterend', '<br/>');
+
+
+content.insertAdjacentHTML('afterend', require('./html/typography-demo.html'));
 
 content.insertAdjacentHTML('afterend', require('./html/table-demo.html'));
 
 content.insertAdjacentHTML('afterend', '<br/>');
 
 content.insertAdjacentHTML('afterend', require('./html/card-demo.html'));
+

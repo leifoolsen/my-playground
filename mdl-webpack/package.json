@@ -12,6 +12,7 @@
   "dependencies": {
     "babel-polyfill": "^6.3.14",
     "babel-runtime": "^6.3.13",
+    "material-design-icons": "^2.1.1",
     "material-design-lite": "^1.0.6",
     "moment": "^2.10.6"
   },
@@ -33,7 +34,6 @@
     "html-loader": "^0.4.0",
     "node-sass": "^3.4.2",
     "null-loader": "^0.1.1",
-    "phantomjs": "^1.9.19",
     "postcss-loader": "^0.8.0",
     "sass-loader": "^3.1.2",
     "style-loader": "^0.13.0",
@@ -48,7 +48,6 @@
     "webpack",
     "es6",
     "babel",
-    "jasmine",
     "sass",
     "mdl",
     "material-design-lite"
