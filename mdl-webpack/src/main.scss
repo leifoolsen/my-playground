@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+// 1. Configuration and helpers
+// No global Sass context, as suggested by http://bensmithett.com/smarter-css-builds-with-webpack/
+// Only import what is strictly needed
+
+$image_path: '/static/images/mdl' !default;
+
+// 2. Vendors
+@import
+  '../node_modules/material-design-lite/src/material-design-lite';
+
+// 3. Base stuff
+
+// 4. Layout-related sections
+
+// 5. Components
+
+// 6. Page-specific styles
+
+// 7. Themes
