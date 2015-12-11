@@ -241,6 +241,7 @@ http://localhost:8080/webpack-dev-server/
 * [css-modules: Why this is the most significant improvement to CSS in years](http://x-team.com/2015/08/css-modules-a-new-way-to-css/)
 * [Styling React Components In Sass](http://hugogiraudel.com/2015/06/18/styling-react-components-in-sass/)
 * [Move.js - CSS3 JavaScript animation framework.](https://github.com/visionmedia/move.js)
+* [Material Design Lite Encapsulated](https://github.com/genadis/encapsulated-mdl)
 
 
 ### ES6 Reading list
