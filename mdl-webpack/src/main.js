@@ -23,6 +23,9 @@ content.insertAdjacentHTML('afterend', '<br/>');
 
 content.insertAdjacentHTML('afterend', require('./html/typography-demo.html'));
 
+content.insertAdjacentHTML('afterend', require('./html/material-design-icons-font-demo.html'));
+content.insertAdjacentHTML('afterend', '<br/>');
+
 content.insertAdjacentHTML('afterend', require('./html/table-demo.html'));
 
 content.insertAdjacentHTML('afterend', '<br/>');

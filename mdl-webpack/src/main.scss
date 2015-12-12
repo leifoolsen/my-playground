@@ -4,6 +4,7 @@
 // No global Sass context, as suggested by http://bensmithett.com/smarter-css-builds-with-webpack/
 // Only import what is strictly needed
 
+$preferred_font: 'Roboto-Light', 'Helvetica', 'Arial', sans-serif !default;
 $image_path: '/static/images/mdl' !default;
 
 // 2. Vendors
@@ -18,5 +19,6 @@ $image_path: '/static/images/mdl' !default;
 // 5. Components
 
 // 6. Page-specific styles
+@import 'stylesheets/pages/demo.css';
 
 // 7. Themes
