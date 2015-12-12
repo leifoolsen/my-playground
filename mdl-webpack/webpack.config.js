@@ -108,13 +108,13 @@ module.exports = {
       },
       // Fonts
       {
-        test: /\.woff(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'url-loader?limit=16384&mimetype=application/font-woff&name=/fonts/[name].[ext]'
+        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=16384&mimetype=application/font-woff"
       },
       {
-        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url-loader?limit=16384&mimetype=application/octet-stream&name=/fonts/[name].[ext]"
+        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url-loader?limit=16384&mimetype=application/octet-stream"
       },
       {
-        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader&name=/fonts/[name].[ext]"
+        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader"
       }
     ]
   },

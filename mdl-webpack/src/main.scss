@@ -10,7 +10,9 @@ $image_path: '/static/images/mdl' !default;
 @import '../node_modules/material-design-lite/src/material-design-lite';
 
 // 3. Base stuff
-@import 'stylesheets/fonts/roboto.css';
+@import
+  'stylesheets/fonts/roboto/roboto.css',
+  'stylesheets/fonts/iconfont/material-icons.css';
 
 // 4. Layout-related sections
 
