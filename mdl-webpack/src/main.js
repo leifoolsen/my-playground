@@ -10,6 +10,7 @@ import 'material-design-lite/material';
 const element = document.querySelector('#container');
 const content = document.createElement('h1');
 content.textContent = `${moment().format('YYYY-MM-DD HH:mm:ss')} - Yo MDL!`;
+content.insertAdjacentHTML('beforeend', '&nbsp;<i class="material-icons md-48">thumb_up</i>');
 element.appendChild(content);
 
 var button = document.createElement('button');

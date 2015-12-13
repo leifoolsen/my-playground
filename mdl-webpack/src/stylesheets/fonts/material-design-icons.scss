@@ -1,21 +1,20 @@
 /*
- * Material design icons package does not provide a CSS-file. This is a copy of CSS from: http://google.github.io/material-design-icons/
- * Tried to use SASS variable to point to font files, but got sass-loader errors when using SASS interpolation syntax:
- *   http://sass-lang.com/documentation/file.SASS_REFERENCE.html#interpolation_
- * Uses plain CSS for now.
+ * Material design icons package does not provide a SASS/CSS-file. This is a copy of CSS from: http://google.github.io/material-design-icons/
  * A list of available icon font names can be found here: https://www.google.com/design/icons/
  */
+
+$material-design-iconfont-path: '../node_modules/material-design-icons/iconfont' !default;
 
 @font-face {
   font-family: 'Material Icons';
   font-style: normal;
   font-weight: 400;
-  src:  url(../../../node_modules/material-design-icons/iconfont/MaterialIcons-Regular.eot); /* For IE6-8 */
-  src:  local('../../../../node_modules/material-design-icons/iconfont/Material Icons'),
-        local('../../../../node_modules/material-design-icons/iconfont/MaterialIcons-Regular'),
-        url(../../../node_modules/material-design-icons/iconfont/MaterialIcons-Regular.woff2) format('woff2'),
-        url(../../../node_modules/material-design-icons/iconfont/MaterialIcons-Regular.woff) format('woff'),
-        url(../../../node_modules/material-design-icons/iconfont/MaterialIcons-Regular.ttf) format('truetype');
+  src:  url(#{$material-design-iconfont-path}/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src:  local('#{$material-design-iconfont-path}/Material Icons'),
+  local('#{$material-design-iconfont-path}/MaterialIcons-Regular'),
+  url(#{$material-design-iconfont-path}/MaterialIcons-Regular.woff2) format('woff2'),
+  url(#{$material-design-iconfont-path}/MaterialIcons-Regular.woff) format('woff'),
+  url(#{$material-design-iconfont-path}/MaterialIcons-Regular.ttf) format('truetype');
 }
 
 .material-icons {
