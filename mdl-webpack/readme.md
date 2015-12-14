@@ -11,8 +11,8 @@ npm run dev
 * [Social Sharing Buttons for Material Design Lite using Font Awesome and Sass](http://www.himpfen.com/social-sharing-buttons-material-design-lite-font-awesome-sass/)
 * [Sass Variables for Material Design's Colour Palette](http://www.himpfen.com/sass-variables-material-design/)
 * [An Overview of Material Design Lite](http://webdesign.tutsplus.com/articles/an-overview-of-material-design-lite--cms-24370)
-* [Creating an MDL theme](http://mdlhut.com/2015/08/creating-an-mdl-theme/)
 * [MDL hut, Tutorials](http://mdlhut.com/category/tuts/)
+* [Creating an MDL theme](http://mdlhut.com/2015/08/creating-an-mdl-theme/)
 * [BEM 101, CSS Tricks](https://css-tricks.com/bem-101/)
 * [Your Frontend Methodology Is All of Them: Atomic Design & Pattern Lab](https://www.phase2technology.com/blog/your-frontend-methodology-is-all-of-them-atomic-design-patternlab/)
 * [Google web starter kit](https://github.com/google/web-starter-kit)
@@ -27,5 +27,11 @@ npm run dev
 * [Noto fonts - git](https://github.com/googlei18n/noto-fonts)
 * [Gray - A grayscale color palette for prototyping the web.](https://github.com/johnotander/gray)
 * [Google, Style / Colo](http://www.google.com/design/spec/style/color.html#)
+* [Material Design Color Palette](http://zavoloklom.github.io/material-design-color-palette/colors.html)
+* [Material Design Lite Tutorial](http://www.tutorialspoint.com/materialdesignlite/index.htm)
+* [Material Design Themes](http://materialdesignthemes.com/)
+* [TutorialPark.com - MDL](http://www.tutorialspark.com/Google_MaterialDesignLite_Tutorials/index.php)
+* [Learning Material Design Lite](http://webdesign.tutsplus.com/series/learning-material-design-lite--cms-888)
+
 
 
