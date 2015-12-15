@@ -21,6 +21,7 @@ button.className = 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-ef
 element.appendChild(button);
 componentHandler.upgradeElement(button);
 
+h1.insertAdjacentHTML('afterend', require('./html/palette-demo.html'));
 h1.insertAdjacentHTML('afterend', require('./html/typography-demo.html'));
 h1.insertAdjacentHTML('afterend', require('./html/material-design-icons-font-demo.html'));
 h1.insertAdjacentHTML('afterend', require('./html/table-demo.html'));

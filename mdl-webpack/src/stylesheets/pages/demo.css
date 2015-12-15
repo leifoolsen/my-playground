@@ -10,7 +10,7 @@
 
 .demo-layout-transparent {
   background: linear-gradient(to bottom, rgba(255,255,255,0.96) 0%,rgba(255,255,255,0.96) 100%),
-    url('../../images/transparent.jpg') center / cover;
+    url('../../images/demo/transparent.jpg') center / cover;
 }
 .demo-layout-transparent .mdl-layout__header,
 .demo-layout-transparent .mdl-layout__drawer-button {
@@ -41,46 +41,4 @@
 .demo-code {
   width: 100%;
   box-sizing: border-box;
-}
-
-.demo-page--typography {
-  color: rgba(0, 0, 0, 0.87);
-}
-
-.demo-page--typography table th {
-  padding-right: 80px;
-
-  vertical-align: top;
-  text-align: left;
-}
-
-.demo-typography--white {
-  background-color: white;
-  color: black;
-}
-
-.demo-typography--black {
-  background-color: black;
-  color: white;
-}
-
-.demo-typography--white,
-.demo-typography--black,
-.demo-typography--img-1,
-.demo-typography--img-2 {
-  width: 360px;
-  height: 272px;
-
-  padding: 16px;
-  box-sizing: border-box;
-}
-
-.demo-typography--img-1 {
-  background-image: url(../../images/img-1.png);
-  color: white;
-}
-
-.demo-typography--img-2 {
-  background-image: url(../../images/img-2.png);
-  color: white;
 }
