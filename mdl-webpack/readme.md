@@ -39,6 +39,7 @@ npm run dev
 * [A Visual Guide to CSS3 Flexbox Properties](https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties)
 * [Speckyboy Design Magazine](http://speckyboy.com/)
 * [HTML & CSS Examples of Material Design in Action](http://speckyboy.com/2015/02/26/html-css-examples-of-material-design-in-action/)
+* [GUI Archives - free GUI resources for both the web and mobile](http://speckyboy.com/category/gui-2/)
 * [Material Design Navigation Drawer I: Sizing](https://medium.com/android-news/navigation-drawer-styling-under-material-design-f0767882e692#.7e1v71gn4)
 * [MDL Sticky Footer](http://jsfiddle.net/eggbox/gk7u32b6/)
 * [MDL transparent header turns opaque](http://codepen.io/peiche/pen/PPPRgz)
@@ -49,12 +50,12 @@ npm run dev
 * [Tutorial: Pinterest Type Layout with Material Design Lite and Masonry.js](http://www.pixelatingbits.com/tutorial-pinterest-type-layout-with-material-design-lite-and-masonry-js/)
 * [Material Design Blog](http://materialdesignblog.com/)
 * [Material Design Blog - Top 25 Material Design HTML / CSS Code Snippets from CodePen](http://materialdesignblog.com/top-25-material-design-html-css-code-snippets-from-codepen/)
-* [Bouncy Material Design navigation drawer in CSS](http://materialdesignblog.com/bouncy-material-design-navigation-drawer-in-css/)
 * [Google's transforming material icons Deconstruction](http://cloudcannon.com/deconstructions/2014/12/05/material-design-delightful-details.html)
 * [materialup](http://www.materialup.com/)
 * [Material Design menu animation](http://www.materialup.com/posts/materian-design-menu-animations)
 * [Bouncy Material Design navigation drawer in CSS](http://materialdesignblog.com/bouncy-material-design-navigation-drawer-in-css/)
 * [10+ Free Design Resources For Android L & Google Material Design](https://365webresources.com/10-free-design-resources-android-l-google-material-design/)
+* [The biggest flat icons bundle available online!](https://roundicons.com/)
 
 
 
