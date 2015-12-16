@@ -39,6 +39,14 @@
 
 
   <style>
+    .mdl-layout__drawer {
+      background-color: transparent;
+    }
+    .is-small-screen .mdl-layout__drawer {
+      background-color: #fff;
+    }
+
+
     /* Change the layout__content class to Flex (instead of inline-block) to allow spacer to work. */
     /* See: https://github.com/google/material-design-lite/issues/913 */
     .mdl-layout__content {
@@ -104,7 +112,7 @@
       </div>
     </header>
 
-    <div class="mdl-layout__drawer" style="background-color: transparent;">
+    <div class="mdl-layout__drawer">
       <span class="mdl-layout-title"><img src="images/demo/organizing.png" class="demo-title"/>Components</span>
       <nav class="mdl-navigation">
         <a class="mdl-navigation__link" href=""><img src="images/demo/comp_badges.png" class="demo-menu"/>Badges</a>
