@@ -30,3 +30,11 @@ h1.insertAdjacentHTML('afterend', require('./html/material-design-icons-font-dem
 h1.insertAdjacentHTML('afterend', require('./html/table-demo.html'));
 h1.insertAdjacentHTML('afterend', require('./html/card-demo.html'));
 
+
+
+/*
+ document.querySelector('.mdl-layout__drawer').addEventListener('click', function () {
+ document.querySelector('.mdl-layout__obfuscator').classList.remove('is-visible');
+ this.classList.remove('is-visible');
+ }, false);
+ */
