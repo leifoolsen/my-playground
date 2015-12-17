@@ -4,7 +4,7 @@ body {
 }
 
 .mdl-layout {
-  margin: 0 auto; max-width: 1200px;
+  /*margin: 0 auto; max-width: 1200px;*/
 }
 
 .mdl-layout__header {
@@ -16,7 +16,7 @@ body {
 }
 
 .demo-layout-transparent .mdl-layout__header,
-.demo-layout-transparent .mdl-layout__drawer-button {
+.demo-layout-transparent .mdl-layout__header .mdl-layout__drawer-button {
   color: black;
 }
 
