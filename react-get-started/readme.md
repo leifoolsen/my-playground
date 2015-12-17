@@ -195,6 +195,8 @@ http://localhost:8080/webpack-dev-server/
 * [structured-log](https://github.com/structured-log/structured-log)
 * [Can we change the face of JavaScript logging, too?](http://nblumhardt.com/2014/06/can-we-change-the-face-of-javascript-logging-too/)
 * [loglevel - Minimal lightweight simple logging for JavaScript](https://github.com/pimterry/loglevel)
+* [Stacktrace.js - Framework-agnostic, micro-library for getting stack traces in all web browsers](http://www.stacktracejs.com/#!)
+
 
 
 ### Testing
@@ -279,6 +281,8 @@ http://localhost:8080/webpack-dev-server/
 * [7 Minimal Node.js Web Frameworks for 2014 and Beyond](http://codecondo.com/7-minimal-node-js-web-frameworks/)
 * [Koa - Koa is a new web framework designed by the team behind Express](http://koajs.com/)
 * [Restify - restify is a node.js module built specifically to enable you to build correct REST web services](http://restify.com/)
+* [Js Search: client-side search library](https://github.com/bvaughn/js-search)
+* [lodash-decorators](https://github.com/steelsojka/lodash-decorators)
 
 
 ### TODO
