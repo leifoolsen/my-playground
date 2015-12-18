@@ -5,6 +5,7 @@ npm install
 npm run dev
 ```
 
+### Reading list
 * [Roboto @font-face kit](https://github.com/FontFaceKit/roboto)
 * [Art and Science of Websites](http://www.himpfen.com/)
 * [Material Design Lite, tutorials, tips and tricks](http://www.himpfen.com/tag/material-design-lite/)
@@ -42,9 +43,6 @@ npm run dev
 * [GUI Archives - free GUI resources for both the web and mobile](http://speckyboy.com/category/gui-2/)
 * [Material Design Navigation Drawer I: Sizing](https://medium.com/android-news/navigation-drawer-styling-under-material-design-f0767882e692#.7e1v71gn4)
 * [MDL Sticky Footer](http://jsfiddle.net/eggbox/gk7u32b6/)
-* [MDL transparent header turns opaque](http://codepen.io/peiche/pen/PPPRgz)
-* [MDL layoutest](http://codepen.io/jdgreen/pen/GpxXYP)
-* [Drawer with icon+menu](http://codepen.io/anon/pen/MKgLGN)
 * [Material Design Icons](https://materialdesignicons.com/)
 * [Material Design Icons, Goodies And Starter Kits](http://www.smashingmagazine.com/2015/07/material-design-icons-templates-tools/)
 * [Tutorial: Pinterest Type Layout with Material Design Lite and Masonry.js](http://www.pixelatingbits.com/tutorial-pinterest-type-layout-with-material-design-lite-and-masonry-js/)
@@ -57,6 +55,25 @@ npm run dev
 * [10+ Free Design Resources For Android L & Google Material Design](https://365webresources.com/10-free-design-resources-android-l-google-material-design/)
 * [The biggest flat icons bundle available online!](https://roundicons.com/)
 * [Material Design Lite WIKI](https://github.com/google/material-design-lite/wiki)
+* [CSS Specificity: Things You Should Know](http://www.smashingmagazine.com/2007/07/css-specificity-things-you-should-know/)
+* [Specifics on CSS Specificity](https://css-tricks.com/specifics-on-css-specificity/)
+
+### CodePen
+* [MDL transparent header turns opaque](http://codepen.io/peiche/pen/PPPRgz)
+* [MDL layoutest](http://codepen.io/jdgreen/pen/GpxXYP)
+* [Drawer with icon+menu](http://codepen.io/anon/pen/MKgLGN)
+* [MDL Table, w. search and Sort](http://codepen.io/ryanjgill/pen/ojRxXE)
+* [Material Popup](http://codepen.io/omix/pen/BodWvJ)
+* [Sales Report by Sales Channel](http://codepen.io/brocariums2003/pen/VvaeXY)
+* [Material Design Table, editable](http://codepen.io/monochromer/pen/GpExzo)
+* [Material Design Lite components demo](http://codepen.io/Nesciosquid/pen/mJgKRq)
+* [Mass Effect Material Stat Sheets](Mass Effect Material Stat Sheets)
+* [Mass Effect Material Stat Sheets, how to close drawer when menu item is clicked](Mass Effect Material Stat Sheets)
+* [Cyclejs + Material Design Lite](Cyclejs + Material Design Lite)
+* [Freecodecamp - Portfolio Work](http://codepen.io/nrvarun/pen/QyLwBm)
+* [Layout test, es6 animation](http://codepen.io/jdgreen/pen/GpxXYP)
+
+
 
 
 

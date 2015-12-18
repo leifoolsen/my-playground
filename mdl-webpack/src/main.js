@@ -3,8 +3,13 @@
 import moment from 'moment';
 import 'material-design-lite/material';
 
-//require('material-design-lite/dist/images/tick.svg');
-//require('material-design-lite/dist/images/tick-mask.svg');
+/*
+class Drawer {
+
+}
+*/
+
+
 
 // content
 const element = document.querySelector('#index');

@@ -28,6 +28,11 @@ body {
   background-color: #fff;
 }
 
+.demo-layout-transparent.mdl-layout__header.is-casting-shadow {
+  /* override initial background when scrolling */
+  background: rgb(63,81,181);
+}
+
 /* Sticky footer */
 /* Change the layout__content class to Flex (instead of inline-block) to allow spacer to work. */
 /* See: https://github.com/google/material-design-lite/issues/913 */
