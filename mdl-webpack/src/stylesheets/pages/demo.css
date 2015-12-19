@@ -15,6 +15,10 @@ body {
 .demo-layout-transparent {
 }
 
+.demo-layout-transparent .mdl-navigation__link.mdl-navigation__link--current:hover {
+  color: black;  /* Quick hack! */
+}
+
 .demo-layout-transparent .mdl-layout__header,
 .demo-layout-transparent .mdl-layout__header .mdl-layout__drawer-button {
   color: black;
@@ -28,9 +32,9 @@ body {
   background-color: #fff;
 }
 
-.demo-layout-transparent.mdl-layout__header.is-casting-shadow {
+.demo-layout-transparent .mdl-layout__header.is-casting-shadow {
   /* override initial background when scrolling */
-  background: rgb(63,81,181);
+  /* background: rgb(63,81,181); */
 }
 
 /* Sticky footer */

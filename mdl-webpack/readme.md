@@ -57,8 +57,12 @@ npm run dev
 * [Material Design Lite WIKI](https://github.com/google/material-design-lite/wiki)
 * [CSS Specificity: Things You Should Know](http://www.smashingmagazine.com/2007/07/css-specificity-things-you-should-know/)
 * [Specifics on CSS Specificity](https://css-tricks.com/specifics-on-css-specificity/)
+* [aurelia-material - Aurelia wrapper for Material Design Lite.](https://github.com/redpelicans/aurelia-material)
+* [Stop Writing Slow Javascript](http://ilikekillnerds.com/2015/02/stop-writing-slow-javascript/)
+* [http://ilikekillnerds.com/2015/02/stop-writing-slow-javascript/](https://developers.google.com/speed/articles/reflow)
+* [Removing Useless Nodes From the DOM](http://www.sitepoint.com/removing-useless-nodes-from-the-dom/)
 
-### CodePen
+### CodePens
 * [MDL transparent header turns opaque](http://codepen.io/peiche/pen/PPPRgz)
 * [MDL layoutest](http://codepen.io/jdgreen/pen/GpxXYP)
 * [Drawer with icon+menu](http://codepen.io/anon/pen/MKgLGN)
@@ -72,11 +76,20 @@ npm run dev
 * [Cyclejs + Material Design Lite](Cyclejs + Material Design Lite)
 * [Freecodecamp - Portfolio Work](http://codepen.io/nrvarun/pen/QyLwBm)
 * [Layout test, es6 animation](http://codepen.io/jdgreen/pen/GpxXYP)
+* [Subway map, svg](http://codepen.io/lacedon/pen/dYBQva)
+* [Pomodoro Timer](http://codepen.io/RamEduard/pen/RrNqeJ)
+* [Edward Duro Portfolio](http://codepen.io/edwardduro/pen/eJYeoW)
+* [Flexbox layout sidebars and content](http://codepen.io/xaddict/pen/dyEoB)
+* [Google Dots](http://codepen.io/jimoong/pen/xZxmQM)
+* [POMODORO TIMER](http://codepen.io/thir13n/pen/qOPBxK)
+* [Pops Form UI](http://codepen.io/prajwal-mis/pen/LVJZXz)
+* [3D Line Chart](http://codepen.io/yizzreel/pen/MaOwMg)
+* [The way to embed SVG](http://codepen.io/fecoder/pen/ogLbbN)
+* [HTML & CSS Examples of Material Design in Action](http://speckyboy.com/2015/02/26/html-css-examples-of-material-design-in-action/)
+* [Tutorial: Pinterest Type Layout with Material Design Lite and Masonry.js](http://www.pixelatingbits.com/tutorial-pinterest-type-layout-with-material-design-lite-and-masonry-js/)
 
 
-
-
-
-
-
+### Videos
+* [Creating a 3D Webpage Header with Material Design and Babylon](https://www.youtube.com/watch?v=IZ6fgcBkhg8)
+* [Material Design Lite Tutorial Part1 Layout (Navigation, Grid, Footer)](https://www.youtube.com/watch?v=pEiyaKwsTws)
 
