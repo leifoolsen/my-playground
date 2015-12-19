@@ -3,6 +3,22 @@
 import moment from 'moment';
 import 'material-design-lite/material';
 
+
+function cleanElement(el, forceReflow = true) {
+  // See: http://jsperf.com/empty-an-element/16
+  while (el.lastChild) {
+    el.removeChild(el.lastChild);
+  }
+
+  if(forceReflow) {
+    // See: http://jsperf.com/force-reflow
+    const d = el.style.display;
+    el.style.display = "none";
+    el.style.display = d;
+  }
+}
+
+
 class Drawer {
   constructor(content) {
     const drawerId = "#drawer";
@@ -43,7 +59,8 @@ class Content {
     fetch(anchor.href, { method: 'get' } )
       .then(response => response.text())
       .then(text => {
-        content.innerHTML = '';  // NOT the most efficient way to do this!
+        //content.innerHTML = '';  // NOT the most efficient way to do this!
+        cleanElement(content);
         content.insertAdjacentHTML('afterbegin', text);
         componentHandler.upgradeDom();
       })

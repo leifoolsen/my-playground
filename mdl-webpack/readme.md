@@ -59,8 +59,14 @@ npm run dev
 * [Specifics on CSS Specificity](https://css-tricks.com/specifics-on-css-specificity/)
 * [aurelia-material - Aurelia wrapper for Material Design Lite.](https://github.com/redpelicans/aurelia-material)
 * [Stop Writing Slow Javascript](http://ilikekillnerds.com/2015/02/stop-writing-slow-javascript/)
-* [http://ilikekillnerds.com/2015/02/stop-writing-slow-javascript/](https://developers.google.com/speed/articles/reflow)
+* [Minimizing browser reflow](https://developers.google.com/speed/articles/reflow)
+* [10 Ways to Minimize Reflows and Improve Performance](http://www.sitepoint.com/10-ways-minimize-reflows-improve-performance/?utm_source=sitepoint&utm_medium=nextpost&utm_term=javascript)
+* [REFLOWS & REPAINTS: CSS PERFORMANCE MAKING YOUR JAVASCRIPT SLOW?](http://www.stubbornella.org/content/2009/03/27/reflows-repaints-css-performance-making-your-javascript-slow/)
 * [Removing Useless Nodes From the DOM](http://www.sitepoint.com/removing-useless-nodes-from-the-dom/)
+* [Lodash and ECMAScript 2015](https://blog.mariusschulz.com/2015/05/11/lodash-and-ecmascript-2015)
+* [Creating an ES6 DOM Library](http://www.ericponto.com/blog/2014/10/05/es6-dom-library/)
+* [Cookbook (es6)](https://github.com/nervgh/recursive-iterator/wiki/Cookbook-(es6))
+
 
 ### CodePens
 * [MDL transparent header turns opaque](http://codepen.io/peiche/pen/PPPRgz)
