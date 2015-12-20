@@ -20,38 +20,51 @@ function cleanElement(el, forceReflow = true) {
 
 
 class Drawer {
+  drawerId            = '#drawer';
+  navLinkQuery        = `${this.drawerId} nav a.mdl-navigation__link`;
+  currentNavClassName = 'mdl-navigation__link--current';
+  currentNavClass     = `.${this.currentNavClassName}`;
+  layoutClass         = '.mdl-layout';
+  isSmallScreenClass  = '.is-small-screen';
+
   constructor(content) {
-    const drawerId = "#drawer";
-    const anchorQuery = `${drawerId} nav a`;
-    const activeAnchorQuery = `${drawerId} nav a.mdl-navigation__link--current`;
 
     //console.log(document.querySelectorAll(`${this.drawerId} nav a`));
-    for (let anchor of document.querySelectorAll(anchorQuery)) {
+    for (let anchor of document.querySelectorAll(this.navLinkQuery)) {
+
       anchor.addEventListener('click', event  => {
         event.preventDefault();
         event.stopPropagation();
-        if(anchor.href !== anchor.baseURI) {
-          const oldActive = document.querySelector(activeAnchorQuery);
-          if(oldActive) {
-            oldActive.classList.remove('mdl-navigation__link--current');
-          }
-          anchor.classList.add('mdl-navigation__link--current');
 
-          // See: http://stackoverflow.com/questions/31536467/how-to-hide-drawer-upon-user-click
-          const layout = document.querySelector('.mdl-layout');
-          if(layout.classList.contains('is-small-screen')) {
-            layout.MaterialLayout.drawerToggleHandler_();
-          }
+        if(anchor.href !== anchor.baseURI) {
+          this.setActiveNavLink_(anchor);
+          this.closeDrawer_();
           content.show(anchor);
         }
       });
     }
   }
+  setActiveNavLink_(navLinkNode) {
+    const currentNav = navLinkNode.parentNode.querySelector(this.currentNavClass);
+    if(currentNav) {
+      currentNav.classList.remove(this.currentNavClassName);
+    }
+    navLinkNode.classList.add(this.currentNavClassName);
+  }
+  closeDrawer_() {
+    // See: http://stackoverflow.com/questions/31536467/how-to-hide-drawer-upon-user-click
+    // See: https://github.com/google/material-design-lite/blob/v1.0.6/material.js#L3234
+    const layout = document.querySelector(this.layoutClass);
+    if(layout.classList.contains(this.isSmallScreenClass)) {
+      layout.MaterialLayout.drawerToggleHandler_();
+    }
+  }
 }
 
 class Content {
+  contentId = '#content';
+
   constructor() {
-    this.contentId = '#content';
   }
   show(anchor) {
     let content = document.querySelector(this.contentId);
@@ -59,7 +72,6 @@ class Content {
     fetch(anchor.href, { method: 'get' } )
       .then(response => response.text())
       .then(text => {
-        //content.innerHTML = '';  // NOT the most efficient way to do this!
         cleanElement(content);
         content.insertAdjacentHTML('afterbegin', text);
         componentHandler.upgradeDom();
