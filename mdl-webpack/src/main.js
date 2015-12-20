@@ -20,12 +20,12 @@ function cleanElement(el, forceReflow = true) {
 
 
 class Drawer {
-  drawerId            = '#drawer';
-  navLinkQuery        = `${this.drawerId} nav a.mdl-navigation__link`;
-  currentNavClassName = 'mdl-navigation__link--current';
-  currentNavClass     = `.${this.currentNavClassName}`;
-  layoutClass         = '.mdl-layout';
-  isSmallScreenClass  = '.is-small-screen';
+  drawerId               = '#drawer';
+  navLinkQuery           = `${this.drawerId} nav a.mdl-navigation__link`;
+  currentNavClassName    = 'mdl-navigation__link--current';
+  currentNavClass        = `.${this.currentNavClassName}`;
+  layoutClass            = '.mdl-layout';
+  isSmallScreenClassName = 'is-small-screen';
 
   constructor(content) {
 
@@ -55,7 +55,7 @@ class Drawer {
     // See: http://stackoverflow.com/questions/31536467/how-to-hide-drawer-upon-user-click
     // See: https://github.com/google/material-design-lite/blob/v1.0.6/material.js#L3234
     const layout = document.querySelector(this.layoutClass);
-    if(layout.classList.contains(this.isSmallScreenClass)) {
+    if(layout.classList.contains(this.isSmallScreenClassName)) {
       layout.MaterialLayout.drawerToggleHandler_();
     }
   }

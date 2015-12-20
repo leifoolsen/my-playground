@@ -66,6 +66,8 @@ npm run dev
 * [Lodash and ECMAScript 2015](https://blog.mariusschulz.com/2015/05/11/lodash-and-ecmascript-2015)
 * [Creating an ES6 DOM Library](http://www.ericponto.com/blog/2014/10/05/es6-dom-library/)
 * [Cookbook (es6)](https://github.com/nervgh/recursive-iterator/wiki/Cookbook-(es6))
+* [NAVIGATION USABILITY - Sticky Menus Are Quicker To Navigate](http://www.smashingmagazine.com/2012/09/sticky-menus-are-quicker-to-navigate/)
+
 
 
 ### CodePens
