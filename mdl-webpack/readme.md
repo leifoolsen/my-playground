@@ -67,8 +67,13 @@ npm run dev
 * [Creating an ES6 DOM Library](http://www.ericponto.com/blog/2014/10/05/es6-dom-library/)
 * [Cookbook (es6)](https://github.com/nervgh/recursive-iterator/wiki/Cookbook-(es6))
 * [NAVIGATION USABILITY - Sticky Menus Are Quicker To Navigate](http://www.smashingmagazine.com/2012/09/sticky-menus-are-quicker-to-navigate/)
-
-
+* [HTML5 and CSS3 - Useful Info for web designers](http://www.scoop.it/t/html5-and-css)
+* [ES6 - Sean Saranga Amarasinghe](http://seanamarasinghe.com/developer/javascript/es6/)
+* [Crafting Twelve-Column Layouts with Flexbox](https://davidwalsh.name/flexbox-layouts)
+* [Understanding ECMAScript 6 arrow functions](https://www.nczonline.net/blog/2013/09/10/understanding-ecmascript-6-arrow-functions/)
+* [7 Essential JavaScript Functions](https://davidwalsh.name/essential-javascript-functions)
+* [Better JavaScript animations with requestAnimationFrame](https://www.nczonline.net/blog/2011/05/03/better-javascript-animations-with-requestanimationframe/)
+* [RxJS v4.0](https://xgrommx.github.io/rx-book/index.html)
 
 ### CodePens
 * [MDL transparent header turns opaque](http://codepen.io/peiche/pen/PPPRgz)
@@ -95,6 +100,9 @@ npm run dev
 * [The way to embed SVG](http://codepen.io/fecoder/pen/ogLbbN)
 * [HTML & CSS Examples of Material Design in Action](http://speckyboy.com/2015/02/26/html-css-examples-of-material-design-in-action/)
 * [Tutorial: Pinterest Type Layout with Material Design Lite and Masonry.js](http://www.pixelatingbits.com/tutorial-pinterest-type-layout-with-material-design-lite-and-masonry-js/)
+* [MDL Sticky Footer](http://jsfiddle.net/eggbox/gk7u32b6/)
+* [Auto Hide Sticky Header - Snappy](http://codepen.io/macmengerink/pen/RPZwEB)
+
 
 
 ### Videos

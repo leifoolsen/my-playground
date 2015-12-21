@@ -44,7 +44,7 @@
   even in small screens. -->
   <div class="demo-layout-transparent mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
 
-    <header class="mdl-layout__header mdl-layout__header--transparent mdl-layout__header--waterfall  mdl-layout__header--scroll">
+    <header id="header" class="mdl-layout__header mdl-layout__header--transparent mdl-layout__header--waterfall mdl-layout__header--scroll">
 
       <div class="mdl-layout__header-row">
         <!-- Title -->
@@ -85,23 +85,32 @@
     </div>
 
       <!-- Content goes here -->
-    <main class="mdl-layout__content">
-      <section id="content" class="demo-page-content mdl-layout__menu-panel"></section>
+    <main id="content" class="mdl-layout__content">
+      <section id="content-panel" class="demo-page-content mdl-layout__menu-panel"></section>
 
       <!-- Add spacer to push Footer down when not enough content -->
       <div class="mdl-layout-spacer"></div>
 
       <!-- Footer goes here -->
-      <footer class="mdl-mini-footer">
-        <div class="mdl-mini-footer--middle-section">
-          <div class="mdl-logo">Logo Title</div>
-          <ul class="mdl-mini-footer--link-list">
+      <footer class="mdl-mini-footer" style="background-color: transparent">
+        <div class="mdl-mini-footer__left-section">
+          <div class="mdl-logo" style="color: #2e2e2e">Footer Title</div>
+          <ul class="mdl-mini-footer__link-list">
             <li><a href="#">Help</a></li>
             <li><a href="#">Privacy & Terms</a></li>
           </ul>
         </div>
+        <div class="mdl-mini-footer__right-section" style="padding-top: 6px;">
+          <i class="material-icons">all_inclusive</i>
+          <i class="material-icons">share</i>
+          <i class="material-icons">arrow_back</i>
+          <i class="material-icons">arrow_forward</i>
+          <i class="material-icons">check</i>
+          <i class="material-icons">close</i>
+          <i class="material-icons">android</i>
+          <i class="material-icons">menu</i>
+        </div>
       </footer>
-
     </main>
   </div>
 
