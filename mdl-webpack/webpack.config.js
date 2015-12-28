@@ -67,7 +67,11 @@ module.exports = {
         include: path.resolve(__dirname, 'src'),  // Skip any files outside of your project's `src` directory
         loader: 'babel-loader',
         query: {                                  // Options to configure babel with
-          plugins: ['transform-runtime'],
+          plugins: [
+            'transform-runtime',
+            'syntax-decorators',
+            'transform-decorators-legacy'         // Note: transform-decorators does not work yet
+          ],
           presets: ['es2015', 'stage-0']
         }
       },

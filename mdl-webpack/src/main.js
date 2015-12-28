@@ -1,11 +1,18 @@
 'use strict';
 
+import { debounce } from 'core-decorators';
+import { throttle } from 'core-decorators';
 import moment from 'moment';
 import 'material-design-lite/material';
 
 
-function cleanElement(el, forceReflow=true) {
+/*
+ * Debounce vs Throttle
+ * Throttle is designed to call function in certain interval during constant call. Like: window.scroll.
+ * Debounce is designed to call function only once during one certain time. not matter how many time it called. Like: submit button click
+ */
 
+function cleanElement(el, forceReflow=true) {
   // See: http://jsperf.com/empty-an-element/16
   while (el.lastChild) {
     el.removeChild(el.lastChild);
@@ -19,66 +26,6 @@ function cleanElement(el, forceReflow=true) {
   }
 }
 
-// NOTE: Should use "https://github.com/jayphelps/core-decorators.js", but Babel has issues:
-//   Decorators are not supported yet in 6.x pending proposal update.
-//
-// Debounce is designed to call function only once during one certain time. not matter how many time it called.
-// Like: submit button click.
-// Returns a function, that, as long as it continues to be invoked, will not
-// be triggered. The function will be called after it stops being called for
-// N milliseconds. If `immediate` is passed, trigger the function on the
-// leading edge, instead of the trailing.
-// See: https://davidwalsh.name/javascript-debounce-function
-// See: http://jsfiddle.net/1dr00xbn/
-// See: https://gist.github.com/bcole808/c0c6877a53c59a77119f
-// See: http://www.html5rocks.com/en/tutorials/speed/animations/
-
-/*eslint-disable no-unused-vars*/
-function debounce(func, wait=100, immediate=false, context=window) {
-  var timeout;
-  return function() {
-    var context = this, args = arguments;
-
-    var later = function() {
-      timeout = null;
-      if (!immediate) func.apply(context, args);
-    };
-    var callNow = immediate && !timeout;
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-    if (callNow) func.apply(context, args);
-  };
-}
-/*eslint-disable no-unused-vars*/
-
-// throttle is designed to call function in certain interval during constant call. Like: window.scroll.
-// See: http://jsfiddle.net/1dr00xbn/
-// See: https://gist.github.com/Eartz/fe651f2fadcc11444549
-// See: https://developer.mozilla.org/en-US/docs/Web/Events/resize
-// See: https://developer.mozilla.org/en-US/docs/Web/Events/scroll
-// See: https://gist.github.com/bcole808/c0c6877a53c59a77119f
-// See: http://www.html5rocks.com/en/tutorials/speed/animations/
-
-/*eslint-disable no-unused-vars*/
-var throttle = (func, ms=100, context=window) => {
-  let to = null;
-  let wait = false;
-  return (...args) => {
-    let later = () => {
-      func.apply(context, args);
-    };
-    if(!wait)  {
-      later();
-      wait = true;
-      to = setTimeout(() => {
-        wait = false;
-      }, ms);
-    }
-  };
-};
-/*eslint-disable no-unused-vars*/
-
-
 class Header {
   headerId  = '#header';
   contentId = '#content';
@@ -88,25 +35,13 @@ class Header {
     this.header = document.querySelector(this.headerId);
     this.prevContentScrollTop = content.scrollTop;
 
-    /*
-    content.addEventListener('scroll',  throttle((event) =>
-      this.handleScroll(event), 250, content)
-    );
-     content.addEventListener('scroll',  event =>
-     this.handleScroll(event)
-     );
-    */
-    content.addEventListener('scroll',  debounce((event) =>
-      this.scrollContent(event), 100, false, content)
-    );
-
-    window.addEventListener('resize',  debounce((event) =>
-      this.resizeHeader(event), 100, false, window)
-    );
+    content.addEventListener('scroll',  event => this.scrollContent(event));
+    window.addEventListener('resize', () => this.resizeHeader());
+    window.addEventListener('orientationchange', () => this.resizeHeader());
   }
 
+  @throttle
   scrollContent(event) {
-
     let content = event.target;
     let currentContentScrollTop = content.scrollTop;
     let scrollDiff = this.prevContentScrollTop - currentContentScrollTop;
@@ -138,7 +73,8 @@ class Header {
     this.prevContentScrollTop = currentContentScrollTop;
   }
 
-  resizeHeader(event) {
+  @debounce
+  resizeHeader() {
     let content = document.querySelector(this.contentId);
     this.header.style.width = content.clientWidth + 'px';
   }
@@ -150,7 +86,7 @@ class Drawer {
   currentNavClassName    = 'mdl-navigation__link--current';
   currentNavClass        = `.${this.currentNavClassName}`;
   layoutClass            = '.mdl-layout';
-  isSmallScreenClassName = 'is-small-screen';
+  //isSmallScreenClassName = 'is-small-screen';
   isVisibleClassName     = 'is-visible';
 
   constructor(content) {
@@ -190,7 +126,7 @@ class Drawer {
 class Content {
   contentId      = '#content';
   contentPanelId = '#content-panel';
-  headerId       = '#header';
+  //headerId       = '#header';
 
   constructor(header) {
     this.header = header;
@@ -205,7 +141,7 @@ class Content {
         cleanElement(contentPanel);
         contentPanel.insertAdjacentHTML('afterbegin', text);
         content.scrollTop = 0;
-        this.header.resizeHeader(null);
+        this.header.resizeHeader();
         componentHandler.upgradeDom();
       })
       .catch(err => console.error(err))
