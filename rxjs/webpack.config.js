@@ -1,8 +1,3 @@
-if (!global.Promise) {
-  console.log("require es6-promise");
-  global.Promise = require('es6-promise').polyfill();
-}
-
 const webpack = require('webpack');
 const path = require('path');
 const autoprefixer = require('autoprefixer');

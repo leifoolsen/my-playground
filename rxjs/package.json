@@ -26,7 +26,6 @@
     "copy-webpack-plugin": "^0.3.3",
     "core-decorators": "^0.9.2",
     "css-loader": "^0.23.1",
-    "es6-promise": "^3.0.2",
     "eslint": "^1.10.3",
     "eslint-loader": "^1.1.1",
     "extract-text-webpack-plugin": "^0.9.1",
