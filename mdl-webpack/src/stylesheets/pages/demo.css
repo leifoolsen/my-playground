@@ -1,20 +1,36 @@
+/*
 *, *::before, *::after, input[type="search"] {
   box-sizing: border-box;
 }
+*/
 
 body {
   background: linear-gradient(to bottom, rgba(255,255,255,0.96) 0%,rgba(255,255,255,0.96) 100%),
   url('../../images/demo/transparent.jpg') center / cover;
 }
 
-.mdl-layout {
-  /*margin: 0 auto; max-width: 1200px;*/
+/* Sticky header */
+.mdl-layout__header.mdl-layout__header--sticky {
+  position: absolute;
 }
 
-#header {
-  z-index: 0;
+.mdl-layout__header.mdl-layout__header--sticky.is-scroll {
+  background-color: #fff !important;
+  opacity: 0.96;
 }
 
+.mdl-layout.mdl-layout--fixed-drawer .mdl-layout__header.mdl-layout__header--sticky .mdl-layout__drawer-button {
+  visibility: hidden;
+}
+.mdl-layout.mdl-layout--fixed-drawer.is-small-screen .mdl-layout__header.mdl-layout__header--sticky .mdl-layout__drawer-button {
+  visibility: visible;
+}
+@media screen and (min-width: 1025px) {
+  .mdl-layout.mdl-layout--fixed-drawer > .mdl-layout__header.mdl-layout__header--sticky .mdl-layout__header-row {
+    padding-left: 16px;
+  }
+}
+/* End Sticky header */
 
 .demo-layout-transparent {
 }
@@ -32,8 +48,13 @@ body {
   background-color: transparent;
 }
 
-.demo-layout-transparent.is-small-screen .mdl-layout__drawer {
+.demo-layout-transparent .mdl-layout__drawer.is-visible {
   background-color: #fff;
+}
+
+.demo-layout-transparent .mdl-layout__drawer .mdl-layout-title a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .demo-layout-transparent .mdl-layout__header.is-casting-shadow {
@@ -41,22 +62,24 @@ body {
   /*background: rgb(63,81,181);*/
 }
 
+
+
 /* Sticky footer */
 /* Change the layout__content class to Flex (instead of inline-block) to allow spacer to work. */
 /* See: https://github.com/google/material-design-lite/issues/913 */
-.demo-layout-transparent .mdl-layout__content {
+.mdl-layout__content.mdl-layout--sticky-footer {
   display: flex;
   flex-flow: column nowrap;
 }
 
-.demo-layout-transparent .mdl-layout__content > *:not(.mdl-layout-spacer) {
+.mdl-layout__content.mdl-layout--sticky-footer > *:not(.mdl-layout-spacer) {
   flex: none;
 }
 
-.demo-layout-transparent .mdl-mini-footer {
+.mdl-layout__content.mdl-layout--sticky-footer > .mdl-mini-footer {
   padding-top: 0;
   padding-bottom: 0;
-  margin-top: 14px;
+  margin-top: 16px;
 }
 
 /* End Sticky footer */
@@ -81,19 +104,11 @@ body {
   margin-left: 0;
 }
 
-.demo-page {
-  width: 100%;
-  height: auto;
-  margin: 0;
-  padding: 24px;
-  box-sizing: border-box;
-}
-
 .demo-page-content {
   width: 100%;
   height: auto;
   margin: 0;
-  padding: 0 24px;
+  padding: 40px 16px 0;   /* FIX-ME: padding-top is 40px only if sticky-header */
   box-sizing: border-box;
 }
 

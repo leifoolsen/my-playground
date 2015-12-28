@@ -44,29 +44,29 @@
   even in small screens. -->
   <div class="demo-layout-transparent mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
 
-    <header id="header" class="mdl-layout__header mdl-layout__header--transparent mdl-layout__header--waterfall mdl-layout__header--scroll">
+    <header id="header" class="mdl-layout__header mdl-layout__header--transparent mdl-layout__header--waterfall mdl-layout__header--sticky">
 
       <div class="mdl-layout__header-row">
         <!-- Title -->
-        <!-- <span class="mdl-layout-title">Title</span> -->
+        <span class="mdl-layout-title">Title</span>
 
         <!-- Add spacer, to align navigation to the right -->
         <div class="mdl-layout-spacer"></div>
 
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
-          <label class="mdl-button mdl-js-button mdl-button--icon" for="fixed-header-drawer-exp">
+        <!-- Search box -->
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
+          <label class="mdl-button mdl-js-button mdl-button--icon" for="search-field">
             <i class="material-icons">search</i>
           </label>
           <div class="mdl-textfield__expandable-holder">
-            <input class="mdl-textfield__input" type="text" name="sample" id="fixed-header-drawer-exp">
+            <input class="mdl-textfield__input" type="text" id="search-field">
           </div>
         </div>
-
       </div>
     </header>
 
-    <div id="drawer" class="mdl-layout__drawer">
-      <span class="mdl-layout-title"><img src="images/demo/organizing.png" class="demo-title"/>Components</span>
+    <aside id="drawer" class="mdl-layout__drawer">
+      <span class="mdl-layout-title"><a href="/"><img src="images/demo/organizing.png" class="demo-title"/>Components</a></span>
       <nav class="mdl-navigation">
         <a class="mdl-navigation__link" href="html/badges.html"><img src="images/demo/comp_badges.png" class="demo-menu"/>Badges</a>
         <a class="mdl-navigation__link" href=""><img src="images/demo/comp_buttons.png" class="demo-menu"/>Buttons</a>
@@ -82,16 +82,16 @@
         <a class="mdl-navigation__link" href="html/typography-demo.html"><img src="images/demo/typewriter.png" class="demo-menu"/>Typography</a>
         <a class="mdl-navigation__link" href="html/palette-demo.html"><img src="images/demo/art-palette.png" class="demo-menu"/>Palettes</a>
       </nav>
-    </div>
+    </aside>
 
       <!-- Content goes here -->
-    <main id="content" class="mdl-layout__content">
-      <section id="content-panel" class="demo-page-content mdl-layout__menu-panel"></section>
+    <main id="content" class="mdl-layout__content mdl-layout--sticky-footer">
+      <section id="content-panel" class="demo-page-content"></section>
 
-      <!-- Add spacer to push Footer down when not enough content -->
+      <!-- Add spacer to push Sticky Footer down when not enough content -->
       <div class="mdl-layout-spacer"></div>
 
-      <!-- Footer goes here -->
+      <!-- Footer -->
       <footer class="mdl-mini-footer" style="background-color: transparent">
         <div class="mdl-mini-footer__left-section">
           <div class="mdl-logo" style="color: #2e2e2e">Footer Title</div>
@@ -100,7 +100,7 @@
             <li><a href="#">Privacy & Terms</a></li>
           </ul>
         </div>
-        <div class="mdl-mini-footer__right-section" style="padding-top: 6px;">
+        <div class="mdl-mini-footer__right-section" style="padding-top: 8px;">
           <i class="material-icons">all_inclusive</i>
           <i class="material-icons">share</i>
           <i class="material-icons">arrow_back</i>

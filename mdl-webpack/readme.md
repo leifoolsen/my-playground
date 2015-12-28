@@ -14,6 +14,7 @@ npm run dev
 * [An Overview of Material Design Lite](http://webdesign.tutsplus.com/articles/an-overview-of-material-design-lite--cms-24370)
 * [MDL hut, Tutorials](http://mdlhut.com/category/tuts/)
 * [Creating an MDL theme](http://mdlhut.com/2015/08/creating-an-mdl-theme/)
+* [How to Change the Color of an MDL Component](http://mdlhut.com/2015/08/how-to-change-the-color-of-an-mdl-component/)
 * [BEM 101, CSS Tricks](https://css-tricks.com/bem-101/)
 * [Your Frontend Methodology Is All of Them: Atomic Design & Pattern Lab](https://www.phase2technology.com/blog/your-frontend-methodology-is-all-of-them-atomic-design-patternlab/)
 * [Google web starter kit](https://github.com/google/web-starter-kit)
@@ -74,6 +75,18 @@ npm run dev
 * [7 Essential JavaScript Functions](https://davidwalsh.name/essential-javascript-functions)
 * [Better JavaScript animations with requestAnimationFrame](https://www.nczonline.net/blog/2011/05/03/better-javascript-animations-with-requestanimationframe/)
 * [RxJS v4.0](https://xgrommx.github.io/rx-book/index.html)
+* [Off-Canvas Menu Effects](http://tympanus.net/codrops/2014/09/16/off-canvas-menu-effects/)
+* [Color Palettes Color Schemes](http://www.color-hex.com/color-palettes/)
+* [Material Design Lite - Concise Style Guide](http://www.softwareapprentice.com/mdl-concise-styleguide/)
+* [MAterial Design - Customize the Color Palette](http://developer.android.com/training/material/theme.html#ColorPalette)
+* [Sketch app plugin for displaying Google Material Design color palette.](https://github.com/t32k/material-design-color-palette)
+* [Material Design Color Palette 1.1.0](https://github.com/zavoloklom/material-design-color-palette)
+* [material palette](https://www.materialpalette.com/)
+* [4 Tools for Creating Brilliant Material Design Color Pallets](http://materialdesignblog.com/tools-for-creating-brilliant-material-design-color-pallets/)
+* [sankk.in / material mixer](http://www.sankk.in/material-mixer/)
+* [New to Material Design? 12 Principles You Need to Know](http://blogs.adobe.com/dreamweaver/2015/05/new-to-material-design-12-principles-you-need-to-know.html)
+* [Material design in the 2014 Google I/O app](http://android-developers.blogspot.se/2014/08/material-design-in-2014-google-io-app.html)
+
 
 ### CodePens
 * [MDL transparent header turns opaque](http://codepen.io/peiche/pen/PPPRgz)
@@ -102,10 +115,10 @@ npm run dev
 * [Tutorial: Pinterest Type Layout with Material Design Lite and Masonry.js](http://www.pixelatingbits.com/tutorial-pinterest-type-layout-with-material-design-lite-and-masonry-js/)
 * [MDL Sticky Footer](http://jsfiddle.net/eggbox/gk7u32b6/)
 * [Auto Hide Sticky Header - Snappy](http://codepen.io/macmengerink/pen/RPZwEB)
-
+* [Material Design Lite (MDL) Navigation Drawer on the right side](http://stackoverflow.hex1.ru/questions/32131858/material-design-lite-mdl-navigation-drawer-on-the-right-side)
+* [Material Design - Responsive Table](http://codepen.io/zavoloklom/pen/IGkDz)
 
 
 ### Videos
 * [Creating a 3D Webpage Header with Material Design and Babylon](https://www.youtube.com/watch?v=IZ6fgcBkhg8)
 * [Material Design Lite Tutorial Part1 Layout (Navigation, Grid, Footer)](https://www.youtube.com/watch?v=pEiyaKwsTws)
-

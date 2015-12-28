@@ -19,7 +19,10 @@ function cleanElement(el, forceReflow=true) {
   }
 }
 
-// debounce is designed to call function only once during one certain time. not matter how many time it called.
+// NOTE: Should use "https://github.com/jayphelps/core-decorators.js", but Babel has issues:
+//   Decorators are not supported yet in 6.x pending proposal update.
+//
+// Debounce is designed to call function only once during one certain time. not matter how many time it called.
 // Like: submit button click.
 // Returns a function, that, as long as it continues to be invoked, will not
 // be triggered. The function will be called after it stops being called for
@@ -45,7 +48,7 @@ function debounce(func, wait=100, immediate=false, context=window) {
     timeout = setTimeout(later, wait);
     if (callNow) func.apply(context, args);
   };
-};
+}
 /*eslint-disable no-unused-vars*/
 
 // throttle is designed to call function in certain interval during constant call. Like: window.scroll.
@@ -59,7 +62,7 @@ function debounce(func, wait=100, immediate=false, context=window) {
 /*eslint-disable no-unused-vars*/
 var throttle = (func, ms=100, context=window) => {
   let to = null;
-  let wait=false;
+  let wait = false;
   return (...args) => {
     let later = () => {
       func.apply(context, args);
@@ -75,29 +78,69 @@ var throttle = (func, ms=100, context=window) => {
 };
 /*eslint-disable no-unused-vars*/
 
+
 class Header {
   headerId  = '#header';
   contentId = '#content';
 
   constructor() {
-    this.header = document.querySelector(this.headerId);
     let content = document.querySelector(this.contentId);
-    content.addEventListener('scroll',  debounce((event) =>
-      this.handleScroll(event), 50, false, content)
-    );
+    this.header = document.querySelector(this.headerId);
+    this.prevContentScrollTop = content.scrollTop;
 
     /*
-     content.addEventListener('scroll',  throttle((event) =>
-     this.handleScroll(event), 250, content)
-     );
-    content.addEventListener('scroll',  event =>
-      this.handleScroll(event)
+    content.addEventListener('scroll',  throttle((event) =>
+      this.handleScroll(event), 250, content)
     );
+     content.addEventListener('scroll',  event =>
+     this.handleScroll(event)
+     );
     */
+    content.addEventListener('scroll',  debounce((event) =>
+      this.scrollContent(event), 100, false, content)
+    );
+
+    window.addEventListener('resize',  debounce((event) =>
+      this.resizeHeader(event), 100, false, window)
+    );
   }
-  handleScroll(event) {
-    let marginTop = Math.min(this.header.offsetHeight, event.target.scrollTop);
-    this.header.style.marginTop = `-${marginTop}px`;
+
+  scrollContent(event) {
+
+    let content = event.target;
+    let currentContentScrollTop = content.scrollTop;
+    let scrollDiff = this.prevContentScrollTop - currentContentScrollTop;
+    let headerTop = (parseInt( window.getComputedStyle( this.header ).getPropertyValue( 'top' ) ) || 0) + scrollDiff;
+
+    if(currentContentScrollTop <= 0) {
+      // Scrolled to the top. Header sticks to the top
+      this.header.style.top = '0';
+      this.header.classList.remove('is-scroll');
+    }
+    else if(scrollDiff > 0) {
+      // Scrolled up. Header slides in
+      this.header.style.top = ( headerTop > 0 ? 0 : headerTop ) + 'px';
+      this.header.classList.add('is-scroll');
+    }
+    else if(scrollDiff < 0) {
+      // Scrolled down
+      this.header.classList.add('is-scroll');
+
+      if (content.scrollHeight - content.scrollTop <= content.offsetHeight) {
+        // Bottom of content
+        this.header.style.top = '0';
+      }
+      else {
+        this.header.style.top = ( Math.abs( headerTop ) > this.header.offsetHeight ? -this.header.offsetHeight : headerTop ) + 'px';
+      }
+    }
+
+    this.prevContentScrollTop = currentContentScrollTop;
+  }
+
+  resizeHeader(event) {
+    let content = document.querySelector(this.contentId);
+    this.header.style.width = content.clientWidth + 'px';
   }
 }
 
@@ -108,6 +151,7 @@ class Drawer {
   currentNavClass        = `.${this.currentNavClassName}`;
   layoutClass            = '.mdl-layout';
   isSmallScreenClassName = 'is-small-screen';
+  isVisibleClassName     = 'is-visible';
 
   constructor(content) {
 
@@ -136,18 +180,23 @@ class Drawer {
     // See: http://stackoverflow.com/questions/31536467/how-to-hide-drawer-upon-user-click
     // See: https://github.com/google/material-design-lite/blob/v1.0.6/material.js#L3234
     const layout = document.querySelector(this.layoutClass);
-    if(layout.classList.contains(this.isSmallScreenClassName)) {
+    const drawer = document.querySelector(this.drawerId);
+    if(drawer.classList.contains(this.isVisibleClassName)) {
       layout.MaterialLayout.drawerToggleHandler_();
     }
   }
 }
 
 class Content {
+  contentId      = '#content';
   contentPanelId = '#content-panel';
+  headerId       = '#header';
 
-  constructor() {
+  constructor(header) {
+    this.header = header;
   }
   show(anchor) {
+    let content = document.querySelector(this.contentId);
     let contentPanel = document.querySelector(this.contentPanelId);
 
     fetch(anchor.href, { method: 'get' } )
@@ -155,6 +204,8 @@ class Content {
       .then(text => {
         cleanElement(contentPanel);
         contentPanel.insertAdjacentHTML('afterbegin', text);
+        content.scrollTop = 0;
+        this.header.resizeHeader(null);
         componentHandler.upgradeDom();
       })
       .catch(err => console.error(err))
@@ -176,13 +227,14 @@ class Content {
     componentHandler.upgradeElement(button);
 
     contentPanel.insertAdjacentHTML('beforeend', require('./html/material-design-icons-font-demo.html'));
+    this.header.resizeHeader(null);
   }
 }
 
 class App {
   constructor() {
     this.header = new Header();
-    this.content = new Content();
+    this.content = new Content(this.header);
     new Drawer(this.content);
   }
 
