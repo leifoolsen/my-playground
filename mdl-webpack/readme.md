@@ -86,6 +86,9 @@ npm run dev
 * [sankk.in / material mixer](http://www.sankk.in/material-mixer/)
 * [New to Material Design? 12 Principles You Need to Know](http://blogs.adobe.com/dreamweaver/2015/05/new-to-material-design-12-principles-you-need-to-know.html)
 * [Material design in the 2014 Google I/O app](http://android-developers.blogspot.se/2014/08/material-design-in-2014-google-io-app.html)
+* [Promisify event emitter](http://glebbahmutov.com/blog//promisify-event-emitter/)
+* [EventEmitter - Event based JavaScript for the browser](https://github.com/Olical/EventEmitter)
+* [EventEmitter2 - A nodejs event emitter implementation with namespaces, wildcards, TTL, works in the browser](https://github.com/asyncly/EventEmitter2)
 
 
 ### CodePens

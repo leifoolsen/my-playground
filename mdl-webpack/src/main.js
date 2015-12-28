@@ -2,6 +2,7 @@
 
 import { debounce } from 'core-decorators';
 import { throttle } from 'core-decorators';
+import EventEmitter from 'eventemitter3';
 import moment from 'moment';
 import 'material-design-lite/material';
 
@@ -175,6 +176,18 @@ class App {
   }
 
   index() {
+    var eventEmitter = new EventEmitter();
+
+    var ringBell = function ringBell()
+    {
+      console.log('ring ring ring');
+    };
+
+    eventEmitter.on('doorOpen', ringBell);
+
+    eventEmitter.emit('doorOpen');
+
+
     this.content.index();
   }
 }
