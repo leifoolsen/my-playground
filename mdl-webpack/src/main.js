@@ -2,23 +2,14 @@
 
 import { debounce } from 'core-decorators';
 import { throttle } from 'core-decorators';
-import EventEmitter from 'eventemitter3';
 import moment from 'moment';
 import 'material-design-lite/material';
-
-
-/*
- * Debounce vs Throttle
- * Throttle is designed to call function in certain interval during constant call. Like: window.scroll.
- * Debounce is designed to call function only once during one certain time. not matter how many time it called. Like: submit button click
- */
 
 function cleanElement(el, forceReflow=true) {
   // See: http://jsperf.com/empty-an-element/16
   while (el.lastChild) {
     el.removeChild(el.lastChild);
   }
-
   if(forceReflow) {
     // See: http://jsperf.com/force-reflow
     const d = el.style.display;
@@ -131,6 +122,8 @@ class Content {
 
   constructor(header) {
     this.header = header;
+
+
   }
   show(anchor) {
     let content = document.querySelector(this.contentId);
@@ -148,6 +141,12 @@ class Content {
       .catch(err => console.error(err))
     ;
   }
+
+  contentChanged() {
+    let event = new CustomEvent('content-changed');
+    document.dispatchEvent(event);
+  }
+
   index() {
     let contentPanel = document.querySelector(this.contentPanelId);
 
@@ -166,32 +165,43 @@ class Content {
     contentPanel.insertAdjacentHTML('beforeend', require('./html/material-design-icons-font-demo.html'));
     this.header.resizeHeader(null);
   }
+
 }
+
+/*
+//import { EventEmitter } from 'events';
+import EventEmitter  from './components/decorators/eventemitter-decorator';
+
+@EventEmitter
+class Door {
+
+}
+const door = new Door();
+door.on('ring', (sound) => console.log(`Door bell: ${sound}!!`));
+door.emit('ring', 'pling plong ding dong');
+*/
 
 class App {
   constructor() {
     this.header = new Header();
     this.content = new Content(this.header);
-    new Drawer(this.content);
+    this.drawer = new Drawer(this.content);
   }
 
-  index() {
-    var eventEmitter = new EventEmitter();
-
-    var ringBell = function ringBell()
-    {
-      console.log('ring ring ring');
-    };
-
-    eventEmitter.on('doorOpen', ringBell);
-
-    eventEmitter.emit('doorOpen');
-
-
+  run() {
     this.content.index();
   }
 }
 
 
 // Start
-document.addEventListener('DOMContentLoaded', () => new App().index());
+document.addEventListener('DOMContentLoaded', () => new App().run());
+
+
+
+/*
+ * Debounce vs Throttle
+ * Throttle is designed to call function in certain interval during constant call. Like: window.scroll.
+ * Debounce is designed to call function only once during one certain time. not matter how many time it called. Like: submit button click
+ */
+

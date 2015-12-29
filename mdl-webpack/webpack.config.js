@@ -70,7 +70,7 @@ module.exports = {
           plugins: [
             'transform-runtime',
             'syntax-decorators',
-            'transform-decorators-legacy'         // Note: transform-decorators does not work yet
+            'transform-decorators-legacy'         // Note: Still need this in favor of 'babel-plugin-transform-decorators'
           ],
           presets: ['es2015', 'stage-0']
         }

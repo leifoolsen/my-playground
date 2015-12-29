@@ -106,8 +106,10 @@ npm run dev
 * [event-emitter - Environment agnostic event emitter](https://github.com/medikoo/event-emitter)
 * [Node.js Events and EventEmitter](http://www.sitepoint.com/nodejs-events-and-eventemitter/)
 * [What are Event Emitters?](https://docs.nodejitsu.com/articles/getting-started/control-flow/what-are-event-emitters)
+* [yaee - Yet Another EventEmitter](https://github.com/stefanr/js-yaee)
 * [es-Observable](http://zenparsing.github.io/es-observable/)
 * [ECMAScript Observable](https://github.com/jayphelps/es-observable)
+* [RxJS 5 - Implements ECMAScript Observable](https://github.com/ReactiveX/RxJS)
 
 
 ### CodePens
