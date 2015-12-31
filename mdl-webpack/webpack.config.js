@@ -28,7 +28,9 @@ module.exports = {
   entry: {
     app: [
       path.join(__dirname, 'src/main.scss'), // Styles
-      'babel-polyfill',                      // Babel requires some helper code to be run before your application
+      'babel-polyfill',                      // Babel requires some helper code to be run before your application,
+                                             //   see: http://jamesknelson.com/webpack-made-simple-build-es6-less-with-autorefresh-in-26-lines/
+                                             //   see: http://jamesknelson.com/using-es6-in-the-browser-with-babel-6-and-webpack/
       path.join(__dirname, 'src/main.js')    // Add your application's scripts last
     ],
     vendor: [                                // Scripts packaged into 'vendor.js'

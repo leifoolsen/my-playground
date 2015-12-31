@@ -1,5 +1,16 @@
 'use strict';
 
+
+// TODO: let webpack do the polyfill
+//import 'babel-polyfill';
+
+import promise from 'es6-promise';
+promise.polyfill();
+
+//import 'whatwg-fetch';
+import 'isomorphic-fetch';
+// END-TODO
+
 import { debounce } from 'core-decorators';
 import { throttle } from 'core-decorators';
 import moment from 'moment';
@@ -138,7 +149,7 @@ class Content {
     let contentPanelEl = document.querySelector(this.contentPanelId);
     let href = event.detail.anchor.href;
 
-    fetch(href, { method: 'get' } )
+    window.fetch(href, { method: 'get' } )
       .then(response => response.text())
       .then(text => {
         cleanElement(contentPanelEl);

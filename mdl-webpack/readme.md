@@ -152,7 +152,10 @@ npm run dev
 * [ES2015 (ES6) pubsub](http://codepen.io/stevenbenisek/pen/qOmRye)
 * [LazyShow](http://codepen.io/tjbenton21/pen/doLvYx/)
 * [Material Design Animation Timing](http://codepen.io/tjbenton21/pen/LEpqmg)
-
+* [Polyfill service](https://github.com/Financial-Times/polyfill-service)
+* [JavaScript Fetch API in action](https://blog.gospodarets.com/fetch_in_action/)
+* [window.fetch polyfill](https://github.com/github/fetch)
+* [isomorphic-fetch - Fetch for node and Browserify. Built on top of GitHub's WHATWG Fetch polyfill.](https://github.com/matthew-andrews/isomorphic-fetch)
 
 ### Videos
 * [Creating a 3D Webpage Header with Material Design and Babylon](https://www.youtube.com/watch?v=IZ6fgcBkhg8)
