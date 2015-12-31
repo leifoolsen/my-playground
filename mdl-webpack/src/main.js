@@ -19,135 +19,157 @@ function cleanElement(el, forceReflow=true) {
 }
 
 class Header {
-  headerId  = '#header';
-  contentId = '#content';
 
-  constructor() {
-    let content = document.querySelector(this.contentId);
-    this.header = document.querySelector(this.headerId);
-    this.prevContentScrollTop = content.scrollTop;
-
-    content.addEventListener('scroll',  event => this.scrollContent(event));
-    window.addEventListener('resize', () => this.resizeHeader());
-    window.addEventListener('orientationchange', () => this.resizeHeader());
+  constructor(selector = '#header') {
+    this.selector = selector;
+    this.headerEl = document.querySelector(this.selector);
+    this.prevContentScrollTop = 0;
   }
 
-  @throttle
-  scrollContent(event) {
-    let content = event.target;
-    let currentContentScrollTop = content.scrollTop;
+  stickToElement(event) {
+    let element = event.detail.element;
+    let currentContentScrollTop = element.scrollTop;
     let scrollDiff = this.prevContentScrollTop - currentContentScrollTop;
-    let headerTop = (parseInt( window.getComputedStyle( this.header ).getPropertyValue( 'top' ) ) || 0) + scrollDiff;
+    let headerTop = (parseInt( window.getComputedStyle( this.headerEl ).getPropertyValue( 'top' ) ) || 0) + scrollDiff;
 
     if(currentContentScrollTop <= 0) {
       // Scrolled to the top. Header sticks to the top
-      this.header.style.top = '0';
-      this.header.classList.remove('is-scroll');
+      this.headerEl.style.top = '0';
+      this.headerEl.classList.remove('is-scroll');
     }
     else if(scrollDiff > 0) {
       // Scrolled up. Header slides in
-      this.header.style.top = ( headerTop > 0 ? 0 : headerTop ) + 'px';
-      this.header.classList.add('is-scroll');
+      this.headerEl.style.top = ( headerTop > 0 ? 0 : headerTop ) + 'px';
+      this.headerEl.classList.add('is-scroll');
     }
     else if(scrollDiff < 0) {
       // Scrolled down
-      this.header.classList.add('is-scroll');
+      this.headerEl.classList.add('is-scroll');
 
-      if (content.scrollHeight - content.scrollTop <= content.offsetHeight) {
+      if (element.scrollHeight - element.scrollTop <= element.offsetHeight) {
         // Bottom of content
-        this.header.style.top = '0';
+        this.headerEl.style.top = '0';
       }
       else {
-        this.header.style.top = ( Math.abs( headerTop ) > this.header.offsetHeight ? -this.header.offsetHeight : headerTop ) + 'px';
+        let offsetHeight = this.headerEl.offsetHeight;
+        this.headerEl.style.top = ( Math.abs( headerTop ) > offsetHeight ? -offsetHeight : headerTop ) + 'px';
       }
     }
 
     this.prevContentScrollTop = currentContentScrollTop;
   }
 
-  @debounce
-  resizeHeader() {
-    let content = document.querySelector(this.contentId);
-    this.header.style.width = content.clientWidth + 'px';
+  resizeToElement(event) {
+    let element = event.detail.element;
+    this.headerEl.style.width = element.clientWidth + 'px';
   }
 }
 
 class Drawer {
-  drawerId               = '#drawer';
-  navLinkQuery           = `${this.drawerId} nav a.mdl-navigation__link`;
-  currentNavClassName    = 'mdl-navigation__link--current';
-  currentNavClass        = `.${this.currentNavClassName}`;
-  layoutClass            = '.mdl-layout';
-  //isSmallScreenClassName = 'is-small-screen';
-  isVisibleClassName     = 'is-visible';
+  currentNavClassName = 'mdl-navigation__link--current';
+  currentNavClass     = `.${this.currentNavClassName}`;
+  layoutClass         = '.mdl-layout';
+  isVisibleClassName  = 'is-visible';
+  notifications       = {};
 
-  constructor(content) {
+  constructor(selector = '#drawer') {
+    this.selector     = selector;
+    this.drawerEl     = document.querySelector(this.selector);
+    this.navLinkQuery = `${this.selector} nav a.mdl-navigation__link`;
 
     for (let anchor of document.querySelectorAll(this.navLinkQuery)) {
 
-      anchor.addEventListener('click', event  => {
+      anchor.addEventListener('click', event => {
         event.preventDefault();
         event.stopPropagation();
 
         if(anchor.href !== anchor.baseURI) {
-          this.setActiveNavLink_(anchor);
-          this.closeDrawer_();
-          content.show(anchor);
+          this.setActiveNavLink(anchor);
+          this.closeDrawerIfVisible();
+          this.menuSelect(anchor);
         }
       });
     }
   }
-  setActiveNavLink_(navLinkNode) {
-    const currentNav = navLinkNode.parentNode.querySelector(this.currentNavClass);
+
+  listenTo(notification, fn) {
+    this.notifications[notification] = fn;
+  }
+
+  setActiveNavLink(navLinkEl) {
+    const currentNav = navLinkEl.parentNode.querySelector(this.currentNavClass);
     if(currentNav) {
       currentNav.classList.remove(this.currentNavClassName);
     }
-    navLinkNode.classList.add(this.currentNavClassName);
+    navLinkEl.classList.add(this.currentNavClassName);
   }
-  closeDrawer_() {
+
+  closeDrawerIfVisible() {
     // See: http://stackoverflow.com/questions/31536467/how-to-hide-drawer-upon-user-click
     // See: https://github.com/google/material-design-lite/blob/v1.0.6/material.js#L3234
     const layout = document.querySelector(this.layoutClass);
-    const drawer = document.querySelector(this.drawerId);
-    if(drawer.classList.contains(this.isVisibleClassName)) {
+    if(this.drawerEl.classList.contains(this.isVisibleClassName)) {
       layout.MaterialLayout.drawerToggleHandler_();
+    }
+  }
+
+  menuSelect(anchorEl) {
+    if(this.notifications.menuselect) {
+      this.notifications.menuselect( { anchor: anchorEl } );
     }
   }
 }
 
 class Content {
-  contentId      = '#content';
   contentPanelId = '#content-panel';
-  //headerId       = '#header';
+  notifications  = {};
 
-  constructor(header) {
-    this.header = header;
-
-
+  constructor(selector = '#content') {
+    this.selector = selector;
+    this.contentEl = document.querySelector(this.selector);
+    this.contentEl.addEventListener('scroll', (event) => this.scroll(event));
   }
-  show(anchor) {
-    let content = document.querySelector(this.contentId);
-    let contentPanel = document.querySelector(this.contentPanelId);
 
-    fetch(anchor.href, { method: 'get' } )
+  listenTo(notification, fn) {
+    this.notifications[notification] = fn;
+  }
+
+  show(event) {
+    let contentPanelEl = document.querySelector(this.contentPanelId);
+    let href = event.detail.anchor.href;
+
+    fetch(href, { method: 'get' } )
       .then(response => response.text())
       .then(text => {
-        cleanElement(contentPanel);
-        contentPanel.insertAdjacentHTML('afterbegin', text);
-        content.scrollTop = 0;
-        this.header.resizeHeader();
-        componentHandler.upgradeDom();
+        cleanElement(contentPanelEl);
+        contentPanelEl.insertAdjacentHTML('afterbegin', text);
+
+        this.contentChange();
       })
       .catch(err => console.error(err))
     ;
   }
 
-  contentChanged() {
-    let event = new CustomEvent('content-changed');
-    document.dispatchEvent(event);
+  contentChange() {
+    componentHandler.upgradeDom();
+    this.contentEl.scrollTop = 0;
+
+    if(this.notifications.contentchange) {
+      this.notifications.contentchange( { element: this.contentEl } );
+    }
+  }
+
+  @throttle
+  scroll(event) {
+    event.stopPropagation();
+
+    if(this.notifications.scrollchange) {
+      this.notifications.scrollchange( { element: this.contentEl } );
+    }
   }
 
   index() {
+    // Messy code :-)
     let contentPanel = document.querySelector(this.contentPanelId);
 
     const h1 = document.createElement('h1');
@@ -163,29 +185,53 @@ class Content {
     componentHandler.upgradeElement(button);
 
     contentPanel.insertAdjacentHTML('beforeend', require('./html/material-design-icons-font-demo.html'));
-    this.header.resizeHeader(null);
+
+
+    this.contentChange();
   }
 
 }
 
-/*
-//import { EventEmitter } from 'events';
-import EventEmitter  from './components/decorators/eventemitter-decorator';
 
-@EventEmitter
-class Door {
+const pubsub = (doc => {
+  // See : https://davidwalsh.name/customevent
+  // See : http://codepen.io/stevenbenisek/pen/qOmRye
+  // Note: A polyfill is required for browsers that do not support CustomEvent constructor
 
-}
-const door = new Door();
-door.on('ring', (sound) => console.log(`Door bell: ${sound}!!`));
-door.emit('ring', 'pling plong ding dong');
-*/
+  return {
+    publish    : (type, detail)   => doc.dispatchEvent( new CustomEvent(type, { detail: detail }) ),
+    subscribe  : (type, listener) => doc.addEventListener( type, listener, 0 ),
+    unsubscribe: (type, listener) => doc.removeEventListener( type, listener, 0 )
+  };
+})(document);
+
 
 class App {
   constructor() {
-    this.header = new Header();
-    this.content = new Content(this.header);
-    this.drawer = new Drawer(this.content);
+    this.header  = new Header();
+    this.content = new Content();
+    this.drawer  = new Drawer();
+
+    // DOM Event dispatchers
+    window.addEventListener('resize',            () => App.windowResize());
+    window.addEventListener('orientationchange', () => App.windowResize());
+
+    // Custom event dispatchers
+    pubsub.subscribe('content.scrolled', event => this.header.stickToElement(event));
+    this.content.listenTo('scrollchange', detail => pubsub.publish('content.scrolled', detail));
+
+    pubsub.subscribe('content.changed', event => this.header.resizeToElement(event));
+    this.content.listenTo('contentchange', detail => pubsub.publish('content.changed', detail));
+
+    pubsub.subscribe('window.resized', event => this.header.resizeToElement(event));
+
+    pubsub.subscribe('drawer.menu.selected', event => this.content.show(event));
+    this.drawer.listenTo('menuselect', detail => pubsub.publish('drawer.menu.selected', detail));
+  }
+
+  @debounce
+  static windowResize() {
+    pubsub.publish('window.resized', { element: document.querySelector('#content') } );
   }
 
   run() {
@@ -203,5 +249,19 @@ document.addEventListener('DOMContentLoaded', () => new App().run());
  * Debounce vs Throttle
  * Throttle is designed to call function in certain interval during constant call. Like: window.scroll.
  * Debounce is designed to call function only once during one certain time. not matter how many time it called. Like: submit button click
+ */
+
+
+
+/*
+ import EventEmitter  from './components/decorators/eventemitter-decorator';
+
+ @EventEmitter
+ class Door {
+
+ }
+ const door = new Door();
+ door.on('ring', (sound) => console.log(`Door bell: ${sound}!!`));
+ door.emit('ring', 'pling plong ding dong');
  */
 

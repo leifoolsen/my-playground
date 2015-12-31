@@ -84,6 +84,7 @@ npm run dev
 * [Fluorine - State Accumulation from a single stream of actions](https://github.com/philplckthun/fluorine)
 * [RxJS 5, beta - Compliant with the ES7 Observable Spec](https://github.com/ReactiveX/RxJS)
 * [RxJS Evolved](http://www.slideshare.net/trxcllnt/rxjs-evolved)
+* [Rxmq.js - JavaScript pub/sub library based on RxJS](https://github.com/rxmqjs/rxmq.js)
 * [Cycle.js - A functional and reactive JavaScript framework for cleaner code](http://cycle.js.org/)
 * [Flyd - The modular, KISS, functional reactive programming library for JavaScript.](https://github.com/paldepind/flyd)
 * [Redux](https://github.com/rackt/redux)
@@ -105,11 +106,17 @@ npm run dev
 * [EventEmitter3 - works in the browser](https://github.com/primus/eventemitter3)
 * [event-emitter - Environment agnostic event emitter](https://github.com/medikoo/event-emitter)
 * [Node.js Events and EventEmitter](http://www.sitepoint.com/nodejs-events-and-eventemitter/)
+* [events - Node's event emitter for all engines.](https://github.com/Gozala/events)
 * [What are Event Emitters?](https://docs.nodejitsu.com/articles/getting-started/control-flow/what-are-event-emitters)
 * [yaee - Yet Another EventEmitter](https://github.com/stefanr/js-yaee)
 * [es-Observable](http://zenparsing.github.io/es-observable/)
 * [ECMAScript Observable](https://github.com/jayphelps/es-observable)
 * [RxJS 5 - Implements ECMAScript Observable](https://github.com/ReactiveX/RxJS)
+* [ES 7 decorators to reduce boilerplate when creating custom HTML elements.](https://github.com/patrickarlt/custom-element-decorators)
+* [rivets.js - Lightweight and powerful data binding + templating solution for building modern web applications.](http://rivetsjs.com/)
+* [Myth - CSS the way it was imagined](http://www.myth.io/)
+* [Modernizr - Respond to your user’s browser features.)[https://modernizr.com/)
+* [MutationObserver API](https://davidwalsh.name/mutationobserver-api)
 
 
 ### CodePens
@@ -141,8 +148,13 @@ npm run dev
 * [Auto Hide Sticky Header - Snappy](http://codepen.io/macmengerink/pen/RPZwEB)
 * [Material Design Lite (MDL) Navigation Drawer on the right side](http://stackoverflow.hex1.ru/questions/32131858/material-design-lite-mdl-navigation-drawer-on-the-right-side)
 * [Material Design - Responsive Table](http://codepen.io/zavoloklom/pen/IGkDz)
+* [LazyShow](http://codepen.io/tjbenton21/details/doLvYx)
+* [ES2015 (ES6) pubsub](http://codepen.io/stevenbenisek/pen/qOmRye)
+* [LazyShow](http://codepen.io/tjbenton21/pen/doLvYx/)
+* [Material Design Animation Timing](http://codepen.io/tjbenton21/pen/LEpqmg)
 
 
 ### Videos
 * [Creating a 3D Webpage Header with Material Design and Babylon](https://www.youtube.com/watch?v=IZ6fgcBkhg8)
 * [Material Design Lite Tutorial Part1 Layout (Navigation, Grid, Footer)](https://www.youtube.com/watch?v=pEiyaKwsTws)
+* [Decorators in JavaScript](https://www.youtube.com/watch?v=d8CDFsQHZpE)
