@@ -67,6 +67,7 @@ module.exports = {
       {
         test: /\.js[x]?$/,                        // Only run `.js` and `.jsx` files through Babel
         include: path.resolve(__dirname, 'src'),  // Skip any files outside of your project's `src` directory
+        exclude: /node_modules/,
         loader: 'babel-loader',
         query: {                                  // Options to configure babel with
           plugins: [

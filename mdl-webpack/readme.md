@@ -117,6 +117,9 @@ npm run dev
 * [Myth - CSS the way it was imagined](http://www.myth.io/)
 * [Modernizr - Respond to your user’s browser features.)[https://modernizr.com/)
 * [MutationObserver API](https://davidwalsh.name/mutationobserver-api)
+* [JavaScript CustomEvent](https://davidwalsh.name/customevent)
+* [polyfill-custom-event, es6](https://github.com/tuxsudo/polyfill-custom-event)
+* [Cross-browser CustomEvent constructor, polyfill](https://github.com/webmodules/custom-event)
 
 
 ### CodePens

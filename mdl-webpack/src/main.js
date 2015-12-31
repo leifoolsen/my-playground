@@ -4,6 +4,8 @@
 // TODO: let webpack do the polyfill
 //import 'babel-polyfill';
 
+import 'custom-event';
+
 import promise from 'es6-promise';
 promise.polyfill();
 
