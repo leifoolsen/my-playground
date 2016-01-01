@@ -20,6 +20,15 @@ const sassLoader = [
   'sass-loader?sourceMap&expanded'
 ].join('!');
 
+const folders = {
+  JS   : path.resolve(__dirname, 'src/js'),
+  CSS  : path.resolve(__dirname, 'src/stylesheets'),
+  HTML : path.resolve(__dirname, 'src/html'),
+  DIST : path.resolve(__dirname, 'dist'),
+  BOWER: path.resolve(__dirname, 'bower_components'),
+  NPM  : path.resolve(__dirname, 'node_modules')
+};
+
 module.exports = {
   debug: true,
   cache: true,
@@ -50,7 +59,7 @@ module.exports = {
     publicPath       : '/static/'
   },
   resolve: {
-    extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx', '.css', '.scss', '.html']
+    extensions: ['', '.js', '.jsx', '.css', '.scss', 'html']
   },
   module: {
     preLoaders: [
@@ -79,6 +88,9 @@ module.exports = {
         }
       },
       {
+        test: /\.json$/, loader: 'json'
+      },
+      {
         test: /\.html$/,
         include: path.join(__dirname, 'src/html'),
         loader: "html-loader"
@@ -95,6 +107,8 @@ module.exports = {
       },
       // Images
       // inline base64 URLs for <=16k images, direct URLs for the rest
+      // the url-loader uses DataUrls.
+      // the file-loader emits files.
       {
         test: /\.jpg/,
         loader: 'url-loader',
@@ -104,25 +118,11 @@ module.exports = {
           name: '/images/[name].[ext]'
         }
       },
-      {
-        test: /\.gif/, loader: 'url-loader?limit=8192&mimetype=image/gif&name=/images/[name].[ext]'
-      },
-      {
-        test: /\.png/, loader: 'url-loader?limit=8192&mimetype=image/png&name=/images/[name].[ext]'
-      },
-      {
-        test: /\.svg/, loader: 'url-loader?limit=16384&mimetype=image/svg+xml&name=/images/[name].[ext]'
-      },
-      // Fonts
-      {
-        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=16384&mimetype=application/font-woff"
-      },
-      {
-        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url-loader?limit=16384&mimetype=application/octet-stream"
-      },
-      {
-        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader"
-      }
+      {test: /\.gif/, loader: 'url-loader?limit=8192&mimetype=image/gif&name=/images/[name].[ext]'},
+      {test: /\.png/, loader: 'url-loader?limit=8192&mimetype=image/png&name=/images/[name].[ext]'},
+      //{test: /\.svg/, loader: 'url-loader?limit=16384&mimetype=image/svg+xml&name=/images/[name].[ext]'},
+      { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=100000&minetype=application/font-woff" },
+      { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader?limit=100000" }
     ]
   },
   plugins: [
@@ -147,6 +147,20 @@ module.exports = {
       { from: 'node_modules/material-design-lite/dist/images', to: 'images/mdl' }
     ])
 
+    // The ProvidePlugin works by hooking into the parser, and adding a dependency whenever it sees an identifier
+    // matching a property name of the object it's instantiated with. So with this config, whenever the parser
+    // hits fetch, it will add a dependency on whatwg-fetch.
+    // Note:
+    // Could not get this to work as outlined
+    // here: http://mts.io/2015/04/08/webpack-shims-polyfills/, https://gist.github.com/Couto/b29676dd1ab8714a818f
+    // Importing the polyfills i main.js works as expected.
+    /*
+    new webpack.ProvidePlugin({
+      Promise: 'imports?this=>global!exports?global.Promise!es6-promise',
+      fetch  : 'imports?this=>global!exports?global.fetch!isomorfic-fetch'
+    })
+
+    */
     // Do not use:
     //   new webpack.HotModuleReplacementPlugin()
     //   new webpack.NoErrorsPlugin()

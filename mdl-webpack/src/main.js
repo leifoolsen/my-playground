@@ -1,17 +1,16 @@
 'use strict';
 
 
-// TODO: let webpack do the polyfill
-//import 'babel-polyfill';
+// First import the polyfills
+// Note: Tried to use the webpack ProvidePlugin to add the polyfills as outlined
+// here: http://mts.io/2015/04/08/webpack-shims-polyfills, and here : https://gist.github.com/Couto/b29676dd1ab8714a818f
+// but that did not work!
 
 import 'custom-event';
+import promise from 'es6-promise'; promise.polyfill();
+import 'isomorphic-fetch'; // ... or import 'whatwg-fetch';
 
-import promise from 'es6-promise';
-promise.polyfill();
-
-//import 'whatwg-fetch';
-import 'isomorphic-fetch';
-// END-TODO
+// End polyfills
 
 import { debounce } from 'core-decorators';
 import { throttle } from 'core-decorators';
@@ -72,7 +71,7 @@ class Header {
     this.prevContentScrollTop = currentContentScrollTop;
   }
 
-  resizeToElement(event) {
+  adjustWidthToElement(event) {
     let element = event.detail.element;
     this.headerEl.style.width = element.clientWidth + 'px';
   }
@@ -233,10 +232,10 @@ class App {
     pubsub.subscribe('content.scrolled', event => this.header.stickToElement(event));
     this.content.listenTo('scrollchange', detail => pubsub.publish('content.scrolled', detail));
 
-    pubsub.subscribe('content.changed', event => this.header.resizeToElement(event));
+    pubsub.subscribe('content.changed', event => this.header.adjustWidthToElement(event));
     this.content.listenTo('contentchange', detail => pubsub.publish('content.changed', detail));
 
-    pubsub.subscribe('window.resized', event => this.header.resizeToElement(event));
+    pubsub.subscribe('window.resized', event => this.header.adjustWidthToElement(event));
 
     pubsub.subscribe('drawer.menu.selected', event => this.content.show(event));
     this.drawer.listenTo('menuselect', detail => pubsub.publish('drawer.menu.selected', detail));
@@ -267,7 +266,7 @@ document.addEventListener('DOMContentLoaded', () => new App().run());
 
 
 /*
- import EventEmitter  from './components/decorators/eventemitter-decorator';
+ import EventEmitter  from './js/decorators/eventemitter-decorator';
 
  @EventEmitter
  class Door {

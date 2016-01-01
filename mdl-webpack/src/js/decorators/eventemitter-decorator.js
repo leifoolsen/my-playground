@@ -14,7 +14,7 @@ const methods = [
   'removeAllListeners',
   'removeListener',
   'setMaxListeners',
-  'getMaxListeners',
+  'getMaxListeners'
 ];
 
 // Get or create eventemitter for current instance

@@ -4,25 +4,27 @@
  * A list of available icon font names can be found here: https://www.google.com/design/icons/
  */
 
+// Note: Calculate path from src, or else webpack chokes
 $material-design-iconfont-path: '../node_modules/material-design-icons/iconfont' !default;
 
 @font-face {
   font-family: 'Material Icons';
   font-style: normal;
   font-weight: 400;
-  src:  url(#{$material-design-iconfont-path}/MaterialIcons-Regular.eot); /* For IE6-8 */
-  src:  local('#{$material-design-iconfont-path}/Material Icons'),
-  local('#{$material-design-iconfont-path}/MaterialIcons-Regular'),
-  url(#{$material-design-iconfont-path}/MaterialIcons-Regular.woff2) format('woff2'),
-  url(#{$material-design-iconfont-path}/MaterialIcons-Regular.woff) format('woff'),
-  url(#{$material-design-iconfont-path}/MaterialIcons-Regular.ttf) format('truetype');
+  src:  url('#{$material-design-iconfont-path}/MaterialIcons-Regular.eot'); /* For IE6-8 */
+  src:
+    local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url('#{$material-design-iconfont-path}/MaterialIcons-Regular.woff2') format('woff2'),
+    url('#{$material-design-iconfont-path}/MaterialIcons-Regular.woff') format('woff'),
+    url('#{$material-design-iconfont-path}/MaterialIcons-Regular.ttf') format('truetype');
 }
 
 .material-icons {
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
-  font-size: 24px;  /* Preferred icon size */
+  font-size: inherit; //24px;  /* Preferred icon size */
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -35,6 +37,7 @@ $material-design-iconfont-path: '../node_modules/material-design-icons/iconfont'
 
   /* Support for all WebKit browsers. */
   -webkit-font-smoothing: antialiased;
+
   /* Support for Safari and Chrome. */
   text-rendering: optimizeLegibility;
 

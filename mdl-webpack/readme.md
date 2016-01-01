@@ -120,7 +120,17 @@ npm run dev
 * [JavaScript CustomEvent](https://davidwalsh.name/customevent)
 * [polyfill-custom-event, es6](https://github.com/tuxsudo/polyfill-custom-event)
 * [Cross-browser CustomEvent constructor, polyfill](https://github.com/webmodules/custom-event)
-
+* [Simple ES6 Event Bus implementation](https://gist.github.com/willishq/feda4575ed0b8b7d2339)
+* [Micro-PubSub](https://github.com/yguan/micro-pubsub)
+* [pubsub.js - Like David Walsh's pubsub object but better](https://gist.github.com/JScott/cda54f715375a3ff294e)
+* [HTML templating with ES6 template strings](http://www.2ality.com/2015/01/template-strings-html.html)
+* [es6-template-demo - working demo code from http://www.2ality.com/2015/01/template-strings-html.html](https://github.com/dannyko/es6-template-demo)
+* [Getting Literal With ES6 Template Strings](https://developers.google.com/web/updates/2015/01/ES6-Template-Strings?hl=en)
+* [The Genius of Template Strings in ES6](http://code.tutsplus.com/tutorials/the-genius-of-template-strings-in-es6--cms-24915)
+* [ES6 In Depth: Template strings](https://hacks.mozilla.org/2015/05/es6-in-depth-template-strings-2/)
+* [HTML Exports](https://github.com/nevir/html-exports)
+* [CSS4 variables in SASS - HOUSTON, WE WILL PROBABLY END UP TOTALLY HAVING A PROBLEM](http://codepen.io/jakealbaugh/post/css4-variables-and-sass)
+* [Why I'm Excited About Native CSS Variables](http://philipwalton.com/articles/why-im-excited-about-native-css-variables/)
 
 ### CodePens
 * [MDL transparent header turns opaque](http://codepen.io/peiche/pen/PPPRgz)
@@ -159,6 +169,11 @@ npm run dev
 * [JavaScript Fetch API in action](https://blog.gospodarets.com/fetch_in_action/)
 * [window.fetch polyfill](https://github.com/github/fetch)
 * [isomorphic-fetch - Fetch for node and Browserify. Built on top of GitHub's WHATWG Fetch polyfill.](https://github.com/matthew-andrews/isomorphic-fetch)
+* [A Polyfill for CSS3 calc()](https://github.com/closingtag/calc-polyfill)
+* [Writing a CSS Parser in JavaScript](https://medium.com/jotform-form-builder/writing-a-css-parser-in-javascript-3ecaa1719a43#.bwpkdrlis)
+* [css.js - A lightweight, battle tested, fast, css parser in JavaScript](https://github.com/jotform/css.js)
+* [matchMedia() polyfill - test whether a CSS media type or media query applies](https://github.com/paulirish/matchMedia.js/)   
+* [Respond.js - A fast & lightweight polyfill for min/max-width CSS3 Media Queries (for IE 6-8, and more)](https://github.com/scottjehl/Respond)
 
 ### Videos
 * [Creating a 3D Webpage Header with Material Design and Babylon](https://www.youtube.com/watch?v=IZ6fgcBkhg8)
