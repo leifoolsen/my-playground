@@ -31,6 +31,7 @@ function cleanElement(el, forceReflow=true) {
 }
 
 class Header {
+  titleClass = '.mdl-layout-title';
 
   constructor(selector = '#header') {
     this.selector = selector;
@@ -74,6 +75,12 @@ class Header {
   adjustWidthToElement(event) {
     let element = event.detail.element;
     this.headerEl.style.width = element.clientWidth + 'px';
+  }
+
+  updateTitle(event) {
+    let anchor = event.detail.anchor;
+    let titleTag = this.headerEl.querySelector(this.titleClass);
+    titleTag.textContent = anchor.textContent;
   }
 }
 
@@ -224,11 +231,11 @@ class App {
     this.content = new Content();
     this.drawer  = new Drawer();
 
-    // DOM Event dispatchers
+    // DOM Events
     window.addEventListener('resize',            () => App.windowResize());
     window.addEventListener('orientationchange', () => App.windowResize());
 
-    // Custom event dispatchers
+    // Custom events
     pubsub.subscribe('content.scrolled', event => this.header.stickToElement(event));
     this.content.listenTo('scrollchange', detail => pubsub.publish('content.scrolled', detail));
 
@@ -238,6 +245,7 @@ class App {
     pubsub.subscribe('window.resized', event => this.header.adjustWidthToElement(event));
 
     pubsub.subscribe('drawer.menu.selected', event => this.content.show(event));
+    pubsub.subscribe('drawer.menu.selected', event => this.header.updateTitle(event));
     this.drawer.listenTo('menuselect', detail => pubsub.publish('drawer.menu.selected', detail));
   }
 

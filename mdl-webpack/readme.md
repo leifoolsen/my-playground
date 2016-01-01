@@ -115,7 +115,7 @@ npm run dev
 * [ES 7 decorators to reduce boilerplate when creating custom HTML elements.](https://github.com/patrickarlt/custom-element-decorators)
 * [rivets.js - Lightweight and powerful data binding + templating solution for building modern web applications.](http://rivetsjs.com/)
 * [Myth - CSS the way it was imagined](http://www.myth.io/)
-* [Modernizr - Respond to your user’s browser features.)[https://modernizr.com/)
+* [Modernizr - Respond to your user’s browser features.](https://modernizr.com/)
 * [MutationObserver API](https://davidwalsh.name/mutationobserver-api)
 * [JavaScript CustomEvent](https://davidwalsh.name/customevent)
 * [polyfill-custom-event, es6](https://github.com/tuxsudo/polyfill-custom-event)
