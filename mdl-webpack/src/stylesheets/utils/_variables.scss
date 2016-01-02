@@ -1,0 +1,26 @@
+/* -----------------------------------------------
+ * Override Material Design Lite variables
+ * ----------------------------------------------- */
+$preferred_font: 'Roboto-Light', 'Helvetica', 'Arial', sans-serif;
+$image_path: '/static/images/mdl';  // See: webpack.config.js CopyWebpackPlugin
+
+/*
+$color-primary: "63,63,63";
+$color-primary-dark: "43,43,43";
+$color-primary-contrast: "114,160,224";
+$color-accent: "69,97,136";
+$color-accent-contrast: "255,255,255";
+*/
+
+/* -----------------------------------------------
+ * Override Material Design Icons variables
+ * ----------------------------------------------- */
+// A list of available icon font names can be found here: https://www.google.com/design/icons/
+$material-design-iconfont-path: '../../node_modules/material-design-icons/iconfont';
+
+
+/* -----------------------------------------------
+ * Override Material Design Iconic Font variables
+ * ----------------------------------------------- */
+// A list of available icons can be found here: http://zavoloklom.github.io/material-design-iconic-font/
+$zmdi-font-path : '../../node_modules/material-design-iconic-font/dist/fonts';

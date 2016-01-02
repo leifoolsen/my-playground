@@ -17,6 +17,7 @@ const cssLoader = [
 const sassLoader = [
   'css-loader?sourceMap',
   'postcss-loader',
+  'resolve-url-loader',
   'sass-loader?sourceMap&expanded'
 ].join('!');
 

@@ -39,12 +39,11 @@
 </head>
 
 <body>
-
   <!-- The drawer is always open in large screens. The header is always shown,
   even in small screens. -->
-  <div class="demo-layout-transparent mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
 
-    <header id="header" class="mdl-layout__header mdl-layout__header--transparent mdl-layout__header--waterfall mdl-layout__header--sticky">
+    <header id="header" class="mdl-layout__header mdl-layout__header--transparent mdl-layout__header--waterfall my-layout__sticky-header">
 
       <div class="mdl-layout__header-row">
         <!-- Title -->
@@ -53,7 +52,7 @@
         <!-- Add spacer, to align navigation to the right -->
         <div class="mdl-layout-spacer"></div>
 
-        <!-- Search box -->
+        <!-- Search box (demo! not functional)-->
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
           <label class="mdl-button mdl-js-button mdl-button--icon" for="search-field">
             <i class="material-icons">search</i>
@@ -66,35 +65,35 @@
     </header>
 
     <aside id="drawer" class="mdl-layout__drawer">
-      <span class="mdl-layout-title"><a href="/"><img src="images/demo/organizing.png" class="demo-title"/>Components</a></span>
+      <span class="mdl-layout-title"><a href="/"><img src="images/demo/organizing.png"/>Components</a></span>
       <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" href="html/badges.html"><img src="images/demo/comp_badges.png" class="demo-menu"/>Badges</a>
-        <a class="mdl-navigation__link" href=""><img src="images/demo/comp_buttons.png" class="demo-menu"/>Buttons</a>
-        <a class="mdl-navigation__link" href="html/card-demo.html"><img src="images/demo/comp_cards.png" class="demo-menu"/>Cards</a>
-        <a class="mdl-navigation__link" href=""><img src="images/demo/comp_layout.png" class="demo-menu"/>Layout</a>
-        <a class="mdl-navigation__link" href=""><img src="images/demo/comp_loading.png" class="demo-menu"/>Loading</a>
-        <a class="mdl-navigation__link" href=""><img src="images/demo/comp_menus.png" class="demo-menu"/>Menus</a>
-        <a class="mdl-navigation__link" href=""><img src="images/demo/comp_sliders.png" class="demo-menu"/>Sliders</a>
-        <a class="mdl-navigation__link" href=""><img src="images/demo/comp_toggles.png" class="demo-menu"/>Toggles</a>
-        <a class="mdl-navigation__link" href="html/table-demo.html"><img src="images/demo/comp_tables.png" class="demo-menu"/>Tables</a>
-        <a class="mdl-navigation__link" href=""><img src="images/demo/comp_textfields.png" class="demo-menu"/>Text Fields</a>
-        <a class="mdl-navigation__link" href=""><img src="images/demo/comp_tooltips.png" class="demo-menu"/>Tooltips</a>
-        <a class="mdl-navigation__link" href="html/typography-demo.html"><img src="images/demo/typewriter.png" class="demo-menu"/>Typography</a>
-        <a class="mdl-navigation__link" href="html/palette-demo.html"><img src="images/demo/art-palette.png" class="demo-menu"/>Palettes</a>
+        <a class="mdl-navigation__link" href="html/badges.html"><img src="images/demo/comp_badges.png"/>Badges</a>
+        <a class="mdl-navigation__link" href=""><img src="images/demo/comp_buttons.png"/>Buttons</a>
+        <a class="mdl-navigation__link" href="html/card-demo.html"><img src="images/demo/comp_cards.png"/>Cards</a>
+        <a class="mdl-navigation__link" href=""><img src="images/demo/comp_layout.png"/>Layout</a>
+        <a class="mdl-navigation__link" href=""><img src="images/demo/comp_loading.png"/>Loading</a>
+        <a class="mdl-navigation__link" href=""><img src="images/demo/comp_menus.png"/>Menus</a>
+        <a class="mdl-navigation__link" href=""><img src="images/demo/comp_sliders.png"/>Sliders</a>
+        <a class="mdl-navigation__link" href=""><img src="images/demo/comp_toggles.png"/>Toggles</a>
+        <a class="mdl-navigation__link" href="html/table-demo.html"><img src="images/demo/comp_tables.png"/>Tables</a>
+        <a class="mdl-navigation__link" href=""><img src="images/demo/comp_textfields.png"/>Text Fields</a>
+        <a class="mdl-navigation__link" href=""><img src="images/demo/comp_tooltips.png"/>Tooltips</a>
+        <a class="mdl-navigation__link" href="html/typography-demo.html"><img src="images/demo/typewriter.png"/>Typography</a>
+        <a class="mdl-navigation__link" href="html/palette-demo.html"><img src="images/demo/art-palette.png"/>Palettes</a>
       </nav>
     </aside>
 
       <!-- Content goes here -->
-    <main id="content" class="mdl-layout__content mdl-layout--sticky-footer">
-      <section id="content-panel" class="demo-page-content"></section>
+    <main id="content" class="mdl-layout__content my-layout__sticky-footer">
+      <section id="content-panel" class="my-page-content"></section>
 
       <!-- Add spacer to push Sticky Footer down when not enough content -->
       <div class="mdl-layout-spacer"></div>
 
       <!-- Footer -->
-      <footer class="mdl-mini-footer" style="background-color: transparent">
+      <footer class="mdl-mini-footer">
         <div class="mdl-mini-footer__left-section">
-          <div class="mdl-logo" style="color: #2e2e2e">Footer Title</div>
+          <div class="mdl-logo">Footer Title</div>
           <ul class="mdl-mini-footer__link-list">
             <li><a href="#">Help</a></li>
             <li><a href="#">Privacy & Terms</a></li>

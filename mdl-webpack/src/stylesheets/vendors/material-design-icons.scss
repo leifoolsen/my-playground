@@ -4,8 +4,7 @@
  * A list of available icon font names can be found here: https://www.google.com/design/icons/
  */
 
-// Note: Calculate path from src, or else webpack chokes
-$material-design-iconfont-path: '../node_modules/material-design-icons/iconfont' !default;
+$material-design-iconfont-path: 'node_modules/material-design-icons/iconfont' !default;
 
 @font-face {
   font-family: 'Material Icons';

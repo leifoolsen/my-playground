@@ -3,8 +3,9 @@
 
 // First import the polyfills
 // Note: Tried to use the webpack ProvidePlugin to add the polyfills as outlined
-// here: http://mts.io/2015/04/08/webpack-shims-polyfills, and here : https://gist.github.com/Couto/b29676dd1ab8714a818f
-// but that did not work!
+//       here: http://mts.io/2015/04/08/webpack-shims-polyfills,
+//       and here : https://gist.github.com/Couto/b29676dd1ab8714a818f
+//       but could not figure out how that should work!
 
 import 'custom-event';
 import promise from 'es6-promise'; promise.polyfill();
@@ -91,7 +92,7 @@ class Drawer {
   isVisibleClassName  = 'is-visible';
   notifications       = {};
 
-  constructor(selector = '#drawer') {
+  constructor(selector= '#drawer') {
     this.selector     = selector;
     this.drawerEl     = document.querySelector(this.selector);
     this.navLinkQuery = `${this.selector} nav a.mdl-navigation__link`;
@@ -258,7 +259,6 @@ class App {
     this.content.index();
   }
 }
-
 
 // Start
 document.addEventListener('DOMContentLoaded', () => new App().run());
