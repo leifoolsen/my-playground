@@ -4,6 +4,7 @@
 
 // colors
 $white   : #fff;
+$white_0 : rgba(255,255,255,0);
 $white_10: rgba(255,255,255,0.1);
 $white_30: rgba(255,255,255,0.3);
 $white_96: rgba(255,255,255,0.96);
@@ -25,7 +26,7 @@ body {
   background: linear-gradient(to bottom, $white_30 0, $white_10 100%);
 
   &.is-scroll {
-    background: linear-gradient(to bottom, $white_96 100%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(to bottom, $white_96 100%, $white_0 100%);
   }
 
   .mdl-layout__drawer-button {
