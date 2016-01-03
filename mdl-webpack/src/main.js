@@ -5,7 +5,7 @@
 // Note: Tried to use the webpack ProvidePlugin to add the polyfills as outlined
 //       here: http://mts.io/2015/04/08/webpack-shims-polyfills,
 //       and here : https://gist.github.com/Couto/b29676dd1ab8714a818f
-//       but could not figure out how that should work!
+//       but could not figure out how that should work (stupid me)
 
 import 'custom-event';
 import promise from 'es6-promise'; promise.polyfill();

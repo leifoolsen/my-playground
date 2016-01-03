@@ -43,7 +43,7 @@
   even in small screens. -->
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
 
-    <header id="header" class="mdl-layout__header mdl-layout__header--transparent mdl-layout__header--waterfall my-layout__sticky-header">
+    <header id="header" class="mdl-layout__header mdl-layout__header--transparent mdl-layout__header--waterfall my-layout__sticky-header mdl-color--grey-100 mdl-color-text--grey-800">
 
       <div class="mdl-layout__header-row">
         <!-- Title -->
@@ -58,7 +58,7 @@
             <i class="material-icons">search</i>
           </label>
           <div class="mdl-textfield__expandable-holder">
-            <input class="mdl-textfield__input" type="text" id="search-field">
+            <input class="mdl-textfield__input" type="text" name="q" value="" id="search-field" pattern=".{3,}" required/>
           </div>
         </div>
       </div>
