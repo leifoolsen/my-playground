@@ -1,0 +1,565 @@
+<style>
+  .textfield-demo-grid .mdl-grid {
+    padding: 0;
+  }
+  .textfield-demo-grid .mdl-cell {
+    color: #000;
+    padding: 0;
+  }
+
+
+
+  /* File input */
+  .mdl-button--file input {
+    cursor: pointer;
+    height: 100%;
+    right: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 300px;
+    z-index: 4;
+  }
+
+  .mdl-textfield--file .mdl-textfield__input {
+    box-sizing: border-box;
+    width: calc(100% - 32px);
+  }
+  .mdl-textfield--file .mdl-button--file {
+    right: 0;
+  }
+
+
+
+
+  /* Select input */
+  .mdl-select {
+    position: relative;
+    font-size: 16px;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 300px;
+    max-width: 100%;
+    margin: 0;
+    padding: 20px 0;
+  }
+
+  .mdl-select__input {
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0, 0.12);
+    display: inline-block;
+    font-size: 16px;
+    margin: 0;
+    padding: 4px 0;
+    width: 100%;
+    background: 16px;
+    text-align: left;
+    color: inherit;
+  }
+
+  .mdl-select.is-focused .mdl-select__input {	outline: none; }
+  .mdl-select.is-invalid .mdl-select__input {
+    border-color: rgb(222, 50, 38);
+    box-shadow: none;
+  }
+
+  .mdl-select.is-disabled .mdl-select__input {
+    background-color: transparent;
+    border-bottom: 1px dotted rgba(0,0,0, 0.12);
+  }
+
+  .mdl-select__label {
+    bottom: 0;
+    color: rgba(0,0,0, 0.26);
+    font-size: 16px;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 24px;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: left;
+  }
+
+  .mdl-select.is-dirty .mdl-select__label { visibility: hidden; }
+
+  .mdl-select--floating-label .mdl-textfield__label {
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .mdl-select--floating-label.is-focused .mdl-select__label,
+  .mdl-select--floating-label.is-dirty .mdl-select__label {
+    color: rgb(63,81,181);
+    font-size: 12px;
+    top: 4px;
+    visibility: visible;
+  }
+
+  .mdl-select--floating-label.is-focused .mdl-select__expandable-holder .mdl-select__label,
+  .mdl-select--floating-label.is-dirty .mdl-select__expandable-holder .mdl-select__label {
+    top: -16px;
+  }
+
+  .mdl-select--floating-label.is-invalid .mdl-select__label {
+    color: rgb(222, 50, 38);
+    font-size: 12px;
+  }
+
+  .mdl-select__label:after {
+    background-color: rgb(63,81,181);
+    bottom: 20px;
+    content: '';
+    height: 2px;
+    left: 45%;
+    position: absolute;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    visibility: hidden;
+    width: 10px;
+  }
+
+  .mdl-select.is-focused .mdl-select__label:after {
+    left: 0;
+    visibility: visible;
+    width: 100%;
+  }
+
+  .mdl-select.is-invalid .mdl-select__label:after {
+    background-color: rgb(222, 50, 38);
+  }
+
+  .mdl-select__error {
+    color: rgb(222, 50, 38);
+    position: absolute;
+    font-size: 12px;
+    margin-top: 3px;
+    visibility: hidden;
+  }
+
+  .mdl-select.is-invalid .mdl-select__error {
+    visibility: visible;
+  }
+
+  .mdl-select__expandable-holder {
+    display: inline-block;
+    position: relative;
+    margin-left: 32px;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-block;
+    max-width: 0.1px;
+  }
+
+  .mdl-select.is-focused .mdl-select__expandable-holder, .mdl-select.is-dirty .mdl-select__expandable-holder {
+    max-width: 600px;
+  }
+
+  .mdl-select__expandable-holder .mdl-select__label:after {
+    bottom: 0;
+  }
+
+
+
+
+</style>
+
+<h2>Text fields</h2>
+
+<div class="textfield-demo-grid">
+
+  <div class="mdl-grid mdl-grid--no-spacing">
+
+    <div class="mdl-cell mdl-cell--4-col">
+      <p>Text</p>
+      <div class="mdl-textfield mdl-js-textfield">
+        <input class="mdl-textfield__input" type="text" id="sample1">
+        <label class="mdl-textfield__label" for="sample1">Text...</label>
+      </div>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col">
+      <p>Text numeric</p>
+      <div class="mdl-textfield mdl-js-textfield">
+        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+        <label class="mdl-textfield__label" for="sample2">Number...</label>
+        <span class="mdl-textfield__error">Input is not a number!</span>
+      </div>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col">
+      <p>Text with floating label, required</p>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="text" id="sample3" required>
+        <label class="mdl-textfield__label" for="sample3">Text...</label>
+      </div>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col">
+      <p>Numeric with floating label</p>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
+        <label class="mdl-textfield__label" for="sample4">Number...</label>
+        <span class="mdl-textfield__error">Input is not a number!</span>
+      </div>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col">
+      <p>Expanding</p>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label">
+        <label class="mdl-button mdl-js-button mdl-button--icon" for="expandable-demo">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" name="q" value="" id="expandable-demo" pattern=".{3,}" />
+          <label class="mdl-textfield__label" for="expandable-demo">Expandable Input</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col">
+      <p>File upload</p>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--file">
+        <input class="mdl-textfield__input" placeholder="File" type="text" id="uploadFile" readonly/>
+        <div class="mdl-button mdl-button--primary mdl-button--icon mdl-button--file">
+          <i class="material-icons">attach_file</i><input type="file" id="uploadBtn">
+        </div>
+      </div>
+
+      <!--
+        // Need a script to work properly - something like this
+
+        document.getElementById("uploadBtn").onchange = function () {
+          document.getElementById("uploadFile").value = this.files[0].name;
+        };
+
+        // See also: http://codepen.io/etcpe9/pen/PqyOye
+
+      -->
+    </div>
+
+
+    <div class="mdl-cell mdl-cell--4-col">
+      <p>Select element</p>
+
+      <div class="mdl-select mdl-js-select mdl-select--floating-label">
+        <select class="mdl-select__input" id="professsion" name="professsion">
+          <option value=""></option>
+          <option value="option1">option 1</option>
+          <option value="option2">option 2</option>
+          <option value="option3">option 3</option>
+          <option value="option4">option 4</option>
+          <option value="option5">option 5</option>
+        </select>
+        <label class="mdl-select__label" for="professsion">Profession</label>
+      </div>
+
+      <!--
+        Need scripting. See: http://codepen.io/etcpe9/pen/PqyOye
+
+      <script>
+        function MaterialSelect(element) {
+          'use strict';
+
+          this.element_ = element;
+          this.maxRows = this.Constant_.NO_MAX_ROWS;
+          // Initialize instance.
+          this.init();
+        }
+
+        MaterialSelect.prototype.Constant_ = {
+          NO_MAX_ROWS: -1,
+          MAX_ROWS_ATTRIBUTE: 'maxrows'
+        };
+
+        MaterialSelect.prototype.CssClasses_ = {
+          LABEL: 'mdl-textfield__label',
+          INPUT: 'mdl-select__input',
+          IS_DIRTY: 'is-dirty',
+          IS_FOCUSED: 'is-focused',
+          IS_DISABLED: 'is-disabled',
+          IS_INVALID: 'is-invalid',
+          IS_UPGRADED: 'is-upgraded'
+        };
+
+        MaterialSelect.prototype.onKeyDown_ = function(event) {
+          'use strict';
+
+          var currentRowCount = event.target.value.split('\n').length;
+          if (event.keyCode === 13) {
+            if (currentRowCount >= this.maxRows) {
+              event.preventDefault();
+            }
+          }
+        };
+
+        MaterialSelect.prototype.onFocus_ = function(event) {
+          'use strict';
+
+          this.element_.classList.add(this.CssClasses_.IS_FOCUSED);
+        };
+
+        MaterialSelect.prototype.onBlur_ = function(event) {
+          'use strict';
+
+          this.element_.classList.remove(this.CssClasses_.IS_FOCUSED);
+        };
+
+        MaterialSelect.prototype.updateClasses_ = function() {
+          'use strict';
+          this.checkDisabled();
+          this.checkValidity();
+          this.checkDirty();
+        };
+
+        MaterialSelect.prototype.checkDisabled = function() {
+          'use strict';
+          if (this.input_.disabled) {
+            this.element_.classList.add(this.CssClasses_.IS_DISABLED);
+          } else {
+            this.element_.classList.remove(this.CssClasses_.IS_DISABLED);
+          }
+        };
+
+        MaterialSelect.prototype.checkValidity = function() {
+          'use strict';
+          if (this.input_.validity.valid) {
+            this.element_.classList.remove(this.CssClasses_.IS_INVALID);
+          } else {
+            this.element_.classList.add(this.CssClasses_.IS_INVALID);
+          }
+        };
+
+        MaterialSelect.prototype.checkDirty = function() {
+          'use strict';
+          if (this.input_.value && this.input_.value.length > 0) {
+            this.element_.classList.add(this.CssClasses_.IS_DIRTY);
+          } else {
+            this.element_.classList.remove(this.CssClasses_.IS_DIRTY);
+          }
+        };
+
+        MaterialSelect.prototype.disable = function() {
+          'use strict';
+
+          this.input_.disabled = true;
+          this.updateClasses_();
+        };
+
+        MaterialSelect.prototype.enable = function() {
+          'use strict';
+
+          this.input_.disabled = false;
+          this.updateClasses_();
+        };
+
+        MaterialSelect.prototype.change = function(value) {
+          'use strict';
+
+          if (value) {
+            this.input_.value = value;
+          }
+          this.updateClasses_();
+        };
+
+        MaterialSelect.prototype.init = function() {
+          'use strict';
+
+          if (this.element_) {
+            this.label_ = this.element_.querySelector('.' + this.CssClasses_.LABEL);
+            this.input_ = this.element_.querySelector('.' + this.CssClasses_.INPUT);
+
+            if (this.input_) {
+              if (this.input_.hasAttribute(this.Constant_.MAX_ROWS_ATTRIBUTE)) {
+                this.maxRows = parseInt(this.input_.getAttribute(
+                  this.Constant_.MAX_ROWS_ATTRIBUTE), 10);
+                if (isNaN(this.maxRows)) {
+                  this.maxRows = this.Constant_.NO_MAX_ROWS;
+                }
+              }
+
+              this.boundUpdateClassesHandler = this.updateClasses_.bind(this);
+              this.boundFocusHandler = this.onFocus_.bind(this);
+              this.boundBlurHandler = this.onBlur_.bind(this);
+              this.input_.addEventListener('input', this.boundUpdateClassesHandler);
+              this.input_.addEventListener('focus', this.boundFocusHandler);
+              this.input_.addEventListener('blur', this.boundBlurHandler);
+
+              if (this.maxRows !== this.Constant_.NO_MAX_ROWS) {
+                // TODO: This should handle pasting multi line text.
+                // Currently doesn't.
+                this.boundKeyDownHandler = this.onKeyDown_.bind(this);
+                this.input_.addEventListener('keydown', this.boundKeyDownHandler);
+              }
+
+              this.updateClasses_();
+              this.element_.classList.add(this.CssClasses_.IS_UPGRADED);
+            }
+          }
+        };
+
+        MaterialSelect.prototype.mdlDowngrade_ = function() {
+          'use strict';
+          this.input_.removeEventListener('input', this.boundUpdateClassesHandler);
+          this.input_.removeEventListener('focus', this.boundFocusHandler);
+          this.input_.removeEventListener('blur', this.boundBlurHandler);
+          if (this.boundKeyDownHandler) {
+            this.input_.removeEventListener('keydown', this.boundKeyDownHandler);
+          }
+        };
+
+        // The component registers itself. It can assume componentHandler is available
+        // in the global scope.
+        componentHandler.register({
+          constructor: MaterialSelect,
+          classAsString: 'MaterialSelect',
+          cssClass: 'mdl-js-select',
+          widget: true
+        });
+      </script>
+
+
+      CSS only version, see: http://codepen.io/pudgereyem/pen/PqBxQx
+      -->
+
+    </div>
+
+  </div>
+
+  <br/>
+  <div class="mdl-grid mdl-grid--no-spacing">
+    <div class="mdl-cell mdl-cell--8-col">
+      <p>Multiple lines</p>
+      <div class="mdl-textfield mdl-js-textfield" style="width: 100%">
+        <textarea class="mdl-textfield__input" type="text" rows= "3" id="sample5" ></textarea>
+        <label class="mdl-textfield__label" for="sample5">Text lines...</label>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+<!--
+<div class="textfield-demo-grid">
+
+  <h2>Form Fields</h2>
+  <form>
+  <div class="mdl-grid mdl-grid--no-spacing">
+
+    <div class="mdl-cell mdl-cell--4-col">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input type="text" id="id1" class="mdl-textfield__input"/>
+      <label for="id1" class="mdl-textfield__label">Field</label>
+    </div>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label icon-field"><i class="glyphicon glyphicon-envelope"></i>
+      <input type="text" id="id2" class="mdl-textfield__input"/>
+      <label for="id2" class="mdl-textfield__label">Field with icon</label>
+    </div>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input type="text" id="id3" class="mdl-textfield__input required"/>
+      <label for="id3" class="mdl-textfield__label">Mandatory field</label>
+    </div>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input type="text" id="id4" class="mdl-textfield__input active"/>
+      <label for="id4" class="mdl-textfield__label">Active field</label>
+    </div>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"><span class="extra-label">Extra Label</span>
+      <input type="text" id="id5" class="mdl-textfield__input"/>
+      <label for="id5" class="mdl-textfield__label">Field</label>
+    </div>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input type="text" disabled="disabled" id="id6" class="mdl-textfield__input"/>
+      <label for="id6" class="mdl-textfield__label">Disabled field</label>
+    </div>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label icon-field"><i class="glyphicon glyphicon-envelope"></i>
+      <input type="text" disabled="disabled" id="id7" class="mdl-textfield__input"/>
+      <label for="id7" class="mdl-textfield__label">Disabled with icon</label>
+    </div>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input type="text" disabled="disabled" value="james@method.org.uk" id="id8" class="mdl-textfield__input"/>
+      <label for="id8" class="mdl-textfield__label">Disabled Field</label>
+    </div>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input type="text" value="Some text value" id="id9" class="mdl-textfield__input"/>
+      <label for="id9" class="mdl-textfield__label">Saving field</label><span class="status">saving..</span>
+    </div>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input type="text" value="Some text value" id="id10" class="mdl-textfield__input"/>
+      <label for="id10" class="mdl-textfield__label">Saved field</label><span class="status">Saved!</span>
+    </div>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input type="text" value="james@method.org.uk" id="id11" class="mdl-textfield__input success"/>
+      <label for="id11" class="mdl-textfield__label">Success</label><i class="glyphicon glyphicon-ok ok"></i>
+    </div>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input type="text" value="james.method-notreal" id="id11" class="mdl-textfield__input fail"/>
+      <label for="id11" class="mdl-textfield__label fail">Failure</label><i class="glyphicon glyphicon-remove fail"></i><span class="err-msg"> <strong>ERROR MESSAGE: </strong>This is not a real email address Vivamus adipiscing fermentum quam volutpat aliquam. Integer et elit eget elit facilisis tristique.        </span>
+    </div>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col">
+    <div class="mdl-textfield mdl-js-textfield select-box">
+      <select ui-select2="ui-select2" ng-model="select2" data-placeholder="Select box">
+        <option value="123">Some value</option>
+        <option value="213">Another value</option>
+      </select><span class="arrow glyphicon glyphicon-chevron-down"></span>
+      <p>select 2 value {{select2}}</p>
+    </div>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col">
+    <datepicker datepicker-value="datepicker-value" date-format="MMMM d, y" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input type="text" ng-model="date" ng-value="date" id="id13" class="mdl-textfield__input"/>
+      <label for="id13" class="mdl-textfield__label">Date picker</label>
+      <button class="date-picker"><i class="fa fa-calendar"></i></button>
+    </datepicker>
+    </div>
+
+  </div>
+  </form>
+
+</div>
+-->
