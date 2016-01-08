@@ -10,13 +10,16 @@
 import 'custom-event';
 import promise from 'es6-promise'; promise.polyfill();
 import 'isomorphic-fetch'; // ... or import 'whatwg-fetch';
-
 // End polyfills
 
 import { debounce } from 'core-decorators';
 import { throttle } from 'core-decorators';
 import moment from 'moment';
 import 'material-design-lite/material';
+
+import 'mdl-selectfield/mdl-selectfield.min';
+import './js/components/select/selectfield';
+
 
 function cleanElement(el, forceReflow=true) {
   // See: http://jsperf.com/empty-an-element/16

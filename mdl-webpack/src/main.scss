@@ -18,7 +18,8 @@
   'stylesheets/vendors/material-design-icons',
   '../node_modules/material-design-iconic-font/scss/material-design-iconic-font',
   '../node_modules/roboto-fontface/css/roboto-fontface.css',
-  '../node_modules/material-design-lite/src/material-design-lite';
+  '../node_modules/material-design-lite/src/material-design-lite',
+  'stylesheets/vendors/mdl-selectfield/selectfield';
 
 // 3. Base stuff
 @import 'stylesheets/base/base';
@@ -27,6 +28,8 @@
 @import 'stylesheets/layout/layout';
 
 // 5. Components
+@import
+  'js/components/select/selectfield';
 
 // 6. Page-specific styles
 @import 'stylesheets/pages/demo.css';

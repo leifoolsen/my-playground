@@ -149,7 +149,7 @@ npm run dev
 * [COLORS - A nicer color palette for the web.](http://clrs.cc/)
 * [Material Design Lite selectfield component](https://github.com/mebibou/mdl-selectfield) 
 * [Material Design Lite dropdown components demo](http://codepen.io/etcpe9/pen/PqyOye)
-* [Material Design <select> element, css only](http://codepen.io/pudgereyem/pen/PqBxQx)
+* [Material Design &lt;select&gt; element, css only](http://codepen.io/pudgereyem/pen/PqBxQx)
 
 
 ### CodePens
@@ -182,8 +182,24 @@ npm run dev
 * [ES2015 (ES6) pubsub](http://codepen.io/stevenbenisek/pen/qOmRye)
 * [LazyShow](http://codepen.io/tjbenton21/pen/doLvYx/)
 * [Material Design Animation Timing](http://codepen.io/tjbenton21/pen/LEpqmg)
+* [Material Design Navigation Menu](http://codepen.io/kucsatax/pen/YPoGjv)
+* [Elastic SVG Sidebar Material Design](http://codepen.io/suez/pen/emjwvP)
+* [Colour Palette From Material Design](http://codepen.io/keefyboooo/pen/RPLOzd)
+* [Material Design Paper Animations (pt 1)](http://codepen.io/jonstuebe/pen/RNyEzz)
+* [Simple sass/jQuery Accordion](http://codepen.io/jonstuebe/pen/iyhej)
+* [Triangle pattern generator](http://codepen.io/msurguy/pen/sbIio)
+* [Material Color Palette](http://codepen.io/vineethtr/pen/WQXPqY)
+* [Google Material Design colors next to palettes generated using chroma.js](http://codepen.io/ckuijjer/pen/EadMeO)
+* [Notes card](http://codepen.io/iremlopsum/pen/qOpmBw)
+* [Fullscreen Color Picker](http://codepen.io/lerouxb/pen/zndJu)
+* [Material Color Picker](http://codepen.io/templarian/pen/jPyvpv)
+* [Simple Material Design Login, with select field](http://codepen.io/michaelschofield/pen/qEzWaM)
+* [Image Editor MaterializeCSS](http://codepen.io/namho/pen/dPZoaK)
+* [Expandable side menu CSS Only](http://codepen.io/simoberny/pen/vNYavm)
+
 
 ### Videos
 * [Creating a 3D Webpage Header with Material Design and Babylon](https://www.youtube.com/watch?v=IZ6fgcBkhg8)
 * [Material Design Lite Tutorial Part1 Layout (Navigation, Grid, Footer)](https://www.youtube.com/watch?v=pEiyaKwsTws)
 * [Decorators in JavaScript](https://www.youtube.com/watch?v=d8CDFsQHZpE)
+

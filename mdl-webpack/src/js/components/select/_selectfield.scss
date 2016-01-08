@@ -1,0 +1,171 @@
+/* Select field.
+ * Copied/Modified/Inspired from:
+ *   http://codepen.io/etcpe9/pen/PqyOye,
+ *   http://codepen.io/pudgereyem/pen/PqBxQx
+ *   https://github.com/MEYVN-digital/mdl-selectfield
+ *   https://github.com/mebibou/mdl-selectfield
+ */
+@import "../../../../node_modules/material-design-lite/src/variables";
+@import "../../../../node_modules/material-design-lite/src/textfield/textfield";
+
+// The container for the whole component.
+.mdlext-selectfield {
+  @extend .mdl-textfield;
+
+  /* Styling the down arrow */
+  &:after {
+    position: absolute;
+    bottom: 1.6em;
+    right: 0.5em;
+    width: 0;
+    height: 0;
+    padding: 0;
+    content: '';
+    border-left: .35em solid transparent;
+    border-right: .35em solid transparent;
+    border-top: .525em solid #000;
+    pointer-events: none;
+  }
+}
+
+// Optional class to align right.
+.mdlext-selectfield--align-right {
+  @extend .mdl-textfield--align-right;
+}
+
+// Optional class to display at full width.
+.mdlext-selectfield--full-width {
+  @extend .mdl-textfield--full-width;
+}
+
+// Optional class to make the select field expandable.
+.mdlext-selectfield--expandable {
+  @extend .mdl-textfield--expandable;
+}
+
+// Styling for the select element.
+.mdlext-selectfield__input {
+  @extend .mdl-textfield__input;
+
+  border-radius: 0;
+  appearance: none; // removes rounded corners at bottom and the down arrow icon as well.
+
+  .mdlext-selectfield.is-focused & {
+    outline: none;
+  }
+
+  .mdlext-selectfield.is-invalid & {
+    border-color: $input-text-error-color;
+    box-shadow: none;
+  }
+
+  .mdlext-selectfield.is-disabled & {
+    background-color: transparent;
+    border-bottom: 1px dotted $input-text-disabled-color;
+    color: $input-text-disabled-text-color;
+  }
+}
+
+
+
+
+.mdlext-selectfield__label {
+  bottom: 0;
+  color: rgba(0,0,0, 0.26);
+  font-size: 16px;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 24px;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.mdlext-selectfield.is-dirty .mdlext-selectfield__label {
+  visibility: hidden;
+}
+
+.mdlext-selectfield--floating-label .mdlext-selectfield__label {
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mdlext-selectfield--floating-label.is-focused .mdlext-selectfield__label,
+.mdlext-selectfield--floating-label.is-dirty .mdlext-selectfield__label {
+  color: rgb(63,81,181);
+  font-size: 12px;
+  top: 4px;
+  visibility: visible;
+}
+
+.mdlext-selectfield--floating-label.is-focused .mdlext-selectfield__expandable-holder .mdlext-selectfield__label,
+.mdlext-selectfield--floating-label.is-dirty .mdlext-selectfield__expandable-holder .mdlext-selectfield__label {
+  top: -16px;
+}
+
+.mdlext-selectfield--floating-label.is-invalid .mdlext-selectfield__label {
+  color: rgb(222, 50, 38);
+  font-size: 12px;
+}
+
+.mdlext-selectfield__label:after {
+  background-color: rgb(63,81,181);
+  bottom: 20px;
+  content: '';
+  height: 2px;
+  left: 45%;
+  position: absolute;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  visibility: hidden;
+  width: 10px;
+}
+
+.mdlext-selectfield.is-focused .mdlext-selectfield__label:after {
+  left: 0;
+  visibility: visible;
+  width: 100%;
+}
+
+.mdlext-selectfield.is-invalid .mdlext-selectfield__label:after {
+  background-color: rgb(222, 50, 38);
+}
+
+.mdlext-selectfeld__error {
+  color: rgb(222, 50, 38);
+  position: absolute;
+  font-size: 12px;
+  margin-top: 3px;
+  visibility: hidden;
+}
+
+.mdlext-selectfield.is-invalid .mdlext-selectfield__error {
+  visibility: visible;
+}
+
+.mdlext-selectfield__expandable-holder {
+  display: inline-block;
+  position: relative;
+  margin-left: 32px;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  max-width: 0.1px;
+}
+
+.mdlext-selectfield.is-focused .mdlext-selectfield__expandable-holder,
+.mdlext-selectfield.is-dirty .mdlext-selectfield__expandable-holder {
+  max-width: 600px;
+}
+
+.mdlext-selectfield__expandable-holder .mdlext-selectfield__label:after {
+  bottom: 0;
+}
