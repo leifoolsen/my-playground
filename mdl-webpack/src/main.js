@@ -17,7 +17,7 @@ import { throttle } from 'core-decorators';
 import moment from 'moment';
 import 'material-design-lite/material';
 
-import 'mdl-selectfield/mdl-selectfield.min';
+//import 'mdl-selectfield/mdl-selectfield.min';
 import './js/components/select/selectfield';
 
 
