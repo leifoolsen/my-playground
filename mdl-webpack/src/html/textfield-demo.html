@@ -7,8 +7,6 @@
     padding: 0;
   }
 
-
-
   /* File input */
   .mdl-button--file input {
     cursor: pointer;
@@ -21,6 +19,9 @@
     z-index: 4;
   }
 
+
+  /* -------------------- */
+
   .mdl-textfield--file .mdl-textfield__input {
     box-sizing: border-box;
     width: calc(100% - 32px);
@@ -28,6 +29,113 @@
   .mdl-textfield--file .mdl-button--file {
     right: 0;
   }
+
+  .mdl-textfield {
+    background-color: #f3f3f3;
+  }
+
+  .mdl-textfield .mdl-textfield__input {
+    border: 1px solid #bababa;
+    height: 36px;
+    line-height: 40px;
+    padding: 0 15px;
+    color: #000;
+    font-size: 16px;
+    border-radius: 0;
+    background-color: #fff;
+  }
+  .mdl-textfield .mdl-textfield__input.required {
+    border-color: #e59617;
+  }
+  .mdl-textfield .mdl-textfield__input.active,
+  .mdl-textfield .mdl-textfield__input:focus {
+    border-color: #458ebd;
+  }
+  .mdl-textfield .mdl-textfield__input.success {
+    border-color: #2b9d4e;
+  }
+  .mdl-textfield .mdl-textfield__input.fail {
+    border-color: #de3848;
+  }
+  .mdl-textfield .mdl-textfield__label {
+    color: #000 !important;
+    font-weight: normal;
+    font-size: 14px !important;
+    left: 0px;
+    top: 0px !important;
+  }
+  .mdl-textfield .mdl-textfield__label.fail {
+    color: #de3848 !important;
+  }
+  .mdl-textfield.is-focused .mdl-textfield__label {
+    top: 0px !important;
+  }
+  .mdl-textfield.is-focused .mdl-textfield__label:after {
+    background-color: transparent !important;
+    visibility: hidden !important;
+  }
+  .mdl-textfield.is-dirty .mdl-textfield__label {
+    top: 0px !important;
+  }
+  .mdl-textfield.is-disabled .mdl-textfield__input {
+    background: #e4ecf3 !important;
+    color: rgba(80,112,127,0.8) !important;
+    border: solid #c6ccd1 1px;
+    color: #191d30 !important;
+  }
+  .mdl-textfield.is-disabled.icon-field i {
+    color: #fff;
+  }
+  .mdl-textfield.icon-field i {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-size: 1.2em;
+  }
+  .mdl-textfield.icon-field .mdl-textfield__input {
+    padding-left: 45px;
+  }
+  .mdl-textfield.icon-field .mdl-textfield__label {
+    left: 45px;
+  }
+  .mdl-textfield .extra-label {
+    font-size: 14px;
+    color: rgba(80,112,127,0.8);
+    position: absolute;
+    top: -5px;
+  }
+  .mdl-textfield .status {
+    position: absolute;
+    right: 10px;
+    top: 25px;
+    font-size: 12px;
+    color: #6f6f6f;
+    font-weight: 300;
+  }
+  .mdl-textfield .glyphicon.ok {
+    position: absolute;
+    right: 10px;
+    top: 33px;
+    font-size: 1.5em;
+    color: #2b9d4e;
+  }
+  .mdl-textfield .glyphicon.fail {
+    position: absolute;
+    right: 10px;
+    top: 33px;
+    font-size: 1.5em;
+    color: #de3848;
+  }
+  .mdl-textfield .err-msg {
+    display: block;
+    padding: 10px;
+    background: rgba(222,56,72,0.1);
+    color: #de3848;
+    font-size: 14px;
+  }
+
 </style>
 
 

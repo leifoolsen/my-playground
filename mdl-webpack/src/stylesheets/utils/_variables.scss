@@ -1,7 +1,8 @@
 /* -----------------------------------------------
  * Override Material Design Lite variables
  * ----------------------------------------------- */
-$preferred_font: 'Helvetica', 'Roboto-Light', 'Arial', sans-serif;
+//$preferred_font: 'Helvetica', 'Roboto-Light', 'Arial', sans-serif;
+$preferred_font: 'Roboto-Light', 'Helvetica', 'Arial', sans-serif;
 $image_path: '/static/images/mdl';  // See: webpack.config.js CopyWebpackPlugin
 
 $color-primary: "63,63,63";
