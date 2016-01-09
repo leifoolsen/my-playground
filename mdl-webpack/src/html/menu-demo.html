@@ -4,15 +4,19 @@
   }
 
   .demo-menu {
+    padding: 0 8px;
+    max-width: 300px;
+    margin: 0 auto;
   }
   .container {
     position: relative;
-    width: 200px;
+    width: 100%;
   }
   .bar {
     box-sizing: border-box;
     background: #3F51B5;
     color: white;
+    height: 64px;
     width: 100%;
     padding: 16px;
   }
@@ -29,25 +33,6 @@
 
   <div class="mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--2-col-phone">
     <!-- Left aligned menu below button -->
-    <style>
-      .demo-menu.demo-menu__lower-left .container {
-        position: relative;
-        width: 200px;
-      }
-      .demo-menu.demo-menu__lower-left .background {
-        background: white;
-        height: 148px;
-        width: 100%;
-      }
-      .demo-menu.demo-menu__lower-left .bar {
-        box-sizing: border-box;
-        background: #3F51B5;
-        color: white;
-        width: 100%;
-        padding: 16px;
-      }
-    </style>
-
     <div class="demo-menu demo-menu__lower-left">
       <div class="container mdl-shadow--2dp">
         <div class="bar">
@@ -72,24 +57,6 @@
   <div class="mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--2-col-phone">
     <!-- Right aligned menu below button -->
     <style>
-      .demo-menu.demo-menu__lower-right .container {
-        position: relative;
-        width: 200px;
-      }
-      .demo-menu.demo-menu__lower-right .background {
-        background: white;
-        height: 148px;
-        width: 100%;
-      }
-      .demo-menu.demo-menu__lower-right .bar {
-        box-sizing: border-box;
-        position: relative;
-        background: #3F51B5;
-        color: white;
-        height: 64px;
-        width: 100%;
-        padding: 16px;
-      }
       .demo-menu.demo-menu__lower-right .wrapper {
         box-sizing: border-box;
         position: absolute;
@@ -100,7 +67,7 @@
     <div class="demo-menu demo-menu__lower-right">
       <div class="container mdl-shadow--2dp">
         <div class="bar">
-          <div class="wrapper" style="">
+          <div class="wrapper">
             <span>Lower right</span>
 
             <button id="demo-menu-lower-right"
@@ -133,25 +100,6 @@
 
   <div class="mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--2-col-phone">
     <!-- Left aligned menu on top of button  -->
-    <style>
-      .demo-menu.demo-menu__top-left .container {
-        position: relative;
-        width: 200px;
-      }
-      .demo-menu.demo-menu__top-left .background {
-        background: white;
-        height: 148px;
-        width: 100%;
-      }
-      .demo-menu.demo-menu__top-left .bar {
-        box-sizing: border-box;
-        background: #3F51B5;
-        color: white;
-        width: 100%;
-        padding: 16px;
-      }
-    </style>
-
     <div class="demo-menu demo-menu__top-left">
       <div class="container mdl-shadow--2dp">
         <div class="background"></div>
@@ -179,24 +127,6 @@
   <div class="mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--2-col-phone">
     <!-- Right aligned menu on top of button  -->
     <style>
-      .demo-menu.demo-menu__top-right .container {
-        position: relative;
-        width: 200px;
-      }
-      .demo-menu.demo-menu__top-right .background {
-        background: white;
-        height: 148px;
-        width: 100%;
-      }
-      .demo-menu.demo-menu__top-right .bar {
-        box-sizing: border-box;
-        position: relative;
-        background: #3F51B5;
-        color: white;
-        height: 64px;
-        width: 100%;
-        padding: 16px;
-      }
       .demo-menu.demo-menu__top-right .wrapper {
         box-sizing: border-box;
         position: absolute;
