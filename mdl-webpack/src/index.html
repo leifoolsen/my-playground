@@ -47,20 +47,28 @@
 
       <div class="mdl-layout__header-row">
         <!-- Title -->
-        <span class="mdl-layout-title">Components</span>
+        <span id="header-title" class="mdl-layout-title">Components</span>
 
         <!-- Add spacer, to align navigation to the right -->
         <div class="mdl-layout-spacer"></div>
 
         <!-- Search box (demo! not functional)-->
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
-          <label class="mdl-button mdl-js-button mdl-button--icon" for="search-field">
+          <label class="mdl-button mdl-js-button mdl-button--icon" id="search-button" for="search-field">
             <i class="material-icons">search</i>
           </label>
           <div class="mdl-textfield__expandable-holder">
             <input class="mdl-textfield__input" type="text" name="q" value="" id="search-field" pattern=".{3,}" required/>
           </div>
         </div>
+        <div  class="mdl-tooltip mdl-tooltip--large" for="search-button">Search demo. Not functional</div>
+
+        <label id="get-mdl-io" class="mdl-button mdl-js-button mdl-button--icon">
+          <a href="http://www.getmdl.io/components/index.html" target="_blank">
+            <i class="material-icons">local_library</i>
+          </a>
+        </label>
+        <div  class="mdl-tooltip mdl-tooltip--large" for="get-mdl-io">Documentaion @ getmdl.io</div>
       </div>
     </header>
 
@@ -71,13 +79,13 @@
         <a class="mdl-navigation__link" href="html/button-demo.html"><img src="images/demo/comp_buttons.png"/>Buttons</a>
         <a class="mdl-navigation__link" href="html/card-demo.html"><img src="images/demo/comp_cards.png"/>Cards</a>
         <a class="mdl-navigation__link" href="html/layout-demo.html"><img src="images/demo/comp_layout.png"/>Layout</a>
-        <a class="mdl-navigation__link" href=""><img src="images/demo/comp_loading.png"/>Loading</a>
-        <a class="mdl-navigation__link" href=""><img src="images/demo/comp_menus.png"/>Menus</a>
-        <a class="mdl-navigation__link" href=""><img src="images/demo/comp_sliders.png"/>Sliders</a>
+        <a class="mdl-navigation__link" href="html/loading-demo.html"><img src="images/demo/comp_loading.png"/>Loading</a>
+        <a class="mdl-navigation__link" href="html/menu-demo.html"><img src="images/demo/comp_menus.png"/>Menus</a>
+        <a class="mdl-navigation__link" href="html/slider-demo.html"><img src="images/demo/comp_sliders.png"/>Sliders</a>
         <a class="mdl-navigation__link" href="html/toggle-demo.html"><img src="images/demo/comp_toggles.png"/>Toggles</a>
         <a class="mdl-navigation__link" href="html/table-demo.html"><img src="images/demo/comp_tables.png"/>Tables</a>
         <a class="mdl-navigation__link" href="html/textfield-demo.html"><img src="images/demo/comp_textfields.png"/>Text Fields</a>
-        <a class="mdl-navigation__link" href=""><img src="images/demo/comp_tooltips.png"/>Tooltips</a>
+        <a class="mdl-navigation__link" href="html/tooltip-demo.html"><img src="images/demo/comp_tooltips.png"/>Tooltips</a>
         <a class="mdl-navigation__link" href="html/typography-demo.html"><img src="images/demo/typewriter.png"/>Typography</a>
         <a class="mdl-navigation__link" href="html/palette-demo.html"><img src="images/demo/art-palette.png"/>Palettes</a>
       </nav>

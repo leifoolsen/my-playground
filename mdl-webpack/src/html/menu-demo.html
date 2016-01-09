@@ -1,0 +1,233 @@
+<style>
+  .demo-menu-grid {
+    margin-top: 64px;
+  }
+
+  .demo-menu {
+  }
+  .container {
+    position: relative;
+    width: 200px;
+  }
+  .bar {
+    box-sizing: border-box;
+    background: #3F51B5;
+    color: white;
+    width: 100%;
+    padding: 16px;
+  }
+  .background {
+    background: white;
+    height: 148px;
+    width: 100%;
+  }
+</style>
+
+<div class="mdl-grid mdl-grid--no-spacing demo-menu-grid">
+  <div class="mdl-cell mdl-cell--2-col mdl-cell--1-col-tablet mdl-cell--hide-phone">
+  </div>
+
+  <div class="mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--2-col-phone">
+    <!-- Left aligned menu below button -->
+    <style>
+      .demo-menu.demo-menu__lower-left .container {
+        position: relative;
+        width: 200px;
+      }
+      .demo-menu.demo-menu__lower-left .background {
+        background: white;
+        height: 148px;
+        width: 100%;
+      }
+      .demo-menu.demo-menu__lower-left .bar {
+        box-sizing: border-box;
+        background: #3F51B5;
+        color: white;
+        width: 100%;
+        padding: 16px;
+      }
+    </style>
+
+    <div class="demo-menu demo-menu__lower-left">
+      <div class="container mdl-shadow--2dp">
+        <div class="bar">
+          <button id="demo-menu-lower-left" class="mdl-button mdl-js-button mdl-button--icon">
+            <i class="material-icons">more_vert</i>
+          </button>
+          <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-left">
+            <li class="mdl-menu__item">Some Action</li>
+            <li class="mdl-menu__item">Another Action</li>
+            <li disabled class="mdl-menu__item">Disabled Action</li>
+            <li class="mdl-menu__item">Yet Another Action</li>
+          </ul>
+
+          <span>Lower left</span>
+
+        </div>
+        <div class="background"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--2-col-phone">
+    <!-- Right aligned menu below button -->
+    <style>
+      .demo-menu.demo-menu__lower-right .container {
+        position: relative;
+        width: 200px;
+      }
+      .demo-menu.demo-menu__lower-right .background {
+        background: white;
+        height: 148px;
+        width: 100%;
+      }
+      .demo-menu.demo-menu__lower-right .bar {
+        box-sizing: border-box;
+        position: relative;
+        background: #3F51B5;
+        color: white;
+        height: 64px;
+        width: 100%;
+        padding: 16px;
+      }
+      .demo-menu.demo-menu__lower-right .wrapper {
+        box-sizing: border-box;
+        position: absolute;
+        right: 16px;
+      }
+    </style>
+
+    <div class="demo-menu demo-menu__lower-right">
+      <div class="container mdl-shadow--2dp">
+        <div class="bar">
+          <div class="wrapper" style="">
+            <span>Lower right</span>
+
+            <button id="demo-menu-lower-right"
+                    class="mdl-button mdl-js-button mdl-button--icon">
+              <i class="material-icons">more_vert</i>
+            </button>
+
+            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                for="demo-menu-lower-right">
+              <li class="mdl-menu__item">Some Action</li>
+              <li class="mdl-menu__item">Another Action</li>
+              <li disabled class="mdl-menu__item">Disabled Action</li>
+              <li class="mdl-menu__item">Yet Another Action</li>
+            </ul>
+          </div>
+        </div>
+        <div class="background"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mdl-cell mdl-cell--2-col mdl-cell--1-col-tablet mdl-cell--hide-phone">
+  </div>
+</div>
+
+
+<div class="mdl-grid mdl-grid--no-spacing demo-menu-grid">
+  <div class="mdl-cell mdl-cell--2-col mdl-cell--1-col-tablet mdl-cell--hide-phone">
+  </div>
+
+  <div class="mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--2-col-phone">
+    <!-- Left aligned menu on top of button  -->
+    <style>
+      .demo-menu.demo-menu__top-left .container {
+        position: relative;
+        width: 200px;
+      }
+      .demo-menu.demo-menu__top-left .background {
+        background: white;
+        height: 148px;
+        width: 100%;
+      }
+      .demo-menu.demo-menu__top-left .bar {
+        box-sizing: border-box;
+        background: #3F51B5;
+        color: white;
+        width: 100%;
+        padding: 16px;
+      }
+    </style>
+
+    <div class="demo-menu demo-menu__top-left">
+      <div class="container mdl-shadow--2dp">
+        <div class="background"></div>
+        <div class="bar">
+          <button id="demo-menu-top-left"
+                  class="mdl-button mdl-js-button mdl-button--icon">
+            <i class="material-icons">more_vert</i>
+          </button>
+
+          <ul class="mdl-menu mdl-menu--top-left mdl-js-menu mdl-js-ripple-effect"
+              for="demo-menu-top-left">
+            <li class="mdl-menu__item">Some Action</li>
+            <li class="mdl-menu__item">Another Action</li>
+            <li disabled class="mdl-menu__item">Disabled Action</li>
+            <li class="mdl-menu__item">Yet Another Action</li>
+          </ul>
+
+          <span>Top left</span>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--2-col-phone">
+    <!-- Right aligned menu on top of button  -->
+    <style>
+      .demo-menu.demo-menu__top-right .container {
+        position: relative;
+        width: 200px;
+      }
+      .demo-menu.demo-menu__top-right .background {
+        background: white;
+        height: 148px;
+        width: 100%;
+      }
+      .demo-menu.demo-menu__top-right .bar {
+        box-sizing: border-box;
+        position: relative;
+        background: #3F51B5;
+        color: white;
+        height: 64px;
+        width: 100%;
+        padding: 16px;
+      }
+      .demo-menu.demo-menu__top-right .wrapper {
+        box-sizing: border-box;
+        position: absolute;
+        right: 16px;
+      }
+    </style>
+    <div class="demo-menu demo-menu__top-right">
+      <div class="container mdl-shadow--2dp">
+        <div class="background"></div>
+        <div class="bar">
+          <div class="wrapper">
+            <span>Top right</span>
+
+            <button id="demo-menu-top-right"
+                    class="mdl-button mdl-js-button mdl-button--icon">
+              <i class="material-icons">more_vert</i>
+            </button>
+
+            <ul class="mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect"
+                for="demo-menu-top-right">
+              <li class="mdl-menu__item">Some Action</li>
+              <li class="mdl-menu__item">Another Action</li>
+              <li disabled class="mdl-menu__item">Disabled Action</li>
+              <li class="mdl-menu__item">Yet Another Action</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mdl-cell mdl-cell--2-col mdl-cell--1-col-tablet mdl-cell--hide-phone">
+  </div>
+</div>

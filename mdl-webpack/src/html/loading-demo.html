@@ -1,0 +1,53 @@
+<style>
+  .demo-loading-grid .mdl-cell {
+  }
+</style>
+
+<h4>Progress bar</h4>
+
+<div class="mdl-grid demo-loading-grid">
+  <div class="mdl-cell mdl-cell--8-col">
+    <!-- Simple MDL Progress Bar -->
+    <div id="p1" class="mdl-progress mdl-js-progress"></div>
+    <script>
+      document.querySelector('#p1').addEventListener('mdl-componentupgraded', function() {
+        this.MaterialProgress.setProgress(44);
+      });
+    </script>
+    <p>Default</p>
+  </div>
+
+  <div class="mdl-cell mdl-cell--8-col">
+    <!-- MDL Progress Bar with Indeterminate Progress -->
+    <div id="p2" class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
+    <p>Indeterminate</p>
+  </div>
+
+  <div class="mdl-cell mdl-cell--8-col">
+    <!-- MDL Progress Bar with Buffering -->
+    <div id="p3" class="mdl-progress mdl-js-progress"></div>
+    <script>
+      document.querySelector('#p3').addEventListener('mdl-componentupgraded', function() {
+        this.MaterialProgress.setProgress(33);
+        this.MaterialProgress.setBuffer(87);
+      });
+    </script>
+    <p>Buffering</p>
+  </div>
+</div>
+
+<h4>Spinner</h4>
+
+<div class="mdl-grid demo-loading-grid" style="text-align: center">
+  <div class="mdl-cell mdl-cell--2-col">
+    <!-- MDL Spinner Component -->
+    <div class="mdl-spinner mdl-js-spinner is-active"></div>
+    <p>Default</p>
+  </div>
+  <div class="mdl-cell mdl-cell--2-col">
+    <!-- MDL Spinner Component with Single Color -->
+    <div class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>
+    <p>Single color</p>
+  </div>
+</div>
+

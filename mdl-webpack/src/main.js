@@ -167,6 +167,11 @@ class Content {
         cleanElement(contentPanelEl);
         contentPanelEl.insertAdjacentHTML('afterbegin', text);
 
+        let scripts = contentPanelEl.querySelectorAll("script");
+        for (let script of scripts) {
+          eval(script.innerHTML);
+        }
+
         this.contentChange();
       })
       .catch(err => console.error(err))

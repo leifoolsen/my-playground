@@ -23,6 +23,7 @@ body {
 
 *:not(.is-small-screen) .my-layout__sticky-header {
   position: absolute;
+  overflow: visible;
   background: linear-gradient(to bottom, $white_30 0, $white_10 100%);
 
   &.is-scroll {
