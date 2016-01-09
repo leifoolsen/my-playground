@@ -1,17 +1,17 @@
 <style>
-  .textfield-demo-grid {
+  .textfield-demo-container {
     margin-top: 64px;
   }
 
-  .textfield-demo-grid .mdl-grid {
-    padding: 0;
-  }
-  .textfield-demo-grid .mdl-cell {
-    color: #000;
-    padding: 0;
+  .textfield-demo-container .mdl-cell {
+    padding: 0 4px 16px 0;
   }
 
-  /* File input */
+  .textfield-demo-container .mdl-cell p {
+    margin-bottom: 0;
+  }
+
+  /* File input example */
   .mdl-button--file input {
     cursor: pointer;
     height: 100%;
@@ -32,125 +32,136 @@
 
 </style>
 
+<div class = "textfield-demo-container">
+<div class="mdl-grid mdl-grid--no-spacing">
 
-<div class="textfield-demo-grid">
-
-  <div class="mdl-grid mdl-grid--no-spacing">
-
-    <div class="mdl-cell mdl-cell--4-col">
-      <p>Text</p>
-      <div class="mdl-textfield mdl-js-textfield">
-        <input class="mdl-textfield__input" type="text" id="sample1">
-        <label class="mdl-textfield__label" for="sample1">Text...</label>
-      </div>
+  <div class="mdl-cell mdl-cell--4-col">
+    <p>Text</p>
+    <div class="mdl-textfield mdl-js-textfield">
+      <input class="mdl-textfield__input" type="text" id="sample1">
+      <label class="mdl-textfield__label" for="sample1">Text...</label>
     </div>
+  </div>
 
-    <div class="mdl-cell mdl-cell--4-col">
-      <p>Text numeric</p>
-      <div class="mdl-textfield mdl-js-textfield">
-        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
-        <label class="mdl-textfield__label" for="sample2">Number...</label>
-        <span class="mdl-textfield__error">Input is not a number!</span>
-      </div>
+  <div class="mdl-cell mdl-cell--4-col">
+    <p>Text numeric</p>
+    <div class="mdl-textfield mdl-js-textfield">
+      <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+      <label class="mdl-textfield__label" for="sample2">Number...</label>
+      <span class="mdl-textfield__error">Input is not a number!</span>
     </div>
+  </div>
 
-    <div class="mdl-cell mdl-cell--4-col">
-      <p>Text with floating label, required</p>
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" id="sample3" required>
-        <label class="mdl-textfield__label" for="sample3">Text...</label>
-      </div>
+  <div class="mdl-cell mdl-cell--4-col">
+    <p>Text with floating label, required</p>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input class="mdl-textfield__input" type="text" id="sample3" required>
+      <label class="mdl-textfield__label" for="sample3">Text...</label>
     </div>
+  </div>
 
-    <div class="mdl-cell mdl-cell--4-col">
-      <p>Numeric with floating label</p>
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
-        <label class="mdl-textfield__label" for="sample4">Number...</label>
-        <span class="mdl-textfield__error">Input is not a number!</span>
-      </div>
+  <div class="mdl-cell mdl-cell--4-col">
+    <p>Numeric with floating label</p>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
+      <label class="mdl-textfield__label" for="sample4">Number...</label>
+      <span class="mdl-textfield__error">Input is not a number!</span>
     </div>
+  </div>
 
-    <div class="mdl-cell mdl-cell--4-col">
-      <p>Expanding</p>
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label">
-        <label class="mdl-button mdl-js-button mdl-button--icon" for="expandable-demo">
-          <i class="material-icons">search</i>
-        </label>
-        <div class="mdl-textfield__expandable-holder">
-          <input class="mdl-textfield__input" type="text" name="q" value="" id="expandable-demo" pattern=".{3,}" />
-          <label class="mdl-textfield__label" for="expandable-demo">Expandable Input</label>
-        </div>
-      </div>
-    </div>
-
-    <div class="mdl-cell mdl-cell--4-col">
-      <p>File upload</p>
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--file">
-        <input class="mdl-textfield__input" placeholder="File" type="text" id="uploadFile" readonly/>
-        <div class="mdl-button mdl-button--primary mdl-button--icon mdl-button--file">
-          <i class="material-icons">attach_file</i><input type="file" id="uploadBtn">
-        </div>
-      </div>
-
-      <!--
-        // Need a script to work properly - something like this
-      -->
-      <script>
-        document.querySelector('#uploadBtn').addEventListener('change', function() {
-          document.querySelector("#uploadFile").value = this.files[0].name;
-        });
-      </script>
-    </div>
-
-    <div class="mdl-cell mdl-cell--4-col">
-      <p>Select element</p>
-
-      <div class="mdlext-selectfield mdlext-js-selectfield">
-        <select class="mdlext-selectfield__select" id="professsion2" name="professsion2">
-          <option value=""></option>
-          <option value="option1">option 1</option>
-          <option value="option2">option 2</option>
-          <option value="option3">option 3</option>
-          <option value="option4">option 4</option>
-          <option value="option5">option 5</option>
-        </select>
-        <label class="mdlext-selectfield__label" for="professsion2">Profession</label>
-      </div>
-
-      <!--
-      CSS only version, see: http://codepen.io/pudgereyem/pen/PqBxQx
-      -->
-    </div>
-
-    <div class="mdl-cell mdl-cell--4-col">
-      <p>Select element with floating label</p>
-
-      <div class="mdlext-selectfield mdlext-js-selectfield mdlext-selectfield--floating-label">
-        <select class="mdlext-selectfield__select" id="professsion" name="professsion">
-          <option value=""></option>
-          <option value="option1">option 1</option>
-          <option value="option2">option 2</option>
-          <option value="option3">option 3</option>
-          <option value="option4">option 4</option>
-          <option value="option5">option 5</option>
-        </select>
-        <label class="mdlext-selectfield__label" for="professsion">Profession</label>
+  <div class="mdl-cell mdl-cell--4-col">
+    <p>Expanding</p>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label">
+      <label class="mdl-button mdl-js-button mdl-button--icon" for="expandable-demo">
+        <i class="material-icons">search</i>
+      </label>
+      <div class="mdl-textfield__expandable-holder">
+        <input class="mdl-textfield__input" type="text" name="q" value="" id="expandable-demo" pattern=".{3,}" />
+        <label class="mdl-textfield__label" for="expandable-demo">Expandable Input</label>
       </div>
     </div>
   </div>
 
-  <br/>
-  <div class="mdl-grid mdl-grid--no-spacing">
-    <div class="mdl-cell mdl-cell--8-col">
-      <p>Multiple lines</p>
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--full-width">
-        <textarea class="mdl-textfield__input" type="text" rows= "3" id="sample5" ></textarea>
-        <label class="mdl-textfield__label" for="sample5">Text lines...</label>
+  <div class="mdl-cell mdl-cell--4-col">
+    <p>File upload</p>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--file">
+      <input class="mdl-textfield__input" placeholder="File" type="text" id="uploadFile" readonly/>
+      <div class="mdl-button mdl-button--primary mdl-button--icon mdl-button--file">
+        <i class="material-icons">attach_file</i><input type="file" id="uploadBtn">
       </div>
+    </div>
+
+    <!--
+      // Need a script to work properly - something like this
+    -->
+    <script>
+      document.querySelector('#uploadBtn').addEventListener('change', function() {
+        document.querySelector("#uploadFile").value = this.files[0].name;
+      });
+    </script>
+  </div>
+
+  <div class="mdl-cell mdl-cell--4-col">
+    <p>Select element</p>
+    <div class="mdlext-selectfield mdlext-js-selectfield">
+      <select class="mdlext-selectfield__select" id="professsion2" name="professsion2">
+        <option value=""></option>
+        <option value="option1">option 1</option>
+        <option value="option2">option 2</option>
+        <option value="option3">option 3</option>
+        <option value="option4">option 4</option>
+        <option value="option5">option 5</option>
+      </select>
+      <label class="mdlext-selectfield__label" for="professsion2">Profession</label>
+    </div>
+
+    <!--
+    CSS only version, see: http://codepen.io/pudgereyem/pen/PqBxQx
+    -->
+  </div>
+
+  <div class="mdl-cell mdl-cell--4-col">
+    <p>Select element with floating label</p>
+    <div class="mdlext-selectfield mdlext-js-selectfield mdlext-selectfield--floating-label">
+      <select class="mdlext-selectfield__select" id="professsion" name="professsion">
+        <option value=""></option>
+        <option value="option1">option 1</option>
+        <option value="option2">option 2</option>
+        <option value="option3">option 3</option>
+        <option value="option4">option 4</option>
+        <option value="option5">option 5</option>
+      </select>
+      <label class="mdlext-selectfield__label" for="professsion">Profession</label>
     </div>
   </div>
 
+  <div class="mdl-cell mdl-cell--4-col">
+    <p>Disabled Select element</p>
+    <div class="mdlext-selectfield mdlext-js-selectfield mdlext-selectfield--floating-label">
+      <select class="mdlext-selectfield__select" id="professsion" name="professsion" disabled>
+        <option value=""></option>
+        <option value="option1">option 1</option>
+        <option value="option2">option 2</option>
+        <option value="option3">option 3</option>
+        <option value="option4">option 4</option>
+        <option value="option5">option 5</option>
+      </select>
+      <label class="mdlext-selectfield__label" for="professsion">Profession</label>
+    </div>
+  </div>
+
+</div>
+
+<br/>
+<div class="mdl-grid mdl-grid--no-spacing">
+  <div class="mdl-cell mdl-cell--8-col">
+    <p>Multiple lines</p>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--full-width">
+      <textarea class="mdl-textfield__input" type="text" rows= "3" id="sample5" ></textarea>
+      <label class="mdl-textfield__label" for="sample5">Text lines...</label>
+    </div>
+  </div>
+</div>
 </div>
 
 

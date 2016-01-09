@@ -19,7 +19,7 @@
   };
 
   MaterialExtSelectfield.prototype.CssClasses_ = {
-    LABEL: 'mdlext-textfield__label',
+    LABEL: 'mdlext-selectfield__label',
     INPUT: 'mdlext-selectfield__select',
     IS_DIRTY: 'is-dirty',
     IS_FOCUSED: 'is-focused',

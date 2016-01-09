@@ -8,6 +8,10 @@
 @import "../../../../node_modules/material-design-lite/src/variables";
 @import "../../../../node_modules/material-design-lite/src/textfield/textfield";
 
+// NOTE:
+// Not shure if extending css classes is a good idea.
+// According to http://www.sitepoint.com/avoid-sass-extend/ it is not!
+
 // The container for the whole component.
 .mdlext-selectfield {
   @extend .mdl-textfield;
@@ -23,8 +27,15 @@
     content: '';
     border-left: .35em solid transparent;
     border-right: .35em solid transparent;
-    border-top: .525em solid #000;
+    border-top: .525em solid;
+    color: inherit;
     pointer-events: none;
+  }
+}
+
+.mdlext-selectfield.is-disabled {
+  &:after {
+    color: $input-text-disabled-color;
   }
 }
 
@@ -50,6 +61,8 @@
   border-radius: 0;
   appearance: none; // removes rounded corners at bottom and the down arrow icon as well.
 
+
+  // Note: Can not extend parent selectors
   .mdlext-selectfield.is-focused & {
     outline: none;
   }
@@ -66,106 +79,67 @@
   }
 }
 
-
-
-
+// Styling for the label / floating label.
+// NOTE: Could use 'mdl-textfield__label' class instead of creating an identical class
 .mdlext-selectfield__label {
-  bottom: 0;
-  color: rgba(0,0,0, 0.26);
-  font-size: 16px;
-  left: 0;
-  right: 0;
-  pointer-events: none;
-  position: absolute;
-  top: 24px;
-  width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-  text-align: left;
+  @extend .mdl-textfield__label;
+
+  // Note: Can not extend parent selectors
+
+  // Floating Label
+  .mdlext-selectfield--floating-label & {
+    @include material-animation-default();
+  }
+
+  .mdlext-selectfield.is-disabled.is-disabled & {
+    color: $input-text-disabled-text-color;
+  }
+
+  .mdlext-selectfield--floating-label.is-focused &,
+  .mdlext-selectfield--floating-label.is-dirty & {
+    color: $input-text-highlight-color;
+    font-size : $input-text-floating-label-fontsize;
+    top: $input-text-vertical-spacing - ($input-text-floating-label-fontsize + $input-text-padding);
+    visibility: visible;
+  }
+
+  .mdlext-selectfield--floating-label.is-focused .mdlext-selectfield__expandable-holder &,
+  .mdlext-selectfield--floating-label.is-dirty .mdlext-selectfield__expandable-holder & {
+    top: -($input-text-floating-label-fontsize + $input-text-padding);
+  }
+
+  .mdlext-selectfield--floating-label.is-invalid & {
+    color: $input-text-error-color;
+    font-size: $input-text-floating-label-fontsize;
+  }
+  .mdlext-selectfield.is-focused &:after {
+    left: 0;
+    visibility: visible;
+    width: 100%;
+  }
+
+  .mdlext-selectfield.is-invalid &:after {
+    background-color: $input-text-error-color;
+  }
 }
 
-.mdlext-selectfield.is-dirty .mdlext-selectfield__label {
-  visibility: hidden;
-}
 
-.mdlext-selectfield--floating-label .mdlext-selectfield__label {
-  -webkit-transition-duration: 0.2s;
-  transition-duration: 0.2s;
-  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.mdlext-selectfield--floating-label.is-focused .mdlext-selectfield__label,
-.mdlext-selectfield--floating-label.is-dirty .mdlext-selectfield__label {
-  color: rgb(63,81,181);
-  font-size: 12px;
-  top: 4px;
-  visibility: visible;
-}
-
-.mdlext-selectfield--floating-label.is-focused .mdlext-selectfield__expandable-holder .mdlext-selectfield__label,
-.mdlext-selectfield--floating-label.is-dirty .mdlext-selectfield__expandable-holder .mdlext-selectfield__label {
-  top: -16px;
-}
-
-.mdlext-selectfield--floating-label.is-invalid .mdlext-selectfield__label {
-  color: rgb(222, 50, 38);
-  font-size: 12px;
-}
-
-.mdlext-selectfield__label:after {
-  background-color: rgb(63,81,181);
-  bottom: 20px;
-  content: '';
-  height: 2px;
-  left: 45%;
-  position: absolute;
-  -webkit-transition-duration: 0.2s;
-  transition-duration: 0.2s;
-  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  visibility: hidden;
-  width: 10px;
-}
-
-.mdlext-selectfield.is-focused .mdlext-selectfield__label:after {
-  left: 0;
-  visibility: visible;
-  width: 100%;
-}
-
-.mdlext-selectfield.is-invalid .mdlext-selectfield__label:after {
-  background-color: rgb(222, 50, 38);
-}
-
+// SelectField Error.
 .mdlext-selectfeld__error {
-  color: rgb(222, 50, 38);
-  position: absolute;
-  font-size: 12px;
-  margin-top: 3px;
-  visibility: hidden;
+  @extend .mdl-textfield__eror;
 }
 
-.mdlext-selectfield.is-invalid .mdlext-selectfield__error {
-  visibility: visible;
-}
-
+// Expandable Holder.
 .mdlext-selectfield__expandable-holder {
-  display: inline-block;
-  position: relative;
-  margin-left: 32px;
-  -webkit-transition-duration: 0.2s;
-  transition-duration: 0.2s;
-  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  max-width: 0.1px;
-}
+  @extend .mdl-textfield__expandable-holder;
 
-.mdlext-selectfield.is-focused .mdlext-selectfield__expandable-holder,
-.mdlext-selectfield.is-dirty .mdlext-selectfield__expandable-holder {
-  max-width: 600px;
-}
-
-.mdlext-selectfield__expandable-holder .mdlext-selectfield__label:after {
-  bottom: 0;
+  // Note: Can not extend parent selectors
+  .mdl-textfield.is-focused &,
+  .mdl-textfield.is-dirty & {
+    // This is an unfortunate hack. Animating between widths in percent (%)
+    // in many browsers (Chrome, Firefox) only animates the inner visual style
+    // of the input - the outer bounding box still 'jumps'.
+    // Thus assume a sensible maximum, and animate to/from that value.
+    max-width: 600px;
+  }
 }

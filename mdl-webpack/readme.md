@@ -197,6 +197,8 @@ http://localhost:8080/webpack-dev-server/
 * [Simple Material Design Login, with select field](http://codepen.io/michaelschofield/pen/qEzWaM)
 * [Image Editor MaterializeCSS](http://codepen.io/namho/pen/dPZoaK)
 * [Expandable side menu CSS Only](http://codepen.io/simoberny/pen/vNYavm)
+* [Material Design Table - Column Customization](http://codepen.io/munaf/pen/EVRKXw)
+* [Pickers - date/time](http://codepen.io/Cel/pen/QwrVjL)
 
 
 ### Videos
