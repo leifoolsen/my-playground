@@ -1,0 +1,113 @@
+/**
+ * Bordered textfields
+ * Modified from: http://codepen.io/prajwal078/pen/LVJZXz?editors=010
+ */
+
+@import "../../../../node_modules/material-design-lite/src/variables";
+@import "../../../../node_modules/material-design-lite/src/textfield/textfield";
+
+$borderd-input-text-border-radius: 3px !default;
+$bordered-input-text-border-width: 1px !default;
+
+// Styling for the input element.
+// Note: This styling also affects mdlext-selectfield! This is a (good or bad?) side effect of using inheritance.
+
+.mdl-bordered-textfields {
+
+  .mdl-textfield {
+    .mdl-textfield__input {
+      border: $bordered-input-text-border-width solid $input-text-bottom-border-color;
+      border-radius: $borderd-input-text-border-radius;
+      padding: 0 $input-text-padding;
+
+      height: 48px; // TODO: calculae height
+      line-height: 65px; // TODO: calculate line-height
+
+      &:disabled {
+        color: $input-text-disabled-text-color;
+        background: rgba(228, 236, 243, 0.25); // TODO: use var
+        border: solid #c6ccd1 1px; // TODO: use var
+      }
+      &:required {
+        border-color: #e59617; // TODO: use var
+      }
+      &:focus,
+      &:required:focus {
+        border-color: #458ebd; // TODO: use var
+      }
+    }
+  }
+  .mdl-textfield.is-dirty {
+    .mdl-textfield__input {
+      &:required {
+        border-color: $input-text-bottom-border-color;
+      }
+      &:focus,
+      &:required:focus {
+        border-color: #458ebd;
+      }
+    }
+  }
+
+  // Styling for the label / floating label.
+  .mdl-textfield {
+    .mdl-textfield__label {
+      padding-left: $input-text-padding;
+      top: 35px !important; // TODO: Remove !important, use var for top
+      font-size: 14px !important; // TODO: Remove important, use mdl label font-size
+
+      // Hide the colored underline for the TextField.
+      &:after {
+        background-color: transparent !important;
+        visibility: hidden !important;
+      }
+    }
+  }
+
+  .mdl-textfield.is-focused {
+    .mdl-textfield__label {
+      top: 25px !important; // TODO: Remove !important, use var for top
+    }
+  }
+
+  .mdl-textfield.is-dirty {
+    .mdl-textfield__label {
+      top: 25px !important; // TODO: Remove !important, use var
+      visibility: visible;
+    }
+  }
+
+  // Icon inside textfield
+  .mdl-textfield.is-disabled.icon-field i {
+    color: $input-text-disabled-color;
+  }
+  .mdl-textfield.icon-field > i {
+    position: absolute;
+    top: 50%;
+    left: 4px; // TODO: Use var
+    transform: translateY(-50%);
+    font-size: 1.4em; // TODO: Use var
+  }
+
+  .mdl-textfield.icon-field .mdl-textfield__input {
+    padding-left: 28px; // TODO: Use var
+  }
+  .mdl-textfield.icon-field .mdl-textfield__label {
+    left: 28px; // TODO: Use var
+  }
+
+  // Button inside textfield
+  .mdl-textfield {
+    .mdl-button {
+      position: absolute;
+      top: 50%;
+      right: 4px; // TODO: Use var
+      transform: translateY(-50%);
+      font-size: 1.4em; // TODO: Use var
+    }
+  }
+}
+
+
+
+

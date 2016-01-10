@@ -125,6 +125,9 @@ http://localhost:8080/webpack-dev-server/
 * [Material Design Lite - Layouts](http://www.tutorialspoint.com/materialdesignlite/materialdesignlite_layouts.htm)
 * [CSS3 Page Landing Animations](https://scotch.io/tutorials/css3-page-landing-animations)
 * [Ideas and Demos for Animating Article Headers](https://scotch.io/bar-talk/ideas-and-demos-for-animating-article-headers-on-scroll)
+* [Material Design Lite selectfield component](https://github.com/mebibou/mdl-selectfield) 
+* [Material Design Lite dropdown components demo](http://codepen.io/etcpe9/pen/PqyOye)
+* [Material Design &lt;select&gt; element, css only](http://codepen.io/pudgereyem/pen/PqBxQx)
 
 ### !
 * [Material Design Lite WIKI](https://github.com/google/material-design-lite/wiki)
@@ -132,7 +135,7 @@ http://localhost:8080/webpack-dev-server/
 * [Material Palette](http://www.materialpalette.com/)
 * [Sass Material Colors](https://github.com/minusfive/sass-material-colors)
 * [Material Colors - Colors of Google's Material Design made available to coders](https://github.com/shuhei/material-colors)
-* [The current _colors / palette approach makes it almost impossible to use sass color functions #146](https://github.com/google/material-design-lite/issues/146)
+* [The current colors / palette approach makes it almost impossible to use sass color functions](https://github.com/google/material-design-lite/issues/146)
 * [Aesthetic Sass 2: Colors and Palettes](https://scotch.io/tutorials/aesthetic-sass-2-colors)
 * [Gray - A grayscale color palette for prototyping the web.](https://github.com/johnotander/gray)
 * [Google, Style / Color](http://www.google.com/design/spec/style/color.html#)
@@ -148,9 +151,6 @@ http://localhost:8080/webpack-dev-server/
 * [Material Popup](http://codepen.io/omix/pen/BodWvJ)
 * [CSS next - Use tomorrow's CSS syntax, today.](http://cssnext.io/)
 * [COLORS - A nicer color palette for the web.](http://clrs.cc/)
-* [Material Design Lite selectfield component](https://github.com/mebibou/mdl-selectfield) 
-* [Material Design Lite dropdown components demo](http://codepen.io/etcpe9/pen/PqyOye)
-* [Material Design &lt;select&gt; element, css only](http://codepen.io/pudgereyem/pen/PqBxQx)
 
 
 ### CodePens
@@ -199,6 +199,7 @@ http://localhost:8080/webpack-dev-server/
 * [Expandable side menu CSS Only](http://codepen.io/simoberny/pen/vNYavm)
 * [Material Design Table - Column Customization](http://codepen.io/munaf/pen/EVRKXw)
 * [Pickers - date/time](http://codepen.io/Cel/pen/QwrVjL)
+* [More than 40 Awesome Loading Animations from CodePen (Pure CSS)](http://www.seebeetee.com/2013/08/29-great-loading-animation-from-codepen.html)
 
 
 ### Videos

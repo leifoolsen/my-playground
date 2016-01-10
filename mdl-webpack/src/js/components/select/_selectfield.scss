@@ -19,7 +19,7 @@
   /* Styling the down arrow */
   &:after {
     position: absolute;
-    bottom: 1.6em;
+    bottom: 1.8em;
     right: 0.5em;
     width: 0;
     height: 0;
@@ -85,6 +85,9 @@
   @extend .mdl-textfield__label;
 
   // Note: Can not extend parent selectors
+  .mdlext-selectfield.is-dirty & {
+    visibility: hidden;
+  }
 
   // Floating Label
   .mdlext-selectfield--floating-label & {
@@ -96,7 +99,7 @@
   }
 
   .mdlext-selectfield--floating-label.is-focused &,
-  .mdlext-selectfield--floating-label.is-dirty & {
+  .mdlext-selectfield--floating-label.is-dirty.is-dirty & {
     color: $input-text-highlight-color;
     font-size : $input-text-floating-label-fontsize;
     top: $input-text-vertical-spacing - ($input-text-floating-label-fontsize + $input-text-padding);
