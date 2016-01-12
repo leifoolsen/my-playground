@@ -1,0 +1,59 @@
+/**
+ * Center an element horizontally and/or vertically using transform css property.
+ *
+ * Note 1: If possible, prefer flexbox instead of this
+ * Note 2: This method can cause elements to be blurry due to the element being placed on a “half pixel”.
+ * To fix this, the parent element should be set to preserve-3d using the "transform-style: preserve-3d" property/value
+ *
+ * Example
+ *  .container {
+ *    position: relative;
+ *    transform-style: preserve-3d;
+ *    min-height: 400px;
+ *    width: 100%;
+ *    background-color: red;
+ *  }
+ * .center-me {
+ *   @include center-element;
+ *   background-color: green;
+ * }
+ *
+ * <div class="container">
+ *   <div class="center-me">
+ *     <p>I'm centered</p>
+ *   </div>
+ * </div>
+ *
+ * With flexbox
+ * .container {
+ *    display: flex;
+ *    align-items: center;
+ *    justify-content: center;
+ *    min-height: 400px;
+ *    width: 100%;
+ *    background-color: red;
+ * }
+ * .center-me {
+ *   background-color: green;
+ * }
+ *
+
+ */
+
+@mixin center-element($horizontal: true, $vertical: true) {
+  position: absolute;
+
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  @else if ($horizontal) {
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+  @else if ($vertical) {
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}

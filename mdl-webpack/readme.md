@@ -126,8 +126,7 @@ http://localhost:8080/webpack-dev-server/
 * [CSS3 Page Landing Animations](https://scotch.io/tutorials/css3-page-landing-animations)
 * [Ideas and Demos for Animating Article Headers](https://scotch.io/bar-talk/ideas-and-demos-for-animating-article-headers-on-scroll)
 * [Material Design Lite selectfield component](https://github.com/mebibou/mdl-selectfield) 
-* [Material Design Lite dropdown components demo](http://codepen.io/etcpe9/pen/PqyOye)
-* [Material Design &lt;select&gt; element, css only](http://codepen.io/pudgereyem/pen/PqBxQx)
+* [Solved by Flexbox](https://philipwalton.github.io/solved-by-flexbox/)
 
 ### !
 * [Material Design Lite WIKI](https://github.com/google/material-design-lite/wiki)
@@ -195,6 +194,8 @@ http://localhost:8080/webpack-dev-server/
 * [Fullscreen Color Picker](http://codepen.io/lerouxb/pen/zndJu)
 * [Material Color Picker](http://codepen.io/templarian/pen/jPyvpv)
 * [Simple Material Design Login, with select field](http://codepen.io/michaelschofield/pen/qEzWaM)
+* [Material Design Lite dropdown components demo](http://codepen.io/etcpe9/pen/PqyOye)
+* [Material Design &lt;select&gt; element, css only](http://codepen.io/pudgereyem/pen/PqBxQx)
 * [Image Editor MaterializeCSS](http://codepen.io/namho/pen/dPZoaK)
 * [Expandable side menu CSS Only](http://codepen.io/simoberny/pen/vNYavm)
 * [Material Design Table - Column Customization](http://codepen.io/munaf/pen/EVRKXw)

@@ -84,8 +84,8 @@ $bordered-input-text-border-width: 1px !default;
   .mdl-textfield.icon-field > i {
     position: absolute;
     top: 50%;
-    left: 4px; // TODO: Use var
     transform: translateY(-50%);
+    left: 4px; // TODO: Use var
     font-size: 1.4em; // TODO: Use var
   }
 
@@ -101,8 +101,8 @@ $bordered-input-text-border-width: 1px !default;
     .mdl-button {
       position: absolute;
       top: 50%;
-      right: 4px; // TODO: Use var
       transform: translateY(-50%);
+      right: 4px; // TODO: Use var
       font-size: 1.4em; // TODO: Use var
     }
   }
