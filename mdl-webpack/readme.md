@@ -201,7 +201,8 @@ http://localhost:8080/webpack-dev-server/
 * [Material Design Table - Column Customization](http://codepen.io/munaf/pen/EVRKXw)
 * [Pickers - date/time](http://codepen.io/Cel/pen/QwrVjL)
 * [More than 40 Awesome Loading Animations from CodePen (Pure CSS)](http://www.seebeetee.com/2013/08/29-great-loading-animation-from-codepen.html)
-
+* [30 Open Source HTML/CSS Projects from CodePen](http://webdesignledger.com/html-css-free-codepen)
+* [Material Design Type in CSS](http://codepen.io/liabru/pen/bNXLGy)
 
 ### Videos
 * [Creating a 3D Webpage Header with Material Design and Babylon](https://www.youtube.com/watch?v=IZ6fgcBkhg8)
