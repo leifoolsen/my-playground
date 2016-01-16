@@ -127,6 +127,12 @@ http://localhost:8080/webpack-dev-server/
 * [Ideas and Demos for Animating Article Headers](https://scotch.io/bar-talk/ideas-and-demos-for-animating-article-headers-on-scroll)
 * [Material Design Lite selectfield component](https://github.com/mebibou/mdl-selectfield) 
 * [Solved by Flexbox](https://philipwalton.github.io/solved-by-flexbox/)
+* [A Simple Web App With Node.js, Express, Bootstrap & Stormpath](https://stormpath.com/blog/build-nodejs-express-stormpath-app/)
+* [HTML5 Cross Browser Polyfills](https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills)
+* [dialog-polyfill.js](https://github.com/GoogleChrome/dialog-polyfill)
+* [dialog element demo](http://demo.agektmr.com/dialog/)
+* [CSS-Grid-Polyfill](https://github.com/FremyCompany/css-grid-polyfill)
+* [Intl.js](https://github.com/andyearnshaw/Intl.js)
 
 ### !
 * [Material Design Lite WIKI](https://github.com/google/material-design-lite/wiki)

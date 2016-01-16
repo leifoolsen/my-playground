@@ -16,10 +16,7 @@ import { debounce } from 'core-decorators';
 import { throttle } from 'core-decorators';
 import moment from 'moment';
 import 'material-design-lite/material';
-
-//import 'mdl-selectfield/mdl-selectfield.min';
 import './js/components/select/selectfield';
-
 
 function cleanElement(el, forceReflow=true) {
   // See: http://jsperf.com/empty-an-element/16
@@ -205,6 +202,10 @@ class Content {
     h1.insertAdjacentHTML('beforeend', '&nbsp;<i class="material-icons md-48">thumb_up</i>');
     contentPanel.appendChild(h1);
 
+    const p =  document.createElement('p');
+    p.textContent = 'Material Design Lite is a light-weight implementation of Material Design, specifically crafted for the web. For more detailed guidelines and specifications for other platforms please refer to the Material Design site.';
+    contentPanel.appendChild(p);
+
     const button = document.createElement('button');
     const textNode = document.createTextNode('Click Me');
     button.appendChild(textNode);
@@ -212,8 +213,9 @@ class Content {
     contentPanel.appendChild(button);
     componentHandler.upgradeElement(button);
 
-    contentPanel.insertAdjacentHTML('beforeend', require('./html/material-design-icons-font-demo.html'));
-
+    // Use require to fetch HTML. Es6 imports and exports must happen at the top level of js-file.
+    const html = require('./html/material-design-icons-font-demo.html');
+    contentPanel.insertAdjacentHTML('beforeend', html);
 
     this.contentChange();
   }
