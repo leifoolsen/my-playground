@@ -18,18 +18,7 @@ import moment from 'moment';
 import 'material-design-lite/material';
 import './js/components/select/selectfield';
 
-function cleanElement(el, forceReflow=true) {
-  // See: http://jsperf.com/empty-an-element/16
-  while (el.lastChild) {
-    el.removeChild(el.lastChild);
-  }
-  if(forceReflow) {
-    // See: http://jsperf.com/force-reflow
-    const d = el.style.display;
-    el.style.display = "none";
-    el.style.display = d;
-  }
-}
+import { cleanElement } from './js/utils';
 
 class Header {
   titleClass = '.mdl-layout-title';
@@ -206,14 +195,21 @@ class Content {
     p.textContent = 'Material Design Lite is a light-weight implementation of Material Design, specifically crafted for the web. For more detailed guidelines and specifications for other platforms please refer to the Material Design site.';
     contentPanel.appendChild(p);
 
+    const p2 = '<p>This page is rendered using JavaScript. See the <strong>Content.index()</strong> method.</p>';
+    contentPanel.insertAdjacentHTML('beforeend', p2);
+
     const button = document.createElement('button');
-    const textNode = document.createTextNode('Click Me');
+    const textNode = document.createTextNode('A Button');
     button.appendChild(textNode);
     button.className = 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent';
     contentPanel.appendChild(button);
     componentHandler.upgradeElement(button);
 
     // Use require to fetch HTML. Es6 imports and exports must happen at the top level of js-file.
+    const h3 = document.createElement('h3');
+    h3.textContent ='The next section of HTML is loaded using require';
+    contentPanel.appendChild(h3);
+
     const html = require('./html/material-design-icons-font-demo.html');
     contentPanel.insertAdjacentHTML('beforeend', html);
 

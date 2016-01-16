@@ -1,6 +1,5 @@
 <style>
   .textfield-demo-container {
-    margin-top: 64px;
   }
 
   .textfield-demo-container .mdl-cell {
@@ -11,6 +10,7 @@
     margin-bottom: 0;
     white-space: nowrap;
     text-overflow: ellipsis;
+    overflow: hidden;
   }
 
   /* File input example */
@@ -26,6 +26,7 @@
   }
 </style>
 
+<h4>Bordered fields</h4>
 <div class = "textfield-demo-container mdl-bordered-textfields">
 
   <div class="mdl-grid mdl-grid--no-spacing">
@@ -48,7 +49,7 @@
     </div>
 
     <div class="mdl-cell mdl-cell--4-col">
-      <p>Text with floating label, required</p>
+      <p>Text with floating label, required field</p>
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input class="mdl-textfield__input" type="text" id="sample3" required>
         <label class="mdl-textfield__label" for="sample3">Text...</label>
@@ -259,27 +260,125 @@
 </div>
 
 
-<h5>Not completed</h5>
-<div class="mdl-grid mdl-grid--no-spacing">
-  <div class="mdl-cell mdl-cell--8-col">
-    <p>Multiple lines</p>
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--full-width mdl-textfield--floating-label">
-      <textarea class="mdl-textfield__input" rows= "3" id="sample5" ></textarea>
-      <label class="mdl-textfield__label">Text lines...</label>
-    </div>
-  </div>
 
-  <div class="mdl-cell mdl-cell--4-col">
-    <p>Expanding</p>
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label">
-      <label class="mdl-button mdl-js-button mdl-button--icon" for="expandable-demo">
-        <i class="material-icons">search</i>
-      </label>
-      <div class="mdl-textfield__expandable-holder">
-        <input class="mdl-textfield__input" type="text" name="q" value="" id="expandable-demo" pattern=".{3,}" />
-        <label class="mdl-textfield__label" for="expandable-demo">Expandable Input</label>
+<h4>MDL fields</h4>
+<div class = "textfield-demo-container">
+
+  <div class="mdl-grid mdl-grid--no-spacing">
+
+    <div class="mdl-cell mdl-cell--4-col">
+      <p>Text</p>
+      <div class="mdl-textfield mdl-js-textfield">
+        <input class="mdl-textfield__input" type="text" id="mdl-sample1">
+        <label class="mdl-textfield__label" for="mdl-sample1">Text...</label>
       </div>
     </div>
-  </div>
-</div>
 
+    <div class="mdl-cell mdl-cell--4-col">
+      <p>Text numeric</p>
+      <div class="mdl-textfield mdl-js-textfield">
+        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="mdl-sample2">
+        <label class="mdl-textfield__label" for="mdl-sample2">Number...</label>
+        <span class="mdl-textfield__error">Input is not a number!</span>
+      </div>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col">
+      <p>Text with floating label, required field</p>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="text" id="mdl-sample3" required>
+        <label class="mdl-textfield__label" for="mdl-sample3">Text...</label>
+      </div>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col">
+      <p>Numeric with floating label</p>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="mdl-sample4">
+        <label class="mdl-textfield__label" for="mdl-sample4">Number...</label>
+        <span class="mdl-textfield__error">Input is not a number!</span>
+      </div>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col">
+      <p>Disabled floating label</p>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="mdl-sample41" disabled value="123">
+        <label class="mdl-textfield__label" for="mdl-sample41">Number...</label>
+        <span class="mdl-textfield__error">Input is not a number!</span>
+      </div>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col">
+      <p>Select element</p>
+      <div class="mdlext-selectfield mdlext-js-selectfield">
+        <select class="mdlext-selectfield__select" id="mdl-professsion3" name="mdl-professsion3">
+          <option value=""></option>
+          <option value="option1">option 1</option>
+          <option value="option2">option 2</option>
+          <option value="option3">option 3</option>
+          <option value="option4">option 4</option>
+          <option value="option5">option 5</option>
+        </select>
+        <label class="mdlext-selectfield__label" for="mdl-professsion3">Profession</label>
+      </div>
+
+      <!--
+      CSS only version, see: http://codepen.io/pudgereyem/pen/PqBxQx
+      -->
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col">
+      <p>Select element with floating label</p>
+      <div class="mdlext-selectfield mdlext-js-selectfield mdlext-selectfield--floating-label">
+        <select class="mdlext-selectfield__select" id="mdl-professsion" name="mdl-professsion">
+          <option value=""></option>
+          <option value="option1">option 1</option>
+          <option value="option2">option 2</option>
+          <option value="option3">option 3</option>
+          <option value="option4">option 4</option>
+          <option value="option5">option 5</option>
+        </select>
+        <label class="mdlext-selectfield__label" for="mdl-professsion">Profession</label>
+      </div>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col">
+      <p>Disabled Select element</p>
+      <div class="mdlext-selectfield mdlext-js-selectfield mdlext-selectfield--floating-label">
+        <select class="mdlext-selectfield__select" id="mdl-professsion2" name="mdl-professsion2" disabled>
+          <option value=""></option>
+          <option value="option1">option 1</option>
+          <option value="option2">option 2</option>
+          <option value="option3">option 3</option>
+          <option value="option4">option 4</option>
+          <option value="option5">option 5</option>
+        </select>
+        <label class="mdlext-selectfield__label" for="mdl-professsion2">Profession</label>
+      </div>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col">
+      <p>Expanding</p>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label">
+        <label class="mdl-button mdl-js-button mdl-button--icon" for="mdl-expandable-demo">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" name="q" value="" id="mdl-expandable-demo" pattern=".{3,}" />
+          <label class="mdl-textfield__label" for="mdl-expandable-demo">Expandable Input</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="mdl-cell mdl-cell--8-col">
+      <p>Multiple lines</p>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--full-width mdl-textfield--floating-label">
+        <textarea class="mdl-textfield__input" rows= "3" id="mdl-sample5" ></textarea>
+        <label class="mdl-textfield__label">Text lines...</label>
+      </div>
+    </div>
+
+  </div>
+
+</div>
