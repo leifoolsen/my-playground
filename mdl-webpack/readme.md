@@ -15,7 +15,6 @@ http://localhost:8080/webpack-dev-server/
 * [An Overview of Material Design Lite](http://webdesign.tutsplus.com/articles/an-overview-of-material-design-lite--cms-24370)
 * [MDL hut, Tutorials](http://mdlhut.com/category/tuts/)
 * [Creating an MDL theme](http://mdlhut.com/2015/08/creating-an-mdl-theme/)
-* [How to Change the Color of an MDL Component](http://mdlhut.com/2015/08/how-to-change-the-color-of-an-mdl-component/)
 * [BEM 101, CSS Tricks](https://css-tricks.com/bem-101/)
 * [Your Frontend Methodology Is All of Them: Atomic Design & Pattern Lab](https://www.phase2technology.com/blog/your-frontend-methodology-is-all-of-them-atomic-design-patternlab/)
 * [Google web starter kit](https://github.com/google/web-starter-kit)
@@ -133,6 +132,27 @@ http://localhost:8080/webpack-dev-server/
 * [dialog element demo](http://demo.agektmr.com/dialog/)
 * [CSS-Grid-Polyfill](https://github.com/FremyCompany/css-grid-polyfill)
 * [Intl.js](https://github.com/andyearnshaw/Intl.js)
+* [You Don't Know JS (book series)](https://github.com/getify/You-Dont-Know-JS)
+* [promise-cookbook](https://github.com/mattdesl/promise-cookbook)
+* [promise-cookbook](https://github.com/wbinnssmith/promise-cookbook)
+* [Web Components, by Bill Stavroulakis](http://bstavroulakis.com/blog/web/web-components-html-templates/)
+* [Riot.js - A React-like user interface micro-library](https://github.com/riot/riot)
+* [Enumify - A JavaScript library for enums. To be used by transpiled ES6](https://github.com/rauschma/enumify)
+* [CSS Tricks - :required](https://css-tricks.com/almanac/selectors/r/required/)
+* [HTML Imports](http://webcomponents.org/polyfills/html-imports/)
+* [Exploring HTML Imports](http://robdodson.me/exploring-html-imports/)
+* [An Introduction to HTML Imports](http://blog.teamtreehouse.com/introduction-html-imports)
+* [Designing A Product Page Layout with Flexbox](https://css-tricks.com/designing-a-product-page-layout-with-flexbox/)
+* [DERICKBAILEY.COM - Trade Secrets Of A Developer / Entrepreneur](http://derickbailey.com/)
+* [Pure CSS Components](https://github.com/LFeh/css-components/)
+* [Vanilla Modal](https://github.com/thephuse/vanilla-modal)
+* [Vanilla Modal - Do we really need another modal script?](http://phuse.ca/vanilla-modal-plain-javascript-modal/)
+* [Material Design Modal](http://ettrics.com/code/material-design-modal/)
+* [Ettrics - Articles](http://ettrics.com/articles/)
+* [Off Canvas Menu - Modal dialog for use with Material Design Lite](https://github.com/MarkRabey/material-modal)
+* [Making Modal Windows Better For Everyone](https://www.smashingmagazine.com/2014/09/making-modal-windows-better-for-everyone/)
+* [Keep tabbing within modal pane only](http://stackoverflow.com/questions/14572084/keep-tabbing-within-modal-pane-only)
+
 
 ### !
 * [Material Design Lite WIKI](https://github.com/google/material-design-lite/wiki)
@@ -156,6 +176,8 @@ http://localhost:8080/webpack-dev-server/
 * [Material Popup](http://codepen.io/omix/pen/BodWvJ)
 * [CSS next - Use tomorrow's CSS syntax, today.](http://cssnext.io/)
 * [COLORS - A nicer color palette for the web.](http://clrs.cc/)
+* [How to Change the Color of an MDL Component](http://mdlhut.com/2015/08/how-to-change-the-color-of-an-mdl-component/)
+* [Google-Material-UI-Color-Palette, Sass Maps of the Google Material UI Color Palette](https://github.com/nilskaspersson/Google-Material-UI-Color-Palette)
 
 
 ### CodePens
@@ -209,6 +231,15 @@ http://localhost:8080/webpack-dev-server/
 * [More than 40 Awesome Loading Animations from CodePen (Pure CSS)](http://www.seebeetee.com/2013/08/29-great-loading-animation-from-codepen.html)
 * [30 Open Source HTML/CSS Projects from CodePen](http://webdesignledger.com/html-css-free-codepen)
 * [Material Design Type in CSS](http://codepen.io/liabru/pen/bNXLGy)
+* [Bokeh Modal](http://codepen.io/bitmap/pen/nHhxI)
+* [Modern Modal Technique](http://codepen.io/oknoblich/pen/nugeB)
+* [Expose Modal ES6](http://codepen.io/souporserious/pen/PwxEyJ)
+* [Material Design Modals](https://codepen.io/ettrics/pen/Jdjdzp)
+* [Full Responsive Popup/Modal - Centerd by CSS only, Content not scrollable while Popup apears, Overflow handling for small viewports](http://codepen.io/jzilg/pen/vEmQrm)
+* [ARROW BOX WITH CSS](http://codepen.io/ewayma/pen/iFLeb)
+* [Cliclable CSS popups with hover](http://codepen.io/timseverien/pen/EIBet)
+* [elementary popup](http://codepen.io/wowse/pen/GJKOPq)
+
 
 ### Videos
 * [Creating a 3D Webpage Header with Material Design and Babylon](https://www.youtube.com/watch?v=IZ6fgcBkhg8)
