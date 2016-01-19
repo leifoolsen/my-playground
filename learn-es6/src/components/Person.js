@@ -6,7 +6,7 @@ class Person {
     this.last = last;
   }
   getName() {
-    return this.first + ' ' + this.last;
+    return `${this.first} ${this.last}`;
   }
   toString() {
     return this.getName();
