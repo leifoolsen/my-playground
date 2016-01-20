@@ -5,7 +5,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "dev": "./node_modules/.bin/webpack-dev-server --hot --inline --module-bind --progress --color",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/karma start"
   },
   "keywords": [
     "webpack",
@@ -26,7 +26,17 @@
     "babel-preset-stage-0": "^6.3.13",
     "eslint": "^1.10.3",
     "eslint-loader": "^1.2.0",
+    "jasmine": "^2.4.1",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.19",
+    "karma-coverage": "^0.5.3",
+    "karma-jasmine": "^0.3.6",
+    "karma-phantomjs-launcher": "^0.2.3",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-spec-reporter": "0.0.23",
+    "karma-webpack": "^1.7.0",
     "null-loader": "^0.1.1",
+    "phantomjs": "^1.9.19",
     "webpack": "^1.12.11",
     "webpack-dev-server": "^1.14.1"
   },

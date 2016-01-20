@@ -1,4 +1,4 @@
-# EcmaScript2015/2016
+# EcmaScript2015
 
 ```
 npm install
@@ -6,15 +6,15 @@ npm run dev
 http://localhost:8080/webpack-dev-server/
 ```
 
-## ES5 => EcmaScript 2015 / 2016
+## EcmaScript 2015 => ES5
 
-### $
+### JQuery $
 ```javascript
 const element = document.querySelector('#some-id');
 console.log(element);
 ```
 
-### $$
+### JQuery $$
 ```javascript
 const elements = document.querySelectorAll('div');
 for (let el of elements) console.log(el);
@@ -22,12 +22,12 @@ for (let el of elements) console.log(el);
 
 ### Ajax
 
-Native
-
+Native / ES5
 ```javascript
 if (window.XMLHttpRequest) { // Mozilla, Safari, ...
   request = new XMLHttpRequest();
-} else if (window.ActiveXObject) { // IE
+} 
+else if (window.ActiveXObject) { // IE
   try {
     request = new ActiveXObject('Msxml2.XMLHTTP');
   } 
@@ -46,7 +46,6 @@ console.log(request.response);
 
 
 JQuery
-
 ```javascript
 $.get('test.html', function(data, status){
   console.log('Status: ', status, ' Data: ', data);
@@ -54,7 +53,6 @@ $.get('test.html', function(data, status){
 ```
 
 EcmaScript2015
-
 ```javascript
 fetch('test.html', { method: 'get' } )
   .then(response => response.text())
@@ -64,15 +62,110 @@ fetch('test.html', { method: 'get' } )
   .catch(err => console.error(err));
 ```
   
+### let, const
+
+EcmaScript2015
+```javascript
+var a = 1;
+
+{
+  let b = 2;
+}
+
+console.log(a); // -> 1
+console.log(b); // ReferenceError, b is undefined
+
+const favorite = 7;
+favourite = 1000; // -> compile error
+ 
+{ 
+  let x;
+  {
+    const x = "sneaky"; // -> // okay, block scoped name
+
+    x = "foo"; // -> // compile error
+  }
+  // error, already declared in block
+  let x = "inner"; 
+}
+
+// Loop scope
+for (var i=1; i<=5; i++) {
+    setTimeout(function(){
+        console.log(i);
+    }, i*100);
+}
+// 6,6,6,6,6
+
+for (let i=1; i<=5; i++) {
+    setTimeout(function(){
+        console.log(i);
+    }, i*100);
+}
+// 1,2,3,4,5
+ 
+```
+
+ES5
+```javascript
+var a = 1;
+
+{
+  var b = 2;
+}
+
+console.log(a); // -> 1
+console.log(b); // -> 2
+
+// Loop scope
+for (var i=1; i<=5; i++) {
+    setTimeout(function(){
+        console.log(i);
+    }, i*100);
+}
+// 6,6,6,6,6
+```
+
 
 ### Arrow Functions
 Binds lexical this
+
+Arrow function syntax
+```javascript
+var reflect = value => value;
+```
 
 Specifying arguments:
 ```javascript
     () => { ... } // no argument
      x => { ... } // one argument
 (x, y) => { ... } // several arguments
+
+
+// No argument
+var myName = () => "LOL";
+
+// effectively equivalent to:
+var myName = function() {
+    return "LOL";
+};
+
+// One argument
+var reflect = value => value;
+
+// effectively equivalent to:
+var reflect = function(value) {
+    return value;
+};
+
+// Several arguments
+var sum = (num1, num2) => num1 + num2;
+
+// effectively equivalent to:
+var sum = function(num1, num2) {
+    return num1 + num2;
+};
+
 ```
 
 Specifying a body:
@@ -81,12 +174,365 @@ x => { return x * x }  // block
 x => x * x  // expression, equivalent to previous line
 ```
 
+EcmaScript 2015
 ```javascript
 let r = [1, 2, 3].map(n => n * 2);
-console.log(r);
+console.log(r);  // -> [ 2, 4, 6 ]
+
+
+// Lexical this
+const bob = {
+  _name: 'Bob',
+  _friends: ['Mary', 'Joe'],
+  printFriends() {
+    this._friends.forEach(f =>
+      console.log(this._name + ' knows ' + f));
+  }
+}
+
+// Event handling
+var PageHandler = {
+
+    id: "123456",
+
+    init: function() {
+        document.addEventListener("click",
+                event => this.doSomething(event.type), false);
+    },
+
+    doSomething: function(type) {
+        console.log("Handling " + type  + " for " + this.id);
+    }
+};
+```
+
+ES5
+```javascript
+var r = [1, 2, 3].map(function(n) { return n * 2; }, this);
+console.log(r);  // -> [ 2, 4, 6 ]
+
+
+// Lexical this
+var bob = {
+  _name: 'Bob',
+  _friends: ['Mary', 'Joe'],
+  printFriends: function printFriends() {
+    this._friends.forEach(function (f) {
+      return console.log(this._name + ' knows ' + f);
+    }, this);
+  }
+};
+
+// Event handling
+var PageHandler = {
+
+    id: "123456",
+
+    init: function() {
+        document.addEventListener("click", (function(event) {
+            this.doSomething(event.type);
+        }).bind(this), false);
+    },
+
+    doSomething: function(type) {
+        console.log("Handling " + type  + " for " + this.id);
+    }
+};
 ```
 
 
-## Nyttige lenker
+### Templae Strings
+
+EcmaScript 2015
+```javascript
+// Basic usage with an expression placeholder
+var person = 'Leif Olsen';
+console.log(`Yo! ${person}!`);
+
+// Expressions work just as well with object literals
+var user = {name: 'Harry Potter'};
+console.log(`Thanks for your reply, ${user.name}.`);
+
+// Expression interpolation. One use is readable inline math.
+var a = 50;
+var b = 100;
+console.log(`The number is ${a + b} and not ${2 * a + b}.`);
+
+// Multi-line strings without needing \n\
+console.log(`string text line 1
+string text line 2`);
+
+// Functions inside expressions
+function fn() { return 'function result'; }
+console.log(`foo ${fn()} bar`);
+```
+
+ES5
+```javascript
+'use strict';
+
+// Basic usage with an expression placeholder
+var person = 'Leif Olsen';
+console.log('Yo! ' + person + '!');
+
+// Expressions work just as well with object literals
+var user = { name: 'Harry Potter' };
+console.log('Thanks for your reply, ' + user.name + '.');
+
+// Expression interpolation. One use is readable inline math.
+var a = 50;
+var b = 100;
+console.log('The number is ' + (a + b) + ' and not ' + (2 * a + b) + '.');
+
+// Multi-line strings:
+console.log('string text line 1\nstring text line 2');
+
+// Functions inside expressions
+function fn() {
+  return 'function result';
+}
+console.log('foo ' + fn() + ' bar');
+```
+
+### Default Parameters
+
+EcmaScript 2015
+```javascript
+
+function greet(msg='hello', name='world') {
+  console.log(msg,name);
+}
+
+greet();                 // -> hello world
+greet('hey');            // -> hey world
+greet(undefined, 'you'); // -> hello you
+```
+
+ES5
+```javascript
+function greet(msg, name) {
+  (msg === undefined) && (msg = 'hello');
+  (name === undefined) && (name = 'world');
+  console.log(msg,name);
+}
+
+greet();                 // -> hello world
+greet('hey');            // -> hey world
+greet(undefined, 'you'); // -> hello you
+```
+
+
+### For-Of
+
+EcmaScript 2015
+```javascript
+// Behind the scenes, this will get an iterator from the array 
+// and loop through it, getting values from it.
+for (let element of [1, 2, 3]) {
+  console.log(element);
+}
+// => 1 2 3
+```
+
+ES5
+```javascript
+// Using a for loop
+var a = [1,2,3];
+for (var i = 0; i < a.length; ++i) {
+    console.log(a[i]);
+}
+// => 1 2 3
+```
+
+
+### Rest & Spread
+
+EcmaScript 2015
+```javascript
+const runners = ["Mary", "Andrew", "Craig", "Michael", "Kenneth", "Dave"];
+
+function getLosers(first, second, third, ...losers) {
+  return losers;
+}
+
+console.log(getLosers(...runners)); // -> "Michael", "Kenneth", "Dave" 
+```
+
+
+### Class
+
+EcmaScript 2015
+```javascript
+class Media {
+	constructor(title, duration, isPlaying = false) {
+    this.title = title;
+    this.duration = duration;
+    this.isPlaying = isPlaying; 
+  }
+  
+  start() {
+    this.isPlaying = true;
+  }
+  
+  stop() {
+    this.isPlaying = false;
+  }
+}
+
+class Song extends Media {
+  constructor(title, artist, duration, isPlaying = false) {
+    super(title, duration, isPlaying);
+    this.artist = artist;
+  } 
+}
+
+const song = new Song("Wonderwall", "Oasis", "3:45");
+song.start();
+console.log(song.title, 'is playing', song.isPlaying);
+```
+
+ES5
+```javascript
+function Media(title, duration) {
+  this.title = title;
+  this.duration = duration;
+  this.isPlaying = false;
+}
+
+Media.prototype.start = function start() {
+  this.isPlaying = true;
+};
+
+Media.prototype.stop = function stop() {
+  this.isPlaying = false;
+};
+
+function Song(title, artist, duration) {
+  Media.call(this, title, duration);
+  this.artist = artist;
+}
+
+Song.prototype = Object.create(Media.prototype);
+```
+
+
+### import export
+
+EcmaScript 2015
+```javascript
+// ./lib/math.js
+
+export function sum(x, y) {
+  return x + y;
+}
+export const pi = 3.141593;
+
+
+// ./components/Person.js
+class Person {
+  constructor(first, last) {
+    this.first = first;
+    this.last = last;
+  }
+  getName() {
+    return `${this.first} ${this.last}`;
+  }
+  toString() {
+    return this.getName();
+  }
+}
+export default Person;
+
+
+// main.js
+import {sum, pi} from './lib/math';
+import Person from './components/Person';
+
+console.log('2π = ' + sum(pi, pi));
+console.log(new Person('Leif', 'Olsen');
+```
+
+ES5
+```javascript
+// ./lib/math.js
+exports.sum = sum;
+function sum(x, y) {
+  return x + y;
+}
+var pi = exports.pi = 3.141593;
+
+// main.js
+var math = require('./lib/math');
+console.log('2π = ' + math.sum(math.pi, math.pi));
+```
+
+
+## TODO
+
+### New Array Features
+
+
+### Maps and Sets
+
+
+### Typed Arrays
+
+
+### Iterables and iterators
+
+
+### Generators
+
+
+### Asynchronous programming
+
+
+### Promises
+
+Basic promise usage, See e.g. [David Walsh, JavaScript Promise API](https://davidwalsh.name/promises)
+```javascript
+var p = new Promise(function(resolve, reject) {
+	
+	// Do an async task async task and then...
+
+	if(/* good condition */) {
+		resolve('Success!');
+	}
+	else {
+		reject('Failure!');
+	}
+});
+
+p.then(function() { 
+	/* do something with the result */
+}).catch(function() {
+	/* error :( */
+})
+```
+
+
+### Decorators
+
+
+#### @Debounce
+
+#### @Throttle
+
+#### @Decorate
+
+
+<!--
+EcmaScript 2015
+```javascript
+
+```
+
+ES5
+```javascript
+
+```
+-->
+
+## Useful links
 * [ECMAScript 6 equivalents in ES5](https://github.com/addyosmani/es6-equivalents-in-es5)
 * [ES6 feature documentation and examples](https://github.com/jedrichards/es6#array-destructuring)

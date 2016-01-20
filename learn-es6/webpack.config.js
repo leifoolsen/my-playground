@@ -61,7 +61,7 @@ module.exports = {
       'strict': 0,
       'no-unused-vars': 2,
       'camelcase': 1,
-      'no-underscore-dangle': 1,
+      'no-underscore-dangle': 0,
       'indent': [1, 2],
       'quotes': 0,
       'linebreak-style': [2, 'unix'],
