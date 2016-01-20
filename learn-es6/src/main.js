@@ -167,7 +167,7 @@ string text line 2`);
   }
 
   run() {
-    //this.fetchDemo();
+    this.fetchDemo();
     //this.blockScopeDemo();
     //this.arrowDemo();
     //this.templateStringsDemo();
@@ -176,7 +176,7 @@ string text line 2`);
     //this.restSpreadDemo();
     //this.classDemo();
     //this.importExportDemo();
-    this.promiseDemo();
+    //this.promiseDemo();
   }
 }
 
