@@ -174,6 +174,15 @@ x => { return x * x }  // block
 x => x * x  // expression, equivalent to previous line
 ```
 
+Lexical this
+```javascript
+// For arrow functions, lexical this is implemented as follows.
+x => x + this.y;
+
+// is mostly syntactic sugar for
+function (x) { return x + this.y }.bind(this)
+```
+
 EcmaScript 2015
 ```javascript
 let r = [1, 2, 3].map(n => n * 2);
@@ -489,8 +498,18 @@ console.log('2π = ' + math.sum(math.pi, math.pi));
 
 ### Promises
 
+The core idea behind promises is that a promise represents the result of an asynchronous operation. A promise is in one of three different states:
+
+* pending - The initial state of a promise.
+* fulfilled - The state of a promise representing a successful operation.
+* rejected - The state of a promise representing a failed operation.
+
+Once a promise is fulfilled or rejected, it is immutable (i.e. it can never change again).
+
+
 Basic promise usage, See e.g. [David Walsh, JavaScript Promise API](https://davidwalsh.name/promises)
 ```javascript
+// Produce a promise
 var p = new Promise(function(resolve, reject) {
 	
 	// Do an async task async task and then...
@@ -503,6 +522,7 @@ var p = new Promise(function(resolve, reject) {
 	}
 });
 
+// Consume
 p.then(function() { 
 	/* do something with the result */
 }).catch(function() {
@@ -510,8 +530,19 @@ p.then(function() {
 })
 ```
 
+Promise composition
+```javascript
+var promises = ['foo','bar','baz'].map(value => {
+  return Promise.resolve(value);
+});
 
-### Decorators
+Promise.all(promises)
+  .then(values => console.log(values)) // ['foo','bar','baz']
+  .catch(error => console.log(error));
+```
+
+
+### @Decorators
 
 
 #### @Debounce
@@ -519,6 +550,9 @@ p.then(function() {
 #### @Throttle
 
 #### @Decorate
+
+
+### Reflect API
 
 
 <!--
@@ -536,3 +570,6 @@ ES5
 ## Useful links
 * [ECMAScript 6 equivalents in ES5](https://github.com/addyosmani/es6-equivalents-in-es5)
 * [ES6 feature documentation and examples](https://github.com/jedrichards/es6#array-destructuring)
+* [ECMAScript 6 — New Features: Overview & Comparison](http://es6-features.org/)
+* [Future JavaScript, ES6, ES7, JS2015 and beyond feature documentation and examples](https://github.com/jedrichards/es6)
+* [ECMAScript 6 git.io/es6features](https://github.com/lukehoban/es6features)

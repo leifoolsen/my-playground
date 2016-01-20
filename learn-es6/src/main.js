@@ -6,7 +6,8 @@ function logResult(title, ...results) {
   console.log(title, results);
   const element = document.querySelector('#mount');
   const content = document.createElement('p');
-  content.textContent = `${title}: ${results}`;
+  const d = new Date();
+  content.textContent = `${d.getHours()}:${d.getSeconds()}:${d.getMinutes()}.${d.getMilliseconds()} - ${title}: ${results}`;
   element.appendChild(content);
 }
 
@@ -153,16 +154,29 @@ string text line 2`);
     logResult('Import Export class', new Person('Leif', 'Olsen'));
   }
 
+  promiseDemo() {
+    var promises = ['foo','bar','baz'].map(value => {
+      return Promise.resolve(value);
+    });
+
+    Promise.all(promises)
+      .then(values => logResult('Promise.all', values)) // ['foo','bar','baz']
+      .catch(error => console.log(error));
+
+    logResult('Code executing after Promise.all');
+  }
+
   run() {
-    this.fetchDemo();
-//    this.blockScopeDemo();
-//    this.arrowDemo();
-//    this.templateStringsDemo();
-//    this.defaultParametersDemo();
-//    this.forOfDemo();
-//    this.restSpreadDemo();
-//    this.classDemo();
-//    this.importExportDemo();
+    //this.fetchDemo();
+    //this.blockScopeDemo();
+    //this.arrowDemo();
+    //this.templateStringsDemo();
+    //this.defaultParametersDemo();
+    //this.forOfDemo();
+    //this.restSpreadDemo();
+    //this.classDemo();
+    //this.importExportDemo();
+    this.promiseDemo();
   }
 }
 
