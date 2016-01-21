@@ -573,3 +573,5 @@ ES5
 * [ECMAScript 6 — New Features: Overview & Comparison](http://es6-features.org/)
 * [Future JavaScript, ES6, ES7, JS2015 and beyond feature documentation and examples](https://github.com/jedrichards/es6)
 * [ECMAScript 6 git.io/es6features](https://github.com/lukehoban/es6features)
+* [Curated List of ES6 and ES7 Resources](http://golist.co/ecmascript-6-resources)
+
