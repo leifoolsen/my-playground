@@ -5,7 +5,7 @@
 // Note: Tried to use the webpack ProvidePlugin to add the polyfills as outlined
 //       here: http://mts.io/2015/04/08/webpack-shims-polyfills,
 //       and here : https://gist.github.com/Couto/b29676dd1ab8714a818f
-//       but could not figure out how that should work (stupid me)
+//       but could not figure out how that should work
 
 import 'custom-event';
 import promise from 'es6-promise'; promise.polyfill();
@@ -16,16 +16,16 @@ import { debounce } from 'core-decorators';
 import { throttle } from 'core-decorators';
 import moment from 'moment';
 import 'material-design-lite/material';
-import './js/components/select/selectfield';
 
-import { cleanElement } from './js/utils';
+import './js/components/select/selectfield';
+import './js/utils/domHelpers';
 
 class Header {
   titleClass = '.mdl-layout-title';
 
   constructor(selector = '#header') {
     this.selector = selector;
-    this.headerEl = document.querySelector(this.selector);
+    this.headerEl = document.qs(this.selector);
     this.prevContentScrollTop = 0;
   }
 
@@ -69,7 +69,7 @@ class Header {
 
   updateTitle(event) {
     let anchor = event.detail.anchor;
-    let titleTag = this.headerEl.querySelector(this.titleClass);
+    let titleTag = this.headerEl.qs(this.titleClass);
     titleTag.textContent = anchor.textContent;
   }
 }
@@ -83,10 +83,10 @@ class Drawer {
 
   constructor(selector= '#drawer') {
     this.selector     = selector;
-    this.drawerEl     = document.querySelector(this.selector);
+    this.drawerEl     = document.qs(this.selector);
     this.navLinkQuery = `${this.selector} nav a.mdl-navigation__link`;
 
-    for (let anchor of document.querySelectorAll(this.navLinkQuery)) {
+    for (let anchor of document.qsa(this.navLinkQuery)) {
 
       anchor.addEventListener('click', event => {
         event.preventDefault();
@@ -106,7 +106,7 @@ class Drawer {
   }
 
   setActiveNavLink(navLinkEl) {
-    const currentNav = navLinkEl.parentNode.querySelector(this.currentNavClass);
+    const currentNav = navLinkEl.parentNode.qs(this.currentNavClass);
     if(currentNav) {
       currentNav.classList.remove(this.currentNavClassName);
     }
@@ -116,7 +116,7 @@ class Drawer {
   closeDrawerIfVisible() {
     // See: http://stackoverflow.com/questions/31536467/how-to-hide-drawer-upon-user-click
     // See: https://github.com/google/material-design-lite/blob/v1.0.6/material.js#L3234
-    const layout = document.querySelector(this.layoutClass);
+    const layout = document.qs(this.layoutClass);
     if(this.drawerEl.classList.contains(this.isVisibleClassName)) {
       layout.MaterialLayout.drawerToggleHandler_();
     }
@@ -135,7 +135,7 @@ class Content {
 
   constructor(selector = '#content') {
     this.selector = selector;
-    this.contentEl = document.querySelector(this.selector);
+    this.contentEl = document.qs(this.selector);
     this.contentEl.addEventListener('scroll', (event) => this.scroll(event));
   }
 
@@ -144,19 +144,18 @@ class Content {
   }
 
   show(event) {
-    let contentPanelEl = document.querySelector(this.contentPanelId);
+    let contentPanelEl = document.qs(this.contentPanelId);
     let href = event.detail.anchor.href;
 
     window.fetch(href, { method: 'get' } )
       .then(response => response.text())
       .then(text => {
-        cleanElement(contentPanelEl);
+        contentPanelEl.removeChilds();
         contentPanelEl.insertAdjacentHTML('afterbegin', text);
 
-        let scripts = contentPanelEl.querySelectorAll("script");
-        for (let script of scripts) {
+        [...contentPanelEl.qsa('script')].forEach(function (script) {
           eval(script.innerHTML);
-        }
+        });
 
         this.contentChange();
       })
@@ -184,7 +183,7 @@ class Content {
 
   index() {
     // Messy code :-)
-    let contentPanel = document.querySelector(this.contentPanelId);
+    let contentPanel = document.qs(this.contentPanelId);
 
     const h1 = document.createElement('h1');
     h1.textContent = `${moment().format('YYYY-MM-DD HH:mm:ss')} - Yo MDL!`;
@@ -258,7 +257,7 @@ class App {
 
   @debounce
   static windowResize() {
-    pubsub.publish('window.resized', { element: document.querySelector('#content') } );
+    pubsub.publish('window.resized', { element: document.qs('#content') } );
   }
 
   run() {
