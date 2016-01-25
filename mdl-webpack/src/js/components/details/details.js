@@ -27,9 +27,9 @@ function injectCSS() {
    Just overwrite the style. Almost everything can be fully customized.
    Anything that shouldn't be overwritten has an !important on it.
 
-   Semantic correct markup is:
+   Semantic correct markup example:
 
-     <details role="group">
+     <details role="group" aria-expanded="true" open>
        <summary role="button">Show/Hide me</summary>
        <p>Some content .....</p>
      </details>
