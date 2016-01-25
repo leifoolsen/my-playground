@@ -8,6 +8,8 @@
  *   http://blog.mxstbr.com/2015/06/html-details/
  *   http://html5doctor.com/the-details-and-summary-elements/
  *   http://zogovic.com/post/21784525226/simple-html5-details-polyfill
+ *   http://www.sitepoint.com/fixing-the-details-element/
+ *   https://www.smashingmagazine.com/2014/11/complete-polyfill-html5-details-element/
  */
 
 const hasNativeDetailsSupport =  ('open' in document.createElement('details'));
@@ -27,21 +29,29 @@ function injectCSS() {
    Just overwrite the style. Almost everything can be fully customized.
    Anything that shouldn't be overwritten has an !important on it.
 
-   Semantic correct markup example:
+   Semantic (correct) markup example:
 
-     <details role="group" aria-expanded="true" open>
+     <details role="group" open>
        <summary role="button">Show/Hide me</summary>
-       <p>Some content .....</p>
+       <p>Some content ..... etc.</p>
      </details>
+
+   Preserve display attribute example:
+
+   <details role="group">
+     <summary role="button">Show/Hide me</summary>
+     <div>
+        <p>Some content ..... etc.</p>
+     </div>
+   </details>
+
    */
 
   const css = `
-    details {
+    details, details>summary {
       display: block;
     }
     details > summary {
-      display: inline-block !important;
-      width: 100%  !important;
       min-height: 1.4em;
       padding: 0.125em;
     }
@@ -90,6 +100,7 @@ export function polyfillDetails(fromEl = document) {
     details.setAttribute('role', 'group');
 
     // See: https://www.w3.org/WAI/GL/wiki/Using_aria-expanded_to_indicate_the_state_of_a_collapsible_element
+    // See: https://www.w3.org/WAI/PF/aria-practices/
     // Should add ARIA attributes for ALL browsers because current native implementaions are weak:
     // See: https://bugs.webkit.org/show_bug.cgi?id=131111
     details.setAttribute('aria-expanded', (details.hasAttribute('open') ? 'true' : 'false'));
@@ -106,7 +117,7 @@ export function polyfillDetails(fromEl = document) {
       details.insertBefore(summary, details.firstChild);
     }
 
-    // The first <summary> must be the first child of <details>
+    // <summary> must be the first child of <details>
     if (details.firstChild !== summary) {
       details.removeChild(summary);
       details.insertBefore(summary, details.firstChild);
