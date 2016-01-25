@@ -10,6 +10,7 @@
 import 'custom-event';
 import promise from 'es6-promise'; promise.polyfill();
 import 'isomorphic-fetch'; // ... or import 'whatwg-fetch';
+import { polyfillDetails } from './js/components/details/details';
 // End polyfills
 
 import { debounce } from 'core-decorators';
@@ -152,6 +153,8 @@ class Content {
       .then(text => {
         contentPanelEl.removeChilds();
         contentPanelEl.insertAdjacentHTML('afterbegin', text);
+
+        polyfillDetails(contentPanelEl);
 
         [...contentPanelEl.qsa('script')].forEach(function (script) {
           eval(script.innerHTML);

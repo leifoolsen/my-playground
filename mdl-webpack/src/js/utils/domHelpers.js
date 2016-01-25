@@ -1,13 +1,20 @@
 "use strict";
 
 // Alias for (el||document).querySelector
+// See: https://github.com/stevermeister/bling.js
+// See: https://github.com/kentcdodds/es6-todomvc/blob/master/js/helpers.js
+// See: http://stackoverflow.com/questions/34157329/queryselector-and-queryselectorall-alias
 document.qs = document.querySelector.bind(document);
 Element.prototype.qs = function() {
   return this.querySelector.apply(this, arguments);
 };
 
 // Alias for (el||document).querySelectorAll
+// See: https://github.com/stevermeister/bling.js
+// See: https://github.com/kentcdodds/es6-todomvc/blob/master/js/helpers.js
+// See: http://stackoverflow.com/questions/34157329/queryselector-and-queryselectorall-alias
 //
+// Note:
 // The returned NodeList is not iterable, e.g. with foreach).
 // As an alternative use a for loop:
 // for (let el of document.qsa('h1')) {

@@ -113,8 +113,6 @@ http://localhost:8080/webpack-dev-server/
 * [Solved by Flexbox](https://philipwalton.github.io/solved-by-flexbox/)
 * [A Simple Web App With Node.js, Express, Bootstrap & Stormpath](https://stormpath.com/blog/build-nodejs-express-stormpath-app/)
 * [HTML5 Cross Browser Polyfills](https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills)
-* [dialog-polyfill.js](https://github.com/GoogleChrome/dialog-polyfill)
-* [dialog element demo](http://demo.agektmr.com/dialog/)
 * [CSS-Grid-Polyfill](https://github.com/FremyCompany/css-grid-polyfill)
 * [Intl.js](https://github.com/andyearnshaw/Intl.js)
 * [You Don't Know JS (book series)](https://github.com/getify/You-Dont-Know-JS)
@@ -134,10 +132,12 @@ http://localhost:8080/webpack-dev-server/
 * [Vanilla Modal - Do we really need another modal script?](http://phuse.ca/vanilla-modal-plain-javascript-modal/)
 * [Material Design Modal](http://ettrics.com/code/material-design-modal/)
 * [Ettrics - Articles](http://ettrics.com/articles/)
+* [dialog-polyfill.js is a polyfill for &lt;dialog&gt;](https://github.com/GoogleChrome/dialog-polyfill)
+* [dialog element demo](http://demo.agektmr.com/dialog/)
 * [Off Canvas Menu - Modal dialog for use with Material Design Lite](https://github.com/MarkRabey/material-modal)
 * [Making Modal Windows Better For Everyone](https://www.smashingmagazine.com/2014/09/making-modal-windows-better-for-everyone/)
 * [Keep tabbing within modal pane only](http://stackoverflow.com/questions/14572084/keep-tabbing-within-modal-pane-only)
-
+* [Can es6's module loader also load assets](http://stackoverflow.com/questions/24923479/can-es6s-module-loader-also-load-assets-html-css)
 
 ### !
 * [Material Design Lite WIKI](https://github.com/google/material-design-lite/wiki)
@@ -224,6 +224,7 @@ http://localhost:8080/webpack-dev-server/
 * [ARROW BOX WITH CSS](http://codepen.io/ewayma/pen/iFLeb)
 * [Cliclable CSS popups with hover](http://codepen.io/timseverien/pen/EIBet)
 * [elementary popup](http://codepen.io/wowse/pen/GJKOPq)
+* [DataTables with expanding row details](http://codepen.io/vseppala/pen/zxdeYo)
 
 
 ### Videos
