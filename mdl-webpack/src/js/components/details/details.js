@@ -21,30 +21,33 @@ function injectCSS() {
   }
 
   /*
-   Modified from: https://github.com/jordanaustin/Details-Expander/blob/master/src/css/main.css
+    Modified from: https://github.com/jordanaustin/Details-Expander/blob/master/src/css/main.css
 
-   NOTE:
-   These are defaults meant to mimic the default unstyled brower look.
-   I highly recommend you style your details tags but don't do it here.
-   Just overwrite the style. Almost everything can be fully customized.
-   Anything that shouldn't be overwritten has an !important on it.
+    NOTE:
+    These are defaults meant to mimic the default unstyled brower look.
+    I highly recommend you style your details tags but don't do it here.
+    Just overwrite the style. Almost everything can be fully customized.
+    Anything that shouldn't be overwritten has an !important on it.
 
-   Semantic (correct) markup example:
+    Semantic (correct) markup example:
 
-     <details role="group" open>
-       <summary role="button">Show/Hide me</summary>
-       <p>Some content ..... etc.</p>
-     </details>
+    <details role="group" open>
+      <summary role="button">Show/Hide me</summary>
+      <p>Some content ..... etc.</p>
+    </details>
 
-   Preserve display attribute example:
-
-   <details role="group">
-     <summary role="button">Show/Hide me</summary>
-     <div>
-        <p>Some content ..... etc.</p>
-     </div>
-   </details>
-
+    Preserve display attribute example:
+    <style>
+      .my-content { display : flex; }
+    </style
+    <details role="group">
+      <summary role="button">Show/Hide me</summary>
+      <div>
+        <div class="my-content">
+          <p>Some content ..... etc.</p>
+        </div>
+      </div>
+    </details>
    */
 
   const css = `
@@ -74,7 +77,7 @@ function injectCSS() {
     details[open] > *:not(summary) {
       display: block;
 
-      /* Wrap detail elements in a div-tag if the original display attribute should be preserved */
+      /* If you need to preserve the original display attribute then wrap detail child elements in a div-tag */
       /* e.g. if you use an element with "display: flex", then wrap it inside a div */
       /* Too much hassle to make JS preserve original attribute */
     }

@@ -143,6 +143,8 @@ http://localhost:8080/webpack-dev-server/
 * [Making A Complete Polyfill For The HTML5 Details Element](https://www.smashingmagazine.com/2014/11/complete-polyfill-html5-details-element/)
 * [&lt;details&gt;](http://blog.mxstbr.com/2015/06/html-details/)
 * [Bulletproof HTML5 &lt;details&gt; fallback using jQuery](https://mathiasbynens.be/notes/html5-details-jquery)
+* [WAI-ARIA 1.0 Authoring Practices](https://www.w3.org/WAI/PF/aria-practices/)
+* [Polyfill.js: A library to make creating CSS polyfills much easier.](https://github.com/philipwalton/polyfill/)
 
 
 ### !
