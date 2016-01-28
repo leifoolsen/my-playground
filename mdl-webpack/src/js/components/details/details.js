@@ -60,7 +60,7 @@ function injectCSS() {
     }
     details > summary:before {
       content:"►";
-      font-size: 0.9em;
+      font-size: 1em;
       position: relative;
       display: inline-block;
       width: 1em;

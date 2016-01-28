@@ -145,6 +145,7 @@ http://localhost:8080/webpack-dev-server/
 * [Bulletproof HTML5 &lt;details&gt; fallback using jQuery](https://mathiasbynens.be/notes/html5-details-jquery)
 * [WAI-ARIA 1.0 Authoring Practices](https://www.w3.org/WAI/PF/aria-practices/)
 * [Polyfill.js: A library to make creating CSS polyfills much easier.](https://github.com/philipwalton/polyfill/)
+* [Pure CSS Triangles Explained](http://appendto.com/2013/03/pure-css-triangles-explained/)
 
 
 ### !
@@ -233,6 +234,7 @@ http://localhost:8080/webpack-dev-server/
 * [Cliclable CSS popups with hover](http://codepen.io/timseverien/pen/EIBet)
 * [elementary popup](http://codepen.io/wowse/pen/GJKOPq)
 * [DataTables with expanding row details](http://codepen.io/vseppala/pen/zxdeYo)
+* [Ultimate arrow mixin, sass](http://codepen.io/kirkas/pen/otqyJ)
 
 
 ### Videos
