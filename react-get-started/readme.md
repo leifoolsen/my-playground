@@ -49,6 +49,8 @@ http://localhost:8080/webpack-dev-server/
 * [Using React with Webpack Tutorial](https://blog.risingstack.com/using-react-with-webpack-tutorial/)
 * [TUTORIAL: BUILD A DATE PICKER WITH REACT JS](http://dapperdeveloper.com/2015/09/21/tutorial-build-a-date-picker-with-react-js/)
 * [Building stateless function components, new in React 0.14](https://egghead.io/lessons/react-building-stateless-function-components-new-in-react-0-14?utm_source=rss&utm_medium=feed&utm_campaign=rss_feed)
+* [Building a React.js App: Utilizing Stateless Function Components](https://egghead.io/lessons/react-building-a-react-js-app-utilizing-stateless-function-components)
+* [Building a React.js App: Notetaker Introduction](https://egghead.io/lessons/react-building-a-react-js-app-notetaker-introduction?series=build-your-first-react-js-application)
 * [How to get started with React js in ES6](http://jpsierens.com/react-es6-get-started/)
 * [Which Flux Implementation Should I Use With React?](http://jamesknelson.com/which-flux-implementation-should-i-use-with-react/)
 * [Redux](http://rackt.org/redux/index.html)
