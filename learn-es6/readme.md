@@ -293,7 +293,7 @@ var PageHandler = {
 ```
 
 
-### Templae Strings
+### Template Strings
 
 EcmaScript 2015
 ```javascript
