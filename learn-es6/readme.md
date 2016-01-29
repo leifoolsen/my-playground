@@ -468,6 +468,85 @@ Song.prototype = Object.create(Media.prototype);
 ```
 
 
+### Private properties
+The only way to get true privacy in JS is through scoping, so there is no way to have a property that is a
+member of this that will be accessible only inside the component. The best way to store truly private data
+in ES6 is keeping private properties in WeakMaps or using Symbols as keys for private properties
+
+#### Using symbols as keys for private properties
+
+EcmaScript 2015
+```javascript
+const _firstName = Symbol('firstName');
+const _lastName  = Symbol('lastName');
+const _age       = Symbol('age');
+
+class ClassWithPrivateDataUsingSymbol {
+  constructor(firstName, lastName, age = 55) {
+    this[_firstName] = firstName;
+    this[_lastName]  = lastName;
+
+    this.age = age;  // Since we're using a set method
+  }
+
+  get firstName() {
+    return this[_firstName];
+  }
+
+  get lastName() {
+    return this[_lastName];
+  }
+
+  get age() {
+    return this[_age];
+  }
+
+  set age(age) {
+    this[_age] = age;
+  }
+
+  toString() {
+    return `${this.firstName} ${this.lastName}, ${this.age}`;
+  }
+}
+```
+
+#### Keeping private data in WeakMaps
+Due to how WeapMaps work it won't prevent objects from beeing GC'ed.
+As long as the WeakMaps are hidden from the outside world, the private data is safe.
+
+EcmaScript 2015
+```javascript
+const _privateProps = new WeakMap();
+class ClassWithPrivateDataUsingWeakMap {
+  constructor(firstName, lastName, age=55) {
+    _privateProps.set(this, { firstName, lastName });
+    this.age = age;
+  }
+
+  get firstName() {
+    return _privateProps.get(this).firstName;
+  }
+
+  get lastName() {
+    return _privateProps.get(this).lastName;
+  }
+
+  get age() {
+    return _privateProps.get(this).age;
+  }
+
+  set age(age) {
+    _privateProps.get(this).age = age;
+  }
+
+  toString() {
+    return `${this.firstName} ${this.lastName}, ${this.age}`;
+  }
+}
+```
+
+
 ### import export
 
 EcmaScript 2015
@@ -616,4 +695,7 @@ ES5
 * [ECMAScript 6 — New Features: Overview & Comparison](http://es6-features.org/)
 * [ECMAScript 6 git.io/es6features](https://github.com/lukehoban/es6features)
 * [Curated List of ES6 and ES7 Resources](http://golist.co/ecmascript-6-resources)
-
+* [ES6 Coding Style](https://github.com/elierotenberg/coding-styles/blob/master/es6.md)
+* [Getters, Setters, and Organizing Responsibility in JavaScript](http://raganwald.com/2015/08/24/ready-get-set-go.html)
+* [Exploring ES6](http://exploringjs.com/es6/index.html#toc_ch_maps-sets)
+* [Understanding ECMAScript 6](https://leanpub.com/understandinges6/read)

@@ -35,6 +35,79 @@ class Song extends Media {
   }
 }
 
+/*
+ * The only way to get true privacy in JS is through scoping, so there is no way to have a property that is a
+ * member of this that will be accessible only inside the component. The best way to store truly private data
+ * in ES6 is keeping private properties in WeakMaps or using Symbols as keys for private properties
+ */
+
+const _firstName = Symbol('firstName');
+const _lastName  = Symbol('lastName');
+const _age       = Symbol('age');
+
+class ClassWithPrivateDataUsingSymbol {
+  constructor(firstName, lastName, age = 55) {
+    this[_firstName] = firstName;
+    this[_lastName]  = lastName;
+
+    this.age = age;  // Since we're using a set method
+  }
+
+  get firstName() {
+    return this[_firstName];
+  }
+
+  get lastName() {
+    return this[_lastName];
+  }
+
+  get age() {
+    return this[_age];
+  }
+
+  set age(age) {
+    this[_age] = age;
+  }
+
+  toString() {
+    return `${this.firstName} ${this.lastName}, ${this.age}`;
+  }
+}
+
+
+/*
+ * Due to how WeapMaps work it won't prevent objects from beeing GC'ed.
+ * As long as the WeakMaps are hidden from the outside world, the private data is safe.
+ */
+const _privateProps = new WeakMap();
+class ClassWithPrivateDataUsingWeakMap {
+  constructor(firstName, lastName, age=55) {
+    _privateProps.set(this, { firstName, lastName });
+    this.age = age;
+  }
+
+  get firstName() {
+    return _privateProps.get(this).firstName;
+  }
+
+  get lastName() {
+    return _privateProps.get(this).lastName;
+  }
+
+  get age() {
+    return _privateProps.get(this).age;
+  }
+
+  set age(age) {
+    _privateProps.get(this).age = age;
+  }
+
+  toString() {
+    return `${this.firstName} ${this.lastName}, ${this.age}`;
+  }
+}
+
+
 class App {
 
   fetchDemo() {
@@ -171,6 +244,20 @@ string text line 2`);
     logResult('Class', song.title, 'is playing', song.isPlaying);
   }
 
+  classWithPrivateDataUsingSymbolDemo() {
+    const person = new ClassWithPrivateDataUsingSymbol("Leif", "Olsen");
+    person.age = 56;
+
+    logResult('ClassWithPrivateDataUsingSymbol', person);
+  }
+
+  classWithPrivateDataUsingWeakMapDemo() {
+    const person = new ClassWithPrivateDataUsingWeakMap("Leif", "Olsen");
+    person.age = 56;
+
+    logResult('ClassWithPrivateDataUsingWeakMap', person);
+  }
+
   importExportDemo() {
     logResult('Import Export function', '2π = ' + sum(pi, pi));
     logResult('Import Export class', new Person('Leif', 'Olsen'));
@@ -191,14 +278,16 @@ string text line 2`);
   run() {
     //this.fetchDemo();
     //this.blockScopeDemo();
-    this.propertyInitialiserShorthandDemo();
-    this.nativeObjectMergingDemo();
+    //this.propertyInitialiserShorthandDemo();
+    //this.nativeObjectMergingDemo();
     //this.arrowDemo();
     //this.templateStringsDemo();
     //this.defaultParametersDemo();
     //this.forOfDemo();
     //this.restSpreadDemo();
-    //this.classDemo();
+    this.classDemo();
+    this.classWithPrivateDataUsingSymbolDemo();
+    this.classWithPrivateDataUsingWeakMapDemo();
     //this.importExportDemo();
     //this.promiseDemo();
   }
