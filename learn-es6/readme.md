@@ -126,6 +126,49 @@ for (var i=1; i<=5; i++) {
 // 6,6,6,6,6
 ```
 
+### Object Literal Enhancements
+
+#### Property Value Shorthands
+EcmaScript2015
+```javascript
+var foo = 'foo';
+var bar = 'bar';
+
+var o = {foo, bar};
+
+console.log(o); // {foo: 'foo', bar: 'bar'}
+```
+
+ES5
+```javascript
+var foo = 'foo';
+var bar = 'bar';
+
+var o = {foo: foo, bar: bar};
+console.log(o); // {foo: 'foo', bar: 'bar'}
+```
+
+#### Destructing Property Value Shorthands
+EcmaScript2015
+```javascript
+const obj = { x: 4, y: 1 };
+const {x,y} = obj;
+console.log(x); // 4
+console.log(y); // 1
+```
+
+
+#### Native object merging - Object.assign
+EcmaScript2015
+```javascript
+var o1 = {foo: 'foo'};
+var o2 = {bar: 'bar'};
+var o3 = {baz: 'baz', foo: 'qux'};
+
+Object.assign(o1, o2, o3); // {foo: 'qux', bar: 'bar', baz: 'baz'}
+console.log(o1); // {foo: 'qux', bar: 'bar', baz: 'baz'}
+```
+
 
 ### Arrow Functions
 Binds lexical this
@@ -569,9 +612,8 @@ ES5
 
 ## Useful links
 * [ECMAScript 6 equivalents in ES5](https://github.com/addyosmani/es6-equivalents-in-es5)
-* [ES6 feature documentation and examples](https://github.com/jedrichards/es6#array-destructuring)
-* [ECMAScript 6 — New Features: Overview & Comparison](http://es6-features.org/)
 * [Future JavaScript, ES6, ES7, JS2015 and beyond feature documentation and examples](https://github.com/jedrichards/es6)
+* [ECMAScript 6 — New Features: Overview & Comparison](http://es6-features.org/)
 * [ECMAScript 6 git.io/es6features](https://github.com/lukehoban/es6features)
 * [Curated List of ES6 and ES7 Resources](http://golist.co/ecmascript-6-resources)
 

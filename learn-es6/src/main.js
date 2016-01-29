@@ -77,6 +77,28 @@ class App {
     // 1,2,3,4,5
   }
 
+  propertyInitialiserShorthandDemo() {
+    const foo = 'foo';
+    const bar = 'bar';
+
+    const o = {foo, bar};
+
+    logResult('propertyInitialiserShorthandDemo, initializing', JSON.stringify(o)); // {foo: 'foo', bar: 'bar'}
+
+    const obj = { x: 4, y: 1 };
+    const {x, y} = obj;
+    logResult('propertyInitialiserShorthandDemo, destructing', 'x', x, 'y', y); // 4, 1}
+  }
+
+  nativeObjectMergingDemo() {
+    const o1 = {foo: 'foo'};
+    const o2 = {bar: 'bar'};
+    const o3 = {baz: 'baz', foo: 'qux'};
+
+    Object.assign(o1, o2, o3); // {foo: 'qux', bar: 'bar', baz: 'baz'}
+    logResult('nativeObjectMergingDemo, Object.assign', JSON.stringify(o1)); // {foo: 'qux', bar: 'bar', baz: 'baz'}
+  }
+
   arrowDemo() {
     let r = [1, 2, 3].map(n => n * 2);
     logResult('Arrow', r);
@@ -167,8 +189,10 @@ string text line 2`);
   }
 
   run() {
-    this.fetchDemo();
+    //this.fetchDemo();
     //this.blockScopeDemo();
+    this.propertyInitialiserShorthandDemo();
+    this.nativeObjectMergingDemo();
     //this.arrowDemo();
     //this.templateStringsDemo();
     //this.defaultParametersDemo();
