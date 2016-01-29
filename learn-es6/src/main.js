@@ -108,6 +108,40 @@ class ClassWithPrivateDataUsingWeakMap {
 }
 
 
+/*
+ * Underscores
+ * The old default, just use a public property with an underscore prefix. While not a private property
+ * by any stretch of the imagination, this is easily the simplest, most readable, and fastest approach.
+ */
+class ClassWithPrivateDataUsingUnderscore {
+  constructor(_firstName, _lastName, _age=55) {
+    this._firstName = _firstName;
+    this._lastName = _lastName;
+    this.age = _age;
+  }
+
+  get firstName() {
+    return this._firstName;
+  }
+
+  get lastName() {
+    return this._lastName;
+  }
+
+  get age() {
+    return this._age;
+  }
+
+  set age(age) {
+    this._age = age;
+  }
+
+  toString() {
+    return `${this.firstName} ${this.lastName}, ${this.age}`;
+  }
+}
+
+
 class App {
 
   fetchDemo() {
@@ -258,6 +292,13 @@ string text line 2`);
     logResult('ClassWithPrivateDataUsingWeakMap', person);
   }
 
+  classWithPrivateDataUsingUnderscoreDemo() {
+    const person = new ClassWithPrivateDataUsingUnderscore("Leif", "Olsen");
+    person.age = 56;
+
+    logResult('ClassWithPrivateDataUsingUnderscore', person);
+  }
+
   importExportDemo() {
     logResult('Import Export function', '2π = ' + sum(pi, pi));
     logResult('Import Export class', new Person('Leif', 'Olsen'));
@@ -288,6 +329,7 @@ string text line 2`);
     this.classDemo();
     this.classWithPrivateDataUsingSymbolDemo();
     this.classWithPrivateDataUsingWeakMapDemo();
+    this.classWithPrivateDataUsingUnderscoreDemo();
     //this.importExportDemo();
     //this.promiseDemo();
   }
