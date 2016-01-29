@@ -471,7 +471,8 @@ Song.prototype = Object.create(Media.prototype);
 ### Private properties
 The only way to get true privacy in JS is through scoping, so there is no way to have a property that is a
 member of this that will be accessible only inside the component. The best way to store truly private data
-in ES6 is keeping private properties in WeakMaps or using Symbols as keys for private properties
+in ES6 is keeping private properties in WeakMaps or using Symbols as keys for private properties. If you don't care
+too much about keeping properties private, simply use the old default underscore prefix to indicate privacy.
 
 #### Using symbols as keys for private properties
 
@@ -509,6 +510,12 @@ class ClassWithPrivateDataUsingSymbol {
     return `${this.firstName} ${this.lastName}, ${this.age}`;
   }
 }
+
+
+const person = new ClassWithPrivateDataUsingSymbol("Leif", "Olsen");
+person.age = 56;
+
+console.log( person); // -> Leif Olsen, 56
 ```
 
 #### Keeping private data in WeakMaps
@@ -544,8 +551,50 @@ class ClassWithPrivateDataUsingWeakMap {
     return `${this.firstName} ${this.lastName}, ${this.age}`;
   }
 }
+
+const person = new ClassWithPrivateDataUsingWeakMap("Leif", "Olsen");
+console.log( person); // -> Leif Olsen, 55
 ```
 
+
+#### Keeping private using underscores
+The old default, just use a public property with an underscore prefix. While not a private property
+by any stretch of the imagination, this is easily the simplest, most readable, and fastest approach.
+
+EcmaScript 2015
+```javascript
+class ClassWithPrivateDataUsingUnderscore {
+  constructor(_firstName, _lastName, _age=55) {
+    this._firstName = _firstName;
+    this._lastName = _lastName;
+    this.age = _age;
+  }
+
+  get firstName() {
+    return this._firstName;
+  }
+
+  get lastName() {
+    return this._lastName;
+  }
+
+  get age() {
+    return this._age;
+  }
+
+  set age(age) {
+    this._age = age;
+  }
+
+  toString() {
+    return `${this.firstName} ${this.lastName}, ${this.age}`;
+  }
+}
+
+const person = new ClassWithPrivateDataUsingUnderscore("Leif", "Olsen");
+person.age = 56;
+console.log( person); // -> Leif Olsen, 56
+```
 
 ### import export
 
@@ -696,6 +745,5 @@ ES5
 * [ECMAScript 6 git.io/es6features](https://github.com/lukehoban/es6features)
 * [Curated List of ES6 and ES7 Resources](http://golist.co/ecmascript-6-resources)
 * [ES6 Coding Style](https://github.com/elierotenberg/coding-styles/blob/master/es6.md)
-* [Getters, Setters, and Organizing Responsibility in JavaScript](http://raganwald.com/2015/08/24/ready-get-set-go.html)
 * [Exploring ES6](http://exploringjs.com/es6/index.html#toc_ch_maps-sets)
 * [Understanding ECMAScript 6](https://leanpub.com/understandinges6/read)
