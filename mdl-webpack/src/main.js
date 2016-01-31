@@ -153,11 +153,10 @@ class Content {
       .then(text => {
         contentPanelEl.removeChilds();
         contentPanelEl.insertAdjacentHTML('afterbegin', text);
-        document.body.appendChild(document.createElement('li'));
 
         polyfillDetails(contentPanelEl);
 
-        [...contentPanelEl.qsa('script')].forEach(function (script) {
+        [...contentPanelEl.qsa('script')].forEach( script => {
           eval(script.innerHTML);
         });
 

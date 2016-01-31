@@ -152,6 +152,7 @@ http://localhost:8080/webpack-dev-server/
 * [Custom Elements With ES6](http://h3manth.com/new/blog/2015/custom-elements-with-es6/)
 * [document-register-element: A stand-alone working lightweight version of the W3C Custom Elements specification.](https://github.com/WebReflection/document-register-element)
 * [DOM4: Modern DOM functionalities for every browser](https://github.com/WebReflection/dom4)
+* [10 SCSS utilities I can’t live without](http://hackingui.com/front-end/10-best-scss-utilities/)
 
 
 ### !
@@ -241,6 +242,11 @@ http://localhost:8080/webpack-dev-server/
 * [elementary popup](http://codepen.io/wowse/pen/GJKOPq)
 * [DataTables with expanding row details](http://codepen.io/vseppala/pen/zxdeYo)
 * [Ultimate arrow mixin, sass](http://codepen.io/kirkas/pen/otqyJ)
+* [Travis Arnold](http://codepen.io/souporserious/)
+* [Responsive Rotating Touch Slider](http://codepen.io/souporserious/pen/eLifH)
+* [Cross-Browser CSS3 Form](http://codepen.io/souporserious/pen/okEfr)
+* [Drop Content Data Attributes](http://codepen.io/souporserious/pen/KpMOxK)
+* [REM & VW UNITS](http://codepen.io/souporserious/pen/RWjWKJ)
 
 
 ### Videos

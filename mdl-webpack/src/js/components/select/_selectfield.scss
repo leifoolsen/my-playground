@@ -7,6 +7,7 @@
  */
 @import "../../../../node_modules/material-design-lite/src/variables";
 @import "../../../../node_modules/material-design-lite/src/textfield/textfield";
+@import "../../../stylesheets/utils/mixins";
 
 // NOTE:
 // Not shure if extending css classes is a good idea.
@@ -18,17 +19,11 @@
 
   /* Styling the down arrow */
   &:after {
+    @include arrow(down, .7em, .47em, inherit);
     position: absolute;
     bottom: 1.8em;
     right: 0.5em;
-    width: 0;
-    height: 0;
     padding: 0;
-    content: '';
-    border-left: .35em solid transparent;
-    border-right: .35em solid transparent;
-    border-top: .525em solid;
-    color: inherit;
     pointer-events: none;
   }
 }
@@ -58,9 +53,19 @@
 .mdlext-selectfield__select {
   @extend .mdl-textfield__input;
 
+  // removes rounded corners at bottom and the down arrow icon as well.
   border-radius: 0;
-  appearance: none; // removes rounded corners at bottom and the down arrow icon as well.
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  text-indent: 0.01px; /* Removes default arrow from firefox */
+  text-overflow: "";   /* Removes default arrow from firefox */
 
+  // Mozilla, remove focusring
+  &:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+  }
 
   // Note: Can not extend parent selectors
   .mdlext-selectfield.is-focused & {
@@ -77,6 +82,10 @@
     border-bottom: 1px dotted $input-text-disabled-color;
     color: $input-text-disabled-text-color;
   }
+}
+
+.mdlext-selectfield__select::-ms-expand {
+  display: none;
 }
 
 // Styling for the label / floating label.
