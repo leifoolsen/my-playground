@@ -1,13 +1,83 @@
+<style>
+  details > *:not(summary) {
+    display: none;
+    opacity: 0;
+    -webkit-transform: scaleY(0);
+    -moz-transform: scaleY(0);
+    -ms-transform: scaleY(0);
+    transform: scaleY(0);
+  }
+  details[open] > *:not(summary) {
+    display: block;
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+
+    -webkit-animation: animopen .1s ease-in-out;
+    -moz-animation: animopen .1s ease-in-out;
+    animation: animopen .1s ease-in-out;
+  }
+
+  /* Animating display:none -> display:block, see: https://jdsteinbach.com/css/snippet-animate-display-transform/ */
+  @-webkit-keyframes animopen {
+    0% {
+      display: none;
+      opacity: 0;
+    }
+    1% {
+      display: block;
+      opacity: 0;
+      -webkit-transform: scaleY(0);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: scaleY(1);
+    }
+  }
+  @-moz-keyframes animopen {
+    0% {
+      display: none;
+      opacity: 0;
+    }
+    1% {
+      display: block;
+      opacity: 0;
+      -moz-transform: scaleY(0);
+    }
+    100% {
+      opacity: 1;
+      -moz-transform: scaleY(1);
+    }
+  }
+  @keyframes animopen {
+    0% {
+      display: none;
+      opacity: 0;
+    }
+    1% {
+      display: block;
+      opacity: 0;
+      transform: scaleY(0);
+    }
+    100% {
+      opacity: 1;
+      transform: scaleY(1);
+    }
+  }
+</style>
+
 <h4>Simple usage</h4>
 <details role="group">
-  <summary role="button">Show/Hide me</summary>
-  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+  <summary role="button">Click to show/hide details</summary>
+  <p>The details are hidden after page load.</p>
 </details>
 
 <h4>The open attribute</h4>
 <details role="group" open>
-  <summary role="button">Hide/Show me</summary>
-  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+  <summary role="button">Click to hide/show details</summary>
+  <p>The details are open after page load.</p>
 </details>
 
 <h4>Nested elements</h4>
@@ -18,26 +88,62 @@
     semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien
     ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi.
     Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui.
-    <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+    <span tabindex="0"><a tabindex="-1" href="#">Donec non enim</a></span> in turpis pulvinar facilisis. Ut felis.</p>
   <details role="group">
     <summary role="button">Related documents</summary>
     <ul>
-      <li><a href="#">Lorem ipsum dolor sit amet,  consectetuer adipiscing elit.</a></li>
-      <li><a href="#">Aliquam tincidunt mauris eu  risus.</a></li>
-      <li><a href="#">Lorem ipsum dolor sit amet,  consectetuer adipiscing elit.</a></li>
-      <li><a href="#">Aliquam tincidunt mauris eu  risus.</a></li>
+      <!-- Tabindex on a tag does not work in FF, see: https://bugzilla.mozilla.org/show_bug.cgi?id=338035 -->
+      <!-- One possible fix: -->
+      <li><span tabindex="0"><a tabindex="-1" href="#">Lorem ipsum dolor sit amet,  consectetuer adipiscing elit.</a></span></li>
+      <li><span tabindex="0"><a tabindex="-1" href="#">Aliquam tincidunt mauris eu  risus.</a></span></li>
+      <li><span tabindex="0"><a tabindex="-1" href="#">Lorem ipsum dolor sit amet,  consectetuer adipiscing elit.</a></span></li>
+      <li><span tabindex="0"><a tabindex="-1" href="#">Aliquam tincidunt mauris eu  risus.</a></span></li>
     </ul>
   </details>
 </details>
 
-<h4>No summary tag</h4>
+
+<h4>No summary tag in markup</h4>
 <details role="group">
   <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
 </details>
 
-<h4>Empty details tag</h4>
-<details role="group">
+<h4>Using event listener</h4>
+
+<details id="hide-show" role="group" open>
+  <summary role="button">Hide me</summary>
+  <p>The details tag below is closed if this detail is open.</p>
 </details>
 
+<details id="show-hide" role="group">
+  <summary role="button">Show me</summary>
+  <p>The details tag above is closed if this detail is open.</p>
+</details>
 
-<summary role="button">Summary tag without parent detail</summary>
+<script>
+  var showHide = document.querySelector('#show-hide');
+  var hideShow = document.querySelector('#hide-show');
+
+  hideShow.addEventListener('click', function(e) {
+    setTimeout(function(){ toggle(this, showHide);}.bind(this), 0); // Chrome needs setTimeout
+  }.bind(hideShow));
+
+  showHide.addEventListener('click', function(e) {
+    setTimeout(function(){ toggle(this, hideShow);}.bind(this), 0); // Chrome needs setTimeout
+  }.bind(showHide));
+
+  function toggle(detail, other) {
+    var summary = detail.querySelector('summary');
+    summary.textContent = detail.hasAttribute('open') ? 'Hide me' : 'Show me';
+
+    summary = other.querySelector('summary');
+    if(detail.hasAttribute('open')) {
+      other.removeAttribute('open');
+      summary.textContent = 'Show me'
+    }
+    else {
+      other.setAttribute('open', '');
+      summary.textContent = 'Hide me'
+    }
+  }
+</script>

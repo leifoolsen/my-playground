@@ -1,7 +1,7 @@
 "use strict";
 
 /**
- * Code copied/modified from:
+ * Code copied/modified/inspired from/by:
  *   https://github.com/jordanaustin/Details-Expander
  *   https://github.com/chemerisuk/better-details-polyfill
  *   http://codepen.io/stevef/pen/jiCBE
@@ -10,8 +10,15 @@
  *   http://zogovic.com/post/21784525226/simple-html5-details-polyfill
  *   http://www.sitepoint.com/fixing-the-details-element/
  *   https://www.smashingmagazine.com/2014/11/complete-polyfill-html5-details-element/
+ *   https://www.w3.org/TR/2011/WD-html5-author-20110705/the-details-element.html
+ *   https://www.w3.org/TR/html-aria/#index-aria-group
+ *   https://www.w3.org/WAI/GL/wiki/Using_aria-expanded_to_indicate_the_state_of_a_collapsible_element
+ *   https://www.w3.org/TR/wai-aria-practices-1.1/
+ *   https://www.w3.org/TR/html-aria/#index-aria-group
  */
 
+const VK_ENTER = 13;
+const VK_SPACE = 32;
 const hasNativeDetailsSupport =  ('open' in document.createElement('details'));
 
 function injectCSS() {
@@ -66,21 +73,33 @@ function injectCSS() {
       width: 1em;
       height: 1em;
       margin-right: 0.3em;
-      transform-origin: 0.4em 0.6em;
+      -webkit-transform-origin: 0.4em 0.6em;
+         -moz-transform-origin: 0.4em 0.6em;
+          -ms-transform-origin: 0.4em 0.6em;
+              transform-origin: 0.4em 0.6em;
     }
     details[open] > summary:before {
       content:"▼"
     }
     details > *:not(summary) {
       display: none;
+      opacity: 0;
     }
     details[open] > *:not(summary) {
       display: block;
+      opacity: 1;
 
       /* If you need to preserve the original display attribute then wrap detail child elements in a div-tag */
       /* e.g. if you use an element with "display: flex", then wrap it inside a div */
       /* Too much hassle to make JS preserve original attribute */
     }
+
+    /* Use this to hide native indicator and use pseudoelement instead
+    summary::-webkit-details-marker {
+      display: none;
+    }
+    */
+
 `;
 
   const style = document.createElement('style');
@@ -88,7 +107,12 @@ function injectCSS() {
     .replace(/(\/\*([^*]|(\*+[^*\/]))*\*+\/)/gm, '') // remove comments from CSS, see: http://www.sitepoint.com/3-neat-tricks-with-regular-expressions/
     .replace( /  +/gm, ' ' );                        // replaces consecutive spaces with a single space
 
+  // WebKit hack :(
+  style.appendChild(document.createTextNode(''));
+
   //console.log(style.textContent);
+
+  // Must be the first stykesheet so it does not override user css
   document.head.insertBefore(style, document.head.firstChild);
 
   return true;
@@ -96,23 +120,20 @@ function injectCSS() {
 
 export function polyfillDetails(fromEl = document) {
 
-  [...fromEl.querySelectorAll('details')].forEach(function(details) {
-
-    // See: https://www.w3.org/TR/2011/WD-html5-author-20110705/the-details-element.html
-    // See: https://www.w3.org/TR/html-aria/#index-aria-group
-    details.setAttribute('role', 'group');
-
-    // See: https://www.w3.org/WAI/GL/wiki/Using_aria-expanded_to_indicate_the_state_of_a_collapsible_element
-    // See: https://www.w3.org/WAI/PF/aria-practices/
-    // Should add ARIA attributes for ALL browsers because current native implementaions are weak:
-    // See: https://bugs.webkit.org/show_bug.cgi?id=131111
-    details.setAttribute('aria-expanded', (details.hasAttribute('open') ? 'true' : 'false'));
+  if(hasNativeDetailsSupport) {
+    return false;
+  }
 
 
-    // See: https://www.w3.org/TR/2011/WD-html5-author-20110705/the-details-element.html
+  [...fromEl.querySelectorAll('details:not(.is-upgraded)')]
+  //.filter( details => !details.classList.contains('is-upgraded') )
+  .forEach( details => {
+
+    details.classList.add('is-upgraded'); // flag to prevent doing this more than once
+
     let summary = details.querySelector('summary:first-child');
 
-    // If there is no child summary element, the user agent
+    // If there is no child summary element, this polyfill
     // should provide its own legend; "Details"
     if (!summary) {
       summary = document.createElement('summary');
@@ -126,35 +147,41 @@ export function polyfillDetails(fromEl = document) {
       details.insertBefore(summary, details.firstChild);
     }
 
-    // See: https://www.w3.org/TR/html-aria/#index-aria-group
-    summary.setAttribute('role', 'button');
     summary.tabIndex = 0;
 
-    ['click', 'keydown'].forEach(function (name) {
-
-      summary.addEventListener(name, event => {
-
-        if (event.target === summary) {
+    summary.addEventListener('keydown', event => {
+      if (event.target === summary) {
+        if (event.keyCode === VK_ENTER || event.keyCode === VK_SPACE) {
           event.preventDefault();
           event.stopPropagation();
 
-          if (!event.keyCode || event.keyCode === 13 || event.keyCode === 32) {
-            if (details.hasAttribute('open')) {
-              details.removeAttribute('open');
-              details.setAttribute('aria-expanded', 'false');
-            }
-            else {
-              details.setAttribute('open', 'open');
-              details.setAttribute('aria-expanded', 'true');
-            }
-          }
+          // Trigger mouse click event for any attached listeners.
+          var evt = new MouseEvent("click", {
+            bubbles: true,
+            cancelable: true,
+            view: window
+          });
+          summary.dispatchEvent(evt);
         }
-      }, true);
-    });
+      }
+    }, true);
+
+    summary.addEventListener('click', event => {
+      if (event.target === summary) {
+        if (details.hasAttribute('open')) {
+          details.removeAttribute('open');
+        }
+        else {
+          details.setAttribute('open', 'open');
+        }
+      }
+    }, true);
+
   });
 
-  return !hasNativeDetailsSupport;
+  return true;
 }
+
 
 document.addEventListener('DOMContentLoaded', () => {
   injectCSS();

@@ -10,7 +10,7 @@
 import 'custom-event';
 import promise from 'es6-promise'; promise.polyfill();
 import 'isomorphic-fetch'; // ... or import 'whatwg-fetch';
-import { polyfillDetails } from './js/components/details/details';
+import { polyfillDetails } from './js/polyfills/details/details';
 // End polyfills
 
 import { debounce } from 'core-decorators';
@@ -153,6 +153,7 @@ class Content {
       .then(text => {
         contentPanelEl.removeChilds();
         contentPanelEl.insertAdjacentHTML('afterbegin', text);
+        document.body.appendChild(document.createElement('li'));
 
         polyfillDetails(contentPanelEl);
 
@@ -228,8 +229,8 @@ const pubsub = (doc => {
 
   return {
     publish    : (type, detail)   => doc.dispatchEvent( new CustomEvent(type, { detail: detail }) ),
-    subscribe  : (type, listener) => doc.addEventListener( type, listener, 0 ),
-    unsubscribe: (type, listener) => doc.removeEventListener( type, listener, 0 )
+    subscribe  : (type, listener) => doc.addEventListener( type, listener, false ),
+    unsubscribe: (type, listener) => doc.removeEventListener( type, listener, false )
   };
 })(document);
 

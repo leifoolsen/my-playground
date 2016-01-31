@@ -138,15 +138,21 @@ http://localhost:8080/webpack-dev-server/
 * [Making Modal Windows Better For Everyone](https://www.smashingmagazine.com/2014/09/making-modal-windows-better-for-everyone/)
 * [Keep tabbing within modal pane only](http://stackoverflow.com/questions/14572084/keep-tabbing-within-modal-pane-only)
 * [Can es6's module loader also load assets](http://stackoverflow.com/questions/24923479/can-es6s-module-loader-also-load-assets-html-css)
-* [ARIA Examples](http://heydonworks.com/practical_aria_examples/)
 * [Fixing the details Element](http://www.sitepoint.com/fixing-the-details-element/)
 * [Making A Complete Polyfill For The HTML5 Details Element](https://www.smashingmagazine.com/2014/11/complete-polyfill-html5-details-element/)
 * [&lt;details&gt;](http://blog.mxstbr.com/2015/06/html-details/)
 * [Bulletproof HTML5 &lt;details&gt; fallback using jQuery](https://mathiasbynens.be/notes/html5-details-jquery)
-* [WAI-ARIA 1.0 Authoring Practices](https://www.w3.org/WAI/PF/aria-practices/)
 * [Polyfill.js: A library to make creating CSS polyfills much easier.](https://github.com/philipwalton/polyfill/)
 * [Pure CSS Triangles Explained](http://appendto.com/2013/03/pure-css-triangles-explained/)
 * [xto6 modernizes your JavaScript code](http://xto6.js.org/)
+* [ARIA Examples](http://heydonworks.com/practical_aria_examples/)
+* [WAI-ARIA 1.1 Authoring Practices](https://www.w3.org/TR/wai-aria-practices-1.1/)
+* [Accessible Rich Internet Applications (WAI-ARIA) 1.1](https://w3c.github.io/aria/aria/aria.html)
+* [.map, .reduce & .filter, Oh My!](http://www.datchley.name/working-with-collections/)
+* [Custom Elements With ES6](http://h3manth.com/new/blog/2015/custom-elements-with-es6/)
+* [document-register-element: A stand-alone working lightweight version of the W3C Custom Elements specification.](https://github.com/WebReflection/document-register-element)
+* [DOM4: Modern DOM functionalities for every browser](https://github.com/WebReflection/dom4)
+
 
 ### !
 * [Material Design Lite WIKI](https://github.com/google/material-design-lite/wiki)
