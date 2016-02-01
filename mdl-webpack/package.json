@@ -14,6 +14,7 @@
     "babel-runtime": "^6.3.19",
     "core-decorators": "^0.10.0",
     "custom-event": "^1.0.0",
+    "dialog-polyfill": "^0.4.2",
     "es6-promise": "^3.0.2",
     "isomorphic-fetch": "^2.2.1",
     "moment": "^2.11.1"

@@ -1,0 +1,103 @@
+<h4>Dialog ployfill</h4>
+<p>The polyfill is available on <a href="https://github.com/GoogleChrome/dialog-polyfill" target="_blank">github</a>.
+Dialog element demo is available <a href="http://demo.agektmr.com/dialog/" target="_blank">here</a>.</p>
+
+<style>
+  dialog {
+    z-index: 10;
+    max-width: 99%;
+  }
+</style>
+<h5>Simplest example</h5>
+<dialog>
+  <p>This is the unstyled dialog!</p>
+  <button id="close">Close</button>
+</dialog>
+
+<button id="show" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect animated bounce">
+  <i class="material-icons md-24">web_asset</i>&nbsp;Open Simple Dialog!
+</button>
+
+<script>
+  var dialog = document.querySelector('dialog');
+  if(!dialog.showModal) {
+    dialogPolyfill.registerDialog(dialog);
+  }
+  document.querySelector('#show').onclick = function() {
+    dialog.show();
+  };
+  document.querySelector('#close').onclick = function() {
+    dialog.close();
+  };
+</script>
+
+<h5>Styling dialog</h5>
+<style>
+  dialog.styled {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  }
+</style>
+<dialog class="styled">
+  <p>Styling dialog is as easy as styling div!</p>
+  <button id="close-styled" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect animated bounce">Close</button>
+</dialog>
+
+<button id="show-styled" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect animated bounce">
+  <i class="material-icons md-24">web_asset</i>&nbsp;Open Styled Dialog!
+</button>
+
+<script>
+  var dialogStyled = document.querySelector('dialog.styled');
+  if(!dialogStyled.showModal) {
+    dialogPolyfill.registerDialog(dialogStyled);
+  }
+  document.querySelector('#show-styled').onclick = function() {
+    dialogStyled.show();
+  };
+  document.querySelector('#close-styled').onclick = function() {
+    dialogStyled.close();
+  };
+</script>
+
+<h5>.showModal() API</h5>
+
+<dialog id="modal-dialog" class="styled">
+  <p>If you don't want the user to interact with things other than the dialog, you can open it modal. Simply call
+    <code>.showModal()</code> instead of <code>.show()</code>. Notice you cannot select text in the background or
+    click / tab to select buttons while the dialog is open.</p>
+
+  <p>Upon closing a dialog, a close event will be fired. Also, users can close a modal dialog by typing the "Escape"
+    key. This will fire a cancel event which you can cancel using <code>event.preventDefault()</code>.</p>
+
+  <p>This layer is guaranteed to be on top of any other elements regardless of their <code>z-index</code> value,
+    including previously opened modal dialogs.</p>
+
+  <p>You can optionally close the modal dialog using the "escape" key!</p>
+
+  <button id="close-modal" onclick="document.querySelector('#modal-dialog').close()"
+          class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect animated bounce">
+    Close
+  </button>
+</dialog>
+
+<button id="show-modal" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect animated bounce">
+  <i class="material-icons md-24">web_asset</i>&nbsp;Open Modal Dialog!
+</button>
+
+<script>
+  var modalDialog = document.querySelector('#modal-dialog');
+  if(!modalDialog.showModal) {
+    dialogPolyfill.registerDialog(modalDialog);
+  }
+  document.querySelector('#show-modal').onclick = function() {
+    modalDialog.showModal();
+  };
+  modalDialog.addEventListener('close', function() {
+    console.log('dialog closed');
+  });
+  modalDialog.addEventListener('cancel', function() {
+    console.log('dialog canceled');
+  });
+</script>

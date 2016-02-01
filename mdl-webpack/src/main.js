@@ -11,6 +11,7 @@ import 'custom-event';
 import promise from 'es6-promise'; promise.polyfill();
 import 'isomorphic-fetch'; // ... or import 'whatwg-fetch';
 import { polyfillDetails } from './js/polyfills/details/details';
+import 'dialog-polyfill/dialog-polyfill';
 // End polyfills
 
 import { debounce } from 'core-decorators';

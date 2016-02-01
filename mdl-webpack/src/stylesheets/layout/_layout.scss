@@ -136,7 +136,7 @@ body {
   width: 100%;
   height: auto;
   margin: 0;
-  padding: 40px 16px 0;   // Quick hack: padding-top is 40px only if sticky-header. Use a variable for this
+  padding: 64px 16px 0;   // Quick hack: padding-top is height of sticky-header. Use a variable for this
   box-sizing: border-box;
 }
 
