@@ -121,29 +121,32 @@
 </details>
 
 <script>
-  var showHide = document.querySelector('#show-hide');
-  var hideShow = document.querySelector('#hide-show');
+  (function() {
+    'use strict';
+    var showHide = document.querySelector('#show-hide');
+    var hideShow = document.querySelector('#hide-show');
 
-  hideShow.addEventListener('click', function(e) {
-    setTimeout(function(){ toggle(this, showHide);}.bind(this), 0); // Chrome needs setTimeout
-  }.bind(hideShow));
+    hideShow.addEventListener('click', function(e) {
+      setTimeout(function(){ toggle(this, showHide);}.bind(this), 0); // Chrome needs setTimeout
+    }.bind(hideShow));
 
-  showHide.addEventListener('click', function(e) {
-    setTimeout(function(){ toggle(this, hideShow);}.bind(this), 0); // Chrome needs setTimeout
-  }.bind(showHide));
+    showHide.addEventListener('click', function(e) {
+      setTimeout(function(){ toggle(this, hideShow);}.bind(this), 0); // Chrome needs setTimeout
+    }.bind(showHide));
 
-  function toggle(detail, other) {
-    var summary = detail.querySelector('summary');
-    summary.textContent = detail.hasAttribute('open') ? 'Hide me' : 'Show me';
+    function toggle(detail, other) {
+      var summary = detail.querySelector('summary');
+      summary.textContent = detail.hasAttribute('open') ? 'Hide me' : 'Show me';
 
-    summary = other.querySelector('summary');
-    if(detail.hasAttribute('open')) {
-      other.removeAttribute('open');
-      summary.textContent = 'Show me'
+      summary = other.querySelector('summary');
+      if(detail.hasAttribute('open')) {
+        other.removeAttribute('open');
+        summary.textContent = 'Show me'
+      }
+      else {
+        other.setAttribute('open', '');
+        summary.textContent = 'Hide me'
+      }
     }
-    else {
-      other.setAttribute('open', '');
-      summary.textContent = 'Hide me'
-    }
-  }
+  }());
 </script>

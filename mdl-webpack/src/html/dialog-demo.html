@@ -25,16 +25,20 @@
 </button>
 
 <script>
-  var dialog = document.querySelector('dialog');
-  if(!dialog.showModal) {
-    dialogPolyfill.registerDialog(dialog);
-  }
-  document.querySelector('#show').onclick = function() {
-    dialog.show();
-  };
-  document.querySelector('#close').onclick = function() {
-    dialog.close();
-  };
+  (function() {
+    'use strict';
+    var dialog = document.querySelector('dialog');
+    if(!dialog.showModal) {
+      dialogPolyfill.registerDialog(dialog);
+    }
+    document.querySelector('#show').onclick = function() {
+      dialog.show();
+    };
+    document.querySelector('#close').onclick = function() {
+      dialog.close();
+    };
+  }());
+
 </script>
 
 <h5>Styling dialog</h5>
@@ -55,16 +59,20 @@
 </button>
 
 <script>
-  var dialogStyled = document.querySelector('dialog.styled');
-  if(!dialogStyled.showModal) {
-    dialogPolyfill.registerDialog(dialogStyled);
-  }
-  document.querySelector('#show-styled').onclick = function() {
-    dialogStyled.show();
-  };
-  document.querySelector('#close-styled').onclick = function() {
-    dialogStyled.close();
-  };
+  (function() {
+    'use strict';
+    var dialogStyled = document.querySelector('dialog.styled');
+    if(!dialogStyled.showModal) {
+      dialogPolyfill.registerDialog(dialogStyled);
+    }
+    document.querySelector('#show-styled').onclick = function() {
+      dialogStyled.show();
+    };
+    document.querySelector('#close-styled').onclick = function() {
+      dialogStyled.close();
+    };
+  }());
+
 </script>
 
 <h5>.showModal() API</h5>
@@ -93,17 +101,20 @@
 </button>
 
 <script>
-  var modalDialog = document.querySelector('#modal-dialog');
-  if(!modalDialog.showModal) {
-    dialogPolyfill.registerDialog(modalDialog);
-  }
-  document.querySelector('#show-modal').onclick = function() {
-    modalDialog.showModal();
-  };
-  modalDialog.addEventListener('close', function() {
-    console.log('dialog closed');
-  });
-  modalDialog.addEventListener('cancel', function() {
-    console.log('dialog canceled');
-  });
+  (function() {
+    'use strict';
+    var modalDialog = document.querySelector('#modal-dialog');
+    if(!modalDialog.showModal) {
+      dialogPolyfill.registerDialog(modalDialog);
+    }
+    document.querySelector('#show-modal').onclick = function() {
+      modalDialog.showModal();
+    };
+    modalDialog.addEventListener('close', function() {
+      console.log('dialog closed');
+    });
+    modalDialog.addEventListener('cancel', function() {
+      console.log('dialog canceled');
+    });
+  }());
 </script>

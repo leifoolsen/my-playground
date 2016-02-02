@@ -264,11 +264,14 @@
         // Need a script to work properly - something like this
       -->
       <script>
-        document.querySelector('#uploadBtn2').addEventListener('change', function() {
-          var n = document.querySelector("#uploadfile2");
-          n.value = this.files[0].name;
-          n.parentNode.classList.add('is-dirty');
-        });
+        (function() {
+          'use strict';
+          document.querySelector('#uploadBtn2').addEventListener('change', function() {
+            var n = document.querySelector("#uploadfile2");
+            n.value = this.files[0].name;
+            n.parentNode.classList.add('is-dirty');
+          });
+        }());
       </script>
     </div>
 
