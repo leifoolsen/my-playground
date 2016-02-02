@@ -90,7 +90,7 @@ function injectCSS() {
       opacity: 1;
 
       /* If you need to preserve the original display attribute then wrap detail child elements in a div-tag */
-      /* e.g. if you use an element with "display: flex", then wrap it inside a div */
+      /* e.g. if you use an element with "display: inline", then wrap it inside a div */
       /* Too much hassle to make JS preserve original attribute */
     }
 
