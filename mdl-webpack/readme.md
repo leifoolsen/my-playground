@@ -153,7 +153,7 @@ http://localhost:8080/webpack-dev-server/
 * [document-register-element: A stand-alone working lightweight version of the W3C Custom Elements specification.](https://github.com/WebReflection/document-register-element)
 * [DOM4: Modern DOM functionalities for every browser](https://github.com/WebReflection/dom4)
 * [10 SCSS utilities I can’t live without](http://hackingui.com/front-end/10-best-scss-utilities/)
-
+* [Vanilla JavaScript TodoMVC Example](https://github.com/kentcdodds/es6-todomvc)
 
 ### !
 * [Material Design Lite WIKI](https://github.com/google/material-design-lite/wiki)
