@@ -102,6 +102,11 @@ body {
     }
   }
 
+  .mdl-navigation a.mdl-navigation__link {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
   .mdl-layout-title {
     a {
       text-decoration: none;
@@ -136,7 +141,7 @@ body {
   width: 100%;
   height: auto;
   margin: 0;
-  padding: 64px 16px 0;   // Quick hack: padding-top is height of sticky-header. Use a variable for this
+  padding: 80px 16px 0;   // Quick hack: padding-top is 80px only if sticky-header. Use a variable for this
   box-sizing: border-box;
 }
 
