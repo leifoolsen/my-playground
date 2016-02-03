@@ -8,37 +8,30 @@
   Additional information on how to use the the <code>&lt;dialog&gt;</code> element can be found in
   <a href="http://demo.agektmr.com/dialog/" target="_blank">this excellent tutorial</a>.</p>
 
-<style>
-  dialog {
-    z-index: 10;
-    max-width: 99%;
-  }
-</style>
 <h5>Simplest example</h5>
-<dialog>
+<dialog id="simple-dialog">
   <p>This is the unstyled dialog!</p>
-  <button id="close">Close</button>
+  <button id="close-simple">Close</button>
 </dialog>
 
-<button id="show" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect animated bounce">
+<button id="show-simple" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect animated bounce">
   <i class="material-icons md-24">web_asset</i>&nbsp;Open Simple Dialog!
 </button>
 
 <script>
   (function() {
     'use strict';
-    var dialog = document.querySelector('dialog');
+    var dialog = document.querySelector('#simple-dialog');
     if(!dialog.showModal) {
       dialogPolyfill.registerDialog(dialog);
     }
-    document.querySelector('#show').onclick = function() {
+    document.querySelector('#show-simple').onclick = function() {
       dialog.show();
     };
-    document.querySelector('#close').onclick = function() {
+    document.querySelector('#close-simple').onclick = function() {
       dialog.close();
     };
   }());
-
 </script>
 
 <h5>Styling dialog</h5>
@@ -49,7 +42,7 @@
     box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
   }
 </style>
-<dialog class="styled">
+<dialog id="styled-dialog" class="styled">
   <p>Styling dialog is as easy as styling div!</p>
   <button id="close-styled" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect animated bounce">Close</button>
 </dialog>
@@ -61,7 +54,7 @@
 <script>
   (function() {
     'use strict';
-    var dialogStyled = document.querySelector('dialog.styled');
+    var dialogStyled = document.querySelector('#styled-dialog');
     if(!dialogStyled.showModal) {
       dialogPolyfill.registerDialog(dialogStyled);
     }
@@ -72,29 +65,9 @@
       dialogStyled.close();
     };
   }());
-
 </script>
 
 <h5>.showModal() API</h5>
-
-<dialog id="modal-dialog" class="styled">
-  <p>If you don't want the user to interact with things other than the dialog, you can open it modal. Simply call
-    <code>.showModal()</code> instead of <code>.show()</code>. Notice you cannot select text in the background or
-    click / tab to select buttons while the dialog is open.</p>
-
-  <p>Upon closing a dialog, a close event will be fired. Also, users can close a modal dialog by typing the "Escape"
-    key. This will fire a cancel event which you can cancel using <code>event.preventDefault()</code>.</p>
-
-  <p>This layer is guaranteed to be on top of any other elements regardless of their <code>z-index</code> value,
-    including previously opened modal dialogs.</p>
-
-  <p>You can optionally close the modal dialog using the "escape" key!</p>
-
-  <button id="close-modal" onclick="document.querySelector('#modal-dialog').close()"
-          class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect animated bounce">
-    Close
-  </button>
-</dialog>
 
 <button id="show-modal" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect animated bounce">
   <i class="material-icons md-24">web_asset</i>&nbsp;Open Modal Dialog!
@@ -103,18 +76,302 @@
 <script>
   (function() {
     'use strict';
+
     var modalDialog = document.querySelector('#modal-dialog');
-    if(!modalDialog.showModal) {
-      dialogPolyfill.registerDialog(modalDialog);
+    if(modalDialog === null) {
+      // A modal dialog must must have document.body as parent
+
+      var dialogHtml = `
+      <dialog id="modal-dialog" class="styled">
+        <p>If you don't want the user to interact with things other than the dialog, you can open it modal. Simply call
+          <code>.showModal()</code> instead of <code>.show()</code>. Notice you cannot select text in the background or
+          click / tab to select buttons while the dialog is open.</p>
+        <p>Upon closing a dialog, a close event will be fired. Also, users can close a modal dialog by typing the "Escape"
+          key. This will fire a cancel event which you can cancel using <code>event.preventDefault()</code>.</p>
+        <p>This layer is guaranteed to be on top of any other elements regardless of their <code>z-index</code> value,
+          including previously opened modal dialogs.</p>
+        <p>You can optionally close the modal dialog using the "escape" key!</p>
+        <button id="close-modal" onclick="document.querySelector('#modal-dialog').close()"
+                class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect animated bounce">
+          Close
+        </button>
+      </dialog>
+      `;
+
+      document.body.insertAdjacentHTML('beforeend', dialogHtml);
+      modalDialog = document.querySelector('#modal-dialog');
+
+      if(!modalDialog.showModal) {
+        dialogPolyfill.registerDialog(modalDialog);
+      }
+      modalDialog.addEventListener('close', function() {
+        console.log('dialog closed');
+      });
+      modalDialog.addEventListener('cancel', function() {
+        console.log('dialog canceled');
+      });
     }
+
     document.querySelector('#show-modal').onclick = function() {
       modalDialog.showModal();
     };
-    modalDialog.addEventListener('close', function() {
-      console.log('dialog closed');
-    });
-    modalDialog.addEventListener('cancel', function() {
-      console.log('dialog canceled');
-    });
+
   }());
 </script>
+
+<!-- Actionbar -->
+<style>
+  dialog.actionbar {
+    position: fixed;
+    border: 0;
+    box-sizing: border-box;
+    width: 100%;
+    bottom: 0;
+    background: #fff;
+    transform: translate(0, 100%);
+    transition: transform 0.25s ease-in-out;
+    margin: 0;
+    padding: 0;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+  }
+  dialog.actionbar.appear {
+    transform: translate(0);
+  }
+  dialog.actionbar .holder {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: wrap;
+  }
+  dialog.actionbar .holder button {
+    flex-grow: 1;
+    min-width: 200px;
+    margin: 8px;
+    border: 0;
+    font-family: Roboto, Arial, Sans-Serif;
+    font-size: 23px;
+    line-height: 33px;
+    font-weight: 400;
+    color: #666;
+    border-radius: 2px;
+    background: #ccc;
+    display: block;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+  }
+  dialog.actionbar .holder button:focus {
+    outline: 0;
+    border-color: rgba(0, 0, 0, 0.125);
+  }
+  dialog.actionbar .holder button.cancel {
+    background: #fcc;
+  }
+  dialog.actionbar::backdrop {
+    background: rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    transition: opacity 0.25s ease-in-out;
+  }
+  dialog.actionbar + .backdrop {
+    background: rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    transition: opacity 0.25s ease-in-out;
+  }
+  dialog.actionbar.appear::backdrop {
+    opacity: 1;
+  }
+  dialog.actionbar.appear + .backdrop {
+    opacity: 1;
+  }
+</style>
+
+<h5>Builds an action bar from a modal dialog.</h5>
+
+<button id="show-actionbar" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect animated bounce">
+  <i class="material-icons md-24">web_asset</i>&nbsp;Show Actionbar
+</button>
+
+<script>
+  var ActionBar = function() {
+    this.options_ = [];
+    this.cancelButton_ = true;
+    this.dialog_ = null;
+  };
+  ActionBar.prototype.enableCancelButton = function(value) {
+    this.cancelButton_ = value;
+  };
+  ActionBar.prototype.addOption = function(name, opt_callback) {
+    this.options_.push({name: name, callback: opt_callback || null});
+  };
+  ActionBar.prototype.show = function(opt_callback) {
+    if (this.dialog_ != null) {
+      throw "Can't show ActionBar, already visible";
+    }
+    var dialog = document.createElement('dialog');
+    if (!('showModal' in dialog)) {
+      dialogPolyfill.registerDialog(dialog);
+    }
+    dialog.className = 'actionbar';
+    var holder = document.createElement('div');
+    holder.className = 'holder';
+    dialog.appendChild(holder);
+    dialog.addEventListener('click', function(ev) {
+      if (ev.target == dialog) {
+        dialog.close();
+      }
+    });
+    dialog.addEventListener('close', function() {
+      opt_callback && opt_callback(dialog.returnValue);
+      var cloneDialog = dialog.cloneNode(true);
+      if (!('showModal' in cloneDialog)) {
+        dialogPolyfill.registerDialog(cloneDialog);
+      }
+      document.body.appendChild(cloneDialog);
+      cloneDialog.showModal();
+      cloneDialog.classList.remove('appear');
+      window.setTimeout(function() {
+        cloneDialog.close();  // TODO: needed until DOM removal is safe
+        cloneDialog.parentNode.removeChild(cloneDialog);
+      }, 250);
+      if (dialog.parentNode) {
+        dialog.parentNode.removeChild(dialog);
+      }
+      if (this.dialog_ == dialog) {
+        this.dialog_ = null;
+      }
+    }.bind(this));
+    this.options_.forEach(function(option) {
+      var button = document.createElement('button');
+      button.textContent = option.name;
+      button.addEventListener('click', function() {
+        if (option.callback) {
+          window.setTimeout(option.callback, 0);
+        }
+        dialog.close(option.name);
+      });
+      holder.appendChild(button);
+    });
+    if (this.cancelButton_) {
+      var cancelButton = document.createElement('button');
+      cancelButton.className = 'cancel';
+      cancelButton.textContent = 'Cancel';
+      cancelButton.addEventListener('click', function() {
+        dialog.close();
+      });
+      holder.appendChild(cancelButton);
+    }
+    document.body.appendChild(dialog);
+    dialog.showModal();
+    dialog.classList.add('appear');
+    this.dialog_ = dialog;
+  };
+  ////// DEMO
+
+  document.querySelector('#show-actionbar').addEventListener('click', function() {
+    var ab = new ActionBar();
+    ab.addOption('Display');
+    ab.addOption('Options');
+    ab.addOption('Longer Choice');
+    ab.addOption('Alert', function() {
+      alert('you hit Alert');
+    });
+    ab.show(function(choice) {
+      console.info('choice was', choice);
+    });
+  });
+</script>
+
+
+<!-- MDL Card -->
+<style>
+  #dialog-card {
+    border: 0;
+    padding: 0;
+  }
+  .dialog-card.mdl-card {
+    width: 100%;
+    max-width: 512px;
+    margin: 0 auto;
+  }
+  .dialog-card > .mdl-card__title {
+    color: #fff;
+    height: 176px;
+    background: url('../images/demo/welcome_card.jpg') center / cover;
+  }
+  .dialog-card > .mdl-card__menu {
+    color: #fff;
+  }
+</style>
+
+<h5>MDL Card dialog.</h5>
+
+<button id="show-card" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect animated bounce">
+  <i class="material-icons md-24">web_asset</i>&nbsp;Show Card
+</button>
+
+<script>
+  (function() {
+    'use strict';
+    var dialog = document.querySelector('#dialog-card');
+
+    if(dialog === null) {
+      // A modal dialog must must have document.body as parent
+      var dialogHtml = `
+      <dialog id="dialog-card">
+        <div class="dialog-card mdl-card mdl-shadow--2dp">
+          <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">Welcome</h2>
+          </div>
+          <div class="mdl-card__menu">
+            <button id="cancel-card" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+              <i class="material-icons">close</i>
+            </button>
+          </div>
+          <div class="mdl-card__supporting-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Mauris sagittis pellentesque lacus eleifend lacinia...
+          </div>
+          <div class="mdl-card__actions mdl-card--border">
+            <a id="close-card" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+              Close card
+            </a>
+          </div>
+        </div>
+      </dialog>
+      `;
+
+      document.body.insertAdjacentHTML('beforeend', dialogHtml);
+      dialog = document.querySelector('#dialog-card');
+
+      if (!('showModal' in dialog)) {
+        dialogPolyfill.registerDialog(dialog);
+      }
+      componentHandler.upgradeDom();  // Upgrade MDL components
+
+      document.querySelector('#cancel-card').addEventListener('click', function() {
+        var ev = new CustomEvent('cancel', {
+          bubbles: false,
+          cancelable: true
+        });
+        if (dialog.dispatchEvent(ev)) {
+          if(dialog.open) dialog.close();
+        }
+      });
+      dialog.addEventListener('close', function(ev) {
+        console.log('dialog closed');
+      });
+      dialog.addEventListener('cancel', function(ev) {
+        console.log('dialog canceled');
+      });
+    }
+
+    document.querySelector('#show-card').onclick = function() {
+      dialog.showModal();
+    };
+    document.querySelector('#close-card').onclick = function() {
+      dialog.close();
+    };
+
+
+  }());
+</script>
+
+

@@ -237,6 +237,7 @@ http://localhost:8080/webpack-dev-server/
 * [Expose Modal ES6](http://codepen.io/souporserious/pen/PwxEyJ)
 * [Material Design Modals](https://codepen.io/ettrics/pen/Jdjdzp)
 * [Full Responsive Popup/Modal - Centerd by CSS only, Content not scrollable while Popup apears, Overflow handling for small viewports](http://codepen.io/jzilg/pen/vEmQrm)
+* [Animated modal dialog styled for use with Material Design Lite](https://github.com/MarkRabey/material-modal)
 * [ARROW BOX WITH CSS](http://codepen.io/ewayma/pen/iFLeb)
 * [Cliclable CSS popups with hover](http://codepen.io/timseverien/pen/EIBet)
 * [elementary popup](http://codepen.io/wowse/pen/GJKOPq)

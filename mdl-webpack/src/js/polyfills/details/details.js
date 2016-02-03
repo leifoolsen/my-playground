@@ -31,7 +31,7 @@ function injectCSS() {
     Modified from: https://github.com/jordanaustin/Details-Expander/blob/master/src/css/main.css
 
     NOTE:
-    These are defaults meant to mimic the default unstyled brower look.
+    These are defaults meant to mimic the default unstyled browser look.
     I highly recommend you style your details tags but don't do it here.
     Just overwrite the style. Almost everything can be fully customized.
     Anything that shouldn't be overwritten has an !important on it.
