@@ -248,7 +248,8 @@ http://localhost:8080/webpack-dev-server/
 * [Cross-Browser CSS3 Form](http://codepen.io/souporserious/pen/okEfr)
 * [Drop Content Data Attributes](http://codepen.io/souporserious/pen/KpMOxK)
 * [REM & VW UNITS](http://codepen.io/souporserious/pen/RWjWKJ)
-
+* [Pikaday - A refreshing JavaScript Datepicker](https://github.com/dbushell/Pikaday)
+* [Pikaday Example](http://codepen.io/adrianparr/pen/KwBNrv)
 
 ### Videos
 * [Creating a 3D Webpage Header with Material Design and Babylon](https://www.youtube.com/watch?v=IZ6fgcBkhg8)
