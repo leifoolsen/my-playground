@@ -154,6 +154,10 @@ http://localhost:8080/webpack-dev-server/
 * [DOM4: Modern DOM functionalities for every browser](https://github.com/WebReflection/dom4)
 * [10 SCSS utilities I can’t live without](http://hackingui.com/front-end/10-best-scss-utilities/)
 * [Vanilla JavaScript TodoMVC Example](https://github.com/kentcdodds/es6-todomvc)
+* [CSS Accordion Slider](http://accordionslider.com/)
+* [CSSPLAY - Stu Nicols](http://www.cssplay.co.uk/)
+* [Responsive Patterns](https://bradfrost.github.io/this-is-responsive/patterns.html)
+
 
 ### !
 * [Material Design Lite WIKI](https://github.com/google/material-design-lite/wiki)
@@ -215,7 +219,6 @@ http://localhost:8080/webpack-dev-server/
 * [Elastic SVG Sidebar Material Design](http://codepen.io/suez/pen/emjwvP)
 * [Colour Palette From Material Design](http://codepen.io/keefyboooo/pen/RPLOzd)
 * [Material Design Paper Animations (pt 1)](http://codepen.io/jonstuebe/pen/RNyEzz)
-* [Simple sass/jQuery Accordion](http://codepen.io/jonstuebe/pen/iyhej)
 * [Triangle pattern generator](http://codepen.io/msurguy/pen/sbIio)
 * [Material Color Palette](http://codepen.io/vineethtr/pen/WQXPqY)
 * [Google Material Design colors next to palettes generated using chroma.js](http://codepen.io/ckuijjer/pen/EadMeO)
