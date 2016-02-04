@@ -105,7 +105,7 @@ function injectCSS() {
   const style = document.createElement('style');
   style.textContent = css
     .replace(/(\/\*([^*]|(\*+[^*\/]))*\*+\/)/gm, '') // remove comments from CSS, see: http://www.sitepoint.com/3-neat-tricks-with-regular-expressions/
-    .replace( /  +/gm, ' ' );                        // replaces consecutive spaces with a single space
+    .replace( /\s/gm, ' ' );                        // replaces consecutive spaces with a single space
 
   // WebKit hack :(
   style.appendChild(document.createTextNode(''));

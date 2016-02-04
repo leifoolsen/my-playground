@@ -157,6 +157,7 @@ http://localhost:8080/webpack-dev-server/
 * [CSS Accordion Slider](http://accordionslider.com/)
 * [CSSPLAY - Stu Nicols](http://www.cssplay.co.uk/)
 * [Responsive Patterns](https://bradfrost.github.io/this-is-responsive/patterns.html)
+* [CSS & Javascript Codes](http://cssscriptcom.tumblr.com/)
 
 
 ### !
@@ -253,6 +254,7 @@ http://localhost:8080/webpack-dev-server/
 * [REM & VW UNITS](http://codepen.io/souporserious/pen/RWjWKJ)
 * [Pikaday - A refreshing JavaScript Datepicker](https://github.com/dbushell/Pikaday)
 * [Pikaday Example](http://codepen.io/adrianparr/pen/KwBNrv)
+* [Rotating Icon Buttons](http://codepen.io/colewaldrip/pen/bdZVGd)
 
 ### Videos
 * [Creating a 3D Webpage Header with Material Design and Babylon](https://www.youtube.com/watch?v=IZ6fgcBkhg8)

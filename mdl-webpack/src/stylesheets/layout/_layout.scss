@@ -140,8 +140,7 @@ body {
 .my-page-content {
   width: 100%;
   height: auto;
-  margin: 0;
-  padding: 80px 16px 0;   // Quick hack: padding-top is 80px only if sticky-header. Use a variable for this
   box-sizing: border-box;
+  margin: 80px 0 0;  // 80px only if sticky-header. Use a variable for this
+  padding: 0 16px;
 }
-
