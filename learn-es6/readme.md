@@ -483,6 +483,7 @@ const _lastName  = Symbol('lastName');
 const _age       = Symbol('age');
 
 class ClassWithPrivateDataUsingSymbol {
+
   constructor(firstName, lastName, age = 55) {
     this[_firstName] = firstName;
     this[_lastName]  = lastName;
@@ -525,7 +526,9 @@ As long as the WeakMaps are hidden from the outside world, the private data is s
 EcmaScript 2015
 ```javascript
 const _privateProps = new WeakMap();
+
 class ClassWithPrivateDataUsingWeakMap {
+
   constructor(firstName, lastName, age=55) {
     _privateProps.set(this, { firstName, lastName });
     this.age = age;
@@ -564,6 +567,7 @@ by any stretch of the imagination, this is easily the simplest, most readable, a
 EcmaScript 2015
 ```javascript
 class ClassWithPrivateDataUsingUnderscore {
+
   constructor(_firstName, _lastName, _age=55) {
     this._firstName = _firstName;
     this._lastName = _lastName;
