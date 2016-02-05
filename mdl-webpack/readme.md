@@ -158,7 +158,8 @@ http://localhost:8080/webpack-dev-server/
 * [CSSPLAY - Stu Nicols](http://www.cssplay.co.uk/)
 * [Responsive Patterns](https://bradfrost.github.io/this-is-responsive/patterns.html)
 * [CSS & Javascript Codes](http://cssscriptcom.tumblr.com/)
-
+* [How do CSS triangles work?](http://stackoverflow.com/questions/7073484/how-do-css-triangles-work?rq=1)
+* [css accordion using flexbox](http://stackoverflow.com/questions/25691500/css-accordion-using-flexbox)
 
 ### !
 * [Material Design Lite WIKI](https://github.com/google/material-design-lite/wiki)
