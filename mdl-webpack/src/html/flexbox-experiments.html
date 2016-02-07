@@ -18,6 +18,13 @@ BEM: Blocks, Elements and Modifiers
 -->
 
 <h4>Flexbox Fundamentals @ <a href="https://egghead.io/lessons/misc-flexbox-fundamentals" target="_blank">egghead.io</a></h4>
+
+<p class="mdl-typography--body-2">Other resources:
+  <a href="https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties" target="_blank">A Visual Guide to CSS3 Flexbox Properties</a>,
+  <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">A Complete Guide to Flexbox</a>,
+  <a href="https://philipwalton.github.io/solved-by-flexbox/" target="_blank">Solved by Flexbox</a>.
+</p>
+
 <style>
   .options {
     display: flex;
@@ -81,7 +88,7 @@ BEM: Blocks, Elements and Modifiers
     </label>
   </div>
 
-  <div class="mdl-cell mdl-cell--2-col options">
+  <div id="flex-direction" class="mdl-cell mdl-cell--2-col options">
     <span>Flex direction:</span>
     <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="flex-direction-row">
       <input type="radio" class="mdl-radio__button" id="flex-direction-row" name="flex-direction" value="row" checked>
@@ -99,9 +106,13 @@ BEM: Blocks, Elements and Modifiers
       <input type="radio" class="mdl-radio__button" id="flex-direction-column-reverse" name="flex-direction" value="column-reverse">
       <span class="mdl-radio__label">column-reverse</span>
     </label>
+    <div class="mdl-tooltip mdl-tooltip--bootm" for="flex-direction">
+      This property specifies how flex items are laid out in the flex container, by setting the direction of the flex
+      container’s main axis. They can be laid out in two main directions, like rows horizontally or like columns vertically.
+    </div>
   </div>
 
-  <div class="mdl-cell mdl-cell--2-col options">
+  <div id="flex-wrap" class="mdl-cell mdl-cell--2-col options">
     <span>Flex wrap:</span>
     <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="flex-wrap-nowrap">
       <input type="radio" class="mdl-radio__button" id="flex-wrap-nowrap" name="flex-wrap" value="nowrap" checked>
@@ -115,6 +126,10 @@ BEM: Blocks, Elements and Modifiers
       <input type="radio" class="mdl-radio__button" id="flex-wrap-wrap-reverse" name="flex-wrap" value="wrap-reverse">
       <span class="mdl-radio__label">wrap-reverse</span>
     </label>
+    <div class="mdl-tooltip mdl-tooltip--bottom" for="flex-wrap">
+      The initial flexbox concept is the container to set its items in one single line. The flex-wrap property controls
+      if the flex container lay out its items in single or multiple lines, and the direction the new lines are stacked in.
+    </div>
   </div>
 
   <div id="justify-content" class="mdl-cell mdl-cell--2-col options">
@@ -139,9 +154,11 @@ BEM: Blocks, Elements and Modifiers
       <input type="radio" class="mdl-radio__button" id="justify-content-space-around" name="justify-content" value="space-around">
       <span class="mdl-radio__label">space-around</span>
     </label>
-  </div>
-  <div class="mdl-tooltip" for="justify-content">
-    Align items in Main Axis
+    <div class="mdl-tooltip mdl-tooltip--bottom" for="justify-content">
+      The justify-content property aligns flex items along the main axis of the current line of the flex container.
+      It helps distribute left free space when either all the flex items on a line are inflexible, or are flexible but
+      have reached their maximum size.
+    </div>
   </div>
 
   <div id="align-items" class="mdl-cell mdl-cell--2-col options">
@@ -166,9 +183,11 @@ BEM: Blocks, Elements and Modifiers
       <input type="radio" class="mdl-radio__button" id="align-items-baseline" name="align-items" value="baseline">
       <span class="mdl-radio__label">baseline</span>
     </label>
-  </div>
-  <div class="mdl-tooltip" for="align-items">
-    Align items in Cross Axis
+    <div class="mdl-tooltip mdl-tooltip--bottom" for="align-items">
+      Flex items can be aligned in the cross axis of the current line of the flex container, similar to justify-content
+      but in the perpendicular direction. This property sets the default alignment for all flex items, including
+      the anonymous ones.
+    </div>
   </div>
 
   <div id="align-content" class="mdl-cell mdl-cell--2-col options">
@@ -197,9 +216,10 @@ BEM: Blocks, Elements and Modifiers
       <input type="radio" class="mdl-radio__button" id="align-content-space-around" name="align-content" value="space-around">
       <span class="mdl-radio__label">space-around</span>
     </label>
-  </div>
-  <div class="mdl-tooltip" for="align-content">
-    Extra space in Cross Axis
+    <div class="mdl-tooltip" for="align-content">
+      The align-content property aligns a flex container’s lines within the flex container when there is extra space in
+      the cross-axis, similar to how justify-content aligns individual items within the main-axis.
+    </div>
   </div>
 
 </div>
@@ -260,7 +280,7 @@ BEM: Blocks, Elements and Modifiers
       <span class="mdl-radio__label">200px</span>
     </label>
   </div>
-  <div class="mdl-cell mdl-cell--2-col options">
+  <div id="flex-basis" class="mdl-cell mdl-cell--2-col options">
     <span>Flex basis</span>
     <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="flex-item-flex-basis-auto">
       <input type="radio" class="mdl-radio__button" id="flex-item-flex-basis-auto" name="flex-basis" value="auto" checked>
@@ -278,8 +298,12 @@ BEM: Blocks, Elements and Modifiers
       <input type="radio" class="mdl-radio__button" id="flex-item-flex-basis-200px" name="flex-basis" value="200px">
       <span class="mdl-radio__label">200px</span>
     </label>
+    <div class="mdl-tooltip mdl-tooltip--bottom" for="flex-basis">
+      This property takes the same values as the width and height properties, and specifies the initial main size of
+      the flex item, before free space is distributed according to the flex factors.
+    </div>
   </div>
-  <div class="mdl-cell mdl-cell--2-col options">
+  <div id="flex-grow" class="mdl-cell mdl-cell--2-col options">
     <span>Flex grow</span>
     <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="flex-item-flex-grow-0">
       <input type="radio" class="mdl-radio__button" id="flex-item-flex-grow-0" name="flex-grow" value="0" checked>
@@ -297,8 +321,13 @@ BEM: Blocks, Elements and Modifiers
       <input type="radio" class="mdl-radio__button" id="flex-item-flex-grow-3" name="flex-grow" value="3">
       <span class="mdl-radio__label">3</span>
     </label>
+    <div class="mdl-tooltip mdl-tooltip--bottom" for="flex-grow">
+      This property specifies the flex grow factor, which determines how much the flex item will grow relative to the
+      rest of the flex items in the flex container when positive free space is distributed.
+    </div>
   </div>
-  <div class="mdl-cell mdl-cell--2-col options">
+
+  <div id="flex-shrink" class="mdl-cell mdl-cell--2-col options">
     <span>Flex shrink</span>
     <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="flex-item-flex-shrink-0">
       <input type="radio" class="mdl-radio__button" id="flex-item-flex-shrink-0" name="flex-shrink" value="0" checked>
@@ -316,8 +345,13 @@ BEM: Blocks, Elements and Modifiers
       <input type="radio" class="mdl-radio__button" id="flex-item-flex-shrink-3" name="flex-shrink" value="3">
       <span class="mdl-radio__label">3</span>
     </label>
+    <div class="mdl-tooltip mdl-tooltip--bottom" for="flex-shrink">
+      The flex-shrink specifies the flex shrink factor, which determines how much the flex item will shrink relative to
+      the rest of the flex items in the flex container when negative free space is distributed.
+    </div>
   </div>
-  <div class="mdl-cell mdl-cell--2-col options">
+
+  <div id="align-self" class="mdl-cell mdl-cell--2-col options">
     <span>Align self</span>
     <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="flex-item-align-self-auto">
       <input type="radio" class="mdl-radio__button" id="flex-item-align-self-auto" name="align-self" value="auto" checked>
@@ -343,6 +377,10 @@ BEM: Blocks, Elements and Modifiers
       <input type="radio" class="mdl-radio__button" id="flex-item-align-self-stretch" name="align-self" value="stretch">
       <span class="mdl-radio__label">stretch</span>
     </label>
+    <div class="mdl-tooltip mdl-tooltip--bottom" for="align-self">
+      This align-self property allows the default alignment (or the one specified by align-items) to be overridden
+      for individual flex items. Refer to align-items explanation for flex container to understand the available values.
+    </div>
   </div>
 </div>
 
@@ -370,6 +408,9 @@ BEM: Blocks, Elements and Modifiers
 <p id="no-of-items" style="width:40%;"># Items <strong>5</strong>
   <input class="mdl-slider mdl-js-slider" type="range" min="0" max="10" value="5" tabindex="0">
 </p>
+<div class="mdl-tooltip mdl-tooltip--top" for="no-of-items">
+  Number of items in grid
+</div>
 
 <script>
   (function() {
@@ -398,6 +439,10 @@ BEM: Blocks, Elements and Modifiers
 <p id="item-order" style="width:40%;">Item order <strong>0</strong>
   <input class="mdl-slider mdl-js-slider" type="range" min="0" max="10" value="0" tabindex="0">
 </p>
+<div class="mdl-tooltip mdl-tooltip--top" for="item-order">
+  The order property controls the order in which children of a flex container appear inside the flex container.
+  By default they are ordered as initially added in the flex container.
+</div>
 
 <script>
   (function() {
@@ -428,8 +473,10 @@ BEM: Blocks, Elements and Modifiers
   <div class="flex-item flex-item--hidden">10</div>
 </div>
 <div class="mdl-tooltip mdl-tooltip--top" for="egghead">
-  Click on one or more items
+  Click on one or more items, then change flex item attributes.
+  If no items are selected then attributes will apply to all items.
 </div>
+
 
 <script>
   (function() {
@@ -443,6 +490,10 @@ BEM: Blocks, Elements and Modifiers
   }());
 </script>
 
+
+<!-- =============== -->
+<!-- Ordered columns -->
+<!-- =============== -->
 
 
 <h4>Ordered columns</h4>
@@ -550,6 +601,10 @@ BEM: Blocks, Elements and Modifiers
 </section>
 
 
+<!-- ================================ -->
+<!-- Header, Sidebar, Content, Footer -->
+<!-- ================================ -->
+
 <h4>Header, Sidebar, Content, Footer</h4>
 <style>
   .flex-layout {
@@ -625,6 +680,9 @@ BEM: Blocks, Elements and Modifiers
         Emulates height 100% with a horizontal flexbox with stretch
         <br /><br />
         This box with a border should fill the blue area except for the padding (just to show the middle flexbox item).
+
+        <br/><br/>
+        <a href="http://jsfiddle.net/MadLittleMods/LmYay/" target="_blank">Source</a>
       </section>
     </div>
     <footer class="flex-item footer">
@@ -632,3 +690,121 @@ BEM: Blocks, Elements and Modifiers
     </footer>
   </div>
 </div>
+
+
+<!-- ================================ -->
+<!-- Horizontal accordion             -->
+<!-- ================================ -->
+
+<h4>Flexbox accordion. <a href="http://codepen.io/aann/pen/dPqBML" target="_blank">Source</a></h4>
+
+<style>
+  .b-accordion {
+    display: flex;
+    width: 100%;
+    height: 300px;
+    padding: 0;
+    margin: 0;
+    flex-flow: row nowrap;
+  }
+  .b-accordion__cell {
+    padding: 16px;
+    overflow: hidden;
+    transition: flex 0.3s;
+    flex: 1 10;
+  }
+  .b-accordion__cell:hover {
+    flex: 10;
+  }
+  .b-accordion__cell:nth-child(1) {
+    background: rgba(239, 154, 154, 0.5);
+  }
+  .b-accordion__cell:nth-child(2) {
+    background: rgba(206, 147, 216, 0.5);
+  }
+  .b-accordion__cell:nth-child(3) {
+    background: rgba(144, 202, 249, 0.5);
+  }
+  .b-accordion__cell:nth-child(4) {
+    background: rgba(165, 214, 167, 0.5);
+  }
+  .b-accordion__cell:nth-child(5) {
+    background: rgba(255, 224, 130, 0.5);
+  }
+  .b-accordion__content {
+    position: relative;
+    display: block;
+    width: 400px;
+  }
+  .b-accordion__content__title {
+    position: absolute;
+    top: 230px;
+    left: 0;
+    display: block;
+    width: 300px;
+    transform: rotate(-90deg);
+    transform-origin: 0 0 0;
+  }
+  .b-accordion__content__text {
+    padding-left: 40px;
+    margin: 0;
+  }
+</style>
+
+
+<ul class="b-accordion">
+  <li class="b-accordion__cell">
+    <article class="b-accordion__content">
+      <h3 class="b-accordion__content__title">First section</h3>
+      <p class="b-accordion__content__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique
+        eget augue eget gravida. Etiam eget imperdiet massa. Aliquam nisi eros, molestie a vulputate quis, tempor nec
+        quam. Ut at libero in sem pellentesque imperdiet. Praesent pretium, sapien vel mollis porttitor, felis magna
+        vehicula metus, ac dignissim odio tortor nec quam. Nam molestie, arcu id maximus lacinia, ante ipsum posuere
+        mauris, ac maximus massa felis quis quam. Curabitur malesuada placerat nunc, id dapibus justo tempor in. Ut
+        molestie arcu justo, id volutpat eros vestibulum eget. Fusce tincidunt leo in est venenatis porta.</p>
+    </article>
+  </li>
+  <li class="b-accordion__cell">
+    <article class="b-accordion__content">
+      <h3 class="b-accordion__content__title">Second</h3>
+      <p class="b-accordion__content__text">Maecenas eu vestibulum orci. Ut eget nisi a est sagittis euismod a vel justo.
+        Quisque at dui urna. Duis vel velit leo. Nulla nunc sem, rutrum at aliquet in, aliquet id velit. Duis mattis
+        placerat erat, a aliquam leo rhoncus vel. Sed nec diam ex. Praesent convallis purus lorem, vel porttitor neque
+        gravida quis. Etiam et malesuada dui. Nunc vitae viverra dui. Suspendisse feugiat efficitur augue, quis blandit
+        leo ullamcorper vel.</p>
+    </article>
+  </li>
+  <li class="b-accordion__cell">
+    <article class="b-accordion__content">
+      <h3 class="b-accordion__content__title">Section #3</h3>
+      <p class="b-accordion__content__text">Nunc felis lectus, convallis sed cursus pretium, porttitor non nisi.
+        Maecenas vitae nunc et turpis placerat elementum vitae non dui. Phasellus tristique lacus eget diam facilisis,
+        nec facilisis dui cursus. Aenean a dolor nunc. Aenean bibendum tempor vulputate. Vestibulum lacinia dictum
+        mattis. Nullam vitae iaculis turpis. Pellentesque ac convallis dolor. Nullam porttitor eleifend purus ut gravida.
+        Suspendisse lobortis erat sed purus sodales, vitae laoreet mi posuere. Etiam massa nulla, rhoncus ut finibus eget,
+        egestas id nisl. Suspendisse potenti. Nunc bibendum non ante in vestibulum. Vivamus sodales velit ut tristique
+        porta. Pellentesque sit amet est vel leo pharetra cursus.</p>
+    </article>
+  </li>
+  <li class="b-accordion__cell">
+    <article class="b-accordion__content">
+      <h3 class="b-accordion__content__title">Fourth section</h3>
+      <p class="b-accordion__content__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique
+        eget augue eget gravida. Etiam eget imperdiet massa. Aliquam nisi eros, molestie a vulputate quis, tempor nec
+        quam. Ut at libero in sem pellentesque imperdiet. Praesent pretium, sapien vel mollis porttitor, felis magna
+        vehicula metus, ac dignissim odio tortor nec quam. Nam molestie, arcu id maximus lacinia, ante ipsum posuere
+        mauris, ac maximus massa felis quis quam. Curabitur malesuada placerat nunc, id dapibus justo tempor in.
+        Ut molestie arcu justo, id volutpat eros vestibulum eget. Fusce tincidunt leo in est venenatis porta.</p>
+    </article>
+  </li>
+  <li class="b-accordion__cell">
+    <article class="b-accordion__content">
+      <h3 class="b-accordion__content__title">Fifth</h3>
+      <p class="b-accordion__content__text">Maecenas eu vestibulum orci. Ut eget nisi a est sagittis euismod a vel justo.
+        Quisque at dui urna. Duis vel velit leo. Nulla nunc sem, rutrum at aliquet in, aliquet id velit. Duis mattis
+        placerat erat, a aliquam leo rhoncus vel. Sed nec diam ex. Praesent convallis purus lorem, vel porttitor neque
+        gravida quis. Etiam et malesuada dui. Nunc vitae viverra dui. Suspendisse feugiat efficitur augue, quis blandit
+        leo ullamcorper vel.</p>
+    </article>
+  </li>
+</ul>
