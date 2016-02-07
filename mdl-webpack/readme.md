@@ -160,6 +160,12 @@ http://localhost:8080/webpack-dev-server/
 * [CSS & Javascript Codes](http://cssscriptcom.tumblr.com/)
 * [How do CSS triangles work?](http://stackoverflow.com/questions/7073484/how-do-css-triangles-work?rq=1)
 * [css accordion using flexbox](http://stackoverflow.com/questions/25691500/css-accordion-using-flexbox)
+* [An Introduction to the BEM Methodology](http://webdesign.tutsplus.com/articles/an-introduction-to-the-bem-methodology--cms-19403)
+* [BEM CSS Presentation, Detroit Craftsman Guild](http://www.slideshare.net/BrianRitter2/bem-css-presentation-detroit-craftsman-guild)
+* [CSS Tricks: BEM 101](https://css-tricks.com/bem-101/)
+* [Using Modern CSS to Build a Responsive Image Grid](http://www.sitepoint.com/using-modern-css-to-build-a-responsive-image-grid/)
+* [Curated articles for designers and front-end developers: CSS Flexbox](http://heydesigner.com/css-flexbox/)
+
 
 ### !
 * [Material Design Lite WIKI](https://github.com/google/material-design-lite/wiki)
@@ -256,10 +262,15 @@ http://localhost:8080/webpack-dev-server/
 * [Pikaday - A refreshing JavaScript Datepicker](https://github.com/dbushell/Pikaday)
 * [Pikaday Example](http://codepen.io/adrianparr/pen/KwBNrv)
 * [Rotating Icon Buttons](http://codepen.io/colewaldrip/pen/bdZVGd)
+* [Responsive Flexbox Tabs / Accordion - CSS Only](http://codepen.io/josh_vogt/pen/EaaZbP)
+* [Making links into checkboxes](http://codepen.io/josh_vogt/pen/xHifz)
+* [Image Grid](http://codepen.io/bradfrost/pen/xkcBn)
+* [Accordion to Full](http://codepen.io/bradfrost/pen/dlwBD)
 
 ### Videos
 * [Creating a 3D Webpage Header with Material Design and Babylon](https://www.youtube.com/watch?v=IZ6fgcBkhg8)
 * [Material Design Lite Tutorial Part1 Layout (Navigation, Grid, Footer)](https://www.youtube.com/watch?v=pEiyaKwsTws)
 * [Decorators in JavaScript](https://www.youtube.com/watch?v=d8CDFsQHZpE)
 * [Async JavaScript with Promises](https://www.youtube.com/watch?v=g90irqWEqd8)
+* [Flexbox Fundamentals - egghead.io](https://egghead.io/lessons/misc-flexbox-fundamentals)
 
