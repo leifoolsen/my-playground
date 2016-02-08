@@ -165,7 +165,10 @@ http://localhost:8080/webpack-dev-server/
 * [CSS Tricks: BEM 101](https://css-tricks.com/bem-101/)
 * [Using Modern CSS to Build a Responsive Image Grid](http://www.sitepoint.com/using-modern-css-to-build-a-responsive-image-grid/)
 * [Curated articles for designers and front-end developers: CSS Flexbox](http://heydesigner.com/css-flexbox/)
-
+* [Flexbox adventures: Flexbox calculations](https://chriswrightdesign.com/experiments/flexbox-adventures/)
+* [THE ULTIMATE FLEXBOX CHEAT SHEET](http://www.sketchingwithcss.com/samplechapter/cheatsheet.html)
+* [Flexy boxes - flexbox code generator](http://the-echoplex.net/flexyboxes/)
+* [Accordion table](http://codepen.io/adahei/pen/Kzfpu)
 
 ### !
 * [Material Design Lite WIKI](https://github.com/google/material-design-lite/wiki)

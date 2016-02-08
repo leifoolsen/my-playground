@@ -19,10 +19,11 @@ BEM: Blocks, Elements and Modifiers
 
 <h4>Flexbox Fundamentals @ <a href="https://egghead.io/lessons/misc-flexbox-fundamentals" target="_blank">egghead.io</a></h4>
 
-<p class="mdl-typography--body-2">Other resources:
+<p class="mdl-typography--body-2">Other resources:<br/>
   <a href="https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties" target="_blank">A Visual Guide to CSS3 Flexbox Properties</a>,
   <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">A Complete Guide to Flexbox</a>,
-  <a href="https://philipwalton.github.io/solved-by-flexbox/" target="_blank">Solved by Flexbox</a>.
+  <a href="https://philipwalton.github.io/solved-by-flexbox/" target="_blank">Solved by Flexbox</a>,
+  <a href="http://www.sketchingwithcss.com/samplechapter/cheatsheet.html" target="_blank">THE ULTIMATE FLEXBOX CHEAT SHEET</a> .
 </p>
 
 <style>
@@ -618,9 +619,9 @@ BEM: Blocks, Elements and Modifiers
 
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* align items in Main Axis */
-    align-items: stretch; /* align items in Cross Axis */
-    align-content: stretch; /* Extra space in Cross Axis */
+    justify-content: flex-start; /* align items in Main Axis  */
+    align-items: stretch;        /* align items in Cross Axis */
+    align-content: stretch;      /* Extra space in Cross Axis */
   }
 
   .flex-layout .flex-item {
@@ -645,7 +646,7 @@ BEM: Blocks, Elements and Modifiers
   .flex-layout .flex-sidebar {
     background: rgba(255, 255, 0, .2);
     width: 200px;
-    border: 1px solid #000000;
+    border: 1px solid red;
   }
 
   .flex-layout .flex-item--fill-area {
@@ -675,14 +676,23 @@ BEM: Blocks, Elements and Modifiers
         Sidebar
       </aside>
       <section class="fill-area-content flex-grow">
-        Content
-        <br /><br />
-        Emulates height 100% with a horizontal flexbox with stretch
-        <br /><br />
-        This box with a border should fill the blue area except for the padding (just to show the middle flexbox item).
+        <p>Content</p>
+        <p>Emulates height 100% with a horizontal flexbox with stretch</p>
+        <p>This box with a border should fill the blue area except for the padding (just to show the middle flexbox item).</p>
+        <p><a href="http://jsfiddle.net/MadLittleMods/LmYay/" target="_blank">Modified from</a></p>
 
-        <br/><br/>
-        <a href="http://jsfiddle.net/MadLittleMods/LmYay/" target="_blank">Source</a>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique
+          eget augue eget gravida. Etiam eget imperdiet massa. Aliquam nisi eros, molestie a vulputate quis, tempor nec
+          quam. Ut at libero in sem pellentesque imperdiet. Praesent pretium, sapien vel mollis porttitor, felis magna
+          vehicula metus, ac dignissim odio tortor nec quam. Nam molestie, arcu id maximus lacinia, ante ipsum posuere
+          mauris, ac maximus massa felis quis quam. Curabitur malesuada placerat nunc, id dapibus justo tempor in. Ut
+          molestie arcu justo, id volutpat eros vestibulum eget. Fusce tincidunt leo in est venenatis porta.</p>
+
+        <p>Maecenas eu vestibulum orci. Ut eget nisi a est sagittis euismod a vel justo.
+          Quisque at dui urna. Duis vel velit leo. Nulla nunc sem, rutrum at aliquet in, aliquet id velit. Duis mattis
+          placerat erat, a aliquam leo rhoncus vel. Sed nec diam ex. Praesent convallis purus lorem, vel porttitor neque
+          gravida quis. Etiam et malesuada dui. Nunc vitae viverra dui. Suspendisse feugiat efficitur augue, quis blandit
+          leo ullamcorper vel.</p>
       </section>
     </div>
     <footer class="flex-item footer">
@@ -693,28 +703,35 @@ BEM: Blocks, Elements and Modifiers
 
 
 <!-- ================================ -->
-<!-- Horizontal accordion             -->
+<!-- Accordion                        -->
 <!-- ================================ -->
 
-<h4>Flexbox accordion. <a href="http://codepen.io/aann/pen/dPqBML" target="_blank">Source</a></h4>
+<h4>Horizontal Flexbox Accordion. <a href="http://codepen.io/aann/pen/dPqBML" target="_blank">Modified from</a></h4>
 
 <style>
+  ul.b-accordion {
+    list-style: none;
+  }
   .b-accordion {
-    display: flex;
     width: 100%;
     height: 300px;
     padding: 0;
     margin: 0;
+    display: flex;
     flex-flow: row nowrap;
   }
   .b-accordion__cell {
-    padding: 16px;
+    position: relative;
+    padding: 8px;
     overflow: hidden;
     transition: flex 0.3s;
-    flex: 1 10;
+    flex: 1 30;
+
+    display: flex;
+    flex-flow: row nowrap;
   }
   .b-accordion__cell:hover {
-    flex: 10;
+    flex: 30;
   }
   .b-accordion__cell:nth-child(1) {
     background: rgba(239, 154, 154, 0.5);
@@ -731,80 +748,218 @@ BEM: Blocks, Elements and Modifiers
   .b-accordion__cell:nth-child(5) {
     background: rgba(255, 224, 130, 0.5);
   }
-  .b-accordion__content {
+
+  .b-accordion__cell__title {
     position: relative;
     display: block;
-    width: 400px;
+    min-width: 40px;
+    cursor: pointer;
+
+    /* TODO: Use flex */
   }
-  .b-accordion__content__title {
-    position: absolute;
-    top: 230px;
-    left: 0;
-    display: block;
-    width: 300px;
+  .b-accordion__cell__title > * {
+
+    /* TODO: Use flex */
     transform: rotate(-90deg);
     transform-origin: 0 0 0;
+    position: absolute;
+    bottom: -32px;
+    left: 4px;
+    white-space: nowrap;
   }
-  .b-accordion__content__text {
-    padding-left: 40px;
-    margin: 0;
+
+  .b-accordion__cell__content {
+    width: 100%
+  }
+  .b-accordion__cell:hover .b-accordion__cell__content {
+    overflow: auto;
+  }
+
+
+  .b-accordion--vertical {
+    flex-flow: column nowrap;
+    height: 100%;
+  }
+  .b-accordion--vertical .b-accordion__cell {
+    flex: 1 20;
+    flex-flow: column nowrap;
+  }
+  .b-accordion--vertical .b-accordion__cell:hover {
+    flex: 20;
+  }
+  .b-accordion--vertical .b-accordion__cell__title > * {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: rotate(0deg);
+    margin-top: 0;
+    margin-bottom: 8px;
+  }
+
+  .b-accordion--vertical .b-accordion__cell__title input[type=radio],
+  .b-accordion--vertical .b-accordion__cell__title input[type=checkbox] {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    cursor: pointer;
+    opacity: 0;
   }
 </style>
 
 
 <ul class="b-accordion">
   <li class="b-accordion__cell">
-    <article class="b-accordion__content">
-      <h3 class="b-accordion__content__title">First section</h3>
-      <p class="b-accordion__content__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique
-        eget augue eget gravida. Etiam eget imperdiet massa. Aliquam nisi eros, molestie a vulputate quis, tempor nec
-        quam. Ut at libero in sem pellentesque imperdiet. Praesent pretium, sapien vel mollis porttitor, felis magna
-        vehicula metus, ac dignissim odio tortor nec quam. Nam molestie, arcu id maximus lacinia, ante ipsum posuere
-        mauris, ac maximus massa felis quis quam. Curabitur malesuada placerat nunc, id dapibus justo tempor in. Ut
-        molestie arcu justo, id volutpat eros vestibulum eget. Fusce tincidunt leo in est venenatis porta.</p>
-    </article>
+    <header class="b-accordion__cell__title">
+      <h5>First section</h5>
+    </header>
+    <section class="b-accordion__cell__content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique eget augue eget gravida.
+        Etiam eget imperdiet massa. Aliquam nisi eros, molestie a vulputate quis, tempor nec quam. Ut at libero
+        in sem pellentesque imperdiet. Praesent pretium, sapien vel mollis porttitor, felis magna vehicula metus,
+        ac dignissim odio tortor nec quam. Nam molestie, arcu id maximus lacinia, ante ipsum posuere mauris, ac
+        maximus massa felis quis quam. Curabitur malesuada placerat nunc, id dapibus justo tempor in. Ut molestie
+        arcu justo, id volutpat eros vestibulum eget. Fusce tincidunt leo in est venenatis porta.</p>
+      <p class="b-accordion__content__text">Maecenas eu vestibulum orci. Ut eget nisi a est sagittis euismod a vel
+        justo. Quisque at dui urna. Duis vel velit leo. Nulla nunc sem, rutrum at aliquet in, aliquet id velit. Duis
+        mattis placerat erat, a aliquam leo rhoncus vel. Sed nec diam ex. Praesent convallis purus lorem, vel porttitor
+        neque gravida quis. Etiam et malesuada dui. Nunc vitae viverra dui. Suspendisse feugiat efficitur augue, quis
+        blandit leo ullamcorper vel.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique eget augue eget gravida.
+        Etiam eget imperdiet massa. Aliquam nisi eros, molestie a vulputate quis, tempor nec quam. Ut at libero
+        in sem pellentesque imperdiet. Praesent pretium, sapien vel mollis porttitor, felis magna vehicula metus,
+        ac dignissim odio tortor nec quam. Nam molestie, arcu id maximus lacinia, ante ipsum posuere mauris, ac
+        maximus massa felis quis quam. Curabitur malesuada placerat nunc, id dapibus justo tempor in. Ut molestie
+        arcu justo, id volutpat eros vestibulum eget. Fusce tincidunt leo in est venenatis porta.</p>
+    </section>
   </li>
   <li class="b-accordion__cell">
-    <article class="b-accordion__content">
-      <h3 class="b-accordion__content__title">Second</h3>
-      <p class="b-accordion__content__text">Maecenas eu vestibulum orci. Ut eget nisi a est sagittis euismod a vel justo.
-        Quisque at dui urna. Duis vel velit leo. Nulla nunc sem, rutrum at aliquet in, aliquet id velit. Duis mattis
-        placerat erat, a aliquam leo rhoncus vel. Sed nec diam ex. Praesent convallis purus lorem, vel porttitor neque
-        gravida quis. Etiam et malesuada dui. Nunc vitae viverra dui. Suspendisse feugiat efficitur augue, quis blandit
-        leo ullamcorper vel.</p>
-    </article>
+    <header class="b-accordion__cell__title">
+      <h5>Second</h5>
+    </header>
+    <section class="b-accordion__cell__content">
+      <p class="b-accordion__content__text">Maecenas eu vestibulum orci. Ut eget nisi a est sagittis euismod a vel
+        justo. Quisque at dui urna. Duis vel velit leo. Nulla nunc sem, rutrum at aliquet in, aliquet id velit. Duis
+        mattis placerat erat, a aliquam leo rhoncus vel. Sed nec diam ex. Praesent convallis purus lorem, vel porttitor
+        neque gravida quis. Etiam et malesuada dui. Nunc vitae viverra dui. Suspendisse feugiat efficitur augue, quis
+        blandit leo ullamcorper vel.</p>
+    </section>
   </li>
   <li class="b-accordion__cell">
-    <article class="b-accordion__content">
-      <h3 class="b-accordion__content__title">Section #3</h3>
-      <p class="b-accordion__content__text">Nunc felis lectus, convallis sed cursus pretium, porttitor non nisi.
-        Maecenas vitae nunc et turpis placerat elementum vitae non dui. Phasellus tristique lacus eget diam facilisis,
-        nec facilisis dui cursus. Aenean a dolor nunc. Aenean bibendum tempor vulputate. Vestibulum lacinia dictum
-        mattis. Nullam vitae iaculis turpis. Pellentesque ac convallis dolor. Nullam porttitor eleifend purus ut gravida.
-        Suspendisse lobortis erat sed purus sodales, vitae laoreet mi posuere. Etiam massa nulla, rhoncus ut finibus eget,
-        egestas id nisl. Suspendisse potenti. Nunc bibendum non ante in vestibulum. Vivamus sodales velit ut tristique
-        porta. Pellentesque sit amet est vel leo pharetra cursus.</p>
-    </article>
+    <header class="b-accordion__cell__title">
+      <h5>Section #3</h5>
+    </header>
+    <section class="b-accordion__cell__content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique eget augue eget gravida.
+        Etiam eget imperdiet massa. Aliquam nisi eros, molestie a vulputate quis, tempor nec quam. Ut at libero
+        in sem pellentesque imperdiet. Praesent pretium, sapien vel mollis porttitor, felis magna vehicula metus,
+        ac dignissim odio tortor nec quam. Nam molestie, arcu id maximus lacinia, ante ipsum posuere mauris, ac
+        maximus massa felis quis quam. Curabitur malesuada placerat nunc, id dapibus justo tempor in. Ut molestie
+        arcu justo, id volutpat eros vestibulum eget. Fusce tincidunt leo in est venenatis porta.</p>
+    </section>
   </li>
   <li class="b-accordion__cell">
-    <article class="b-accordion__content">
-      <h3 class="b-accordion__content__title">Fourth section</h3>
-      <p class="b-accordion__content__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique
-        eget augue eget gravida. Etiam eget imperdiet massa. Aliquam nisi eros, molestie a vulputate quis, tempor nec
-        quam. Ut at libero in sem pellentesque imperdiet. Praesent pretium, sapien vel mollis porttitor, felis magna
-        vehicula metus, ac dignissim odio tortor nec quam. Nam molestie, arcu id maximus lacinia, ante ipsum posuere
-        mauris, ac maximus massa felis quis quam. Curabitur malesuada placerat nunc, id dapibus justo tempor in.
-        Ut molestie arcu justo, id volutpat eros vestibulum eget. Fusce tincidunt leo in est venenatis porta.</p>
-    </article>
+    <header class="b-accordion__cell__title">
+      <h5>Fourth section</h5>
+    </header>
+    <section class="b-accordion__cell__content">
+      <p class="b-accordion__content__text">Maecenas eu vestibulum orci. Ut eget nisi a est sagittis euismod a vel
+        justo. Quisque at dui urna. Duis vel velit leo. Nulla nunc sem, rutrum at aliquet in, aliquet id velit. Duis
+        mattis placerat erat, a aliquam leo rhoncus vel. Sed nec diam ex. Praesent convallis purus lorem, vel porttitor
+        neque gravida quis. Etiam et malesuada dui. Nunc vitae viverra dui. Suspendisse feugiat efficitur augue, quis
+        blandit leo ullamcorper vel.</p>
+    </section>
   </li>
   <li class="b-accordion__cell">
-    <article class="b-accordion__content">
-      <h3 class="b-accordion__content__title">Fifth</h3>
-      <p class="b-accordion__content__text">Maecenas eu vestibulum orci. Ut eget nisi a est sagittis euismod a vel justo.
-        Quisque at dui urna. Duis vel velit leo. Nulla nunc sem, rutrum at aliquet in, aliquet id velit. Duis mattis
-        placerat erat, a aliquam leo rhoncus vel. Sed nec diam ex. Praesent convallis purus lorem, vel porttitor neque
-        gravida quis. Etiam et malesuada dui. Nunc vitae viverra dui. Suspendisse feugiat efficitur augue, quis blandit
-        leo ullamcorper vel.</p>
-    </article>
+    <header class="b-accordion__cell__title">
+      <h5>Fifth</h5>
+    </header>
+    <section class="b-accordion__cell__content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique eget augue eget gravida.
+        Etiam eget imperdiet massa. Aliquam nisi eros, molestie a vulputate quis, tempor nec quam. Ut at libero
+        in sem pellentesque imperdiet. Praesent pretium, sapien vel mollis porttitor, felis magna vehicula metus,
+        ac dignissim odio tortor nec quam. Nam molestie, arcu id maximus lacinia, ante ipsum posuere mauris, ac
+        maximus massa felis quis quam. Curabitur malesuada placerat nunc, id dapibus justo tempor in. Ut molestie
+        arcu justo, id volutpat eros vestibulum eget. Fusce tincidunt leo in est venenatis porta.</p>
+    </section>
   </li>
 </ul>
+
+
+<h4>Vertical Flexbox Accordion</h4>
+<div style="width: 350px; height: 600px;">
+
+  <ul class="b-accordion b-accordion--vertical">
+    <li class="b-accordion__cell">
+      <header class="b-accordion__cell__title">
+        <input type="checkbox" name="my-accordion"/>
+        <h5>First section</h5>
+      </header>
+      <section class="b-accordion__cell__content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique eget augue eget gravida.
+          Etiam eget imperdiet massa. Aliquam nisi eros, molestie a vulputate quis, tempor nec quam. Ut at libero
+          in sem pellentesque imperdiet. Praesent pretium, sapien vel mollis porttitor, felis magna vehicula metus,
+          ac dignissim odio tortor nec quam. Nam molestie, arcu id maximus lacinia, ante ipsum posuere mauris, ac
+          maximus massa felis quis quam. Curabitur malesuada placerat nunc, id dapibus justo tempor in. Ut molestie
+          arcu justo, id volutpat eros vestibulum eget. Fusce tincidunt leo in est venenatis porta.</p>
+        <p class="b-accordion__content__text">Maecenas eu vestibulum orci. Ut eget nisi a est sagittis euismod a vel
+          justo. Quisque at dui urna. Duis vel velit leo. Nulla nunc sem, rutrum at aliquet in, aliquet id velit. Duis
+          mattis placerat erat, a aliquam leo rhoncus vel. Sed nec diam ex. Praesent convallis purus lorem, vel porttitor
+          neque gravida quis. Etiam et malesuada dui. Nunc vitae viverra dui. Suspendisse feugiat efficitur augue, quis
+          blandit leo ullamcorper vel.</p>
+      </section>
+    </li>
+    <li class="b-accordion__cell">
+      <header class="b-accordion__cell__title">
+        <h5>Second</h5>
+      </header>
+      <section class="b-accordion__cell__content">
+        <p class="b-accordion__content__text">Maecenas eu vestibulum orci. Ut eget nisi a est sagittis euismod a vel
+          justo. Quisque at dui urna. Duis vel velit leo. Nulla nunc sem, rutrum at aliquet in, aliquet id velit. Duis
+          mattis placerat erat, a aliquam leo rhoncus vel. Sed nec diam ex. Praesent convallis purus lorem, vel porttitor
+          neque gravida quis. Etiam et malesuada dui. Nunc vitae viverra dui. Suspendisse feugiat efficitur augue, quis
+          blandit leo ullamcorper vel.</p>
+      </section>
+    </li>
+    <li class="b-accordion__cell">
+      <header class="b-accordion__cell__title">
+        <h5>Section #3</h5>
+      </header>
+      <section class="b-accordion__cell__content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique eget augue eget gravida.
+          Etiam eget imperdiet massa. Aliquam nisi eros, molestie a vulputate quis, tempor nec quam. Ut at libero
+          in sem pellentesque imperdiet. Praesent pretium, sapien vel mollis porttitor, felis magna vehicula metus,
+          ac dignissim odio tortor nec quam. Nam molestie, arcu id maximus lacinia, ante ipsum posuere mauris, ac
+          maximus massa felis quis quam. Curabitur malesuada placerat nunc, id dapibus justo tempor in. Ut molestie
+          arcu justo, id volutpat eros vestibulum eget. Fusce tincidunt leo in est venenatis porta.</p>
+      </section>
+    </li>
+    <li class="b-accordion__cell">
+      <header class="b-accordion__cell__title">
+        <h5>Fourth section</h5>
+      </header>
+      <section class="b-accordion__cell__content">
+        <p class="b-accordion__content__text">Maecenas eu vestibulum orci. Ut eget nisi a est sagittis euismod a vel
+          justo. Quisque at dui urna. Duis vel velit leo. Nulla nunc sem, rutrum at aliquet in, aliquet id velit. Duis
+          mattis placerat erat, a aliquam leo rhoncus vel. Sed nec diam ex. Praesent convallis purus lorem, vel porttitor
+          neque gravida quis. Etiam et malesuada dui. Nunc vitae viverra dui. Suspendisse feugiat efficitur augue, quis
+          blandit leo ullamcorper vel.</p>
+      </section>
+    </li>
+    <li class="b-accordion__cell">
+      <header class="b-accordion__cell__title">
+        <h5>Fifth</h5>
+      </header>
+      <section class="b-accordion__cell__content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique eget augue eget gravida.
+          Etiam eget imperdiet massa. Aliquam nisi eros, molestie a vulputate quis, tempor nec quam. Ut at libero
+          in sem pellentesque imperdiet. Praesent pretium, sapien vel mollis porttitor, felis magna vehicula metus,
+          ac dignissim odio tortor nec quam. Nam molestie, arcu id maximus lacinia, ante ipsum posuere mauris, ac
+          maximus massa felis quis quam. Curabitur malesuada placerat nunc, id dapibus justo tempor in. Ut molestie
+          arcu justo, id volutpat eros vestibulum eget. Fusce tincidunt leo in est venenatis porta.</p>
+      </section>
+    </li>
+  </ul>
+
+</div>
