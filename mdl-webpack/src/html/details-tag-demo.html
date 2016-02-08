@@ -68,6 +68,41 @@
   }
 </style>
 
+
+<details role="group" open>
+  <summary role="button">The details tag</summary>
+  <div>
+    <p>The <code>&lt;details&gt</code> tag specifies additional details that the user can view or hide on demand.
+      The <code>&lt;summary&gt;</code> tag defines a visible heading for the <code>&lt;details&gt;</code> element.
+      The heading can be clicked to view/hide the details.
+      More information can be found in these articles:
+      <a href="https://www.w3.org/wiki/HTML/Elements/details" target="_blank"><strong>HTML/Elements/details</strong></a>,
+      <a href="http://html5doctor.com/the-details-and-summary-elements/" target="_blank"><strong>The details and summary elements</strong></a></p>
+
+    <h5>Semantic markup</h5>
+    <pre>
+    &lt;details role="group" open&gt;
+      &lt;summary role="button">Show/Hide me&lt;/summary&gt;
+          &lt;p>Some content ..... etc.&lt;/p&gt;
+    &lt;/details&gt;
+    </pre>
+
+    <p><strong>Note:</strong> The <code>&lt;detail&gt;</code> element currently has very limited cross-browser support.
+      To ensure support across all modern browsers, please consider using a polyfill or creating your own.
+      I wrote my own using the following sources:</p>
+    <ul>
+      <li>https://github.com/jordanaustin/Details-Expander</li>
+      <li>https://github.com/chemerisuk/better-details-polyfill</li>
+      <li>http://codepen.io/stevef/pen/jiCBE</li>
+      <li>http://blog.mxstbr.com/2015/06/html-details/</li>
+      <li>http://html5doctor.com/the-details-and-summary-elements/</li>
+      <li>http://zogovic.com/post/21784525226/simple-html5-details-polyfill</li>
+      <li>http://www.sitepoint.com/fixing-the-details-element/</li>
+      <li>https://www.smashingmagazine.com/2014/11/complete-polyfill-html5-details-element/</li>
+    </ul>
+  </div>
+</details>
+
 <h4>Simple usage</h4>
 <details role="group">
   <summary role="button">Click to show/hide details</summary>
@@ -108,7 +143,7 @@
   <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
 </details>
 
-<h4>Using event listener</h4>
+<h4>Event listener example</h4>
 
 <details id="hide-show" role="group" open>
   <summary role="button">Hide me</summary>
