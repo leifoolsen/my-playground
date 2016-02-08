@@ -43,7 +43,11 @@ function injectCSS() {
       <p>Some content ..... etc.</p>
     </details>
 
-    Preserve display attribute example:
+
+    Note: There is no guarantee that the browser's implementation of the <details> element will
+    respect it's child elements layout when toggeling the details. To preserve the child elements layout,
+    always wrap the child elements inside a <div>.
+
     <style>
       .my-content { display : flex; }
     </style
@@ -112,7 +116,7 @@ function injectCSS() {
 
   //console.log(style.textContent);
 
-  // Must be the first stykesheet so it does not override user css
+  // Must be the first stylesheet so it does not override user css
   document.head.insertBefore(style, document.head.firstChild);
 
   return true;
@@ -125,11 +129,11 @@ export function polyfillDetails(fromEl = document) {
   }
 
 
-  [...fromEl.querySelectorAll('details:not(.is-upgraded)')]
+  [...fromEl.querySelectorAll('details:not(.is-polyfilled)')]
   //.filter( details => !details.classList.contains('is-upgraded') )
   .forEach( details => {
 
-    details.classList.add('is-upgraded'); // flag to prevent doing this more than once
+    details.classList.add('is-polyfilled'); // flag to prevent doing this more than once
 
     let summary = details.querySelector('summary:first-child');
 
@@ -149,6 +153,21 @@ export function polyfillDetails(fromEl = document) {
 
     summary.tabIndex = 0;
 
+    // Respect layout of child elements!
+    // Chrome does not respect the child elements layout, so there is no need to implement this in the polyfill.
+    // Instead you should wrap the details child elements inside a <div> to preserve the child elements layout.
+    /*
+    let items = details.querySelectorAll('details > *:not(summary)');
+    if(items.length > 0) {
+      let newChild = document.createElement('div');
+      for (let i = 0; i < items.length; i++) {
+        newChild.appendChild(items[i]);
+      }
+      details.insertBefore(newChild, null);
+    }
+    */
+
+    // Events
     summary.addEventListener('keydown', event => {
       if (event.target === summary) {
         if (event.keyCode === VK_ENTER || event.keyCode === VK_SPACE) {
