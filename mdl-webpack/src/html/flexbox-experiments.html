@@ -607,6 +607,7 @@ BEM: Blocks, Elements and Modifiers
 <!-- ================================ -->
 
 <h4>Header, Sidebar, Content, Footer</h4>
+<p>Note: OSX Chrome only.</p>
 <style>
   .flex-layout {
     height: 400px;
@@ -724,7 +725,7 @@ BEM: Blocks, Elements and Modifiers
     position: relative;
     padding: 8px;
     overflow: hidden;
-    transition: flex 0.3s;
+    transition: flex 0.2s ease-in;
     flex: 1 30;
 
     display: flex;
@@ -768,11 +769,44 @@ BEM: Blocks, Elements and Modifiers
     white-space: nowrap;
   }
 
-  .b-accordion__cell__content {
-    width: 100%
+  .b-accordion__cell .b-accordion__cell__content {
+    width: 100%;
+    overflow: hidden; /* Overflow hidden/auto can not be be transitioned. Need a keyframe for that */
   }
   .b-accordion__cell:hover .b-accordion__cell__content {
     overflow: auto;
+
+    -webkit-animation: accordion-open .4s ease-in-out;
+    -moz-animation: accordion-open .4s ease-in-out;
+    animation: accordion-open .4s ease-in-out;
+  }
+
+  /* Animating overflow:hidden -> overflow:auto, see: https://jdsteinbach.com/css/snippet-animate-display-transform/   */
+  /* Why do we need to animate this? The text overflow auto should be set after the accordion animation has completed! */
+  /* If we omit this, the the overflow scrollbar will occasionally flicker during the accordion transition             */
+  @-webkit-keyframes accordion-open {
+    0% {
+      overflow: hidden;
+    }
+    100% {
+      overflow: auto;
+    }
+  }
+  @-moz-keyframes accordion-open {
+    0% {
+      overflow: hidden;
+    }
+    100% {
+      overflow: auto;
+    }
+  }
+  @keyframes accordion-open {
+    0% {
+      overflow: hidden;
+    }
+    100% {
+      overflow: auto;
+    }
   }
 
 
@@ -884,12 +918,13 @@ BEM: Blocks, Elements and Modifiers
         arcu justo, id volutpat eros vestibulum eget. Fusce tincidunt leo in est venenatis porta.</p>
     </section>
   </li>
+
+
 </ul>
 
 
 <h4>Vertical Flexbox Accordion</h4>
 <div style="width: 350px; height: 600px;">
-
   <ul class="b-accordion b-accordion--vertical">
     <li class="b-accordion__cell">
       <header class="b-accordion__cell__title">

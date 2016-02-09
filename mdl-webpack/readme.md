@@ -169,6 +169,10 @@ http://localhost:8080/webpack-dev-server/
 * [THE ULTIMATE FLEXBOX CHEAT SHEET](http://www.sketchingwithcss.com/samplechapter/cheatsheet.html)
 * [Flexy boxes - flexbox code generator](http://the-echoplex.net/flexyboxes/)
 * [Accordion table](http://codepen.io/adahei/pen/Kzfpu)
+* [Tether: A positioning engine to make overlays, tooltips and dropdowns better](https://github.com/HubSpot/tether/)
+* [Pikaday - A refreshing JavaScript Datepicker](https://github.com/dbushell/Pikaday)
+* [flatpickr - Super lightweight & elegant date picker](https://github.com/chmln/flatpickr)
+* [Material Datetime Picker](https://github.com/ripjar/material-datetime-picker)
 
 ### !
 * [Material Design Lite WIKI](https://github.com/google/material-design-lite/wiki)
@@ -262,7 +266,6 @@ http://localhost:8080/webpack-dev-server/
 * [Cross-Browser CSS3 Form](http://codepen.io/souporserious/pen/okEfr)
 * [Drop Content Data Attributes](http://codepen.io/souporserious/pen/KpMOxK)
 * [REM & VW UNITS](http://codepen.io/souporserious/pen/RWjWKJ)
-* [Pikaday - A refreshing JavaScript Datepicker](https://github.com/dbushell/Pikaday)
 * [Pikaday Example](http://codepen.io/adrianparr/pen/KwBNrv)
 * [Rotating Icon Buttons](http://codepen.io/colewaldrip/pen/bdZVGd)
 * [Responsive Flexbox Tabs / Accordion - CSS Only](http://codepen.io/josh_vogt/pen/EaaZbP)
