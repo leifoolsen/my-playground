@@ -1,4 +1,6 @@
 <style>
+  /* Styling details example */
+
   details > *:not(summary) {
     display: none;
     opacity: 0;
@@ -255,7 +257,7 @@
   <div>
     <p>There is no guarantee that the browser's implementation of the <code>&lt;details&gt;</code>
       element will respect it's child elements layout when toggeling the details. To preserve the child elements
-      layout, <strong>always</strong> wrap the child elements inside a <code>&lt;div&gt;</code>.</p>
+      layout, <strong>always</strong> wrap the child elements inside a block element, e.g. <code>&lt;div&gt;</code>.</p>
     <div class="someting-inlined someting-inlined--yellow">I'm inlined</div>
     <div class="someting-inlined someting-inlined--green">Mee 2</div>
   </div>

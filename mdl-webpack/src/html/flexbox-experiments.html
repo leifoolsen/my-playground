@@ -710,10 +710,10 @@ BEM: Blocks, Elements and Modifiers
 <h4>Horizontal Flexbox Accordion. <a href="http://codepen.io/aann/pen/dPqBML" target="_blank">Modified from</a></h4>
 
 <style>
-  ul.b-accordion {
+  ul.mdlext-accordion {
     list-style: none;
   }
-  .b-accordion {
+  .mdlext-accordion {
     width: 100%;
     height: 300px;
     padding: 0;
@@ -721,7 +721,7 @@ BEM: Blocks, Elements and Modifiers
     display: flex;
     flex-flow: row nowrap;
   }
-  .b-accordion__cell {
+  .mdlext-accordion__panel {
     position: relative;
     padding: 8px;
     overflow: hidden;
@@ -731,33 +731,37 @@ BEM: Blocks, Elements and Modifiers
     display: flex;
     flex-flow: row nowrap;
   }
-  .b-accordion__cell:hover {
+  .mdlext-accordion__panel[open] {
     flex: 30;
   }
-  .b-accordion__cell:nth-child(1) {
+
+
+  .mdlext-accordion__panel:nth-child(1) {
     background: rgba(239, 154, 154, 0.5);
   }
-  .b-accordion__cell:nth-child(2) {
+  .mdlext-accordion__panel:nth-child(2) {
     background: rgba(206, 147, 216, 0.5);
   }
-  .b-accordion__cell:nth-child(3) {
+  .mdlext-accordion__panel:nth-child(3) {
     background: rgba(144, 202, 249, 0.5);
   }
-  .b-accordion__cell:nth-child(4) {
+  .mdlext-accordion__panel:nth-child(4) {
     background: rgba(165, 214, 167, 0.5);
   }
-  .b-accordion__cell:nth-child(5) {
+  .mdlext-accordion__panel:nth-child(5) {
     background: rgba(255, 224, 130, 0.5);
   }
 
-  .b-accordion__cell__title {
+
+  .mdlext-accordion__panel__title {
     position: relative;
     display: block;
     min-width: 40px;
+    cursor: pointer;
 
     /* Use flex */
   }
-  .b-accordion__cell__title > * {
+  .mdlext-accordion__panel__title > * {
 
     /* Use flex */
     transform: rotate(-90deg);
@@ -767,23 +771,22 @@ BEM: Blocks, Elements and Modifiers
     left: 4px;
     white-space: nowrap;
   }
-
-  .b-accordion__cell .b-accordion__cell__content {
+  .mdlext-accordion__panel .mdlext-accordion__panel__content {
     width: 100%;
     overflow: hidden; /* Overflow hidden/auto can not be be transitioned. Need a keyframe for that */
   }
-  .b-accordion__cell:hover .b-accordion__cell__content {
+  .mdlext-accordion__panel[open] .mdlext-accordion__panel__content {
     overflow: auto;
 
-    -webkit-animation: accordion-open .4s ease-in-out;
-    -moz-animation: accordion-open .4s ease-in-out;
-    animation: accordion-open .4s ease-in-out;
+    -webkit-animation: mdlext-accordion__panel-open .4s linear;
+    -moz-animation: mdlext-accordion__panel-open .4s linear;
+    animation: mdlext-accordion__panel-open .4s linear;
   }
 
   /* Animating overflow:hidden -> overflow:auto, see: https://jdsteinbach.com/css/snippet-animate-display-transform/   */
   /* Why do we need to animate this? The text overflow auto should be set after the accordion animation has completed! */
   /* If we omit this, the the overflow scrollbar will occasionally flicker during the accordion transition             */
-  @-webkit-keyframes accordion-open {
+  @-webkit-keyframes mdlext-accordion__panel-open {
     0% {
       overflow: hidden;
     }
@@ -791,7 +794,7 @@ BEM: Blocks, Elements and Modifiers
       overflow: auto;
     }
   }
-  @-moz-keyframes accordion-open {
+  @-moz-keyframes mdlext-accordion__panel-open {
     0% {
       overflow: hidden;
     }
@@ -799,7 +802,7 @@ BEM: Blocks, Elements and Modifiers
       overflow: auto;
     }
   }
-  @keyframes accordion-open {
+  @keyframes mdlext-accordion__panel-open {
     0% {
       overflow: hidden;
     }
@@ -809,18 +812,18 @@ BEM: Blocks, Elements and Modifiers
   }
 
 
-  .b-accordion--vertical {
+  .mdlext-accordion--vertical {
     flex-flow: column nowrap;
     height: 100%;
   }
-  .b-accordion--vertical .b-accordion__cell {
+  .mdlext-accordion--vertical .mdlext-accordion__panel {
     flex: 1 20;
     flex-flow: column nowrap;
   }
-  .b-accordion--vertical .b-accordion__cell:hover {
+  .mdlext-accordion--vertical .mdlext-accordion__panel[open] {
     flex: 20;
   }
-  .b-accordion--vertical .b-accordion__cell__title > * {
+  .mdlext-accordion--vertical .mdlext-accordion__panel__title > * {
     position: relative;
     bottom: auto;
     left: auto;
@@ -829,31 +832,23 @@ BEM: Blocks, Elements and Modifiers
     margin-bottom: 0;
     padding-bottom: 8px;
   }
-
-  input.b-accordion-state[type=radio],
-  input.b-accordion-state[type=checkbox] {
-
-  }
-  .b-accordion--vertical .b-accordion__cell__title > label {
+  .mdlext-accordion--vertical .mdlext-accordion__panel__title > a {
     display: block;
-    cursor: pointer;
-
-    font-family: "Roboto-Light", "Helvetica", "Arial", sans-serif;
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 1;
-    letter-spacing: 0.02em;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
   }
 
 </style>
 
 
-<ul class="b-accordion">
-  <li class="b-accordion__cell">
-    <header class="b-accordion__cell__title">
+<ul id="my-horisontal-accordion" class="mdlext-accordion" role="tablist" aria-multiselectable="false">
+  <li class="mdlext-accordion__panel" role="tabpanel">
+    <header class="mdlext-accordion__panel__title">
       <h5>First section</h5>
     </header>
-    <section class="b-accordion__cell__content">
+    <section class="mdlext-accordion__panel__content">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique eget augue eget gravida.
         Etiam eget imperdiet massa. Aliquam nisi eros, molestie a vulputate quis, tempor nec quam. Ut at libero
         in sem pellentesque imperdiet. Praesent pretium, sapien vel mollis porttitor, felis magna vehicula metus,
@@ -873,11 +868,11 @@ BEM: Blocks, Elements and Modifiers
         arcu justo, id volutpat eros vestibulum eget. Fusce tincidunt leo in est venenatis porta.</p>
     </section>
   </li>
-  <li class="b-accordion__cell">
-    <header class="b-accordion__cell__title">
+  <li class="mdlext-accordion__panel" role="tabpanel">
+    <header class="mdlext-accordion__panel__title">
       <h5>Second</h5>
     </header>
-    <section class="b-accordion__cell__content">
+    <section class="mdlext-accordion__panel__content">
       <p>Maecenas eu vestibulum orci. Ut eget nisi a est sagittis euismod a vel
         justo. Quisque at dui urna. Duis vel velit leo. Nulla nunc sem, rutrum at aliquet in, aliquet id velit. Duis
         mattis placerat erat, a aliquam leo rhoncus vel. Sed nec diam ex. Praesent convallis purus lorem, vel porttitor
@@ -885,11 +880,11 @@ BEM: Blocks, Elements and Modifiers
         blandit leo ullamcorper vel.</p>
     </section>
   </li>
-  <li class="b-accordion__cell">
-    <header class="b-accordion__cell__title">
+  <li class="mdlext-accordion__panel" role="tabpanel" open>
+    <header class="mdlext-accordion__panel__title">
       <h5>Section #3</h5>
     </header>
-    <section class="b-accordion__cell__content">
+    <section class="mdlext-accordion__panel__content">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique eget augue eget gravida.
         Etiam eget imperdiet massa. Aliquam nisi eros, molestie a vulputate quis, tempor nec quam. Ut at libero
         in sem pellentesque imperdiet. Praesent pretium, sapien vel mollis porttitor, felis magna vehicula metus,
@@ -898,11 +893,11 @@ BEM: Blocks, Elements and Modifiers
         arcu justo, id volutpat eros vestibulum eget. Fusce tincidunt leo in est venenatis porta.</p>
     </section>
   </li>
-  <li class="b-accordion__cell">
-    <header class="b-accordion__cell__title">
+  <li class="mdlext-accordion__panel" role="tabpanel">
+    <header class="mdlext-accordion__panel__title">
       <h5>Fourth section</h5>
     </header>
-    <section class="b-accordion__cell__content">
+    <section class="mdlext-accordion__panel__content">
       <p>Maecenas eu vestibulum orci. Ut eget nisi a est sagittis euismod a vel
         justo. Quisque at dui urna. Duis vel velit leo. Nulla nunc sem, rutrum at aliquet in, aliquet id velit. Duis
         mattis placerat erat, a aliquam leo rhoncus vel. Sed nec diam ex. Praesent convallis purus lorem, vel porttitor
@@ -910,11 +905,11 @@ BEM: Blocks, Elements and Modifiers
         blandit leo ullamcorper vel.</p>
     </section>
   </li>
-  <li class="b-accordion__cell">
-    <header class="b-accordion__cell__title">
+  <li class="mdlext-accordion__panel" role="tabpanel">
+    <header class="mdlext-accordion__panel__title">
       <h5>Fifth</h5>
     </header>
-    <section class="b-accordion__cell__content">
+    <section class="mdlext-accordion__panel__content">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique eget augue eget gravida.
         Etiam eget imperdiet massa. Aliquam nisi eros, molestie a vulputate quis, tempor nec quam. Ut at libero
         in sem pellentesque imperdiet. Praesent pretium, sapien vel mollis porttitor, felis magna vehicula metus,
@@ -928,18 +923,13 @@ BEM: Blocks, Elements and Modifiers
 
 <h4>Vertical Flexbox Accordion</h4>
 <div style="width: 350px; height: 600px;">
-  <input class="b-accordion-state" type="checkbox" name="my-accordion" id="my-accordion-tab-1" />
-  <input class="b-accordion-state" type="checkbox" name="my-accordion" id="my-accordion-tab-2" />
-  <input class="b-accordion-state" type="checkbox" name="my-accordion" id="my-accordion-tab-3" />
-  <input class="b-accordion-state" type="checkbox" name="my-accordion" id="my-accordion-tab-4" />
-  <input class="b-accordion-state" type="checkbox" name="my-accordion" id="my-accordion-tab-5" />
-
-  <ul class="b-accordion b-accordion--vertical">
-    <li class="b-accordion__cell">
-      <header class="b-accordion__cell__title">
-        <label for="my-accordion-tab-1">First section</label>
+  <ul id="my-vertical-accordion" class="mdlext-accordion mdlext-accordion--vertical" aria-multiselectable="false">
+    <li class="mdlext-accordion__panel" open>
+      <header class="mdlext-accordion__panel__title">
+        <a href="#void" onclick="return false;"></a>
+        <h5>First section</h5>
       </header>
-      <section class="b-accordion__cell__content">
+      <section class="mdlext-accordion__panel__content">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique eget augue eget gravida.
           Etiam eget imperdiet massa. Aliquam nisi eros, molestie a vulputate quis, tempor nec quam. Ut at libero
           in sem pellentesque imperdiet. Praesent pretium, sapien vel mollis porttitor, felis magna vehicula metus,
@@ -953,11 +943,12 @@ BEM: Blocks, Elements and Modifiers
           blandit leo ullamcorper vel.</p>
       </section>
     </li>
-    <li class="b-accordion__cell">
-      <header class="b-accordion__cell__title">
-        <label for="my-accordion-tab-2">Second</label>
+    <li class="mdlext-accordion__panel">
+      <header class="mdlext-accordion__panel__title">
+        <a href="#void"></a>
+        <h5>Second</h5>
       </header>
-      <section class="b-accordion__cell__content">
+      <section class="mdlext-accordion__panel__content">
         <p>Maecenas eu vestibulum orci. Ut eget nisi a est sagittis euismod a vel
           justo. Quisque at dui urna. Duis vel velit leo. Nulla nunc sem, rutrum at aliquet in, aliquet id velit. Duis
           mattis placerat erat, a aliquam leo rhoncus vel. Sed nec diam ex. Praesent convallis purus lorem, vel porttitor
@@ -965,11 +956,12 @@ BEM: Blocks, Elements and Modifiers
           blandit leo ullamcorper vel.</p>
       </section>
     </li>
-    <li class="b-accordion__cell">
-      <header class="b-accordion__cell__title">
-        <label for="my-accordion-tab-3">Section #3</label>
+    <li class="mdlext-accordion__panel">
+      <header class="mdlext-accordion__panel__title">
+        <a href="#void"></a>
+        <h5>Section #3</h5>
       </header>
-      <section class="b-accordion__cell__content">
+      <section class="mdlext-accordion__panel__content">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique eget augue eget gravida.
           Etiam eget imperdiet massa. Aliquam nisi eros, molestie a vulputate quis, tempor nec quam. Ut at libero
           in sem pellentesque imperdiet. Praesent pretium, sapien vel mollis porttitor, felis magna vehicula metus,
@@ -978,11 +970,12 @@ BEM: Blocks, Elements and Modifiers
           arcu justo, id volutpat eros vestibulum eget. Fusce tincidunt leo in est venenatis porta.</p>
       </section>
     </li>
-    <li class="b-accordion__cell">
-      <header class="b-accordion__cell__title">
-        <label for="my-accordion-tab-4">Fourth section</label>
+    <li class="mdlext-accordion__panel">
+      <header class="mdlext-accordion__panel__title">
+        <a href="#void"></a>
+        <h5>Fourth section</h5>
       </header>
-      <section class="b-accordion__cell__content">
+      <section class="mdlext-accordion__panel__content">
         <p>Maecenas eu vestibulum orci. Ut eget nisi a est sagittis euismod a vel
           justo. Quisque at dui urna. Duis vel velit leo. Nulla nunc sem, rutrum at aliquet in, aliquet id velit. Duis
           mattis placerat erat, a aliquam leo rhoncus vel. Sed nec diam ex. Praesent convallis purus lorem, vel porttitor
@@ -990,11 +983,12 @@ BEM: Blocks, Elements and Modifiers
           blandit leo ullamcorper vel.</p>
       </section>
     </li>
-    <li class="b-accordion__cell">
-      <header class="b-accordion__cell__title">
-        <label for="my-accordion-tab-5">Fifth</label>
+    <li class="mdlext-accordion__panel" role="tabpanel">
+      <header class="mdlext-accordion__panel__title">
+        <a href="#void"></a>
+        <h5>Fifth</h5>
       </header>
-      <section class="b-accordion__cell__content">
+      <section class="mdlext-accordion__panel__content">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique eget augue eget gravida.
           Etiam eget imperdiet massa. Aliquam nisi eros, molestie a vulputate quis, tempor nec quam. Ut at libero
           in sem pellentesque imperdiet. Praesent pretium, sapien vel mollis porttitor, felis magna vehicula metus,
@@ -1006,3 +1000,50 @@ BEM: Blocks, Elements and Modifiers
   </ul>
 
 </div>
+
+<script>
+  (function() {
+    'use strict';
+
+    initAccordion(document.querySelector('#my-horisontal-accordion'));
+    initAccordion(document.querySelector('#my-vertical-accordion'));
+
+    function initAccordion(accordion) {
+
+      if(!accordion.hasAttribute('role')) {
+        accordion.setAttribute('role', 'tablist');
+      }
+
+      var headers = accordion.querySelectorAll('.mdlext-accordion__panel__title');
+
+      for (var i = 0; i < headers.length; ++i) {
+
+        if(!headers[i].hasAttribute('role')) {
+          headers[i].setAttribute('role', 'tab');
+        }
+        if(!headers[i].parentNode.hasAttribute('role')) {
+          headers[i].parentNode.setAttribute('role', 'tabpanel');
+        }
+        if(!headers[i].parentNode.hasAttribute('open')) {
+          headers[i].setAttribute('aria-expanded', '');
+        }
+
+        headers[i].addEventListener('click', function(e) {
+          if(!this.parentNode.hasAttribute('open')) {
+            var openPanel = accordion.querySelector('.mdlext-accordion__panel[open]');
+            if(openPanel) {
+              openPanel.removeAttribute('open');
+              var header = openPanel.querySelector('.mdlext-accordion__panel__title');
+              if(header) {
+                header.removeAttribute('aria-expanded');
+              }
+            }
+            this.parentNode.setAttribute('open', '');
+            this.setAttribute('aria-expanded', '')
+          }
+        }.bind(headers[i]));
+      }
+    }
+
+  }());
+</script>
