@@ -22,8 +22,8 @@
     <p>Check on</p>
   </div>
   <div class="mdl-cell mdl-cell--2-col">
-    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-      <input type="checkbox" id="checkbox-2" class="mdl-checkbox__input" tabindex="2">
+    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-2">
+      <input type="checkbox" id="checkbox-2" class="mdl-checkbox__input">
       <span class="mdl-checkbox__label">Checkbox</span>
     </label>
     <p>Check off</p>
@@ -52,7 +52,7 @@
   </div>
   <div class="mdl-cell mdl-cell--2-col">
     <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-3">
-      <input type="radio" id="option-3" class="mdl-radio__button" name="options" value="2" disabled>
+      <input type="radio" id="option-3" class="mdl-radio__button" name="options" value="3" disabled>
       <span class="mdl-radio__label">Third</span>
     </label>
     <p>Radio disabled</p>
@@ -104,18 +104,66 @@
 </div>
 
 
+<h4>Native Toggles</h4>
+<div class="mdl-grid demo-toggle-grid">
+  <div class="mdl-cell mdl-cell--2-col">
+    <label for="native-checkbox-1">
+      <input type="checkbox" id="native-checkbox-1" checked>
+      <span>Checkbox</span>
+    </label>
+    <p>Check on</p>
+  </div>
+  <div class="mdl-cell mdl-cell--2-col">
+    <label for="native-checkbox-2">
+      <input type="checkbox" id="native-checkbox-2">
+      <span>Checkbox</span>
+    </label>
+    <p>Check off</p>
+  </div>
+  <div class="mdl-cell mdl-cell--2-col">
+    <label for="native-checkbox-3">
+      <input type="checkbox" id="native-checkbox-3" checked disabled>
+      <span>Checkbox</span>
+    </label>
+    <p>Check disabled</p>
+  </div>
+
+  <div class="mdl-cell mdl-cell--2-col">
+    <label for="native-option-1">
+      <input type="radio" id="native-option-1" name="native-options" value="1" checked>
+      <span>First</span>
+    </label>
+    <p>Radio on</p>
+  </div>
+  <div class="mdl-cell mdl-cell--2-col">
+    <label for="native-option-2">
+      <input type="radio" id="native-option-2" name="native-options" value="2">
+      <span>Second</span>
+    </label>
+    <p>Radio off</p>
+  </div>
+  <div class="mdl-cell mdl-cell--2-col">
+    <label for="native-option-3">
+      <input type="radio" id="native-option-3" name="native-options" value="3" disabled>
+      <span class="mdl-radio__label">Third</span>
+    </label>
+    <p>Radio disabled</p>
+  </div>
+</div>
+
+
 <h4>Sliders</h4>
 <div class="mdl-grid demo-slider-grid">
   <div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-phone">
     <!-- Default Slider -->
-    <input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="0" tabindex="0">
+    <input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="0">
 
     <p>Default slider	</p>
   </div>
 
   <div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-phone">
     <!-- Slider with Starting Value -->
-    <input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="25" tabindex="0">
+    <input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="25">
 
     <p>Starting value</p>
   </div>
