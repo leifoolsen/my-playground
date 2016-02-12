@@ -1,13 +1,13 @@
 @charset "UTF-8";
 
-// --------------------------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------------------
 // Organizing SASS / CSS
 // See: http://sass-guidelin.es/#the-7-1-pattern
 // See: https://github.com/HugoGiraudel/sass-boilerplate/tree/master/stylesheets
 //
-// No global Sass context, as suggested by http://bensmithett.com/smarter-css-builds-with-webpack/
+// TODO: No global Sass context, as suggested by http://bensmithett.com/smarter-css-builds-with-webpack/
 // Only import what is strictly needed
-// --------------------------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------------------
 
 
 // 1. Configuration and helpers
@@ -29,6 +29,7 @@
 
 // 5. Components
 @import
+  'js/components/accordion/accordion',
   'js/components/select/selectfield',
   'js/components/textfield/textfield';
 

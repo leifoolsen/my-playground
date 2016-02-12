@@ -1,124 +1,373 @@
 <style>
-  /*
-    BEM: Blocks, Elements and Modifiers
-
-    // Block component
-    .btn {}
-
-    // Element that depends upon the block
-    .btn__price {}
-
-    // Modifier that changes the style of the block
-    .btn--orange {}
-    .btn--big {}
-
-    <a class="btn btn--big btn--orange" href="http://css-tricks.com">
-      <span class="btn__price">$9.99</span>
-      <span class="btn__text">Subscribe</span>
-    </a>
-  */
-
-  .flex-container {
-    height: calc(100vh - 120px);
-    border: 1px solid #000;
-    overflow-y: auto;
-    background: rgba(255, 255, 255, .1);
-
-    display: flex;                   /* flex        | inline-flex                                                                */
-    flex-direction: column;          /* row        <| row-reverse | column       | column-reverse                                */
-    flex-wrap: wrap;                 /* nowrap     <| wrap        | wrap-reverse                                                 */
-    justify-content: flex-start;     /* flex-start <| flex-end    | center       | space-between | space-around                  */
-    align-items: flex-start;         /* stretch    <| flex-start  | flex-end     | center        | baseline      |               */
-    align-content: flex-start;       /* stretch    <| flex-start  | flex-end     | center        | space-between | space-around  */
+  .mdlext-accordion__panel-colored:nth-child(1) {
+    background: rgba(239, 154, 154, 0.4);
   }
-
-  .flex-item {
-    border: 2px solid dimgrey;
-    background: rgba(0, 0, 255, .1);
-    padding: 8px;
-    min-width: 100px;
-
-    align-self: flex-start;          /* auto <| flex-start | flex-end | center | baseline | stretch */
+  .mdlext-accordion__panel-colored:nth-child(2) {
+    background: rgba(206, 147, 216, 0.4);
   }
-  .flex-item__grow-2 {
-    flex-grow: 2
+  .mdlext-accordion__panel-colored:nth-child(3) {
+    background: rgba(144, 202, 249, 0.4);
+  }
+  .mdlext-accordion__panel-colored:nth-child(4) {
+    background: rgba(165, 214, 167, 0.4);
+  }
+  .mdlext-accordion__panel-colored:nth-child(5) {
+    background: rgba(255, 224, 130, 0.4);
   }
 </style>
 
-<section class="flex-container">
-  <div class="flex-item">
-    <p>1'st: Item</p>
+
+<h4>Horizontal Flexbox Accordion</h4>
+<div style="height: 250px;">
+  <ul id="my-horisontal-accordion" class="mdlext-accordion" role="tablist" aria-multiselectable="false">
+    <li class="mdlext-accordion__panel" role="tabpanel">
+      <header class="mdlext-accordion__panel__title">
+        <a href="#void"></a>
+        <h5>First section</h5>
+      </header>
+      <section class="mdlext-accordion__panel__content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique eget augue eget gravida.
+          Etiam eget imperdiet massa. Aliquam nisi eros, molestie a vulputate quis, tempor nec quam. Ut at libero
+          in sem pellentesque imperdiet. Praesent pretium, sapien vel mollis porttitor, felis magna vehicula metus,
+          ac dignissim odio tortor nec quam. Nam molestie, arcu id maximus lacinia, ante ipsum posuere mauris, ac
+          maximus massa felis quis quam. Curabitur malesuada placerat nunc, id dapibus justo tempor in. Ut molestie
+          arcu justo, id volutpat eros vestibulum eget. Fusce tincidunt leo in est venenatis porta.</p>
+        <p>Maecenas eu vestibulum orci. Ut eget nisi a est sagittis euismod a vel
+          justo. Quisque at dui urna. Duis vel velit leo. Nulla nunc sem, rutrum at aliquet in, aliquet id velit. Duis
+          mattis placerat erat, a aliquam leo rhoncus vel. Sed nec diam ex. Praesent convallis purus lorem, vel porttitor
+          neque gravida quis. Etiam et malesuada dui. Nunc vitae viverra dui. Suspendisse feugiat efficitur augue, quis
+          blandit leo ullamcorper vel.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique eget augue eget gravida.
+          Etiam eget imperdiet massa. Aliquam nisi eros, molestie a vulputate quis, tempor nec quam. Ut at libero
+          in sem pellentesque imperdiet. Praesent pretium, sapien vel mollis porttitor, felis magna vehicula metus,
+          ac dignissim odio tortor nec quam. Nam molestie, arcu id maximus lacinia, ante ipsum posuere mauris, ac
+          maximus massa felis quis quam. Curabitur malesuada placerat nunc, id dapibus justo tempor in. Ut molestie
+          arcu justo, id volutpat eros vestibulum eget. Fusce tincidunt leo in est venenatis porta.</p>
+      </section>
+    </li>
+    <li class="mdlext-accordion__panel">
+      <header class="mdlext-accordion__panel__title">
+        <a href="#void"></a>
+        <h5>Second</h5>
+      </header>
+      <section class="mdlext-accordion__panel__content">
+        <p>Maecenas eu vestibulum orci. Ut eget nisi a est sagittis euismod a vel
+          justo. Quisque at dui urna. Duis vel velit leo. Nulla nunc sem, rutrum at aliquet in, aliquet id velit. Duis
+          mattis placerat erat, a aliquam leo rhoncus vel. Sed nec diam ex. Praesent convallis purus lorem, vel porttitor
+          neque gravida quis. Etiam et malesuada dui. Nunc vitae viverra dui. Suspendisse feugiat efficitur augue, quis
+          blandit leo ullamcorper vel.</p>
+      </section>
+    </li>
+    <li class="mdlext-accordion__panel">
+      <header class="mdlext-accordion__panel__title">
+        <a href="#void"></a>
+        <h5>Section #3</h5>
+      </header>
+      <section class="mdlext-accordion__panel__content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique eget augue eget gravida.
+          Etiam eget imperdiet massa. Aliquam nisi eros, molestie a vulputate quis, tempor nec quam. Ut at libero
+          in sem pellentesque imperdiet. Praesent pretium, sapien vel mollis porttitor, felis magna vehicula metus,
+          ac dignissim odio tortor nec quam. Nam molestie, arcu id maximus lacinia, ante ipsum posuere mauris, ac
+          maximus massa felis quis quam. Curabitur malesuada placerat nunc, id dapibus justo tempor in. Ut molestie
+          arcu justo, id volutpat eros vestibulum eget. Fusce tincidunt leo in est venenatis porta.</p>
+      </section>
+    </li>
+    <li class="mdlext-accordion__panel">
+      <header class="mdlext-accordion__panel__title">
+        <a href="#void"></a>
+        <h5>Fourth section</h5>
+      </header>
+      <section class="mdlext-accordion__panel__content">
+        <p>Maecenas eu vestibulum orci. Ut eget nisi a est sagittis euismod a vel
+          justo. Quisque at dui urna. Duis vel velit leo. Nulla nunc sem, rutrum at aliquet in, aliquet id velit. Duis
+          mattis placerat erat, a aliquam leo rhoncus vel. Sed nec diam ex. Praesent convallis purus lorem, vel porttitor
+          neque gravida quis. Etiam et malesuada dui. Nunc vitae viverra dui. Suspendisse feugiat efficitur augue, quis
+          blandit leo ullamcorper vel.</p>
+      </section>
+    </li>
+    <li class="mdlext-accordion__panel">
+      <header class="mdlext-accordion__panel__title">
+        <a href="#void"></a>
+        <h5>Fifth</h5>
+      </header>
+      <section class="mdlext-accordion__panel__content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique eget augue eget gravida.
+          Etiam eget imperdiet massa. Aliquam nisi eros, molestie a vulputate quis, tempor nec quam. Ut at libero
+          in sem pellentesque imperdiet. Praesent pretium, sapien vel mollis porttitor, felis magna vehicula metus,
+          ac dignissim odio tortor nec quam. Nam molestie, arcu id maximus lacinia, ante ipsum posuere mauris, ac
+          maximus massa felis quis quam. Curabitur malesuada placerat nunc, id dapibus justo tempor in. Ut molestie
+          arcu justo, id volutpat eros vestibulum eget. Fusce tincidunt leo in est venenatis porta.</p>
+      </section>
+    </li>
+  </ul>
+</div>
+
+<h4>Horizontal Flexbox Accordion, Colored</h4>
+<div style="height: 250px;">
+  <ul id="my-horisontal-accordion-colored" class="mdlext-accordion" role="tablist" aria-multiselectable="false">
+    <li class="mdlext-accordion__panel mdlext-accordion__panel-colored">
+      <header class="mdlext-accordion__panel__title">
+        <a href="#void"></a>
+        <h5>First section</h5>
+      </header>
+      <section class="mdlext-accordion__panel__content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique eget augue eget gravida.
+          Etiam eget imperdiet massa. Aliquam nisi eros, molestie a vulputate quis, tempor nec quam. Ut at libero
+          in sem pellentesque imperdiet. Praesent pretium, sapien vel mollis porttitor, felis magna vehicula metus,
+          ac dignissim odio tortor nec quam. Nam molestie, arcu id maximus lacinia, ante ipsum posuere mauris, ac
+          maximus massa felis quis quam. Curabitur malesuada placerat nunc, id dapibus justo tempor in. Ut molestie
+          arcu justo, id volutpat eros vestibulum eget. Fusce tincidunt leo in est venenatis porta.</p>
+        <p>Maecenas eu vestibulum orci. Ut eget nisi a est sagittis euismod a vel
+          justo. Quisque at dui urna. Duis vel velit leo. Nulla nunc sem, rutrum at aliquet in, aliquet id velit. Duis
+          mattis placerat erat, a aliquam leo rhoncus vel. Sed nec diam ex. Praesent convallis purus lorem, vel porttitor
+          neque gravida quis. Etiam et malesuada dui. Nunc vitae viverra dui. Suspendisse feugiat efficitur augue, quis
+          blandit leo ullamcorper vel.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique eget augue eget gravida.
+          Etiam eget imperdiet massa. Aliquam nisi eros, molestie a vulputate quis, tempor nec quam. Ut at libero
+          in sem pellentesque imperdiet. Praesent pretium, sapien vel mollis porttitor, felis magna vehicula metus,
+          ac dignissim odio tortor nec quam. Nam molestie, arcu id maximus lacinia, ante ipsum posuere mauris, ac
+          maximus massa felis quis quam. Curabitur malesuada placerat nunc, id dapibus justo tempor in. Ut molestie
+          arcu justo, id volutpat eros vestibulum eget. Fusce tincidunt leo in est venenatis porta.</p>
+      </section>
+    </li>
+    <li class="mdlext-accordion__panel mdlext-accordion__panel-colored">
+      <header class="mdlext-accordion__panel__title">
+        <a href="#void"></a>
+        <h5>Second</h5>
+      </header>
+      <section class="mdlext-accordion__panel__content">
+        <p>Maecenas eu vestibulum orci. Ut eget nisi a est sagittis euismod a vel
+          justo. Quisque at dui urna. Duis vel velit leo. Nulla nunc sem, rutrum at aliquet in, aliquet id velit. Duis
+          mattis placerat erat, a aliquam leo rhoncus vel. Sed nec diam ex. Praesent convallis purus lorem, vel porttitor
+          neque gravida quis. Etiam et malesuada dui. Nunc vitae viverra dui. Suspendisse feugiat efficitur augue, quis
+          blandit leo ullamcorper vel.</p>
+      </section>
+    </li>
+    <li class="mdlext-accordion__panel mdlext-accordion__panel-colored" open>
+      <header class="mdlext-accordion__panel__title">
+        <a href="#void"></a>
+        <h5>Section #3</h5>
+      </header>
+      <section class="mdlext-accordion__panel__content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique eget augue eget gravida.
+          Etiam eget imperdiet massa. Aliquam nisi eros, molestie a vulputate quis, tempor nec quam. Ut at libero
+          in sem pellentesque imperdiet. Praesent pretium, sapien vel mollis porttitor, felis magna vehicula metus,
+          ac dignissim odio tortor nec quam. Nam molestie, arcu id maximus lacinia, ante ipsum posuere mauris, ac
+          maximus massa felis quis quam. Curabitur malesuada placerat nunc, id dapibus justo tempor in. Ut molestie
+          arcu justo, id volutpat eros vestibulum eget. Fusce tincidunt leo in est venenatis porta.</p>
+      </section>
+    </li>
+    <li class="mdlext-accordion__panel mdlext-accordion__panel-colored">
+      <header class="mdlext-accordion__panel__title">
+        <a href="#void"></a>
+        <h5>Fourth section</h5>
+      </header>
+      <section class="mdlext-accordion__panel__content">
+        <p>Maecenas eu vestibulum orci. Ut eget nisi a est sagittis euismod a vel
+          justo. Quisque at dui urna. Duis vel velit leo. Nulla nunc sem, rutrum at aliquet in, aliquet id velit. Duis
+          mattis placerat erat, a aliquam leo rhoncus vel. Sed nec diam ex. Praesent convallis purus lorem, vel porttitor
+          neque gravida quis. Etiam et malesuada dui. Nunc vitae viverra dui. Suspendisse feugiat efficitur augue, quis
+          blandit leo ullamcorper vel.</p>
+      </section>
+    </li>
+    <li class="mdlext-accordion__panel mdlext-accordion__panel-colored">
+      <header class="mdlext-accordion__panel__title">
+        <a href="#void"></a>
+        <h5>Fifth</h5>
+      </header>
+      <section class="mdlext-accordion__panel__content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique eget augue eget gravida.
+          Etiam eget imperdiet massa. Aliquam nisi eros, molestie a vulputate quis, tempor nec quam. Ut at libero
+          in sem pellentesque imperdiet. Praesent pretium, sapien vel mollis porttitor, felis magna vehicula metus,
+          ac dignissim odio tortor nec quam. Nam molestie, arcu id maximus lacinia, ante ipsum posuere mauris, ac
+          maximus massa felis quis quam. Curabitur malesuada placerat nunc, id dapibus justo tempor in. Ut molestie
+          arcu justo, id volutpat eros vestibulum eget. Fusce tincidunt leo in est venenatis porta.</p>
+      </section>
+    </li>
+  </ul>
+</div>
+
+
+<style>
+  .vertical-accordion-height {
+    height: 600px;
+  }
+</style>
+<h4>Vertical Flexbox Accordion</h4>
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone">
   </div>
-  <div class="flex-item">
-    <p>2'nd: Item</p>
+
+  <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone vertical-accordion-height">
+    <ul id="my-vertical-accordion" class="mdlext-accordion mdlext-accordion--vertical" aria-multiselectable="false">
+      <li class="mdlext-accordion__panel">
+        <header class="mdlext-accordion__panel__title">
+          <a href="#void" onclick="return false;"></a>
+          <h5>First section</h5>
+        </header>
+        <section class="mdlext-accordion__panel__content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique eget augue eget gravida.
+            Etiam eget imperdiet massa. Aliquam nisi eros, molestie a vulputate quis, tempor nec quam. Ut at libero
+            in sem pellentesque imperdiet. Praesent pretium, sapien vel mollis porttitor, felis magna vehicula metus,
+            ac dignissim odio tortor nec quam. Nam molestie, arcu id maximus lacinia, ante ipsum posuere mauris, ac
+            maximus massa felis quis quam. Curabitur malesuada placerat nunc, id dapibus justo tempor in. Ut molestie
+            arcu justo, id volutpat eros vestibulum eget. Fusce tincidunt leo in est venenatis porta.</p>
+          <p>Maecenas eu vestibulum orci. Ut eget nisi a est sagittis euismod a vel
+            justo. Quisque at dui urna. Duis vel velit leo. Nulla nunc sem, rutrum at aliquet in, aliquet id velit. Duis
+            mattis placerat erat, a aliquam leo rhoncus vel. Sed nec diam ex. Praesent convallis purus lorem, vel porttitor
+            neque gravida quis. Etiam et malesuada dui. Nunc vitae viverra dui. Suspendisse feugiat efficitur augue, quis
+            blandit leo ullamcorper vel.</p>
+        </section>
+      </li>
+      <li class="mdlext-accordion__panel">
+        <header class="mdlext-accordion__panel__title">
+          <a href="#void"></a>
+          <h5>Second</h5>
+        </header>
+        <section class="mdlext-accordion__panel__content">
+          <p>Maecenas eu vestibulum orci. Ut eget nisi a est sagittis euismod a vel
+            justo. Quisque at dui urna. Duis vel velit leo. Nulla nunc sem, rutrum at aliquet in, aliquet id velit. Duis
+            mattis placerat erat, a aliquam leo rhoncus vel. Sed nec diam ex. Praesent convallis purus lorem, vel porttitor
+            neque gravida quis. Etiam et malesuada dui. Nunc vitae viverra dui. Suspendisse feugiat efficitur augue, quis
+            blandit leo ullamcorper vel.</p>
+        </section>
+      </li>
+      <li class="mdlext-accordion__panel">
+        <header class="mdlext-accordion__panel__title">
+          <a href="#void"></a>
+          <h5>Section #3</h5>
+        </header>
+        <section class="mdlext-accordion__panel__content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique eget augue eget gravida.
+            Etiam eget imperdiet massa. Aliquam nisi eros, molestie a vulputate quis, tempor nec quam. Ut at libero
+            in sem pellentesque imperdiet. Praesent pretium, sapien vel mollis porttitor, felis magna vehicula metus,
+            ac dignissim odio tortor nec quam. Nam molestie, arcu id maximus lacinia, ante ipsum posuere mauris, ac
+            maximus massa felis quis quam. Curabitur malesuada placerat nunc, id dapibus justo tempor in. Ut molestie
+            arcu justo, id volutpat eros vestibulum eget. Fusce tincidunt leo in est venenatis porta.</p>
+        </section>
+      </li>
+      <li class="mdlext-accordion__panel">
+        <header class="mdlext-accordion__panel__title">
+          <a href="#void"></a>
+          <h5>Fourth section</h5>
+        </header>
+        <section class="mdlext-accordion__panel__content">
+          <p>Maecenas eu vestibulum orci. Ut eget nisi a est sagittis euismod a vel
+            justo. Quisque at dui urna. Duis vel velit leo. Nulla nunc sem, rutrum at aliquet in, aliquet id velit. Duis
+            mattis placerat erat, a aliquam leo rhoncus vel. Sed nec diam ex. Praesent convallis purus lorem, vel porttitor
+            neque gravida quis. Etiam et malesuada dui. Nunc vitae viverra dui. Suspendisse feugiat efficitur augue, quis
+            blandit leo ullamcorper vel.</p>
+        </section>
+      </li>
+      <li class="mdlext-accordion__panel">
+        <header class="mdlext-accordion__panel__title">
+          <a href="#void"></a>
+          <h5>Fifth</h5>
+        </header>
+        <section class="mdlext-accordion__panel__content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique eget augue eget gravida.
+            Etiam eget imperdiet massa. Aliquam nisi eros, molestie a vulputate quis, tempor nec quam. Ut at libero
+            in sem pellentesque imperdiet. Praesent pretium, sapien vel mollis porttitor, felis magna vehicula metus,
+            ac dignissim odio tortor nec quam. Nam molestie, arcu id maximus lacinia, ante ipsum posuere mauris, ac
+            maximus massa felis quis quam. Curabitur malesuada placerat nunc, id dapibus justo tempor in. Ut molestie
+            arcu justo, id volutpat eros vestibulum eget. Fusce tincidunt leo in est venenatis porta.</p>
+        </section>
+      </li>
+    </ul>
   </div>
-  <div class="flex-item">
-    <p>3'rd: Item</p>
+
+  <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone vertical-accordion-height">
+    <ul id="my-vertical-accordion-colored" class="mdlext-accordion mdlext-accordion--vertical" aria-multiselectable="false">
+      <li class="mdlext-accordion__panel mdlext-accordion__panel-colored">
+        <header class="mdlext-accordion__panel__title">
+          <a href="#void"></a>
+          <h5>First section</h5>
+        </header>
+        <section class="mdlext-accordion__panel__content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique eget augue eget gravida.
+            Etiam eget imperdiet massa. Aliquam nisi eros, molestie a vulputate quis, tempor nec quam. Ut at libero
+            in sem pellentesque imperdiet. Praesent pretium, sapien vel mollis porttitor, felis magna vehicula metus,
+            ac dignissim odio tortor nec quam. Nam molestie, arcu id maximus lacinia, ante ipsum posuere mauris, ac
+            maximus massa felis quis quam. Curabitur malesuada placerat nunc, id dapibus justo tempor in. Ut molestie
+            arcu justo, id volutpat eros vestibulum eget. Fusce tincidunt leo in est venenatis porta.</p>
+          <p>Maecenas eu vestibulum orci. Ut eget nisi a est sagittis euismod a vel
+            justo. Quisque at dui urna. Duis vel velit leo. Nulla nunc sem, rutrum at aliquet in, aliquet id velit. Duis
+            mattis placerat erat, a aliquam leo rhoncus vel. Sed nec diam ex. Praesent convallis purus lorem, vel porttitor
+            neque gravida quis. Etiam et malesuada dui. Nunc vitae viverra dui. Suspendisse feugiat efficitur augue, quis
+            blandit leo ullamcorper vel.</p>
+        </section>
+      </li>
+      <li class="mdlext-accordion__panel mdlext-accordion__panel-colored" open>
+        <header class="mdlext-accordion__panel__title">
+          <a href="#void"></a>
+          <h5>Second</h5>
+        </header>
+        <section class="mdlext-accordion__panel__content">
+          <p>Maecenas eu vestibulum orci. Ut eget nisi a est sagittis euismod a vel
+            justo. Quisque at dui urna. Duis vel velit leo. Nulla nunc sem, rutrum at aliquet in, aliquet id velit. Duis
+            mattis placerat erat, a aliquam leo rhoncus vel. Sed nec diam ex. Praesent convallis purus lorem, vel porttitor
+            neque gravida quis. Etiam et malesuada dui. Nunc vitae viverra dui. Suspendisse feugiat efficitur augue, quis
+            blandit leo ullamcorper vel.</p>
+        </section>
+      </li>
+      <li class="mdlext-accordion__panel mdlext-accordion__panel-colored">
+        <header class="mdlext-accordion__panel__title">
+          <a href="#void"></a>
+          <h5>Section #3</h5>
+        </header>
+        <section class="mdlext-accordion__panel__content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique eget augue eget gravida.
+            Etiam eget imperdiet massa. Aliquam nisi eros, molestie a vulputate quis, tempor nec quam. Ut at libero
+            in sem pellentesque imperdiet. Praesent pretium, sapien vel mollis porttitor, felis magna vehicula metus,
+            ac dignissim odio tortor nec quam. Nam molestie, arcu id maximus lacinia, ante ipsum posuere mauris, ac
+            maximus massa felis quis quam. Curabitur malesuada placerat nunc, id dapibus justo tempor in. Ut molestie
+            arcu justo, id volutpat eros vestibulum eget. Fusce tincidunt leo in est venenatis porta.</p>
+        </section>
+      </li>
+      <li class="mdlext-accordion__panel mdlext-accordion__panel-colored">
+        <header class="mdlext-accordion__panel__title">
+          <a href="#void"></a>
+          <h5>Fourth section</h5>
+        </header>
+        <section class="mdlext-accordion__panel__content">
+          <p>Maecenas eu vestibulum orci. Ut eget nisi a est sagittis euismod a vel
+            justo. Quisque at dui urna. Duis vel velit leo. Nulla nunc sem, rutrum at aliquet in, aliquet id velit. Duis
+            mattis placerat erat, a aliquam leo rhoncus vel. Sed nec diam ex. Praesent convallis purus lorem, vel porttitor
+            neque gravida quis. Etiam et malesuada dui. Nunc vitae viverra dui. Suspendisse feugiat efficitur augue, quis
+            blandit leo ullamcorper vel.</p>
+        </section>
+      </li>
+      <li class="mdlext-accordion__panel mdlext-accordion__panel-colored">
+        <header class="mdlext-accordion__panel__title">
+          <a href="#void"></a>
+          <h5>Fifth</h5>
+        </header>
+        <section class="mdlext-accordion__panel__content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique eget augue eget gravida.
+            Etiam eget imperdiet massa. Aliquam nisi eros, molestie a vulputate quis, tempor nec quam. Ut at libero
+            in sem pellentesque imperdiet. Praesent pretium, sapien vel mollis porttitor, felis magna vehicula metus,
+            ac dignissim odio tortor nec quam. Nam molestie, arcu id maximus lacinia, ante ipsum posuere mauris, ac
+            maximus massa felis quis quam. Curabitur malesuada placerat nunc, id dapibus justo tempor in. Ut molestie
+            arcu justo, id volutpat eros vestibulum eget. Fusce tincidunt leo in est venenatis porta.</p>
+        </section>
+      </li>
+    </ul>
   </div>
-  <div class="flex-item">
-    <p>4'th: Item</p>
+
+  <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone">
   </div>
-  <div class="flex-item">
-    <p>5'th: Item</p>
-  </div>
-  <div class="flex-item">
-    <p>6'th: Item</p>
-  </div>
-  <div class="flex-item">
-    <p>7'th: Item</p>
-  </div>
-  <div class="flex-item">
-    <p>8'th: Item</p>
-  </div>
-  <div class="flex-item">
-    <p>9'th: Item</p>
-  </div>
-  <div class="flex-item">
-    <p>10'th: Item</p>
-  </div>
-  <div class="flex-item">
-    <p>11'th: Item</p>
-  </div>
-  <div class="flex-item">
-    <p>12'th: Item</p>
-  </div>
-  <div class="flex-item">
-    <p>13'th: Item</p>
-  </div>
-  <div class="flex-item">
-    <p>14'th: Item</p>
-  </div>
-  <div class="flex-item">
-    <p>15'th: Item</p>
-  </div>
-  <div class="flex-item">
-    <p>16'th: Item</p>
-  </div>
-  <div class="flex-item">
-    <p>17'th: Item</p>
-  </div>
-  <div class="flex-item">
-    <p>18'th: Item</p>
-  </div>
-  <div class="flex-item">
-    <p>19'th: Item</p>
-  </div>
-  <div class="flex-item">
-    <p>20'th: Item</p>
-  </div>
-  <div class="flex-item">
-    <p>21'st: Item</p>
-  </div>
-  <div class="flex-item">
-    <p>22'nd: Item</p>
-  </div>
-  <div class="flex-item">
-    <p>23'rd: Item</p>
-  </div>
-  <div class="flex-item">
-    <p>24'th: Item</p>
-  </div>
-  <div class="flex-item">
-    <p>25'th: Item</p>
-  </div>
-</section>
+</div>
+
+
+<!--
+HOW DO I CALL AN ES6 FUNCTION FROM HTML????
+<script>
+  (function() {
+    'use strict';
+    initAccordion(document.querySelector('#my-horisontal-accordion'));
+    initAccordion(document.querySelector('#my-horisontal-accordion-colored'));
+    initAccordion(document.querySelector('#my-vertical-accordion'));
+    initAccordion(document.querySelector('#my-vertical-accordion-colored'));
+  }());
+</script>
+-->

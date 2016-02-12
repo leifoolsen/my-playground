@@ -10,8 +10,8 @@
 import 'custom-event';
 import promise from 'es6-promise'; promise.polyfill();
 import 'isomorphic-fetch'; // ... or import 'whatwg-fetch';
-import { polyfillDetails } from './js/polyfills/details/details';
 import 'dialog-polyfill/dialog-polyfill';
+import { polyfillDetails } from './js/polyfills/details/details';
 // End polyfills
 
 import { debounce } from 'core-decorators';
@@ -19,8 +19,10 @@ import { throttle } from 'core-decorators';
 import moment from 'moment';
 import 'material-design-lite/material';
 
-import './js/components/select/selectfield';
 import './js/utils/domHelpers';
+import './js/components/select/selectfield';
+
+import { initAccordions } from './js/components/accordion/accordion';
 
 class Header {
   titleClass = '.mdl-layout-title';
@@ -156,6 +158,9 @@ class Content {
         contentPanelEl.insertAdjacentHTML('afterbegin', text);
 
         polyfillDetails(contentPanelEl);
+
+        // How do I call this directly from iported page??
+        initAccordions(contentPanelEl);
 
         [...contentPanelEl.qsa('script')].forEach( script => {
           eval(script.innerHTML);
