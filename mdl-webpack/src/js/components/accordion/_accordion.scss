@@ -3,14 +3,15 @@
  * TODO: include css for icons
  */
 
-$mdlext-accordion-panel-padding               : 8px !default;
+$mdlext-accordion-title-padding               : 8px !default;
 $mdlext-accordion-title-height                : 48px !default;
-$mdlext-accordion-title-color                 : #a0a0a0 !default;
-$mdlext-accordion-title-background-color      : rgba($mdlext-accordion-title-color, 0.1) !default;
-$mdlext-accordion-title-background-color-hover: rgba($mdlext-accordion-title-color, 0.3) !default;
-$mdlext-accordion-title-border-color          : rgba($mdlext-accordion-title-color, 0.2) !default;
-$mdlext-accordion-title-background-color-open : rgba($mdlext-accordion-title-color, 0.2) !default;
-$mdlext-accordion-title-border-color-open     : rgba($mdlext-accordion-title-color, 0.4) !default;
+$mdlext-accordion-title-color                 : #C0C0C0 !default;
+$mdlext-accordion-title-background-color      : rgba($mdlext-accordion-title-color, 0.3) !default;
+$mdlext-accordion-title-background-color-hover: rgba($mdlext-accordion-title-color, 0.4) !default;
+$mdlext-accordion-title-border-color          : rgba($mdlext-accordion-title-color, 0.5) !default;
+$mdlext-accordion-title-background-color-open : rgba($mdlext-accordion-title-color, 0.5) !default;
+$mdlext-accordion-title-border-color-open     : rgba($mdlext-accordion-title-color, 0.6) !default;
+$mdlext-accordion-content-padding             : 8px !default;
 
 ul.mdlext-accordion {
   list-style: none;
@@ -64,14 +65,18 @@ ul.mdlext-accordion {
         white-space: nowrap;
         margin: 0;
         padding: 0;
-        bottom: -$mdlext-accordion-panel-padding;
-        left: $mdlext-accordion-panel-padding;
+        bottom: -$mdlext-accordion-title-padding;
+        left: $mdlext-accordion-title-padding;
         transform: rotate(-90deg);
         transform-origin: 0 0 0;
         position: absolute;
       }
       a {
         display: block;
+        text-decoration: none;
+        overflow: hidden;
+        //opacity: 0;
+        font-size: 0;
         transform: rotate(0deg);
         top: 2px;
         right: 2px;
@@ -82,13 +87,11 @@ ul.mdlext-accordion {
     }
     .mdlext-accordion__panel__content {
       width: 100%;
-      padding: $mdlext-accordion-panel-padding;
+      padding: $mdlext-accordion-content-padding;
       overflow: hidden;  // Overflow hidden/auto can not be transitioned. Need a keyframe for that
     }
     &[open] .mdlext-accordion__panel__content {
       overflow: auto;
-      //-webkit-animation: mdlext-accordion__panel-open .5s linear;  // Use autoprefixer
-      //-moz-animation: mdlext-accordion__panel-open .5s linear;     // Use autoprefixer
       animation: mdlext-accordion__panel-open .5s linear;
     }
   }
@@ -115,7 +118,7 @@ ul.mdlext-accordion {
             position: relative;
             bottom: auto;
             left: auto;
-            padding-left: $mdlext-accordion-panel-padding;
+            padding-left: $mdlext-accordion-title-padding;
             transform: rotate(0deg);
           }
           a {

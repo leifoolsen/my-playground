@@ -80,17 +80,22 @@ body {
  * Drawer
  * --------------------- */
 
-.mdl-layout__drawer {
+//.mdl-layout__drawer {
+#drawer {
   background-color: transparent;
 
   &.is-visible {
     background-color: $white;
   }
 
+  .mdl-layout-title {
+    margin-bottom: -64px;
+  }
   .mdl-layout-title a,
   .mdl-navigation a.mdl-navigation__link {
     display: flex;
     align-items: center;
+    padding-right: 0;
 
     i,
     img {
@@ -99,6 +104,23 @@ body {
       margin-right: 8px;
       margin-top: -8px;
       margin-bottom: -8px;
+    }
+  }
+
+  #accordion {
+    //padding-top: 64px;
+    .mdlext-accordion__panel:nth-child(1) {
+
+      height: 64px;
+
+      .mdlext-accordion__panel__title {
+        min-height: 64px;
+      }
+    }
+
+
+    .mdlext-accordion__panel__content {
+      padding: 0;
     }
   }
 
@@ -120,13 +142,13 @@ body {
 
 }
 
-.is-small-screen .mdl-layout__drawer .mdl-layout-title a img,
-.is-small-screen .mdl-layout__drawer .mdl-navigation a.mdl-navigation__link i,
-.is-small-screen .mdl-layout__drawer .mdl-navigation a.mdl-navigation__link img {
+.is-small-screen #drawer .mdl-layout-title a img,
+.is-small-screen #drawer .mdl-navigation a.mdl-navigation__link i,
+.is-small-screen #drawer .mdl-navigation a.mdl-navigation__link img {
   margin-left: 0;
 }
 
-.mdl-layout__drawer .mdl-navigation a.mdl-navigation__link.mdl-navigation__link--current:hover {
+#drawer .mdl-navigation a.mdl-navigation__link.mdl-navigation__link--current:hover {
   background-color: black;  // // Quick hack: maybe fix later
 }
 
@@ -141,4 +163,8 @@ body {
   box-sizing: border-box;
   margin: 64px 0 0 0;  // 64px only if sticky-header. Use a variable for this
   padding: 0 16px;
+}
+.my-page-content > h5:first-child,
+.my-page-content > details:first-of-type {
+  margin-top: 16px;
 }

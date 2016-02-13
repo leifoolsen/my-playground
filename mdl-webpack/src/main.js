@@ -79,6 +79,7 @@ class Header {
 }
 
 class Drawer {
+  accordionId         = '#accordion';
   currentNavClassName = 'mdl-navigation__link--current';
   currentNavClass     = `.${this.currentNavClassName}`;
   layoutClass         = '.mdl-layout';
@@ -88,7 +89,10 @@ class Drawer {
   constructor(selector= '#drawer') {
     this.selector     = selector;
     this.drawerEl     = document.qs(this.selector);
-    this.navLinkQuery = `${this.selector} nav a.mdl-navigation__link`;
+
+    initAccordions(this.drawerEl);
+
+    this.navLinkQuery = `${this.accordionId} a.mdl-navigation__link`;
 
     for (let anchor of document.qsa(this.navLinkQuery)) {
 
@@ -110,7 +114,7 @@ class Drawer {
   }
 
   setActiveNavLink(navLinkEl) {
-    const currentNav = navLinkEl.parentNode.qs(this.currentNavClass);
+    const currentNav = document.qs(`${this.accordionId} ${this.currentNavClass}`);
     if(currentNav) {
       currentNav.classList.remove(this.currentNavClassName);
     }
