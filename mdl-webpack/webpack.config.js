@@ -46,8 +46,6 @@ module.exports = {
     vendor: [                                // Scripts packaged into 'vendor.js'
       'moment',
       'material-design-lite/material'
-      //'react',
-      //'react-dom',
       // +++ other 3'rd party
     ]
   },
