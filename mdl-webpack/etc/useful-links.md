@@ -449,6 +449,7 @@
 * [Start your own JavaScript library using webpack and ES6](http://krasimirtsonev.com/blog/article/javascript-library-starter-using-webpack-es6)
 * [Simple Webpack React Starter](https://github.com/cgreening/simple-webpack-react-starter)
 * [webpack-es6-config](https://www.npmjs.com/package/webpack-es6-config)
+* [Writing client-side ES6 with webpack](http://www.2ality.com/2015/04/webpack-es6.html)
 
 ## Lint
 * [Configuring ESLint](http://eslint.org/docs/user-guide/configuring.html)
