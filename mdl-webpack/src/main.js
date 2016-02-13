@@ -155,25 +155,30 @@ class Content {
     let contentPanelEl = document.qs(this.contentPanelId);
     let href = event.detail.anchor.href;
 
-    window.fetch(href, { method: 'get' } )
-      .then(response => response.text())
-      .then(text => {
-        contentPanelEl.removeChilds();
-        contentPanelEl.insertAdjacentHTML('afterbegin', text);
+    if(href.endsWith('/#js')) {
+      this.renderWithJS();
+    }
+    else {
+      window.fetch(href, {method: 'get'})
+        .then(response => response.text())
+        .then(text => {
+          contentPanelEl.removeChilds();
+          contentPanelEl.insertAdjacentHTML('afterbegin', text);
 
-        polyfillDetails(contentPanelEl);
+          polyfillDetails(contentPanelEl);
 
-        // How do I call this directly from iported page??
-        initAccordions(contentPanelEl);
+          // How do I call this directly from iported page??
+          initAccordions(contentPanelEl);
 
-        [...contentPanelEl.qsa('script')].forEach( script => {
-          eval(script.innerHTML);
-        });
+          [...contentPanelEl.qsa('script')].forEach(script => {
+            eval(script.innerHTML);
+          });
 
-        this.contentChange();
-      })
-      .catch(err => console.error(err))
-    ;
+          this.contentChange();
+        })
+        .catch(err => console.error(err))
+      ;
+    }
   }
 
   contentChange() {
@@ -194,9 +199,10 @@ class Content {
     }
   }
 
-  index() {
+  renderWithJS() {
     // Messy code :-)
     let contentPanel = document.qs(this.contentPanelId);
+    contentPanel.removeChilds();
 
     const h1 = document.createElement('h1');
     h1.textContent = `${moment().format('YYYY-MM-DD HH:mm:ss')} - Yo MDL!`;
@@ -223,6 +229,17 @@ class Content {
     contentPanel.appendChild(h3);
 
     const html = require('./html/material-design-icons-font-demo.html');
+    contentPanel.insertAdjacentHTML('beforeend', html);
+
+    this.contentChange();
+  }
+
+  index() {
+    let contentPanel = document.qs(this.contentPanelId);
+    contentPanel.removeChilds();
+
+    // Use require to fetch HTML. Es6 imports and exports must happen at the top level of js-file.
+    const html = require('./html/home.html');
     contentPanel.insertAdjacentHTML('beforeend', html);
 
     this.contentChange();
