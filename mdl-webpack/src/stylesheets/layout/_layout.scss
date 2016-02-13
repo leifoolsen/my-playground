@@ -108,7 +108,6 @@ body {
   }
 
   #accordion {
-    //padding-top: 64px;
     .mdlext-accordion__panel:nth-child(1) {
 
       height: 64px;
@@ -118,9 +117,12 @@ body {
       }
     }
 
-
     .mdlext-accordion__panel__content {
       padding: 0;
+    }
+
+    .mdlext-accordion__panel[open] .mdlext-accordion__panel__title {
+      background: rgba(144, 202, 249, 0.5);
     }
   }
 
@@ -164,7 +166,9 @@ body {
   margin: 64px 0 0 0;  // 64px only if sticky-header. Use a variable for this
   padding: 0 16px;
 }
-.my-page-content > h5:first-child,
-.my-page-content > details:first-of-type {
-  margin-top: 16px;
+.my-page-content > h1:first-child {
+  margin-top: 0;
+}
+.my-page-content > h5:first-child {
+  margin-top: 12px;
 }
