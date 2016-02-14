@@ -37,7 +37,7 @@ and makes the contents of each panel visible (or not) by interacting with the Ac
 Demonstrates how you can create your own theme of MDL text fields.
 
 #### Select Element Component
-<img src="details-element.png" />
+<img src="select-element.png" />
 
 The HTML ```<select>``` element represents a control that presents a menu of options. MDL does not provide it's own 
 component for the ```<select>``` element.
