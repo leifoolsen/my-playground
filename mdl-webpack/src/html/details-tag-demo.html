@@ -111,7 +111,7 @@
       </pre>
 
       <p class="mdl-typography--body-2">Note 1:</p>
-      <p>There is no guarantee that the browser's implementation of the <code>&lt;details&gt;</code>
+      <p>There is no guarantee that the browser's implementation, or the polyfill implementation, of the <code>&lt;details&gt;</code>
         element will respect it's child elements layout when toggeling the details. To preserve the child elements
         layout, <strong>always</strong> wrap the child elements inside a block element, e.g. <code>&lt;div&gt;</code>.</p>
 
@@ -157,6 +157,19 @@
       </div>
     </details>
   </div>
+
+  <details role="group">
+    <summary role="button">How to use the polyfill</summary>
+    <div>
+      <p>Import the polyfill into your main javascript module.</p>
+      <p><code>import { polyfillDetails } from './js/polyfills/details/details';</code></p>
+
+      <p>If you load HTML fragments dynamically, e.g. in a single page application, then you must call the polyfill after loading the HTML.</p>
+      <p><code>polyfillDetails(content)</code></p>
+      <p>Where <code>content</code> is the parent node of the loaded HTML fragment.</p>
+
+    </div>
+  </details>
 </details>
 
 <h5>Simple usage</h5>
@@ -262,7 +275,7 @@
 <details role="group" open>
   <summary role="button">Respect layout of child elements</summary>
   <div>
-    <p>There is no guarantee that the browser's implementation of the <code>&lt;details&gt;</code>
+    <p>There is no guarantee that the browser's implementation, or the polyfill implementation, of the <code>&lt;details&gt;</code>
       element will respect it's child elements layout when toggeling the details. To preserve the child elements
       layout, <strong>always</strong> wrap the child elements inside a block element, e.g. <code>&lt;div&gt;</code>.</p>
     <div class="someting-inlined someting-inlined--yellow">I'm inlined</div>

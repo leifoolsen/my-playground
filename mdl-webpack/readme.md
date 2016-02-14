@@ -11,18 +11,40 @@ Material Design Lite lets you add a Material Design look and feel to your websit
 frameworks and aims to optimize for cross-device use,  and offer an experience that is immediately accessible
 
 
-```
-npm install
-npm run dev
-http://localhost:8080/webpack-dev-server/
-```
-
-
 ## What is included
+A Material Design Lite project showcasing all components in MDL version 1.1.0. You can use SASS variables to modify all  
+aspects of MDL - a typical use case is to configure fonts and color schemes. The project has selfhosting of font Roboto, 
+Material Icons and Material Design Iconic Font - you don't need any external references in HTML. 
 
-### Custom components
+A few custom components are also hosted in this project (later they should move to their own repo).
 
-#### Accordion Component
+
+## Getting started
+* [NodeJS](https://nodejs.org/en/) version 4.x or 5.x must be installed in advance and it is assumed that you have basic knowledge of NodeJS.
+* Fork, clone or download ZIP
+* CD to project root folder
+* Install project dependencies: ```npm install```
+* Start the project in development mode: ```npm run dev```
+* Open a browser an hit: ```http://localhost:8080/webpack-dev-server/```
+* Import the project into an IDE of your choice.
+* Open: ```./src/stylesheets/utils/_variables.scss``` 
+* In the ```/* ==========  Color & Themes  ========== */``` section add the following code:
+
+```
+$color-primary: "63,63,63";
+$color-primary-dark: "43,43,43";
+$color-primary-contrast: "114,160,224";
+$color-accent: "69,97,136";
+$color-accent-contrast: "255,255,255";
+```
+* Save the modified file.
+* If the Webpack Dev Server is running, you will (almost) immediately see the changes in your browser.
+
+
+## Custom components
+This project has a few custom components. 
+
+### Accordion Component
 <img src="flexbox-accordion.png"  style="height: 200px;" />
 
 An accordion component is a collection of expandable panels associated with a common outer container. Panels consist of 
@@ -34,14 +56,14 @@ and makes the contents of each panel visible (or not) by interacting with the Ac
 Credits: The Accordion component is based on this [CodePen](http://codepen.io/aann/pen/dPqBML)
 
 
-#### Bordered Input Fields Theme Component
+### Bordered Input Fields Theme Component
 <img src="bordered-fields-theme.png" />
 
 Demonstrates how you can create your own theme of MDL text fields.
 
 Credits: The Bordered Fields Theme component is based on this [CodePen](http://codepen.io/prajwal078/pen/LVJZXz)
 
-#### Select Element Component
+### Select Element Component
 <img src="select-element.png" />
 
 The HTML ```<select>``` element represents a control that presents a menu of options. MDL does not provide it's own 
@@ -53,9 +75,9 @@ Credits: The Select component is based on the following sources:
 * [Simple Material Design Login, with select field](http://codepen.io/michaelschofield/pen/qEzWaM)
 * [Material Design &lt;select&gt; element, css only](http://codepen.io/pudgereyem/pen/PqBxQx)
 
-### Polyfills
+## Polyfills
 
-#### Details Element Polyfill
+### Details Element Polyfill
 <img src="details-element.png"/>
 
 The ```<details>``` element specifies additional details that the user can view or hide on demand. The ```<summary>``` 
@@ -72,3 +94,18 @@ please consider using a polyfill or creating your own. I wrote my own polyfill u
 * http://zogovic.com/post/21784525226/simple-html5-details-polyfill
 * http://www.sitepoint.com/fixing-the-details-element/
 * https://www.smashingmagazine.com/2014/11/complete-polyfill-html5-details-element/
+
+#### How to use the polyfill
+Import the polyfill into your main javascript module.
+
+```javascript
+import { polyfillDetails } from './js/polyfills/details/details';
+```
+
+If you load HTML fragments dynamically, e.g. in a single page application, then you must call the polyfill after loading the HTML.
+
+```javascripy
+polyfillDetails(content);
+```
+
+Where ```content``` is the parent node of the loaded HTML fragment.
