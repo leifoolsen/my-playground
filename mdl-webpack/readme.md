@@ -30,7 +30,7 @@ A few custom components are also hosted in this project (later they should move 
 * Open: ```./src/stylesheets/utils/_variables.scss``` 
 * In the ```/* ==========  Color & Themes  ========== */``` section add the following code:
 
-```
+```sass
 $color-primary: "63,63,63";
 $color-primary-dark: "43,43,43";
 $color-primary-contrast: "114,160,224";
