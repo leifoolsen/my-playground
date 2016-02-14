@@ -1,5 +1,5 @@
 # MDL Webpack
-A [Google Material Design Lite](http://www.getmdl.io/index.html) project built with NPM and Webpack.
+A [Google Material Design Lite](http://www.getmdl.io/index.html) project built with NPM and Webpack using SASS and EcmaScript 2015/2016.
 
 <img src="./etc/mdl-webpack.png" style="width:100%; max-width: 800px; margin: 0 auto;" />
 
@@ -119,3 +119,12 @@ polyfillDetails(content);
 ```
 
 Where ```content``` is the parent node of the loaded HTML fragment.
+
+
+## NOTE
+This project is still in it's early stages.
+
+As part of my work I review the usability of MDL as a SASS framework for both internal and public projects. 
+In the coming months we plan to use MDL in some of our internal projects. At the same time, I plan to expand this 
+project so that it can run as part of the real frontend project. In this way it will be easy for web designers to 
+make changes in design and simultaneously verify that the changes are as expected for all aspects of the design.
