@@ -19,6 +19,11 @@ Material Icons and Material Design Iconic Font - you don't need any external ref
 A few custom components are also hosted in this project (later they should move to their own repo).
 
 
+## Why
+Material Design Lite is a great SASS/CSS framework, but the pre built themes was not sufficient for my use. SASS with
+Webpack provides control with all aspects of MDL and makes it easy to customize the design.
+
+
 ## Getting started
 * [NodeJS](https://nodejs.org/en/) version 4.x or 5.x must be installed in advance and it is assumed that you have basic knowledge of NodeJS.
 * Fork, clone or download ZIP
@@ -26,7 +31,7 @@ A few custom components are also hosted in this project (later they should move 
 * Install project dependencies: ```npm install```
 * Start the project in development mode: ```npm run dev```
 * Open a browser an hit: ```http://localhost:8080/webpack-dev-server/```
-* Import the project into an IDE of your choice.
+* Import the project into an IDE of your choice
 * Open: ```./src/stylesheets/utils/_variables.scss``` 
 * In the ```/* ==========  Color & Themes  ========== */``` section add the following code:
 
@@ -43,6 +48,7 @@ $color-accent-contrast: "255,255,255";
 
 ## Custom components
 This project has a few custom components. 
+
 
 ### Accordion Component
 <img src="./etc/flexbox-accordion.png"  style="height: 200px;" />
@@ -63,6 +69,7 @@ Demonstrates how you can create your own theme of MDL text fields.
 
 Credits: The Bordered Fields Theme component is based on this [CodePen](http://codepen.io/prajwal078/pen/LVJZXz)
 
+
 ### Select Element Component
 <img src="./etc/select-element.png" />
 
@@ -75,7 +82,9 @@ Credits: The Select component is based on the following sources:
 * [Simple Material Design Login, with select field](http://codepen.io/michaelschofield/pen/qEzWaM)
 * [Material Design &lt;select&gt; element, css only](http://codepen.io/pudgereyem/pen/PqBxQx)
 
+
 ## Polyfills
+
 
 ### Details Element Polyfill
 <img src="./etc/details-element.png"/>
@@ -94,6 +103,7 @@ please consider using a polyfill or creating your own. I wrote my own polyfill u
 * http://zogovic.com/post/21784525226/simple-html5-details-polyfill
 * http://www.sitepoint.com/fixing-the-details-element/
 * https://www.smashingmagazine.com/2014/11/complete-polyfill-html5-details-element/
+
 
 #### How to use the polyfill
 Import the polyfill into your main javascript module.
