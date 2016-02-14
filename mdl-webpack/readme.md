@@ -31,7 +31,7 @@ content on a single page without scrolling, where all of the sections are peers 
 The general look is similar to a tree where each root tree node is an expandable accordion header. The user navigates 
 and makes the contents of each panel visible (or not) by interacting with the Accordion Header.
 
-#### Bordered Input Fileds Theme Component
+#### Bordered Input Fields Theme Component
 <img src="bordered-fields-theme.png" />
 
 Demonstrates how you can create your own theme of MDL text fields.
@@ -45,7 +45,19 @@ component for the ```<select>``` element.
 ### Polyfills
 
 #### Details Element Polyfill
-<img src="details-element.png" style="margin-left: -10px;" />
+<img src="details-element.png"/>
 
 The ```<details>``` element specifies additional details that the user can view or hide on demand. The ```<summary>``` 
 element defines a visible heading for the ```<details>``` element. The heading can be clicked to view/hide the details.
+
+The ```<details>``` element currently has very limited cross-browser support. To ensure support across all modern browsers, 
+please consider using a polyfill or creating your own. I wrote my own polyfill using the following sources:
+
+* https://github.com/jordanaustin/Details-Expander
+* https://github.com/chemerisuk/better-details-polyfill
+* http://codepen.io/stevef/pen/jiCBE
+* http://blog.mxstbr.com/2015/06/html-details/
+* http://html5doctor.com/the-details-and-summary-elements/
+* http://zogovic.com/post/21784525226/simple-html5-details-polyfill
+* http://www.sitepoint.com/fixing-the-details-element/
+* https://www.smashingmagazine.com/2014/11/complete-polyfill-html5-details-element/
