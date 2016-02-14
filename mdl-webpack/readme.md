@@ -31,16 +31,27 @@ content on a single page without scrolling, where all of the sections are peers 
 The general look is similar to a tree where each root tree node is an expandable accordion header. The user navigates 
 and makes the contents of each panel visible (or not) by interacting with the Accordion Header.
 
+Credits: The Accordion component is based on this [CodePen](http://codepen.io/aann/pen/dPqBML)
+
+
 #### Bordered Input Fields Theme Component
 <img src="bordered-fields-theme.png" />
 
 Demonstrates how you can create your own theme of MDL text fields.
+
+Credits: The Bordered Fields Theme component is based on this [CodePen](http://codepen.io/prajwal078/pen/LVJZXz)
 
 #### Select Element Component
 <img src="select-element.png" />
 
 The HTML ```<select>``` element represents a control that presents a menu of options. MDL does not provide it's own 
 component for the ```<select>``` element.
+
+Credits: The Select component is based on the following sources:
+* [Material Design Lite selectfield component](https://github.com/mebibou/mdl-selectfield) 
+* [mdl-selectfield](https://github.com/MEYVN-digital/mdl-selectfield)
+* [Simple Material Design Login, with select field](http://codepen.io/michaelschofield/pen/qEzWaM)
+* [Material Design &lt;select&gt; element, css only](http://codepen.io/pudgereyem/pen/PqBxQx)
 
 ### Polyfills
 
