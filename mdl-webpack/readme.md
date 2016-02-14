@@ -1,7 +1,7 @@
 # MDL Webpack
 A [Google Material Design Lite](http://www.getmdl.io/index.html) project built with NPM and Webpack.
 
-<img src="mdl-webpack.png" style="width:100%; max-width: 800px; margin: 0 auto;" />
+<img src="./etc/mdl-webpack.png" style="width:100%; max-width: 800px; margin: 0 auto;" />
 
 Material Design is a design language developed by Google. Expanding upon the "card" motifs 
 that debuted in Google Now, Material Design makes more liberal use of grid-based layouts, responsive animations and 
@@ -45,7 +45,7 @@ $color-accent-contrast: "255,255,255";
 This project has a few custom components. 
 
 ### Accordion Component
-<img src="flexbox-accordion.png"  style="height: 200px;" />
+<img src="./etc/flexbox-accordion.png"  style="height: 200px;" />
 
 An accordion component is a collection of expandable panels associated with a common outer container. Panels consist of 
 a header and an associated content region or panel. The primary use of an Accordion is to present multiple sections of 
@@ -57,14 +57,14 @@ Credits: The Accordion component is based on this [CodePen](http://codepen.io/aa
 
 
 ### Bordered Input Fields Theme Component
-<img src="bordered-fields-theme.png" />
+<img src="./etc/bordered-fields-theme.png" />
 
 Demonstrates how you can create your own theme of MDL text fields.
 
 Credits: The Bordered Fields Theme component is based on this [CodePen](http://codepen.io/prajwal078/pen/LVJZXz)
 
 ### Select Element Component
-<img src="select-element.png" />
+<img src="./etc/select-element.png" />
 
 The HTML ```<select>``` element represents a control that presents a menu of options. MDL does not provide it's own 
 component for the ```<select>``` element.
@@ -78,7 +78,7 @@ Credits: The Select component is based on the following sources:
 ## Polyfills
 
 ### Details Element Polyfill
-<img src="details-element.png"/>
+<img src="./etc/details-element.png"/>
 
 The ```<details>``` element specifies additional details that the user can view or hide on demand. The ```<summary>``` 
 element defines a visible heading for the ```<details>``` element. The heading can be clicked to view/hide the details.
