@@ -23,7 +23,7 @@ http://localhost:8080/webpack-dev-server/
 ### Custom components
 
 #### Accordion Component
-<img src="flexbox-accordion.png"  style="max-height: 200px;" />
+<img src="flexbox-accordion.png"  style="height: 200px;" />
 
 An accordion component is a collection of expandable panels associated with a common outer container. Panels consist of 
 a header and an associated content region or panel. The primary use of an Accordion is to present multiple sections of 
@@ -45,7 +45,7 @@ component for the ```<select>``` element.
 ### Polyfills
 
 #### Details Element Polyfill
-<img src="details-element.png" />
+<img src="details-element.png" style="margin-left: -10px;" />
 
 The ```<details>``` element specifies additional details that the user can view or hide on demand. The ```<summary>``` 
 element defines a visible heading for the ```<details>``` element. The heading can be clicked to view/hide the details.
