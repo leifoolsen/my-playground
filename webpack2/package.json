@@ -1,0 +1,76 @@
+{
+  "name": "webpack2",
+  "version": "0.0.1",
+  "description": "Trying out webpack2",
+  "author": "Leif Olsen <leif.o.olsen.at.gmail.com> (https://github.com/leifoolsen)",
+  "private": true,
+  "scripts": {
+    "test": "./node_modules/.bin/karma start",
+    "check-coverage": "./node_modules/.bin/istanbul check-coverage --statements 23 --branches 5 --functions 9 --lines 24",
+    "watch:test": "npm test -- --auto-watch --no-single-run",
+    "validate": "npm-run-all --parallel validate-webpack:* lint test --serial check-coverage",
+    "validate-webpack:dev": "./node_modules/.bin/webpack-validator webpack.config.babel.js --env.dev",
+    "validate-webpack:prod": "./node_modules/.bin/webpack-validator webpack.config.babel.js --env.prod",
+    "clean-dist": "./node_modules/.bin/rimraf dist",
+    "copy-files": "./node_modules/.bin/cpy src/favicon.ico dist",
+    "clean-and-copy": "npm run clean-dist && npm run copy-files",
+    "prestart": "npm run clean-and-copy",
+    "start": "./node_modules/.bin/webpack-dev-server --env.dev --content-base dist",
+    "prebuild": "npm run clean-and-copy",
+    "prebuild:prod": "npm run clean-and-copy",
+    "build": "./node_modules/.bin/webpack  --env.dev",
+    "build:prod": "./node_modules/.bin/webpack --env.prod",
+    "lint": "./node_modules/.bin/eslint .",
+    "setup": "npm install && npm run validate"
+  },
+  "engines": {
+    "node": ">= 6"
+  },
+  "dependencies": {
+    "moment": "2.13.0",
+    "todomvc-app-css": "2.0.6",
+    "todomvc-common": "1.0.2"
+  },
+  "devDependencies": {
+    "babel": "6.5.2",
+    "babel-cli": "6.10.1",
+    "babel-core": "6.9.1",
+    "babel-eslint": "6.0.4",
+    "babel-loader": "6.2.4",
+    "babel-plugin-__coverage__": "11.0.0",
+    "babel-preset-es2015-webpack": "6.4.1",
+    "babel-preset-stage-2": "6.5.0",
+    "chai": "3.5.0",
+    "cpy-cli": "1.0.1",
+    "css-loader": "0.23.1",
+    "eslint": "2.13.0",
+    "eslint-loader": "1.3.0",
+    "ghooks": "1.2.4",
+    "html-webpack-plugin": "2.21.0",
+    "imports-loader": "0.6.5",
+    "istanbul": "0.4.3",
+    "karma": "0.13.22",
+    "karma-chai": "0.1.0",
+    "karma-chrome-launcher": "1.0.1",
+    "karma-coverage": "1.0.0",
+    "karma-mocha": "1.0.1",
+    "karma-webpack": "1.7.0",
+    "mocha": "2.5.3",
+    "npm-run-all": "2.2.0",
+    "opt-cli": "1.4.2",
+    "rimraf": "2.5.2",
+    "style-loader": "0.13.1",
+    "webpack": "2.1.0-beta.13",
+    "webpack-dev-server": "2.1.0-beta.0",
+    "webpack-validator": "2.1.3"
+  },
+  "config": {
+    "ghooks": {
+      "pre-commit": "opt --in pre-commit --exec \"npm run validate\""
+    }
+  },
+  "keywords": [
+    "webpack2"
+  ],
+  "license": "ISC"
+}
