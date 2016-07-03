@@ -7,11 +7,11 @@
   "main": "webpack.config.babel.js",
   "scripts": {
     "setup": "npm install && npm run validate",
-    "validate": "npm-run-all --parallel validate-webpack:* test --serial check-coverage",
+    "validate": "npm-run-all --parallel validate-webpack:* test:coverage --serial check-coverage",
     "validate-webpack:dev": "./node_modules/.bin/webpack-validator webpack.config.babel.js --env.dev",
     "validate-webpack:prod": "./node_modules/.bin/webpack-validator webpack.config.babel.js --env.prod",
     "clean": "./node_modules/.bin/rimraf dist",
-    "prebuild": "npm run clean && npm run test",
+    "prebuild": "npm run clean && npm run validate",
     "build": "./node_modules/.bin/webpack --env.dev",
     "prebuild:prod": "npm run clean && npm run validate",
     "build:prod": "./node_modules/.bin/webpack --env.prod",
@@ -23,7 +23,7 @@
     "report-coverage": "cat ./coverage/lcov.info | ./node_modules/.bin/codecov",
     "test:watch": "./node_modules/.bin/mocha  -w --opts ./mocha.opts './test/**/*.spec.js'",
     "test": "./node_modules/.bin/mocha  --opts ./mocha.opts './test/**/*.spec.js'",
-    "start": "./node_modules/.bin/webpack-dev-server --env.dev --port 8084 --progress"
+    "start": "./node_modules/.bin/webpack-dev-server --env.dev --port 8084 --progress --content-base src"
   },
   "engineStrict": true,
   "engines": {
@@ -49,12 +49,12 @@
     "eslint-loader": "1.4.0",
     "extract-text-webpack-plugin": "1.0.1",
     "file-loader": "0.9.0",
-    "ghooks": "1.2.4",
+    "ghooks": "1.3.0",
     "html-webpack-plugin": "2.22.0",
     "ignore-styles": "4.0.0",
     "imports-loader": "0.6.5",
     "istanbul": "1.1.0-alpha.1",
-    "jsdom": "9.3.0",
+    "jsdom": "9.4.0",
     "jsdomify": "2.1.0",
     "mocha": "2.5.3",
     "node-sass": "3.8.0",

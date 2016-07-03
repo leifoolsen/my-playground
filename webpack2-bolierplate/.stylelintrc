@@ -19,6 +19,6 @@
     "number-no-trailing-zeros": true,
     "selector-list-comma-space-before": "never",
     "selector-list-comma-newline-after": "always",
-    "selector-no-id": false
+    "selector-no-id": null
   }
 }

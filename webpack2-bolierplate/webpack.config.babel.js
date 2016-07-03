@@ -84,8 +84,9 @@ module.exports = env => {
       failOnError: true
     },
     /*
+    // Note: webpack-validator fails with error: "sassLoader" is not allowed
+    // npm run prebuild and npm run prebuild:prod can not call npm run validate if we add this block
     sassLoader: {
-      // Note: webpack-validator fails with error: "sassLoader" is not allowed
       includePaths: [
         resolve(__dirname, './node_modules'),
         resolve(__dirname, './src')
@@ -111,13 +112,14 @@ module.exports = env => {
         disable: false,
         allChunks: true
       }),
+
       new StyleLintPlugin({
         // http://stylelint.io/user-guide/example-config/
         configFile: '.stylelintrc',
         context: 'src',
         files: '**/*.s?(a|c)ss',
         syntax: 'scss',
-        failOnError: false
+        failOnError: true
       }),
 
       new CopyWebpackPlugin([
@@ -155,24 +157,6 @@ module.exports = env => {
         }
       }))
       // End: finetuning 'npm run build:prod'
-    ]),
-    devServer: {
-      contentBase: 'src',
-      port: 8080,                 // default port
-      hot: true,                  // adds the HotModuleReplacementPlugin.
-      historyApiFallback: false,  // when false, dev server make directory listing, good feature to navigate in project
-      quiet: false,
-      noInfo: false,
-      lazy: false
-      /*
-      proxy: {
-        // Our rest server
-        '/api/*': {
-          target: 'http://localhost:8081',
-          secure: false
-        }
-      }
-      */
-    }
+    ])
   };
 };
