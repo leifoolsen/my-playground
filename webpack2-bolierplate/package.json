@@ -1,7 +1,7 @@
 {
   "name": "es2015-sass-webpack2-boilerplate",
   "version": "0.0.1",
-  "description": "A bolierplate for es2015, SASS and Webpack2",
+  "description": "A bolierplate for ES2015 and SASS using Webpack2",
   "author": "Leif Olsen <leif.o.olsen.at.gmail.com> (https://github.com/leifoolsen)",
   "private": true,
   "main": "webpack.config.babel.js",
@@ -49,6 +49,7 @@
     "eslint-loader": "1.4.0",
     "extract-text-webpack-plugin": "1.0.1",
     "file-loader": "0.9.0",
+    "ghooks": "1.2.4",
     "html-webpack-plugin": "2.22.0",
     "ignore-styles": "4.0.0",
     "imports-loader": "0.6.5",

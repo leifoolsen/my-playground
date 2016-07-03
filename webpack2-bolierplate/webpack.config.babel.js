@@ -112,6 +112,7 @@ module.exports = env => {
         allChunks: true
       }),
       new StyleLintPlugin({
+        // http://stylelint.io/user-guide/example-config/
         configFile: '.stylelintrc',
         context: 'src',
         files: '**/*.s?(a|c)ss',
