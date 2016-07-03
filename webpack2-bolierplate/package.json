@@ -75,6 +75,7 @@
   },
   "keywords": [
     "Webpack2",
+    "JavaScript",
     "ES6",
     "ES2015",
     "ECMASCRIPT 2015",
@@ -82,5 +83,5 @@
     "SASS",
     "SASS Boilerplate"
   ],
-  "license": "ISC"
+  "license": "MIT"
 }
