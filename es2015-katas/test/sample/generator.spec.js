@@ -10,7 +10,7 @@ const expect = require('chai').expect;
 
 describe('generator', () => {
 
-  function* greetGeneratorFunction() {
+  function *greetGeneratorFunction() {
     yield 'h';
     yield 'e';
     yield 'l';
