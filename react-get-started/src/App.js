@@ -1,10 +1,12 @@
 'use strict';
 
+import 'material-design-lite/material';
+import 'mdl-ext';
 import React from 'react';
-import Hello from './components/Hello';
+import MdlextSelectfield from './components/react-mdlext-selectfield';
 
-const items = [
-  { value: "#0", label: ""  },
+const options = [
+  { value: ""  , label: ""  },
   { value: "#1", label: "One"  },
   { value: "#2", label: "Two"  },
   { value: "#3", label: "Three"},
@@ -23,7 +25,8 @@ const order = {
 class App extends React.Component {
   render() {
     return (
-      <Hello items={items} value="#3" label="A label goes here"/>
+      <MdlextSelectfield options={options} className="my-class" label="Select a value" floatingLabel value="#2"
+             onChange={ (e) => {console.log( '***** onChange', e.target.value)}} />
     )
   }
 }
