@@ -25,7 +25,7 @@ const order = {
 class App extends React.Component {
   render() {
     return (
-      <MdlextSelectfield options={options} className="my-class" label="Select a value" floatingLabel value="#2"
+      <MdlextSelectfield options={options} className="my-class" label="Select a value" floatingLabel value=""
              onChange={ (e) => {console.log( '***** onChange', e.target.value)}} />
     )
   }

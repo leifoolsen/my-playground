@@ -28,6 +28,9 @@ const pseudoId = (n=12) => Array(n+1).join((Math.random().toString(36)+'00000000
 
 // Based on: https://github.com/tleunen/react-mdl/blob/master/src/Textfield.js
 class MdlextSelectfield extends React.Component {
+
+  static displayName = 'MdlextSelectfield';
+
   static propTypes = {
     className: PropTypes.string,
     disabled: PropTypes.bool,

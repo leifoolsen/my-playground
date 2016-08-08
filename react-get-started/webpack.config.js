@@ -2,13 +2,15 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-  entry: './src/index',
+  context: path.resolve(__dirname, 'src'),
+  devtool: 'cheap-module-eval-source-map',
+  entry: './index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'app-bundle.js',
-    publicPath: '/dist/'
+    pathinfo: true,
+    publicPath: '/static/'
   },
-  devtool: 'source-map',
   stats: {
     colors: true
   },
@@ -16,9 +18,14 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        loader: 'babel-loader',
+        loader: 'babel',
         exclude: /node_modules/
       }
     ]
+  },
+  devServer: {
+    contentBase: './src',
+    port: 8088,
+    inline: true,
   }
 };
