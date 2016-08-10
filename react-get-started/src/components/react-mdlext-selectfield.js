@@ -6,11 +6,13 @@ import { findDOMNode } from 'react-dom';
 const cssClasses = (...classes) => {
   const isString = s => s != null && typeof s === 'string';
 
-  const reduceClass = (result, clazz) => isString(clazz)
-    ? result ? `${result} ${clazz}` : clazz
+  const joinStrings = (a, b) => a ? `${a} ${b}` : b;
+
+  const reduceClass = (prevResult, clazz) => isString(clazz)
+    ? joinStrings(prevResult, clazz)
     : Object.keys(clazz)
       .filter( key => clazz[key] )
-      .reduce( (result, key) => result ? `${result} ${key}` : key, result );
+      .reduce( (result, key) => joinStrings(result, key), prevResult );
 
   return classes
     .filter( clazz => !!clazz)
@@ -23,7 +25,7 @@ const cssClasses = (...classes) => {
 //console.log('*****', '['+cssClasses( null, undefined, {'foo':null, 'bar':false, 'baz':false, 'bat':undefined } ) + ']' ); // -> []
 
 // http://stackoverflow.com/questions/1349404/generate-random-string-characters-in-javascript
-const pseudoId = (n=12) => Array(n+1).join((Math.random().toString(36)+'00000000000000000').slice(2, 18)).slice(0, n);
+const pseudoId = (n = 12) => Array( n+1 ).join((`${Math.random().toString(36)}00000000000000000`).slice(2, 18)).slice(0, n);
 
 
 // Based on: https://github.com/tleunen/react-mdl/blob/master/src/Textfield.js
@@ -42,10 +44,10 @@ class MdlextSelectfield extends React.Component {
     options: PropTypes.array.isRequired,
     required: PropTypes.bool,
     style: PropTypes.object,
-    value: PropTypes.string
+    value: PropTypes.string,
   };
   static defaultProps = {
-    value: ''
+    //value: ''
   };
 
   constructor(props){
@@ -107,7 +109,7 @@ class MdlextSelectfield extends React.Component {
         { label ?<label htmlFor={customId} className='mdlext-selectfield__label'>{label}</label>: null }
         { error ?<span className='mdlext-selectfield__error'>{error}</span>: null }
       </div>
-    )
+    );
   }
 
 }
