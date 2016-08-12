@@ -4,7 +4,7 @@ import React from 'react';
 import MdlextSelectfield from './components/react-mdlext-selectfield';
 
 const options = [
-  { value: ''  , label: ''  },
+  { value: ''  , label: '', disabled: true, hidden: true },
   { value: '#1', label: 'One'  },
   { value: '#2', label: 'Two'  },
   { value: '#3', label: 'Three'},
