@@ -1,21 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-//const App = () => <h1>Hello React @ Egghead. Stateless function</h1>;
-
-
 class App extends React.Component {
-
-  /*
-  static propTypes = {
-    txt: React.PropTypes.string,
-    aNumber: React.PropTypes.number.isRequired
-  };
-
-  static defaultProps = {
-    aNumber: 101
-  };
-  */
 
   state = {
     red: 0,
@@ -61,16 +47,5 @@ class Slider extends React.Component {
     )
   }
 }
-
-/*
-const Widget = props => {
-  return (
-    <div>
-      <input type="text" onChange={props.update} />
-      <h1>{props.txt} - {props.aNumber}</h1>
-    </div>
-  )
-};
-*/
 
 export default App;
