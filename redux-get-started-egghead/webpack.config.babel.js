@@ -3,9 +3,12 @@ const {resolve} = require('path');
 
 module.exports = env => {
 
+  const removeEmpty = array => array.filter(i => !!i);
+
   return {
     context: resolve(__dirname, 'src'),
-
+    devtool: env.prod ? 'source-map' : 'eval-source-map',
+    bail: env.prod,
     entry: './main.js',
     output: {
       path: resolve(__dirname, 'dist'),
@@ -26,6 +29,11 @@ module.exports = env => {
         'node_modules'
       ],
       extensions: ['.js', '.jsx', '.css', '.scss', '.html']
-    }
+    },
+    plugins: removeEmpty([
+      new webpack.LoaderOptionsPlugin({
+        debug: !env.prod
+      })
+    ])
   };
 };
