@@ -1,10 +1,10 @@
 {
   "name": "react-fundamentals-egghead",
   "version": "0.0.1",
-  "description": "React fundamentals Egghead course",
-  "main": "index.js",
+  "description": "Redux get started, Egghead course",
+  "main": "./src/main.js",
   "scripts": {
-    "start": "./node_modules/.bin/webpack-dev-server",
+    "start": "./node_modules/.bin/webpack-dev-server --env.dev --port 3333 --progress --inline --content-base src",
     "test:watch": "./node_modules/.bin/mocha  -w --opts ./mocha.opts './test/**/*.spec.js'",
     "test:pattern": "./node_modules/.bin/mocha  -w --opts ./mocha.opts './test/**/*.spec.js' --grep $pattern",
     "test": "./node_modules/.bin/mocha  --opts ./mocha.opts './test/**/*.spec.js'"
@@ -29,9 +29,14 @@
     "babel-preset-react": "6.16.0",
     "babel-preset-stage-0": "6.16.0",
     "chai": "3.5.0",
+    "file-loader": "0.9.0",
+    "html-webpack-plugin": "2.22.0",
     "ignore-styles": "5.0.1",
     "mocha": "3.1.2",
-    "sinon": "^1.17.6",
+    "opt-cli": "1.5.1",
+    "resolve-url-loader": "1.6.0",
+    "sinon": "1.17.6",
+    "url-loader": "0.5.7",
     "webpack": "2.1.0-beta.25",
     "webpack-dev-server": "2.1.0-beta.9"
   }

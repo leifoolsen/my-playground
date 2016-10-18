@@ -1,16 +1,15 @@
-const { resolve } = require('path');
+const webpack = require('webpack');
+const {resolve} = require('path');
 
-module.exports = () => {
+module.exports = env => {
 
   return {
-    entry: ['babel-polyfill', './main.js'],
+    context: resolve(__dirname, 'src'),
+
+    entry: './main.js',
     output: {
-      path: resolve(__dirname, './'),
-      filename: 'index.js'
-    },
-    devServer: {
-      inline: true,
-      port: 3333
+      path: resolve(__dirname, 'dist'),
+      filename: 'index.js',
     },
     module: {
       loaders: [
@@ -20,6 +19,13 @@ module.exports = () => {
           exclude: /node_modules/
         }
       ]
+    },
+    resolve: {
+      modules: [
+        resolve(__dirname, "src"),
+        'node_modules'
+      ],
+      extensions: ['.js', '.jsx', '.css', '.scss', '.html']
     }
   };
 };
