@@ -57,6 +57,7 @@
     "react/jsx-no-undef": 2,
     "react/jsx-uses-react": 1,
     "react/jsx-uses-vars": 1,
+    "react/jsx-wrap-multilines": 2,
     "react/no-danger": 2,
     "react/no-did-mount-set-state": 2,
     "react/no-did-update-set-state": 2,
@@ -65,7 +66,6 @@
     "react/no-unknown-property": 2,
     "react/react-in-jsx-scope": 2,
     "react/self-closing-comp": 2,
-    "react/wrap-multilines": 2,
     "semi": [1, "always"],
     "strict": 0
   },

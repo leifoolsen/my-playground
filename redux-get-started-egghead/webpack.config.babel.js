@@ -18,7 +18,7 @@ module.exports = env => {
     module: {
       rules: [
         {
-          test: /\.js$/,
+          test: /\.jds$/,
           include: [path.resolve(__dirname, "src")],
           exclude: [/node_modules/],
           loader: "babel-loader",
