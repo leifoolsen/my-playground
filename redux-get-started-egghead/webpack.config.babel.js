@@ -1,38 +1,41 @@
 const webpack = require('webpack');
-const {resolve} = require('path');
+const path = require('path');
 
 module.exports = env => {
 
   const removeEmpty = array => array.filter(i => !!i);
 
   return {
-    context: resolve(__dirname, 'src'),
+    context: path.resolve(__dirname, 'src'),
     devtool: env.prod ? 'source-map' : 'eval-source-map',
     bail: env.prod,
     entry: './main.js',
     output: {
-      path: resolve(__dirname, 'dist'),
+      path: path.resolve(__dirname, 'dist'),
       filename: 'index.js',
+      publicPath: '/',
     },
     module: {
-      loaders: [
+      rules: [
         {
           test: /\.js$/,
-          loader: 'babel',
-          exclude: /node_modules/
-        }
+          include: [path.resolve(__dirname, "src")],
+          exclude: [/node_modules/],
+          loader: "babel-loader",
+        },
       ]
     },
     resolve: {
       modules: [
-        resolve(__dirname, "src"),
-        'node_modules'
+        'node_modules',
+        path.resolve(__dirname, "src"),
       ],
       extensions: ['.js', '.jsx', '.css', '.scss', '.html']
     },
     plugins: removeEmpty([
       new webpack.LoaderOptionsPlugin({
-        debug: !env.prod
+        debug: !env.prod,
+        context: __dirname,
       })
     ])
   };

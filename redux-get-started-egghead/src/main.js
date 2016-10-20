@@ -1,5 +1,4 @@
 import React from 'react';
-import {render} from 'react-dom';
-import TodoApp from './App-l24';
+import './App-l30';
 
-render(<TodoApp />, document.getElementById('app'));
+//render(<TodoApp />, document.getElementById('app'));
