@@ -1,5 +1,5 @@
 {
-  "name": "react-fundamentals-egghead",
+  "name": "redux-get-started-egghead",
   "version": "0.0.1",
   "description": "Redux get started, Egghead course",
   "main": "./src/main.js",
