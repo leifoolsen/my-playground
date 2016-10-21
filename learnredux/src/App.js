@@ -1,10 +1,13 @@
 import React from 'react';
+import {Link} from 'react-router';
 
-class App extends React.Component {
+const App = React.createClass({
   render() {
     return (
-      <h1>Hello React</h1>
+      <div>
+        <h1><Link to="/">Reduxtagram</Link></h1>
+      </div>
     );
   }
-}
+});
 export default App;

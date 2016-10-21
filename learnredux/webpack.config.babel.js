@@ -25,6 +25,7 @@ module.exports = env => {
       vendor: [
         'react',
         'react-dom',
+        'react-router',
         'redux',
         'react-redux',
         // +++ other 3'rd party
