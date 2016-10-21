@@ -28,6 +28,8 @@ module.exports = env => {
         'react-router',
         'redux',
         'react-redux',
+        'react-router-redux',
+        'raven-js',
         // +++ other 3'rd party
       ]
     },
