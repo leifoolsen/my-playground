@@ -26,6 +26,7 @@ module.exports = env => {
         'react',
         'react-dom',
         'react-router',
+        'react-addons-css-transition-group',
         'redux',
         'react-redux',
         'react-router-redux',

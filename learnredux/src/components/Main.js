@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router';
 
-const App = React.createClass({
+const Main = React.createClass({
   render() {
     return (
       <div>
@@ -14,4 +14,4 @@ const App = React.createClass({
   }
 });
 
-export default App;
+export default Main;

@@ -1,5 +1,5 @@
 function comments(state = [], action) {
-  console.log(state, action);
+  console.log('Comments reducer', state, action);
   return state;
 }
 
