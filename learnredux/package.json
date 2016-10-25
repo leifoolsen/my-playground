@@ -19,7 +19,7 @@
     "test:watch": "./node_modules/.bin/mocha  -w --opts ./mocha.opts './test/**/*.spec.js'",
     "test:pattern": "./node_modules/.bin/mocha  -w --opts ./mocha.opts './test/**/*.spec.js' --grep $pattern",
     "test": "./node_modules/.bin/mocha  --opts ./mocha.opts './test/**/*.spec.js'",
-    "start": "./node_modules/.bin/webpack-dev-server --env.dev --port 3333 --progress --inline --content-base src"
+    "start": "./node_modules/.bin/webpack-dev-server --env.dev --port 3333 --progress --inline --hot --content-base src"
   },
   "config": {
     "ghooks": {

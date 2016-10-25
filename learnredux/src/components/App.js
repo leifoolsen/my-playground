@@ -7,7 +7,7 @@ function mapStateToProps(state) {
   return {
     posts: state.posts,
     comments: state.comments
-  }
+  };
 }
 
 function mapDispachToProps(dispatch) {
