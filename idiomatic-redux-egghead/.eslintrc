@@ -1,3 +1,14 @@
+//{
+//  "extends": "airbnb",
+//  "parserOptions": {
+//    "ecmaFeatures": {
+//      "experimentalObjectRestSpread": true
+//    }
+//  }
+//}
+
+
+
 // ESLint Reset - A starter .eslintrc file that resets all rules to off and includes a description of what each rule does.
 // From here, enable the rules that you care about by changing the 0 to a 1 or 2.
 // 1 means warning (will not affect exit code) and 2 means error (will affect exit code).

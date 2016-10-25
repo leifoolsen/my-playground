@@ -1,16 +1,16 @@
 import 'babel-polyfill';
-import './stylesheets/main.scss';
 import React from 'react';
 import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import todoApp from './reducers';
+import App from './components/App';
 
+const store = createStore(todoApp);
 
-class App extends React.Component {
-
-  render() {
-    return (
-      <div>Hello Idiomatic Redux</div>
-    );
-  }
-}
-
-render(<App />, document.getElementById('root'));
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);
