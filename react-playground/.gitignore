@@ -1,0 +1,30 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+node_modules/
+
+# production
+build/
+
+# misc
+.DS_Store
+npm-debug.log
+
+# coverage reports
+coverage
+
+# test results
+test-results.xml
+
+# Intellij files
+.idea/
+*.iml
+
+# Other
+cache/
+target/
+dist/
+node/
+*logs
+*.log
+.sonar/

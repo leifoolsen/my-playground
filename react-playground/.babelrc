@@ -1,0 +1,17 @@
+{
+  "presets": [
+    ["es2015", { "modules": false }],
+    "stage-0",
+    "react"
+  ],
+  "plugins": ["transform-object-rest-spread"],
+  "env": {
+    "development": {
+    },
+    "test": {
+      "plugins": [
+        ["__coverage__", {"ignore": "*.+(test|stub).*"}]
+      ]
+    }
+  }
+}
