@@ -6,6 +6,7 @@ dist/
 logs/
 *.log
 *.tmp
+dump.rdb
 
 # Runtime data
 pids
