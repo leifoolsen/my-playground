@@ -1,33 +1,42 @@
 import React from 'react';
-import { IndexLink } from 'react-router';
+//import { IndexLink } from 'react-router';
+import NavLink from './nav-link';
 
-class MainLayout extends React.Component {
-  render() {
-    return (
-      <div className="HolyGrail">
-        <header className="HolyGrail-header">
-          <p>Header</p>
-        </header>
-        <div className="HolyGrail-body">
-          <main className="HolyGrail-content">
-            <p>Main</p>
-            {this.props.children}
-          </main>
-          <nav className="HolyGrail-nav">
-            <ul>
-              <li><IndexLink to="/" activeClassName="active">Home</IndexLink></li>
-              <li><IndexLink to="/users" activeClassName="active">Users</IndexLink></li>
-              <li><IndexLink to="/widgets" activeClassName="active">Widgets</IndexLink></li>
-            </ul>
-          </nav>
-        </div>
-        <footer className="HolyGrail-footer">
-          <p>Footer</p>
-        </footer>
-      </div>
-    );
-  }
-}
+const MainLayout = props => (
+  <div className="HolyGrail">
+    <header className="HolyGrail-header">
+      <p>Header</p>
+    </header>
+    <div className="HolyGrail-body">
+      <main className="HolyGrail-content">
+        <p>Main</p>
+        {props.children}
+      </main>
+      <nav className="HolyGrail-nav">
+        <ul>
+          <li><NavLink to="/">Home</NavLink></li>
+          <li><NavLink to="/users">Users</NavLink></li>
+          <li>
+            <NavLink
+              to={{
+                pathname: '/widgets',
+                query: { message: 'Hello from Route Query' }
+              }}
+            >
+              Widgets
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/about/">About</NavLink>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <footer className="HolyGrail-footer">
+      <p>Footer</p>
+    </footer>
+  </div>
+);
 
 MainLayout.propTypes = {
   children: React.PropTypes.node,
