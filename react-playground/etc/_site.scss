@@ -1,0 +1,194 @@
+@charset "UTF-8";
+
+/**
+ * https://github.com/philipwalton/solved-by-flexbox/blob/master/assets/css/components/holy-grail.css
+ * 1. Avoid the IE 10-11 `min-height` bug.
+ * 2. Set `flex-shrink` to `0` to prevent some browsers from
+ *    letting these items shrink to smaller than their content's default
+ *    minimum size. See http://bit.ly/1Mn35US for details.
+ * 3. Use `%` instead of `vh` since `vh` is buggy in older mobile Safari.
+ */
+
+$space-lg: 16px;
+$space-sm: 8px;
+$border-radius: 3px;
+
+$sidebar-left-width: 260px;
+$sidebar-border-radius: $border-radius;
+$sidebar-color: rgba(147, 128, 108, 0.1);
+$sidebar-breakpoint: 768px;
+
+$content-border-radius: $border-radius;
+$content-color: rgba(147, 128, 108, 0.1);
+
+$header-color: rgba(#e7e0e2, 1);
+$header-height-sm: 112px;
+$header-height-lg: 136px;
+
+$header-logo-height-sm: $header-height-sm - $space-sm*2;
+$header-logo-height-lg: $header-height-lg - $space-lg*2;
+
+$header-left-section-color: rgba(#612c3a, 1);
+$header-left-section-width-sm: 250px;
+$header-left-section-width-lg: 290px;
+
+$header-right-section-color: $header-color;
+
+$header-diagonal-width-sm: 50px;
+$header-diagonal-width-lg: 50px;
+
+$footer-border-radius: $border-radius;
+$footer-color: rgba(#554f4f, 1);
+$footer-font-color: rgba(#ffffff, 1);
+$footer-height-sm: 96px;
+$footer-height-lg: 120px;
+
+
+.site-layout {
+  //background-color: yellow; // trace
+  display: flex;
+  min-height: 100vh;
+  height: 100%; /* 1, 3 */
+  flex-direction: column;
+
+  &__body {
+    //background-color: cyan; // trace
+    display: flex;
+    flex: 1 0 auto; /* 2 */
+    flex-direction: column;
+  }
+
+  &__wrapper {
+    //background-color: orange; // trace
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  &__content {
+    background: $content-color;
+    border-radius: $content-border-radius;
+    margin: $space-sm;
+    padding: $space-sm;
+    flex: 1;
+  }
+
+  &__sidebar-left,
+  &__sidebar-right {
+    background: $sidebar-color;
+    margin: $space-sm $space-sm 0;
+    padding: $space-sm;
+    border-radius: $sidebar-border-radius;
+  }
+
+  &__sidebar-left {
+    order: -1;
+
+    a.active {
+      font-weight: bold; // Lag Egen klassse
+    }
+  }
+}
+
+@media (min-width: $sidebar-breakpoint) {
+  .site-layout {
+
+    &__body {
+      flex-direction: row;
+    }
+
+    &__content {
+      margin: $space-lg;
+      padding: $space-lg;
+      flex: 1;
+    }
+
+    &__sidebar-left,
+    &__sidebar-right {
+      margin: $space-lg $space-lg 0;
+      flex: 0 0 $sidebar-left-width;
+    }
+  }
+}
+
+////// Header, Footer //////
+.site-header {
+  background: $header-color;
+  height: $header-height-sm;
+  display: flex;
+
+  &__logo {
+    width: $header-logo-height-sm;
+    height: $header-logo-height-sm;
+    background: url(LogoSKE_CMYK_white_outline.svg) no-repeat center;
+  }
+
+  &__left-section {
+    background: $header-left-section-color;
+
+    /* stylelint-disable */
+    padding-top: 0;
+    padding-right: 0 !important;
+    padding-bottom: 0;
+    padding-left: $space-sm;
+    /* stylelint-enable */
+
+    width: $header-left-section-width-sm - $header-diagonal-width-sm;
+    display: flex;
+    align-items: center;
+  }
+
+  &__diagonal {
+    border-right: $header-diagonal-width-sm solid $header-right-section-color;
+    border-bottom: $header-height-sm solid $header-left-section-color;
+  }
+
+  &__right-section {
+    background: $header-right-section-color;
+    padding: 0 $space-sm;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.site-footer {
+  background: $footer-color;
+  border-radius: $footer-border-radius $footer-border-radius 0 0;
+  color: $footer-font-color;
+  height: $footer-height-sm;
+  margin: 0 $space-sm;
+  padding: 0 $space-sm;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (min-width: $sidebar-breakpoint) {
+  .site-header {
+    height: $header-height-lg;
+
+    &__logo {
+      width: $header-logo-height-lg;
+      height: $header-logo-height-lg;
+    }
+
+    &__left-section {
+      padding-left: $space-lg;
+      width: $header-left-section-width-lg - $header-diagonal-width-lg;
+    }
+
+    &__diagonal {
+      border-bottom-width: $header-height-lg;
+    }
+
+    &__right-section {
+      padding: 0 $space-lg 0 $space-lg*2;
+    }
+  }
+  .site-footer {
+    height: $footer-height-lg;
+    margin: 0 $space-lg;
+    padding: 0 $space-lg;
+  }
+}
