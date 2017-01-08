@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+// The main file should be the only Sass file from the whole code base not to begin with an underscore.
+// This file should not contain anything but `@import` and comments.
+// Reference: [Sass Guidelines](http://sass-guidelin.es/)
+//            [Architecture](http://sass-guidelin.es/#architecture)
+//            [Main file](http://sass-guidelin.es/#main-file)
+
+// 1. Configuration and helpers
+
+// Material Design Lite
+@import '~material-design-lite/src/variables';
+@import '~material-design-lite/src/mixins';
+
+// mdl-ext
+@import '~mdl-ext/src/variables';
+@import '~mdl-ext/src/mixins';
+@import '~mdl-ext/src/functions';
+
+// 2. Vendors
+@import '~material-design-icons/iconfont/material-icons';
+@import '~roboto-fontface/css/roboto/sass/roboto-fontface-light';
+@import '~material-design-lite/src/material-design-lite';
+
+//@import '~mdl-ext/src/mdl-ext';
+@import '~mdl-ext/src/menu-button/menu-button';
+
+// 3. Base stuff
+
+// 4. Layout-related sections
+
+// 5. Components
+
+// 6. Page-specific styles
+
+// 7. Themes
