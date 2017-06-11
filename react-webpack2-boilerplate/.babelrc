@@ -1,0 +1,36 @@
+{
+  "plugins": [
+    "syntax-async-functions",
+    "syntax-dynamic-import",
+    "transform-async-to-generator",
+    "transform-regenerator",
+    "transform-runtime",
+    "transform-class-properties"
+  ],
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": [
+            "last 2 versions",
+            "ie >= 11"
+          ]
+        }
+      }
+    ],
+    "react",
+    "stage-0"
+  ],
+  "env": {
+    "test": {
+    },
+    "development": {
+      "plugins": [
+        "react-hot-loader/babel"
+      ]
+    },
+    "production": {
+    }
+  }
+}

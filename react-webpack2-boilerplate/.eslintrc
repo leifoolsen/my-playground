@@ -1,0 +1,66 @@
+// ESLint Reset - A starter .eslintrc file that resets all rules to off and includes a description of what each rule does.
+// From here, enable the rules that you care about by changing the 0 to a 1 or 2.
+// 1 means warning (will not affect exit code) and 2 means error (will affect exit code).
+// See: https://gist.github.com/ghostwords/40936f11091b87987e56
+// See: http://eslint.org/docs/rules/
+// See: https://github.com/feross/eslint-config-standard
+
+{
+  "extends": [
+    "eslint:recommended"
+    //"plugin:flowtype/recommended" // Will not use flow. See: https://github.com/facebook/flow/issues/869#issuecomment-256643823
+  ],
+
+  "parser": "babel-eslint",
+
+  "settings": {
+    "ecmascript": 7,
+    "jsx": true,
+    "polyfills": [
+      "fetch"
+    ]
+  },
+  "parserOptions": {
+    "ecmaVersion": 7,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "globalReturn": true,
+      "jsx": true,
+      "modules": true
+    },
+    "sourceType": "module"
+  },
+  "env": {
+    "browser": true, // browser global variables
+    "node": true,    // Node.js global variables and Node.js-specific rules
+    "mocha": true,   // adds all of the Mocha testing global variables
+    "es6": true      // ECMAScript 6
+  },
+  "plugins": [
+    "compat",     // Allow configuration of target browser/s (npm i -D eslint-plugin-compat)
+    "react"    // React specific linting rules (npm i -D eslint-plugin-react)
+    //"flowtype" // Will not use flow. See: https://github.com/facebook/flow/issues/869#issuecomment-256643823
+  ],
+  "globals": {
+    // "componentHandler": true // Material Design Lite
+  },
+  "rules": {
+    "compat/compat": 2, // required by eslint-plugin-compat
+    "indent": [2, 2, {"SwitchCase": 1}],
+    "linebreak-style": [2, "unix"],
+    "max-statements-per-line": [1, {"max": 1}],
+    "no-console": 1,
+    "no-restricted-syntax": 1,
+    "no-iterator": 1,
+    "no-var": 1,
+    "prefer-const": 1,
+    "prefer-rest-params": 1,
+    "prefer-spread": 1,
+    "prefer-template": 1,
+    "quotes": [2, "single"],
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "semi": [2, "always"],
+    "strict": 0
+  }
+}
